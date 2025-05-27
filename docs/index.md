@@ -23,7 +23,7 @@ hide:
     </div>
   </div>
   <div class="hero-visual">
-    <div class="nostr-network">
+    <div class="nostr-network no-lines-style">
       <div class="node relay"></div>
       <div class="node client"></div>
       <div class="node client"></div>
@@ -54,12 +54,6 @@ hide:
     <div class="feature-icon"><span class="material-icons">flash_on</span></div>
     <h3>Lightning Fast</h3>
     <p>Simple protocol design enables real-time communication with minimal overhead.</p>
-  </div>
-  
-  <div class="feature-card">
-    <div class="feature-icon"><span class="material-icons">extension</span></div>
-    <h3>Extensible</h3>
-    <p>NIPs (Nostr Implementation Possibilities) allow for endless innovation and new features.</p>
   </div>
 </div>
 

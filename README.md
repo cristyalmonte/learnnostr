@@ -2,7 +2,6 @@
 
 A beautiful, interactive learning platform for the Nostr protocol, built with MkDocs Material. Learn Nostr through hands-on tutorials, comprehensive guides, and a developer-friendly experience.
 
-![LearnNostr Preview](https://via.placeholder.com/800x400/667eea/ffffff?text=LearnNostr+Preview)
 
 ## ✨ Features
 

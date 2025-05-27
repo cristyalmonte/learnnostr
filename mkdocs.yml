@@ -3,7 +3,7 @@ site_description: Interactive tutorials and comprehensive guide to learning Nost
 site_author: LearnNostr Team
 site_url: https://learnnostr.org
 
-repo_name: cristyalmonte/learnnostr
+repo_name: learnnostr
 repo_url: https://github.com/cristyalmonte/learnnostr
 edit_uri: edit/main/docs/
 

@@ -1,0 +1,15 @@
+{
+  "name": "learnnostr",
+  "version": 2,
+  "builds": [
+    {
+      "src": "requirements.txt",
+      "use": "@vercel/python"
+    }
+  ],
+  "installCommand": "pip install -r requirements.txt",
+  "buildCommand": "mkdocs build",
+  "outputDirectory": "site",
+  "cleanUrls": true,
+  "trailingSlash": false
+} 

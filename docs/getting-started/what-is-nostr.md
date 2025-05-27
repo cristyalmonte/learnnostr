@@ -10,7 +10,7 @@
 
 ## Introduction
 
-**Nostr** stands for "**N**otes and **O**ther **St**uff **T**ransmitted by **R**elays". It's a simple, open protocol that enables global, decentralized, and censorship-resistant social media.
+**Nostr** stands for "Notes and Other Stuff Transmitted by Relays". It's a simple, open protocol that enables global, decentralized, and censorship-resistant social media.
 
 Unlike traditional social media platforms, Nostr doesn't rely on a central server or company. Instead, it uses a network of relays to distribute messages, giving users complete control over their identity and data.
 

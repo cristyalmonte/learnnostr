@@ -154,12 +154,15 @@ nav:
   - Home: index.md
   - Getting Started:
     - What is Nostr?: getting-started/what-is-nostr.md
+    - Setting Up a Lightning Wallet: getting-started/wallet-setup.md
     - Setting Up a Relay: getting-started/relay-setup.md
     - Essential Nostr Tools: getting-started/nostr-tools.md
   - Core Concepts:
     - Nostr Fundamentals: concepts/nostr-fundamentals.md
     - Keys and Identity: concepts/keys.md
+    - Understanding Clients: concepts/clients.md
     - Understanding Relays: concepts/relays.md
+    - Understanding Zaps: concepts/zaps.md
     - NIPs Explained: concepts/nips.md
   - Tutorials:
     - Building a Simple Client: tutorials/simple-client.md 

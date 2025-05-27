@@ -8,7 +8,7 @@ A beautiful, interactive learning platform for the Nostr protocol built with MkD
 
 ```bash
 # Clone and setup
-git clone https://github.com/learnnostr/learnnostr.git
+git clone https://github.com/cristyalmonte/learnnostr.git
 cd learnnostr
 
 # Install dependencies

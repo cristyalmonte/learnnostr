@@ -3,8 +3,8 @@ site_description: Interactive tutorials and comprehensive guide to learning Nost
 site_author: LearnNostr Team
 site_url: https://learnnostr.org
 
-repo_name: learnnostr/learnnostr
-repo_url: https://github.com/learnnostr/learnnostr
+repo_name: cristyalmonte/learnnostr
+repo_url: https://github.com/cristyalmonte/learnnostr
 edit_uri: edit/main/docs/
 
 copyright: Copyright &copy; 2024 LearnNostr
@@ -78,7 +78,7 @@ extra:
     property: !ENV GOOGLE_ANALYTICS_KEY
   social:
     - icon: fontawesome/brands/github
-      link: https://github.com/learnnostr
+      link: https://github.com/cristyalmonte/learnnostr
     - icon: fontawesome/brands/twitter
       link: https://twitter.com/learnnostr
     - icon: fontawesome/brands/discord
@@ -119,7 +119,7 @@ markdown_extensions:
   - pymdownx.magiclink:
       normalize_issue_symbols: true
       repo_url_shorthand: true
-      user: learnnostr
+      user: cristyalmonte
       repo: learnnostr
   - pymdownx.mark
   - pymdownx.smartsymbols

@@ -165,4 +165,5 @@ nav:
     - Understanding Zaps: concepts/zaps.md
     - NIPs Explained: concepts/nips.md
   - Tutorials:
-    - Building a Simple Client: tutorials/simple-client.md 
+    - Building a Simple Client: tutorials/simple-client.md
+  - Support: support.md 

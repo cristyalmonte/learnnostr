@@ -49,4 +49,3 @@ MIT License - see [LICENSE](LICENSE) for details.
 ---
 
 Built with ❤️ for the Nostr community
-# Site deployed Thu May 29 00:07:56 EDT 2025

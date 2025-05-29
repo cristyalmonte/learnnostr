@@ -11,9 +11,9 @@ copyright: Copyright &copy; 2024 LearnNostr
 
 theme:
   name: material
-  custom_dir: overrides
-  logo: assets/logo.svg
-  favicon: assets/favicon.ico
+  # custom_dir: overrides  # Removed this line causing template error
+  # logo: assets/logo.svg  # Commented out until we create assets
+  # favicon: assets/favicon.ico  # Commented out until we create assets
   
   palette:
     # Palette toggle for automatic mode

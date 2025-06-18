@@ -1,6 +1,6 @@
 # LearnNostr
 
-A beautiful, interactive learning platform for the Nostr protocol built with MkDocs Material.
+An interactive learning platform for the Nostr protocol built with MkDocs Material.
 
 🌐 **Live Site**: [learnnostr.org](https://learnnostr.org)
 

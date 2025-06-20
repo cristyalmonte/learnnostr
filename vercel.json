@@ -1,9 +1,14 @@
 {
-  "name": "learnnostr",
   "version": 2,
-  "installCommand": "pip install -r requirements.txt",
-  "buildCommand": "mkdocs build --strict",
-  "outputDirectory": "site",
-  "cleanUrls": true,
-  "trailingSlash": false
+  "name": "learnnostr",
+  "builds": [
+    {
+      "src": "build.sh",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "site"
+      }
+    }
+  ],
+  "outputDirectory": "site"
 } 

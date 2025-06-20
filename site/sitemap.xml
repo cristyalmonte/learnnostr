@@ -1,55 +1,59 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-         <loc>https://learnnostr.org/</loc>
-         <lastmod>2025-05-29</lastmod>
+         <loc>https://learnnostr.com/</loc>
+         <lastmod>2025-05-31</lastmod>
     </url>
     <url>
-         <loc>https://learnnostr.org/support/</loc>
-         <lastmod>2025-05-29</lastmod>
+         <loc>https://learnnostr.com/definitions/</loc>
+         <lastmod>2025-05-31</lastmod>
     </url>
     <url>
-         <loc>https://learnnostr.org/concepts/clients/</loc>
-         <lastmod>2025-05-29</lastmod>
+         <loc>https://learnnostr.com/support/</loc>
+         <lastmod>2025-05-31</lastmod>
     </url>
     <url>
-         <loc>https://learnnostr.org/concepts/keys/</loc>
-         <lastmod>2025-05-29</lastmod>
+         <loc>https://learnnostr.com/concepts/clients/</loc>
+         <lastmod>2025-05-31</lastmod>
     </url>
     <url>
-         <loc>https://learnnostr.org/concepts/nips/</loc>
-         <lastmod>2025-05-29</lastmod>
+         <loc>https://learnnostr.com/concepts/keys/</loc>
+         <lastmod>2025-05-31</lastmod>
     </url>
     <url>
-         <loc>https://learnnostr.org/concepts/nostr-fundamentals/</loc>
-         <lastmod>2025-05-29</lastmod>
+         <loc>https://learnnostr.com/concepts/nips/</loc>
+         <lastmod>2025-05-31</lastmod>
     </url>
     <url>
-         <loc>https://learnnostr.org/concepts/relays/</loc>
-         <lastmod>2025-05-29</lastmod>
+         <loc>https://learnnostr.com/concepts/nostr-fundamentals/</loc>
+         <lastmod>2025-05-31</lastmod>
     </url>
     <url>
-         <loc>https://learnnostr.org/concepts/zaps/</loc>
-         <lastmod>2025-05-29</lastmod>
+         <loc>https://learnnostr.com/concepts/relays/</loc>
+         <lastmod>2025-05-31</lastmod>
     </url>
     <url>
-         <loc>https://learnnostr.org/getting-started/nostr-tools/</loc>
-         <lastmod>2025-05-29</lastmod>
+         <loc>https://learnnostr.com/concepts/zaps/</loc>
+         <lastmod>2025-05-31</lastmod>
     </url>
     <url>
-         <loc>https://learnnostr.org/getting-started/relay-setup/</loc>
-         <lastmod>2025-05-29</lastmod>
+         <loc>https://learnnostr.com/getting-started/nostr-tools/</loc>
+         <lastmod>2025-05-31</lastmod>
     </url>
     <url>
-         <loc>https://learnnostr.org/getting-started/wallet-setup/</loc>
-         <lastmod>2025-05-29</lastmod>
+         <loc>https://learnnostr.com/getting-started/relay-setup/</loc>
+         <lastmod>2025-05-31</lastmod>
     </url>
     <url>
-         <loc>https://learnnostr.org/getting-started/what-is-nostr/</loc>
-         <lastmod>2025-05-29</lastmod>
+         <loc>https://learnnostr.com/getting-started/wallet-setup/</loc>
+         <lastmod>2025-05-31</lastmod>
     </url>
     <url>
-         <loc>https://learnnostr.org/tutorials/simple-client/</loc>
-         <lastmod>2025-05-29</lastmod>
+         <loc>https://learnnostr.com/getting-started/what-is-nostr/</loc>
+         <lastmod>2025-05-31</lastmod>
+    </url>
+    <url>
+         <loc>https://learnnostr.com/tutorials/simple-client/</loc>
+         <lastmod>2025-05-31</lastmod>
     </url>
 </urlset>

@@ -1,120 +1,1695 @@
-<!doctype html><html lang=en class=no-js> <head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="Interactive tutorials and comprehensive guide to learning Nostr protocol"><meta name=author content="LearnNostr Team"><link href=https://learnnostr.org/concepts/keys/ rel=canonical><link href=../nostr-fundamentals/ rel=prev><link href=../clients/ rel=next><link rel=icon href=../../assets/images/favicon.png><meta name=generator content="mkdocs-1.6.1, mkdocs-material-9.6.14"><title>Keys and Identity - LearnNostr</title><link rel=stylesheet href=../../assets/stylesheets/main.342714a4.min.css><link rel=stylesheet href=../../assets/stylesheets/palette.06af60db.min.css><link rel=preconnect href=https://fonts.gstatic.com crossorigin><link rel=stylesheet href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback"><style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style><link rel=stylesheet href=../../stylesheets/extra.css><script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script><script id=__analytics>function __md_analytics(){function e(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],e("js",new Date),e("config",""),document.addEventListener("DOMContentLoaded",(function(){document.forms.search&&document.forms.search.query.addEventListener("blur",(function(){this.value&&e("event","search",{search_term:this.value})}));document$.subscribe((function(){var t=document.forms.feedback;if(void 0!==t)for(var a of t.querySelectorAll("[type=submit]"))a.addEventListener("click",(function(a){a.preventDefault();var n=document.location.pathname,d=this.getAttribute("data-md-value");e("event","feedback",{page:n,data:d}),t.firstElementChild.disabled=!0;var r=t.querySelector(".md-feedback__note [data-md-value='"+d+"']");r&&(r.hidden=!1)})),t.hidden=!1})),location$.subscribe((function(t){e("config","",{page_path:t.pathname})}))}));var t=document.createElement("script");t.async=!0,t.src="https://www.googletagmanager.com/gtag/js?id=",document.getElementById("__analytics").insertAdjacentElement("afterEnd",t)}</script><script>"undefined"!=typeof __md_analytics&&__md_analytics()</script></head> <body dir=ltr data-md-color-scheme=default data-md-color-primary=indigo data-md-color-accent=indigo> <input class=md-toggle data-md-toggle=drawer type=checkbox id=__drawer autocomplete=off> <input class=md-toggle data-md-toggle=search type=checkbox id=__search autocomplete=off> <label class=md-overlay for=__drawer></label> <div data-md-component=skip> <a href=#keys-and-identity-in-nostr class=md-skip> Skip to content </a> </div> <div data-md-component=announce> </div> <div data-md-color-scheme=default data-md-component=outdated hidden> </div> <header class="md-header md-header--shadow md-header--lifted" data-md-component=header> <nav class="md-header__inner md-grid" aria-label=Header> <a href=../.. title=LearnNostr class="md-header__button md-logo" aria-label=LearnNostr data-md-component=logo> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg> </a> <label class="md-header__button md-icon" for=__drawer> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg> </label> <div class=md-header__title data-md-component=header-title> <div class=md-header__ellipsis> <div class=md-header__topic> <span class=md-ellipsis> LearnNostr </span> </div> <div class=md-header__topic data-md-component=header-topic> <span class=md-ellipsis> Keys and Identity </span> </div> </div> </div> <form class=md-header__option data-md-component=palette> <input class=md-option data-md-color-media=(prefers-color-scheme) data-md-color-scheme=default data-md-color-primary=indigo data-md-color-accent=indigo aria-label="Switch to light mode" type=radio name=__palette id=__palette_0> <label class="md-header__button md-icon" title="Switch to light mode" for=__palette_1 hidden> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="m14.3 16-.7-2h-3.2l-.7 2H7.8L11 7h2l3.2 9zM20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12zm-9.15 3.96h2.3L12 9z"/></svg> </label> <input class=md-option data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme=default data-md-color-primary=purple data-md-color-accent=deep-purple aria-label="Switch to dark mode" type=radio name=__palette id=__palette_1> <label class="md-header__button md-icon" title="Switch to dark mode" for=__palette_2 hidden> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg> </label> <input class=md-option data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme=slate data-md-color-primary=purple data-md-color-accent=deep-purple aria-label="Switch to system preference" type=radio name=__palette id=__palette_2> <label class="md-header__button md-icon" title="Switch to system preference" for=__palette_0 hidden> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg> </label> </form> <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script> <label class="md-header__button md-icon" for=__search> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg> </label> <div class=md-search data-md-component=search role=dialog> <label class=md-search__overlay for=__search></label> <div class=md-search__inner role=search> <form class=md-search__form name=search> <input type=text class=md-search__input name=query aria-label=Search placeholder=Search autocapitalize=off autocorrect=off autocomplete=off spellcheck=false data-md-component=search-query required> <label class="md-search__icon md-icon" for=__search> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg> </label> <nav class=md-search__options aria-label=Search> <a href=javascript:void(0) class="md-search__icon md-icon" title=Share aria-label=Share data-clipboard data-clipboard-text data-md-component=search-share tabindex=-1> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg> </a> <button type=reset class="md-search__icon md-icon" title=Clear aria-label=Clear tabindex=-1> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg> </button> </nav> <div class=md-search__suggest data-md-component=search-suggest></div> </form> <div class=md-search__output> <div class=md-search__scrollwrap tabindex=0 data-md-scrollfix> <div class=md-search-result data-md-component=search-result> <div class=md-search-result__meta> Initializing search </div> <ol class=md-search-result__list role=presentation></ol> </div> </div> </div> </div> </div> <div class=md-header__source> <a href=https://github.com/cristyalmonte/learnnostr title="Go to repository" class=md-source data-md-component=source> <div class="md-source__icon md-icon"> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 496 512"><!-- Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg> </div> <div class=md-source__repository> learnnostr </div> </a> </div> </nav> <nav class=md-tabs aria-label=Tabs data-md-component=tabs> <div class=md-grid> <ul class=md-tabs__list> <li class=md-tabs__item> <a href=../.. class=md-tabs__link> Home </a> </li> <li class=md-tabs__item> <a href=../../getting-started/what-is-nostr/ class=md-tabs__link> Getting Started </a> </li> <li class="md-tabs__item md-tabs__item--active"> <a href=../nostr-fundamentals/ class=md-tabs__link> Core Concepts </a> </li> <li class=md-tabs__item> <a href=../../tutorials/simple-client/ class=md-tabs__link> Tutorials </a> </li> <li class=md-tabs__item> <a href=../../support/ class=md-tabs__link> Support </a> </li> </ul> </div> </nav> </header> <div class=md-container data-md-component=container> <main class=md-main data-md-component=main> <div class="md-main__inner md-grid"> <div class="md-sidebar md-sidebar--primary" data-md-component=sidebar data-md-type=navigation> <div class=md-sidebar__scrollwrap> <div class=md-sidebar__inner> <nav class="md-nav md-nav--primary md-nav--lifted" aria-label=Navigation data-md-level=0> <label class=md-nav__title for=__drawer> <a href=../.. title=LearnNostr class="md-nav__button md-logo" aria-label=LearnNostr data-md-component=logo> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg> </a> LearnNostr </label> <div class=md-nav__source> <a href=https://github.com/cristyalmonte/learnnostr title="Go to repository" class=md-source data-md-component=source> <div class="md-source__icon md-icon"> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 496 512"><!-- Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg> </div> <div class=md-source__repository> learnnostr </div> </a> </div> <ul class=md-nav__list data-md-scrollfix> <li class=md-nav__item> <a href=../.. class=md-nav__link> <span class=md-ellipsis> Home </span> </a> </li> <li class="md-nav__item md-nav__item--pruned md-nav__item--nested"> <a href=../../getting-started/what-is-nostr/ class=md-nav__link> <span class=md-ellipsis> Getting Started </span> <span class="md-nav__icon md-icon"></span> </a> </li> <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested"> <input class="md-nav__toggle md-toggle " type=checkbox id=__nav_3 checked> <label class=md-nav__link for=__nav_3 id=__nav_3_label tabindex> <span class=md-ellipsis> Core Concepts </span> <span class="md-nav__icon md-icon"></span> </label> <nav class=md-nav data-md-level=1 aria-labelledby=__nav_3_label aria-expanded=true> <label class=md-nav__title for=__nav_3> <span class="md-nav__icon md-icon"></span> Core Concepts </label> <ul class=md-nav__list data-md-scrollfix> <li class=md-nav__item> <a href=../nostr-fundamentals/ class=md-nav__link> <span class=md-ellipsis> Nostr Fundamentals </span> </a> </li> <li class="md-nav__item md-nav__item--active"> <input class="md-nav__toggle md-toggle" type=checkbox id=__toc> <label class="md-nav__link md-nav__link--active" for=__toc> <span class=md-ellipsis> Keys and Identity </span> <span class="md-nav__icon md-icon"></span> </label> <a href=./ class="md-nav__link md-nav__link--active"> <span class=md-ellipsis> Keys and Identity </span> </a> <nav class="md-nav md-nav--secondary" aria-label="Table of contents"> <label class=md-nav__title for=__toc> <span class="md-nav__icon md-icon"></span> Table of contents </label> <ul class=md-nav__list data-md-component=toc data-md-scrollfix> <li class=md-nav__item> <a href=#introduction class=md-nav__link> <span class=md-ellipsis> Introduction </span> </a> </li> <li class=md-nav__item> <a href=#understanding-cryptographic-keys class=md-nav__link> <span class=md-ellipsis> Understanding Cryptographic Keys </span> </a> <nav class=md-nav aria-label="Understanding Cryptographic Keys"> <ul class=md-nav__list> <li class=md-nav__item> <a href=#what-are-cryptographic-keys class=md-nav__link> <span class=md-ellipsis> What are Cryptographic Keys? </span> </a> </li> <li class=md-nav__item> <a href=#the-key-pair class=md-nav__link> <span class=md-ellipsis> The Key Pair </span> </a> </li> </ul> </nav> </li> <li class=md-nav__item> <a href=#private-vs-public-keys-the-essential-difference class=md-nav__link> <span class=md-ellipsis> Private vs Public Keys: The Essential Difference </span> </a> <nav class=md-nav aria-label="Private vs Public Keys: The Essential Difference"> <ul class=md-nav__list> <li class=md-nav__item> <a href=#private-keys-your-secret-identity class=md-nav__link> <span class=md-ellipsis> Private Keys: Your Secret Identity </span> </a> <nav class=md-nav aria-label="Private Keys: Your Secret Identity"> <ul class=md-nav__list> <li class=md-nav__item> <a href=#what-it-does class=md-nav__link> <span class=md-ellipsis> What it does: </span> </a> </li> <li class=md-nav__item> <a href=#security-rules class=md-nav__link> <span class=md-ellipsis> Security Rules: </span> </a> </li> <li class=md-nav__item> <a href=#think-of-it-like class=md-nav__link> <span class=md-ellipsis> Think of it like: </span> </a> </li> </ul> </nav> </li> <li class=md-nav__item> <a href=#public-keys-your-public-identity class=md-nav__link> <span class=md-ellipsis> Public Keys: Your Public Identity </span> </a> <nav class=md-nav aria-label="Public Keys: Your Public Identity"> <ul class=md-nav__list> <li class=md-nav__item> <a href=#what-it-does_1 class=md-nav__link> <span class=md-ellipsis> What it does: </span> </a> </li> <li class=md-nav__item> <a href=#sharing-rules class=md-nav__link> <span class=md-ellipsis> Sharing Rules: </span> </a> </li> <li class=md-nav__item> <a href=#think-of-it-like_1 class=md-nav__link> <span class=md-ellipsis> Think of it like: </span> </a> </li> </ul> </nav> </li> <li class=md-nav__item> <a href=#the-mathematical-relationship class=md-nav__link> <span class=md-ellipsis> The Mathematical Relationship </span> </a> </li> <li class=md-nav__item> <a href=#real-world-analogy class=md-nav__link> <span class=md-ellipsis> Real-World Analogy </span> </a> </li> <li class=md-nav__item> <a href=#common-mistakes-to-avoid class=md-nav__link> <span class=md-ellipsis> Common Mistakes to Avoid </span> </a> </li> </ul> </nav> </li> <li class=md-nav__item> <a href=#private-keys class=md-nav__link> <span class=md-ellipsis> Private Keys </span> </a> <nav class=md-nav aria-label="Private Keys"> <ul class=md-nav__list> <li class=md-nav__item> <a href=#characteristics class=md-nav__link> <span class=md-ellipsis> Characteristics </span> </a> </li> <li class=md-nav__item> <a href=#format-examples class=md-nav__link> <span class=md-ellipsis> Format Examples </span> </a> </li> <li class=md-nav__item> <a href=#generating-a-private-key class=md-nav__link> <span class=md-ellipsis> Generating a Private Key </span> </a> </li> </ul> </nav> </li> <li class=md-nav__item> <a href=#public-keys class=md-nav__link> <span class=md-ellipsis> Public Keys </span> </a> <nav class=md-nav aria-label="Public Keys"> <ul class=md-nav__list> <li class=md-nav__item> <a href=#characteristics_1 class=md-nav__link> <span class=md-ellipsis> Characteristics </span> </a> </li> <li class=md-nav__item> <a href=#format-examples_1 class=md-nav__link> <span class=md-ellipsis> Format Examples </span> </a> </li> <li class=md-nav__item> <a href=#deriving-public-key class=md-nav__link> <span class=md-ellipsis> Deriving Public Key </span> </a> </li> </ul> </nav> </li> <li class=md-nav__item> <a href=#key-formats-and-encoding class=md-nav__link> <span class=md-ellipsis> Key Formats and Encoding </span> </a> <nav class=md-nav aria-label="Key Formats and Encoding"> <ul class=md-nav__list> <li class=md-nav__item> <a href=#hex-format class=md-nav__link> <span class=md-ellipsis> Hex Format </span> </a> </li> <li class=md-nav__item> <a href=#bech32-format-nip-19 class=md-nav__link> <span class=md-ellipsis> Bech32 Format (NIP-19) </span> </a> </li> </ul> </nav> </li> <li class=md-nav__item> <a href=#digital-signatures class=md-nav__link> <span class=md-ellipsis> Digital Signatures </span> </a> <nav class=md-nav aria-label="Digital Signatures"> <ul class=md-nav__list> <li class=md-nav__item> <a href=#how-signatures-work class=md-nav__link> <span class=md-ellipsis> How Signatures Work </span> </a> </li> <li class=md-nav__item> <a href=#example-signing-an-event class=md-nav__link> <span class=md-ellipsis> Example: Signing an Event </span> </a> </li> </ul> </nav> </li> <li class=md-nav__item> <a href=#identity-without-usernames class=md-nav__link> <span class=md-ellipsis> Identity Without Usernames </span> </a> <nav class=md-nav aria-label="Identity Without Usernames"> <ul class=md-nav__list> <li class=md-nav__item> <a href=#traditional-vs-nostr-identity class=md-nav__link> <span class=md-ellipsis> Traditional vs Nostr Identity </span> </a> </li> <li class=md-nav__item> <a href=#benefits-of-cryptographic-identity class=md-nav__link> <span class=md-ellipsis> Benefits of Cryptographic Identity </span> </a> </li> </ul> </nav> </li> <li class=md-nav__item> <a href=#key-management-best-practices class=md-nav__link> <span class=md-ellipsis> Key Management Best Practices </span> </a> <nav class=md-nav aria-label="Key Management Best Practices"> <ul class=md-nav__list> <li class=md-nav__item> <a href=#secure-storage class=md-nav__link> <span class=md-ellipsis> Secure Storage </span> </a> </li> <li class=md-nav__item> <a href=#key-backup-strategies class=md-nav__link> <span class=md-ellipsis> Key Backup Strategies </span> </a> </li> </ul> </nav> </li> <li class=md-nav__item> <a href=#multiple-identities class=md-nav__link> <span class=md-ellipsis> Multiple Identities </span> </a> <nav class=md-nav aria-label="Multiple Identities"> <ul class=md-nav__list> <li class=md-nav__item> <a href=#use-cases class=md-nav__link> <span class=md-ellipsis> Use Cases </span> </a> </li> <li class=md-nav__item> <a href=#managing-multiple-keys class=md-nav__link> <span class=md-ellipsis> Managing Multiple Keys </span> </a> </li> </ul> </nav> </li> <li class=md-nav__item> <a href=#interactive-exercise class=md-nav__link> <span class=md-ellipsis> Interactive Exercise </span> </a> </li> <li class=md-nav__item> <a href=#common-pitfalls class=md-nav__link> <span class=md-ellipsis> Common Pitfalls </span> </a> </li> <li class=md-nav__item> <a href=#next-steps class=md-nav__link> <span class=md-ellipsis> Next Steps </span> </a> </li> <li class=md-nav__item> <a href=#quick-quiz class=md-nav__link> <span class=md-ellipsis> Quick Quiz </span> </a> </li> </ul> </nav> </li> <li class=md-nav__item> <a href=../clients/ class=md-nav__link> <span class=md-ellipsis> Understanding Clients </span> </a> </li> <li class=md-nav__item> <a href=../relays/ class=md-nav__link> <span class=md-ellipsis> Understanding Relays </span> </a> </li> <li class=md-nav__item> <a href=../zaps/ class=md-nav__link> <span class=md-ellipsis> Understanding Zaps </span> </a> </li> <li class=md-nav__item> <a href=../nips/ class=md-nav__link> <span class=md-ellipsis> NIPs Explained </span> </a> </li> </ul> </nav> </li> <li class="md-nav__item md-nav__item--pruned md-nav__item--nested"> <a href=../../tutorials/simple-client/ class=md-nav__link> <span class=md-ellipsis> Tutorials </span> <span class="md-nav__icon md-icon"></span> </a> </li> <li class=md-nav__item> <a href=../../support/ class=md-nav__link> <span class=md-ellipsis> Support </span> </a> </li> </ul> </nav> </div> </div> </div> <div class="md-sidebar md-sidebar--secondary" data-md-component=sidebar data-md-type=toc> <div class=md-sidebar__scrollwrap> <div class=md-sidebar__inner> <nav class="md-nav md-nav--secondary" aria-label="Table of contents"> <label class=md-nav__title for=__toc> <span class="md-nav__icon md-icon"></span> Table of contents </label> <ul class=md-nav__list data-md-component=toc data-md-scrollfix> <li class=md-nav__item> <a href=#introduction class=md-nav__link> <span class=md-ellipsis> Introduction </span> </a> </li> <li class=md-nav__item> <a href=#understanding-cryptographic-keys class=md-nav__link> <span class=md-ellipsis> Understanding Cryptographic Keys </span> </a> <nav class=md-nav aria-label="Understanding Cryptographic Keys"> <ul class=md-nav__list> <li class=md-nav__item> <a href=#what-are-cryptographic-keys class=md-nav__link> <span class=md-ellipsis> What are Cryptographic Keys? </span> </a> </li> <li class=md-nav__item> <a href=#the-key-pair class=md-nav__link> <span class=md-ellipsis> The Key Pair </span> </a> </li> </ul> </nav> </li> <li class=md-nav__item> <a href=#private-vs-public-keys-the-essential-difference class=md-nav__link> <span class=md-ellipsis> Private vs Public Keys: The Essential Difference </span> </a> <nav class=md-nav aria-label="Private vs Public Keys: The Essential Difference"> <ul class=md-nav__list> <li class=md-nav__item> <a href=#private-keys-your-secret-identity class=md-nav__link> <span class=md-ellipsis> Private Keys: Your Secret Identity </span> </a> <nav class=md-nav aria-label="Private Keys: Your Secret Identity"> <ul class=md-nav__list> <li class=md-nav__item> <a href=#what-it-does class=md-nav__link> <span class=md-ellipsis> What it does: </span> </a> </li> <li class=md-nav__item> <a href=#security-rules class=md-nav__link> <span class=md-ellipsis> Security Rules: </span> </a> </li> <li class=md-nav__item> <a href=#think-of-it-like class=md-nav__link> <span class=md-ellipsis> Think of it like: </span> </a> </li> </ul> </nav> </li> <li class=md-nav__item> <a href=#public-keys-your-public-identity class=md-nav__link> <span class=md-ellipsis> Public Keys: Your Public Identity </span> </a> <nav class=md-nav aria-label="Public Keys: Your Public Identity"> <ul class=md-nav__list> <li class=md-nav__item> <a href=#what-it-does_1 class=md-nav__link> <span class=md-ellipsis> What it does: </span> </a> </li> <li class=md-nav__item> <a href=#sharing-rules class=md-nav__link> <span class=md-ellipsis> Sharing Rules: </span> </a> </li> <li class=md-nav__item> <a href=#think-of-it-like_1 class=md-nav__link> <span class=md-ellipsis> Think of it like: </span> </a> </li> </ul> </nav> </li> <li class=md-nav__item> <a href=#the-mathematical-relationship class=md-nav__link> <span class=md-ellipsis> The Mathematical Relationship </span> </a> </li> <li class=md-nav__item> <a href=#real-world-analogy class=md-nav__link> <span class=md-ellipsis> Real-World Analogy </span> </a> </li> <li class=md-nav__item> <a href=#common-mistakes-to-avoid class=md-nav__link> <span class=md-ellipsis> Common Mistakes to Avoid </span> </a> </li> </ul> </nav> </li> <li class=md-nav__item> <a href=#private-keys class=md-nav__link> <span class=md-ellipsis> Private Keys </span> </a> <nav class=md-nav aria-label="Private Keys"> <ul class=md-nav__list> <li class=md-nav__item> <a href=#characteristics class=md-nav__link> <span class=md-ellipsis> Characteristics </span> </a> </li> <li class=md-nav__item> <a href=#format-examples class=md-nav__link> <span class=md-ellipsis> Format Examples </span> </a> </li> <li class=md-nav__item> <a href=#generating-a-private-key class=md-nav__link> <span class=md-ellipsis> Generating a Private Key </span> </a> </li> </ul> </nav> </li> <li class=md-nav__item> <a href=#public-keys class=md-nav__link> <span class=md-ellipsis> Public Keys </span> </a> <nav class=md-nav aria-label="Public Keys"> <ul class=md-nav__list> <li class=md-nav__item> <a href=#characteristics_1 class=md-nav__link> <span class=md-ellipsis> Characteristics </span> </a> </li> <li class=md-nav__item> <a href=#format-examples_1 class=md-nav__link> <span class=md-ellipsis> Format Examples </span> </a> </li> <li class=md-nav__item> <a href=#deriving-public-key class=md-nav__link> <span class=md-ellipsis> Deriving Public Key </span> </a> </li> </ul> </nav> </li> <li class=md-nav__item> <a href=#key-formats-and-encoding class=md-nav__link> <span class=md-ellipsis> Key Formats and Encoding </span> </a> <nav class=md-nav aria-label="Key Formats and Encoding"> <ul class=md-nav__list> <li class=md-nav__item> <a href=#hex-format class=md-nav__link> <span class=md-ellipsis> Hex Format </span> </a> </li> <li class=md-nav__item> <a href=#bech32-format-nip-19 class=md-nav__link> <span class=md-ellipsis> Bech32 Format (NIP-19) </span> </a> </li> </ul> </nav> </li> <li class=md-nav__item> <a href=#digital-signatures class=md-nav__link> <span class=md-ellipsis> Digital Signatures </span> </a> <nav class=md-nav aria-label="Digital Signatures"> <ul class=md-nav__list> <li class=md-nav__item> <a href=#how-signatures-work class=md-nav__link> <span class=md-ellipsis> How Signatures Work </span> </a> </li> <li class=md-nav__item> <a href=#example-signing-an-event class=md-nav__link> <span class=md-ellipsis> Example: Signing an Event </span> </a> </li> </ul> </nav> </li> <li class=md-nav__item> <a href=#identity-without-usernames class=md-nav__link> <span class=md-ellipsis> Identity Without Usernames </span> </a> <nav class=md-nav aria-label="Identity Without Usernames"> <ul class=md-nav__list> <li class=md-nav__item> <a href=#traditional-vs-nostr-identity class=md-nav__link> <span class=md-ellipsis> Traditional vs Nostr Identity </span> </a> </li> <li class=md-nav__item> <a href=#benefits-of-cryptographic-identity class=md-nav__link> <span class=md-ellipsis> Benefits of Cryptographic Identity </span> </a> </li> </ul> </nav> </li> <li class=md-nav__item> <a href=#key-management-best-practices class=md-nav__link> <span class=md-ellipsis> Key Management Best Practices </span> </a> <nav class=md-nav aria-label="Key Management Best Practices"> <ul class=md-nav__list> <li class=md-nav__item> <a href=#secure-storage class=md-nav__link> <span class=md-ellipsis> Secure Storage </span> </a> </li> <li class=md-nav__item> <a href=#key-backup-strategies class=md-nav__link> <span class=md-ellipsis> Key Backup Strategies </span> </a> </li> </ul> </nav> </li> <li class=md-nav__item> <a href=#multiple-identities class=md-nav__link> <span class=md-ellipsis> Multiple Identities </span> </a> <nav class=md-nav aria-label="Multiple Identities"> <ul class=md-nav__list> <li class=md-nav__item> <a href=#use-cases class=md-nav__link> <span class=md-ellipsis> Use Cases </span> </a> </li> <li class=md-nav__item> <a href=#managing-multiple-keys class=md-nav__link> <span class=md-ellipsis> Managing Multiple Keys </span> </a> </li> </ul> </nav> </li> <li class=md-nav__item> <a href=#interactive-exercise class=md-nav__link> <span class=md-ellipsis> Interactive Exercise </span> </a> </li> <li class=md-nav__item> <a href=#common-pitfalls class=md-nav__link> <span class=md-ellipsis> Common Pitfalls </span> </a> </li> <li class=md-nav__item> <a href=#next-steps class=md-nav__link> <span class=md-ellipsis> Next Steps </span> </a> </li> <li class=md-nav__item> <a href=#quick-quiz class=md-nav__link> <span class=md-ellipsis> Quick Quiz </span> </a> </li> </ul> </nav> </div> </div> </div> <div class=md-content data-md-component=content> <article class="md-content__inner md-typeset"> <a href=https://github.com/cristyalmonte/learnnostr/edit/main/docs/concepts/keys.md title="Edit this page" class="md-content__button md-icon"> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75z"/></svg> </a> <a href=https://github.com/cristyalmonte/learnnostr/raw/main/docs/concepts/keys.md title="View source of this page" class="md-content__button md-icon"> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M12 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0 8a5 5 0 0 1-5-5 5 5 0 0 1 5-5 5 5 0 0 1 5 5 5 5 0 0 1-5 5m0-12.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5"/></svg> </a> <h1 id=keys-and-identity-in-nostr>Keys and Identity in Nostr<a class=headerlink href=#keys-and-identity-in-nostr title="Permanent link">&para;</a></h1> <div class="admonition info"> <p class=admonition-title>Learning Objectives</p> <p>After this lesson, you'll understand:</p> <ul> <li>How cryptographic keys work in Nostr</li> <li>The difference between private and public keys</li> <li>Key formats and encoding (hex, npub, nsec)</li> <li>Best practices for key management</li> <li>How identity works without usernames</li> </ul> </div> <h2 id=introduction>Introduction<a class=headerlink href=#introduction title="Permanent link">&para;</a></h2> <p>In Nostr, your identity is entirely based on cryptographic keys. Unlike traditional social media where you create an account with a username and password, Nostr uses public-key cryptography to establish and verify your identity.</p> <h2 id=understanding-cryptographic-keys>Understanding Cryptographic Keys<a class=headerlink href=#understanding-cryptographic-keys title="Permanent link">&para;</a></h2> <h3 id=what-are-cryptographic-keys>What are Cryptographic Keys?<a class=headerlink href=#what-are-cryptographic-keys title="Permanent link">&para;</a></h3> <p>Cryptographic keys are pairs of mathematically related numbers used for:</p> <ul> <li><strong>Authentication</strong>: Proving you are who you claim to be</li> <li><strong>Digital Signatures</strong>: Ensuring messages haven't been tampered with</li> <li><strong>Encryption</strong>: Keeping communications private (optional in Nostr)</li> </ul> <h3 id=the-key-pair>The Key Pair<a class=headerlink href=#the-key-pair title="Permanent link">&para;</a></h3> <p>Every Nostr identity consists of two keys:</p> <pre class=mermaid><code>graph LR
-    A[Private Key] --&gt;|generates| B[Public Key]
-    A --&gt;|signs| C[Events]
-    B --&gt;|verifies| C
-    B --&gt;|identifies| D[Your Identity]</code></pre> <h2 id=private-vs-public-keys-the-essential-difference>Private vs Public Keys: The Essential Difference<a class=headerlink href=#private-vs-public-keys-the-essential-difference title="Permanent link">&para;</a></h2> <p>Understanding the difference between private and public keys is crucial for using Nostr safely and effectively.</p> <h3 id=private-keys-your-secret-identity>Private Keys: Your Secret Identity<a class=headerlink href=#private-keys-your-secret-identity title="Permanent link">&para;</a></h3> <p>Your private key is like a <strong>master password</strong> that controls your entire Nostr identity.</p> <h4 id=what-it-does><strong>What it does:</strong><a class=headerlink href=#what-it-does title="Permanent link">&para;</a></h4> <ul> <li><strong>Signs events</strong> - Proves you authored a message</li> <li><strong>Controls identity</strong> - Only you can post as "you"</li> <li><strong>Enables authentication</strong> - Proves ownership of your account</li> <li><strong>Cannot be recovered</strong> - If lost, your identity is gone forever</li> </ul> <h4 id=security-rules><strong>Security Rules:</strong><a class=headerlink href=#security-rules title="Permanent link">&para;</a></h4> <ul> <li>❌ <strong>NEVER share</strong> with anyone</li> <li>❌ <strong>NEVER post</strong> publicly or in messages</li> <li>❌ <strong>NEVER store</strong> in plain text</li> <li>✅ <strong>ALWAYS backup</strong> securely</li> <li>✅ <strong>ALWAYS encrypt</strong> when storing</li> </ul> <h4 id=think-of-it-like><strong>Think of it like:</strong><a class=headerlink href=#think-of-it-like title="Permanent link">&para;</a></h4> <ul> <li>Your house key - only you should have it</li> <li>Your signature - uniquely identifies you</li> <li>Your bank PIN - gives access to everything</li> </ul> <h3 id=public-keys-your-public-identity>Public Keys: Your Public Identity<a class=headerlink href=#public-keys-your-public-identity title="Permanent link">&para;</a></h3> <p>Your public key is your <strong>address</strong> on Nostr - it's how others find and verify you.</p> <h4 id=what-it-does_1><strong>What it does:</strong><a class=headerlink href=#what-it-does_1 title="Permanent link">&para;</a></h4> <ul> <li><strong>Identifies you</strong> - Your unique address on Nostr</li> <li><strong>Verifies signatures</strong> - Others can confirm your messages are authentic</li> <li><strong>Enables discovery</strong> - People can find and follow you</li> <li><strong>Safe to share</strong> - No security risk in sharing</li> </ul> <h4 id=sharing-rules><strong>Sharing Rules:</strong><a class=headerlink href=#sharing-rules title="Permanent link">&para;</a></h4> <ul> <li>✅ <strong>Safe to share</strong> publicly</li> <li>✅ <strong>Post in bio</strong> or profiles</li> <li>✅ <strong>Share in messages</strong> </li> <li>✅ <strong>Display on websites</strong></li> <li>✅ <strong>Include in QR codes</strong></li> </ul> <h4 id=think-of-it-like_1><strong>Think of it like:</strong><a class=headerlink href=#think-of-it-like_1 title="Permanent link">&para;</a></h4> <ul> <li>Your email address - others need it to contact you</li> <li>Your phone number - safe to share, identifies you</li> <li>Your mailing address - public information</li> </ul> <h3 id=the-mathematical-relationship>The Mathematical Relationship<a class=headerlink href=#the-mathematical-relationship title="Permanent link">&para;</a></h3> <pre class=mermaid><code>graph LR
-    A[Private Key&lt;br/&gt;🔐 Secret] --&gt;|generates| B[Public Key&lt;br/&gt;🌐 Public]
-    A --&gt;|signs| C[Message]
-    B --&gt;|verifies| C
-    C --&gt;|authentic?| D{✓ Valid}</code></pre> <p>Private and public keys are mathematically linked: - <strong>One-way relationship</strong>: Private key generates public key - <strong>Cannot reverse</strong>: Public key cannot reveal private key - <strong>Cryptographic proof</strong>: Signatures prove private key ownership</p> <h3 id=real-world-analogy>Real-World Analogy<a class=headerlink href=#real-world-analogy title="Permanent link">&para;</a></h3> <p>Think of it like a <strong>wax seal</strong> system:</p> <ul> <li><strong>Private Key</strong> = Your unique seal stamp (keep secret!)</li> <li><strong>Public Key</strong> = The pattern your seal makes (everyone can see)</li> <li><strong>Signature</strong> = Pressing your seal on a document</li> <li><strong>Verification</strong> = Others checking if the seal pattern matches yours</li> </ul> <h3 id=common-mistakes-to-avoid>Common Mistakes to Avoid<a class=headerlink href=#common-mistakes-to-avoid title="Permanent link">&para;</a></h3> <div class="admonition danger"> <p class=admonition-title>Critical Errors</p> <p><strong>Sharing Private Keys</strong> <div class="language-text highlight"><pre><span></span><code><span id=__span-0-1><a id=__codelineno-0-1 name=__codelineno-0-1 href=#__codelineno-0-1></a>❌ &quot;Here&#39;s my nsec1abc123...&quot; (NEVER DO THIS!)
-</span><span id=__span-0-2><a id=__codelineno-0-2 name=__codelineno-0-2 href=#__codelineno-0-2></a>✅ &quot;Here&#39;s my npub1xyz789...&quot; (Safe to share)
-</span></code></pre></div></p> <p><strong>Confusing Key Types</strong> <div class="language-text highlight"><pre><span></span><code><span id=__span-1-1><a id=__codelineno-1-1 name=__codelineno-1-1 href=#__codelineno-1-1></a>❌ Posting private key thinking it&#39;s public
-</span><span id=__span-1-2><a id=__codelineno-1-2 name=__codelineno-1-2 href=#__codelineno-1-2></a>❌ Trying to follow someone using their private key
-</span><span id=__span-1-3><a id=__codelineno-1-3 name=__codelineno-1-3 href=#__codelineno-1-3></a>✅ Always double-check key prefixes (nsec vs npub)
-</span></code></pre></div></p> <p><strong>Insecure Storage</strong> <div class="language-text highlight"><pre><span></span><code><span id=__span-2-1><a id=__codelineno-2-1 name=__codelineno-2-1 href=#__codelineno-2-1></a>❌ Saving private key in notes app
-</span><span id=__span-2-2><a id=__codelineno-2-2 name=__codelineno-2-2 href=#__codelineno-2-2></a>❌ Emailing private key to yourself
-</span><span id=__span-2-3><a id=__codelineno-2-3 name=__codelineno-2-3 href=#__codelineno-2-3></a>✅ Using secure password managers or hardware wallets
-</span></code></pre></div></p> </div> <h2 id=private-keys>Private Keys<a class=headerlink href=#private-keys title="Permanent link">&para;</a></h2> <p>Your private key is the <strong>secret</strong> that proves ownership of your identity.</p> <h3 id=characteristics>Characteristics<a class=headerlink href=#characteristics title="Permanent link">&para;</a></h3> <ul> <li><strong>Secret</strong>: Never share this with anyone</li> <li><strong>Unique</strong>: Each private key is randomly generated</li> <li><strong>Powerful</strong>: Can create signatures for any event</li> <li><strong>Irreplaceable</strong>: If lost, your identity is lost forever</li> </ul> <h3 id=format-examples>Format Examples<a class=headerlink href=#format-examples title="Permanent link">&para;</a></h3> <div class="tabbed-set tabbed-alternate" data-tabs=1:2><input checked=checked id=format-examples-hex-format name=__tabbed_1 type=radio><input id=format-examples-nsec-format-bech32 name=__tabbed_1 type=radio><div class=tabbed-labels><label for=format-examples-hex-format>Hex Format</label><label for=format-examples-nsec-format-bech32>nsec Format (Bech32)</label></div> <div class=tabbed-content> <div class=tabbed-block> <div class="language-text highlight"><pre><span></span><code><span id=__span-3-1><a id=__codelineno-3-1 name=__codelineno-3-1 href=#__codelineno-3-1></a>d63b64d9c2c4f8c7b8e9f1a2b3c4d5e6f7a8b9c0d1e2f3a4b5c6d7e8f9a0b1c2
-</span></code></pre></div> </div> <div class=tabbed-block> <div class="language-text highlight"><pre><span></span><code><span id=__span-4-1><a id=__codelineno-4-1 name=__codelineno-4-1 href=#__codelineno-4-1></a>nsec1mclkfkwu2n7v0wuwn6d2kwx56mn0029ceuxr6ul6xjm2k6l7qxsqrxqhp8
-</span></code></pre></div> </div> </div> </div> <h3 id=generating-a-private-key>Generating a Private Key<a class=headerlink href=#generating-a-private-key title="Permanent link">&para;</a></h3> <div class="tabbed-set tabbed-alternate" data-tabs=2:3><input checked=checked id=generating-a-private-key-javascript name=__tabbed_2 type=radio><input id=generating-a-private-key-python name=__tabbed_2 type=radio><input id=generating-a-private-key-rust name=__tabbed_2 type=radio><div class=tabbed-labels><label for=generating-a-private-key-javascript>JavaScript</label><label for=generating-a-private-key-python>Python</label><label for=generating-a-private-key-rust>Rust</label></div> <div class=tabbed-content> <div class=tabbed-block> <div class="language-javascript highlight"><pre><span></span><code><span id=__span-5-1><a id=__codelineno-5-1 name=__codelineno-5-1 href=#__codelineno-5-1></a><span class=k>import</span><span class=w> </span><span class=p>{</span><span class=w> </span><span class=nx>generatePrivateKey</span><span class=w> </span><span class=p>}</span><span class=w> </span><span class=kr>from</span><span class=w> </span><span class=s1>&#39;nostr-tools&#39;</span>
-</span><span id=__span-5-2><a id=__codelineno-5-2 name=__codelineno-5-2 href=#__codelineno-5-2></a>
-</span><span id=__span-5-3><a id=__codelineno-5-3 name=__codelineno-5-3 href=#__codelineno-5-3></a><span class=kd>const</span><span class=w> </span><span class=nx>privateKey</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=nx>generatePrivateKey</span><span class=p>()</span>
-</span><span id=__span-5-4><a id=__codelineno-5-4 name=__codelineno-5-4 href=#__codelineno-5-4></a><span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=s1>&#39;Private key:&#39;</span><span class=p>,</span><span class=w> </span><span class=nx>privateKey</span><span class=p>)</span>
-</span><span id=__span-5-5><a id=__codelineno-5-5 name=__codelineno-5-5 href=#__codelineno-5-5></a><span class=c1>// Output: d63b64d9c2c4f8c7b8e9f1a2b3c4d5e6f7a8b9c0d1e2f3a4b5c6d7e8f9a0b1c2</span>
-</span></code></pre></div> </div> <div class=tabbed-block> <div class="language-python highlight"><pre><span></span><code><span id=__span-6-1><a id=__codelineno-6-1 name=__codelineno-6-1 href=#__codelineno-6-1></a><span class=kn>from</span><span class=w> </span><span class=nn>nostr.key</span><span class=w> </span><span class=kn>import</span> <span class=n>PrivateKey</span>
-</span><span id=__span-6-2><a id=__codelineno-6-2 name=__codelineno-6-2 href=#__codelineno-6-2></a>
-</span><span id=__span-6-3><a id=__codelineno-6-3 name=__codelineno-6-3 href=#__codelineno-6-3></a><span class=n>private_key</span> <span class=o>=</span> <span class=n>PrivateKey</span><span class=p>()</span>
-</span><span id=__span-6-4><a id=__codelineno-6-4 name=__codelineno-6-4 href=#__codelineno-6-4></a><span class=nb>print</span><span class=p>(</span><span class=sa>f</span><span class=s2>&quot;Private key: </span><span class=si>{</span><span class=n>private_key</span><span class=o>.</span><span class=n>hex</span><span class=p>()</span><span class=si>}</span><span class=s2>&quot;</span><span class=p>)</span>
-</span><span id=__span-6-5><a id=__codelineno-6-5 name=__codelineno-6-5 href=#__codelineno-6-5></a><span class=o>//</span> <span class=n>Output</span><span class=p>:</span> <span class=n>d63b64d9c2c4f8c7b8e9f1a2b3c4d5e6f7a8b9c0d1e2f3a4b5c6d7e8f9a0b1c2</span>
-</span></code></pre></div> </div> <div class=tabbed-block> <div class="language-rust highlight"><pre><span></span><code><span id=__span-7-1><a id=__codelineno-7-1 name=__codelineno-7-1 href=#__codelineno-7-1></a><span class=k>use</span><span class=w> </span><span class=n>nostr_sdk</span><span class=p>::</span><span class=n>prelude</span><span class=p>::</span><span class=o>*</span><span class=p>;</span>
-</span><span id=__span-7-2><a id=__codelineno-7-2 name=__codelineno-7-2 href=#__codelineno-7-2></a>
-</span><span id=__span-7-3><a id=__codelineno-7-3 name=__codelineno-7-3 href=#__codelineno-7-3></a><span class=kd>let</span><span class=w> </span><span class=n>keys</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=n>Keys</span><span class=p>::</span><span class=n>generate</span><span class=p>();</span>
-</span><span id=__span-7-4><a id=__codelineno-7-4 name=__codelineno-7-4 href=#__codelineno-7-4></a><span class=fm>println!</span><span class=p>(</span><span class=s>&quot;Private key: {}&quot;</span><span class=p>,</span><span class=w> </span><span class=n>keys</span><span class=p>.</span><span class=n>secret_key</span><span class=p>().</span><span class=n>display_secret</span><span class=p>());</span>
-</span></code></pre></div> </div> </div> </div> <h2 id=public-keys>Public Keys<a class=headerlink href=#public-keys title="Permanent link">&para;</a></h2> <p>Your public key is your <strong>identity</strong> in Nostr - it's how others recognize you.</p> <h3 id=characteristics_1>Characteristics<a class=headerlink href=#characteristics_1 title="Permanent link">&para;</a></h3> <ul> <li><strong>Public</strong>: Safe to share with everyone</li> <li><strong>Derived</strong>: Mathematically derived from your private key</li> <li><strong>Immutable</strong>: Always the same for a given private key</li> <li><strong>Verifiable</strong>: Others can verify your signatures with it</li> </ul> <h3 id=format-examples_1>Format Examples<a class=headerlink href=#format-examples_1 title="Permanent link">&para;</a></h3> <div class="tabbed-set tabbed-alternate" data-tabs=3:2><input checked=checked id=format-examples_1-hex-format name=__tabbed_3 type=radio><input id=format-examples_1-npub-format-bech32 name=__tabbed_3 type=radio><div class=tabbed-labels><label for=format-examples_1-hex-format>Hex Format</label><label for=format-examples_1-npub-format-bech32>npub Format (Bech32)</label></div> <div class=tabbed-content> <div class=tabbed-block> <div class="language-text highlight"><pre><span></span><code><span id=__span-8-1><a id=__codelineno-8-1 name=__codelineno-8-1 href=#__codelineno-8-1></a>02a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0c1d2e3f4a5b6c7d8e9f0a1b2
-</span></code></pre></div> </div> <div class=tabbed-block> <div class="language-text highlight"><pre><span></span><code><span id=__span-9-1><a id=__codelineno-9-1 name=__codelineno-9-1 href=#__codelineno-9-1></a>npub15xdvv02wuha0hpkx6x0z7g3mgh4w0l9fxqcr6nxvhm2k6l7qxsqg8t5c4
-</span></code></pre></div> </div> </div> </div> <h3 id=deriving-public-key>Deriving Public Key<a class=headerlink href=#deriving-public-key title="Permanent link">&para;</a></h3> <div class="tabbed-set tabbed-alternate" data-tabs=4:2><input checked=checked id=deriving-public-key-javascript name=__tabbed_4 type=radio><input id=deriving-public-key-python name=__tabbed_4 type=radio><div class=tabbed-labels><label for=deriving-public-key-javascript>JavaScript</label><label for=deriving-public-key-python>Python</label></div> <div class=tabbed-content> <div class=tabbed-block> <div class="language-javascript highlight"><pre><span></span><code><span id=__span-10-1><a id=__codelineno-10-1 name=__codelineno-10-1 href=#__codelineno-10-1></a><span class=k>import</span><span class=w> </span><span class=p>{</span><span class=w> </span><span class=nx>getPublicKey</span><span class=p>,</span><span class=w> </span><span class=nx>nip19</span><span class=w> </span><span class=p>}</span><span class=w> </span><span class=kr>from</span><span class=w> </span><span class=s1>&#39;nostr-tools&#39;</span>
-</span><span id=__span-10-2><a id=__codelineno-10-2 name=__codelineno-10-2 href=#__codelineno-10-2></a>
-</span><span id=__span-10-3><a id=__codelineno-10-3 name=__codelineno-10-3 href=#__codelineno-10-3></a><span class=kd>const</span><span class=w> </span><span class=nx>privateKey</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=s1>&#39;d63b64d9c2c4f8c7b8e9f1a2b3c4d5e6f7a8b9c0d1e2f3a4b5c6d7e8f9a0b1c2&#39;</span>
-</span><span id=__span-10-4><a id=__codelineno-10-4 name=__codelineno-10-4 href=#__codelineno-10-4></a><span class=kd>const</span><span class=w> </span><span class=nx>publicKey</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=nx>getPublicKey</span><span class=p>(</span><span class=nx>privateKey</span><span class=p>)</span>
-</span><span id=__span-10-5><a id=__codelineno-10-5 name=__codelineno-10-5 href=#__codelineno-10-5></a>
-</span><span id=__span-10-6><a id=__codelineno-10-6 name=__codelineno-10-6 href=#__codelineno-10-6></a><span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=s1>&#39;Public key (hex):&#39;</span><span class=p>,</span><span class=w> </span><span class=nx>publicKey</span><span class=p>)</span>
-</span><span id=__span-10-7><a id=__codelineno-10-7 name=__codelineno-10-7 href=#__codelineno-10-7></a><span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=s1>&#39;Public key (npub):&#39;</span><span class=p>,</span><span class=w> </span><span class=nx>nip19</span><span class=p>.</span><span class=nx>npubEncode</span><span class=p>(</span><span class=nx>publicKey</span><span class=p>))</span>
-</span></code></pre></div> </div> <div class=tabbed-block> <div class="language-python highlight"><pre><span></span><code><span id=__span-11-1><a id=__codelineno-11-1 name=__codelineno-11-1 href=#__codelineno-11-1></a><span class=kn>from</span><span class=w> </span><span class=nn>nostr.key</span><span class=w> </span><span class=kn>import</span> <span class=n>PrivateKey</span>
-</span><span id=__span-11-2><a id=__codelineno-11-2 name=__codelineno-11-2 href=#__codelineno-11-2></a>
-</span><span id=__span-11-3><a id=__codelineno-11-3 name=__codelineno-11-3 href=#__codelineno-11-3></a><span class=n>private_key</span> <span class=o>=</span> <span class=n>PrivateKey</span><span class=o>.</span><span class=n>from_hex</span><span class=p>(</span><span class=s1>&#39;d63b64d9c2c4f8c7b8e9f1a2b3c4d5e6f7a8b9c0d1e2f3a4b5c6d7e8f9a0b1c2&#39;</span><span class=p>)</span>
-</span><span id=__span-11-4><a id=__codelineno-11-4 name=__codelineno-11-4 href=#__codelineno-11-4></a><span class=n>public_key</span> <span class=o>=</span> <span class=n>private_key</span><span class=o>.</span><span class=n>public_key</span>
-</span><span id=__span-11-5><a id=__codelineno-11-5 name=__codelineno-11-5 href=#__codelineno-11-5></a>
-</span><span id=__span-11-6><a id=__codelineno-11-6 name=__codelineno-11-6 href=#__codelineno-11-6></a><span class=nb>print</span><span class=p>(</span><span class=sa>f</span><span class=s2>&quot;Public key (hex): </span><span class=si>{</span><span class=n>public_key</span><span class=o>.</span><span class=n>hex</span><span class=p>()</span><span class=si>}</span><span class=s2>&quot;</span><span class=p>)</span>
-</span><span id=__span-11-7><a id=__codelineno-11-7 name=__codelineno-11-7 href=#__codelineno-11-7></a><span class=nb>print</span><span class=p>(</span><span class=sa>f</span><span class=s2>&quot;Public key (npub): </span><span class=si>{</span><span class=n>public_key</span><span class=o>.</span><span class=n>bech32</span><span class=p>()</span><span class=si>}</span><span class=s2>&quot;</span><span class=p>)</span>
-</span></code></pre></div> </div> </div> </div> <h2 id=key-formats-and-encoding>Key Formats and Encoding<a class=headerlink href=#key-formats-and-encoding title="Permanent link">&para;</a></h2> <p>Nostr uses different formats for displaying keys to users:</p> <h3 id=hex-format>Hex Format<a class=headerlink href=#hex-format title="Permanent link">&para;</a></h3> <ul> <li><strong>Raw format</strong>: 64 character hexadecimal string</li> <li><strong>Use case</strong>: Internal processing, APIs</li> <li><strong>Example</strong>: <code>d63b64d9c2c4f8c7b8e9f1a2b3c4d5e6f7a8b9c0d1e2f3a4b5c6d7e8f9a0b1c2</code></li> </ul> <h3 id=bech32-format-nip-19>Bech32 Format (NIP-19)<a class=headerlink href=#bech32-format-nip-19 title="Permanent link">&para;</a></h3> <ul> <li><strong>User-friendly</strong>: Includes checksums and prefixes</li> <li><strong>Private keys</strong>: Start with <code>nsec1</code></li> <li><strong>Public keys</strong>: Start with <code>npub1</code></li> <li><strong>Benefits</strong>: Error detection, easier to copy/paste</li> </ul> <div class="admonition tip"> <p class=admonition-title>Format Conversion</p> <p>Most Nostr libraries provide functions to convert between formats:</p> <div class="language-javascript highlight"><pre><span></span><code><span id=__span-12-1><a id=__codelineno-12-1 name=__codelineno-12-1 href=#__codelineno-12-1></a><span class=k>import</span><span class=w> </span><span class=p>{</span><span class=w> </span><span class=nx>nip19</span><span class=w> </span><span class=p>}</span><span class=w> </span><span class=kr>from</span><span class=w> </span><span class=s1>&#39;nostr-tools&#39;</span>
-</span><span id=__span-12-2><a id=__codelineno-12-2 name=__codelineno-12-2 href=#__codelineno-12-2></a>
-</span><span id=__span-12-3><a id=__codelineno-12-3 name=__codelineno-12-3 href=#__codelineno-12-3></a><span class=c1>// Hex to bech32</span>
-</span><span id=__span-12-4><a id=__codelineno-12-4 name=__codelineno-12-4 href=#__codelineno-12-4></a><span class=kd>const</span><span class=w> </span><span class=nx>npub</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=nx>nip19</span><span class=p>.</span><span class=nx>npubEncode</span><span class=p>(</span><span class=nx>hexPublicKey</span><span class=p>)</span>
-</span><span id=__span-12-5><a id=__codelineno-12-5 name=__codelineno-12-5 href=#__codelineno-12-5></a><span class=kd>const</span><span class=w> </span><span class=nx>nsec</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=nx>nip19</span><span class=p>.</span><span class=nx>nsecEncode</span><span class=p>(</span><span class=nx>hexPrivateKey</span><span class=p>)</span>
-</span><span id=__span-12-6><a id=__codelineno-12-6 name=__codelineno-12-6 href=#__codelineno-12-6></a>
-</span><span id=__span-12-7><a id=__codelineno-12-7 name=__codelineno-12-7 href=#__codelineno-12-7></a><span class=c1>// Bech32 to hex</span>
-</span><span id=__span-12-8><a id=__codelineno-12-8 name=__codelineno-12-8 href=#__codelineno-12-8></a><span class=kd>const</span><span class=w> </span><span class=p>{</span><span class=w> </span><span class=nx>type</span><span class=p>,</span><span class=w> </span><span class=nx>data</span><span class=w> </span><span class=p>}</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=nx>nip19</span><span class=p>.</span><span class=nx>decode</span><span class=p>(</span><span class=nx>npub</span><span class=p>)</span>
-</span></code></pre></div> </div> <h2 id=digital-signatures>Digital Signatures<a class=headerlink href=#digital-signatures title="Permanent link">&para;</a></h2> <p>Your private key is used to create digital signatures that prove authenticity:</p> <h3 id=how-signatures-work>How Signatures Work<a class=headerlink href=#how-signatures-work title="Permanent link">&para;</a></h3> <ol> <li><strong>Create Event</strong>: You compose a message or event</li> <li><strong>Hash Content</strong>: The event content is hashed</li> <li><strong>Sign Hash</strong>: Your private key signs the hash</li> <li><strong>Attach Signature</strong>: The signature is included with the event</li> <li><strong>Verify</strong>: Others use your public key to verify the signature</li> </ol> <h3 id=example-signing-an-event>Example: Signing an Event<a class=headerlink href=#example-signing-an-event title="Permanent link">&para;</a></h3> <div class="tabbed-set tabbed-alternate" data-tabs=5:2><input checked=checked id=example-signing-an-event-javascript name=__tabbed_5 type=radio><input id=example-signing-an-event-python name=__tabbed_5 type=radio><div class=tabbed-labels><label for=example-signing-an-event-javascript>JavaScript</label><label for=example-signing-an-event-python>Python</label></div> <div class=tabbed-content> <div class=tabbed-block> <div class="language-javascript highlight"><pre><span></span><code><span id=__span-13-1><a id=__codelineno-13-1 name=__codelineno-13-1 href=#__codelineno-13-1></a><span class=k>import</span><span class=w> </span><span class=p>{</span><span class=w> </span><span class=nx>finishEvent</span><span class=w> </span><span class=p>}</span><span class=w> </span><span class=kr>from</span><span class=w> </span><span class=s1>&#39;nostr-tools&#39;</span>
-</span><span id=__span-13-2><a id=__codelineno-13-2 name=__codelineno-13-2 href=#__codelineno-13-2></a>
-</span><span id=__span-13-3><a id=__codelineno-13-3 name=__codelineno-13-3 href=#__codelineno-13-3></a><span class=kd>const</span><span class=w> </span><span class=nx>event</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=p>{</span>
-</span><span id=__span-13-4><a id=__codelineno-13-4 name=__codelineno-13-4 href=#__codelineno-13-4></a><span class=w>    </span><span class=nx>kind</span><span class=o>:</span><span class=w> </span><span class=mf>1</span><span class=p>,</span>
-</span><span id=__span-13-5><a id=__codelineno-13-5 name=__codelineno-13-5 href=#__codelineno-13-5></a><span class=w>    </span><span class=nx>created_at</span><span class=o>:</span><span class=w> </span><span class=nb>Math</span><span class=p>.</span><span class=nx>floor</span><span class=p>(</span><span class=nb>Date</span><span class=p>.</span><span class=nx>now</span><span class=p>()</span><span class=w> </span><span class=o>/</span><span class=w> </span><span class=mf>1000</span><span class=p>),</span>
-</span><span id=__span-13-6><a id=__codelineno-13-6 name=__codelineno-13-6 href=#__codelineno-13-6></a><span class=w>    </span><span class=nx>tags</span><span class=o>:</span><span class=w> </span><span class=p>[],</span>
-</span><span id=__span-13-7><a id=__codelineno-13-7 name=__codelineno-13-7 href=#__codelineno-13-7></a><span class=w>    </span><span class=nx>content</span><span class=o>:</span><span class=w> </span><span class=s1>&#39;Hello Nostr!&#39;</span>
-</span><span id=__span-13-8><a id=__codelineno-13-8 name=__codelineno-13-8 href=#__codelineno-13-8></a><span class=p>}</span>
-</span><span id=__span-13-9><a id=__codelineno-13-9 name=__codelineno-13-9 href=#__codelineno-13-9></a>
-</span><span id=__span-13-10><a id=__codelineno-13-10 name=__codelineno-13-10 href=#__codelineno-13-10></a><span class=kd>const</span><span class=w> </span><span class=nx>signedEvent</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=nx>finishEvent</span><span class=p>(</span><span class=nx>event</span><span class=p>,</span><span class=w> </span><span class=nx>privateKey</span><span class=p>)</span>
-</span><span id=__span-13-11><a id=__codelineno-13-11 name=__codelineno-13-11 href=#__codelineno-13-11></a><span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=s1>&#39;Signed event:&#39;</span><span class=p>,</span><span class=w> </span><span class=nx>signedEvent</span><span class=p>)</span>
-</span></code></pre></div> </div> <div class=tabbed-block> <div class="language-python highlight"><pre><span></span><code><span id=__span-14-1><a id=__codelineno-14-1 name=__codelineno-14-1 href=#__codelineno-14-1></a><span class=kn>from</span><span class=w> </span><span class=nn>nostr.event</span><span class=w> </span><span class=kn>import</span> <span class=n>Event</span>
-</span><span id=__span-14-2><a id=__codelineno-14-2 name=__codelineno-14-2 href=#__codelineno-14-2></a><span class=kn>from</span><span class=w> </span><span class=nn>nostr.key</span><span class=w> </span><span class=kn>import</span> <span class=n>PrivateKey</span>
-</span><span id=__span-14-3><a id=__codelineno-14-3 name=__codelineno-14-3 href=#__codelineno-14-3></a><span class=kn>import</span><span class=w> </span><span class=nn>time</span>
-</span><span id=__span-14-4><a id=__codelineno-14-4 name=__codelineno-14-4 href=#__codelineno-14-4></a>
-</span><span id=__span-14-5><a id=__codelineno-14-5 name=__codelineno-14-5 href=#__codelineno-14-5></a><span class=n>private_key</span> <span class=o>=</span> <span class=n>PrivateKey</span><span class=p>()</span>
-</span><span id=__span-14-6><a id=__codelineno-14-6 name=__codelineno-14-6 href=#__codelineno-14-6></a>
-</span><span id=__span-14-7><a id=__codelineno-14-7 name=__codelineno-14-7 href=#__codelineno-14-7></a><span class=n>event</span> <span class=o>=</span> <span class=n>Event</span><span class=p>(</span>
-</span><span id=__span-14-8><a id=__codelineno-14-8 name=__codelineno-14-8 href=#__codelineno-14-8></a>    <span class=n>kind</span><span class=o>=</span><span class=mi>1</span><span class=p>,</span>
-</span><span id=__span-14-9><a id=__codelineno-14-9 name=__codelineno-14-9 href=#__codelineno-14-9></a>    <span class=n>content</span><span class=o>=</span><span class=s2>&quot;Hello Nostr!&quot;</span><span class=p>,</span>
-</span><span id=__span-14-10><a id=__codelineno-14-10 name=__codelineno-14-10 href=#__codelineno-14-10></a>    <span class=n>created_at</span><span class=o>=</span><span class=nb>int</span><span class=p>(</span><span class=n>time</span><span class=o>.</span><span class=n>time</span><span class=p>())</span>
-</span><span id=__span-14-11><a id=__codelineno-14-11 name=__codelineno-14-11 href=#__codelineno-14-11></a><span class=p>)</span>
-</span><span id=__span-14-12><a id=__codelineno-14-12 name=__codelineno-14-12 href=#__codelineno-14-12></a>
-</span><span id=__span-14-13><a id=__codelineno-14-13 name=__codelineno-14-13 href=#__codelineno-14-13></a><span class=n>private_key</span><span class=o>.</span><span class=n>sign_event</span><span class=p>(</span><span class=n>event</span><span class=p>)</span>
-</span><span id=__span-14-14><a id=__codelineno-14-14 name=__codelineno-14-14 href=#__codelineno-14-14></a><span class=nb>print</span><span class=p>(</span><span class=sa>f</span><span class=s2>&quot;Signed event: </span><span class=si>{</span><span class=n>event</span><span class=o>.</span><span class=n>to_json</span><span class=p>()</span><span class=si>}</span><span class=s2>&quot;</span><span class=p>)</span>
-</span></code></pre></div> </div> </div> </div> <h2 id=identity-without-usernames>Identity Without Usernames<a class=headerlink href=#identity-without-usernames title="Permanent link">&para;</a></h2> <h3 id=traditional-vs-nostr-identity>Traditional vs Nostr Identity<a class=headerlink href=#traditional-vs-nostr-identity title="Permanent link">&para;</a></h3> <table> <thead> <tr> <th>Traditional Social Media</th> <th>Nostr</th> </tr> </thead> <tbody> <tr> <td>Username + Password</td> <td>Cryptographic Keys</td> </tr> <tr> <td>Platform controls identity</td> <td>You control identity</td> </tr> <tr> <td>Can be banned/suspended</td> <td>Censorship resistant</td> </tr> <tr> <td>Tied to one platform</td> <td>Portable across clients</td> </tr> <tr> <td>Password can be reset</td> <td>Keys cannot be recovered</td> </tr> </tbody> </table> <h3 id=benefits-of-cryptographic-identity>Benefits of Cryptographic Identity<a class=headerlink href=#benefits-of-cryptographic-identity title="Permanent link">&para;</a></h3> <div class="admonition success"> <p class=admonition-title>Advantages</p> <ul> <li><strong>True Ownership</strong>: You own your identity, not a platform</li> <li><strong>Portability</strong>: Use the same identity across all Nostr clients</li> <li><strong>Censorship Resistance</strong>: No central authority can ban you</li> <li><strong>Verification</strong>: Cryptographic proof of authenticity</li> <li><strong>Privacy</strong>: No personal information required</li> </ul> </div> <div class="admonition warning"> <p class=admonition-title>Responsibilities</p> <ul> <li><strong>Key Security</strong>: You must protect your private key</li> <li><strong>No Recovery</strong>: Lost keys mean lost identity</li> <li><strong>Backup Important</strong>: Always backup your keys securely</li> </ul> </div> <h2 id=key-management-best-practices>Key Management Best Practices<a class=headerlink href=#key-management-best-practices title="Permanent link">&para;</a></h2> <h3 id=secure-storage>Secure Storage<a class=headerlink href=#secure-storage title="Permanent link">&para;</a></h3> <div class="admonition danger"> <p class=admonition-title>Never Do This</p> <ul> <li>Store private keys in plain text files</li> <li>Share private keys via email or messaging</li> <li>Use the same key across multiple devices without encryption</li> <li>Store keys in browser localStorage without encryption</li> </ul> </div> <div class="admonition success"> <p class=admonition-title>Best Practices</p> <ul> <li>Use hardware wallets when possible</li> <li>Encrypt private keys with strong passwords</li> <li>Use secure key management software</li> <li>Create offline backups in multiple locations</li> <li>Consider using key derivation for multiple identities</li> </ul> </div> <h3 id=key-backup-strategies>Key Backup Strategies<a class=headerlink href=#key-backup-strategies title="Permanent link">&para;</a></h3> <div class="tabbed-set tabbed-alternate" data-tabs=6:3><input checked=checked id=key-backup-strategies-paper-backup name=__tabbed_6 type=radio><input id=key-backup-strategies-digital-backup name=__tabbed_6 type=radio><input id=key-backup-strategies-hardware-wallet name=__tabbed_6 type=radio><div class=tabbed-labels><label for=key-backup-strategies-paper-backup>Paper Backup</label><label for=key-backup-strategies-digital-backup>Digital Backup</label><label for=key-backup-strategies-hardware-wallet>Hardware Wallet</label></div> <div class=tabbed-content> <div class=tabbed-block> <div class="language-text highlight"><pre><span></span><code><span id=__span-15-1><a id=__codelineno-15-1 name=__codelineno-15-1 href=#__codelineno-15-1></a>1. Write down your private key (nsec format)
-</span><span id=__span-15-2><a id=__codelineno-15-2 name=__codelineno-15-2 href=#__codelineno-15-2></a>2. Store in a fireproof safe
-</span><span id=__span-15-3><a id=__codelineno-15-3 name=__codelineno-15-3 href=#__codelineno-15-3></a>3. Consider multiple copies in different locations
-</span><span id=__span-15-4><a id=__codelineno-15-4 name=__codelineno-15-4 href=#__codelineno-15-4></a>4. Use tamper-evident storage
-</span></code></pre></div> </div> <div class=tabbed-block> <div class="language-text highlight"><pre><span></span><code><span id=__span-16-1><a id=__codelineno-16-1 name=__codelineno-16-1 href=#__codelineno-16-1></a>1. Encrypt with strong password
-</span><span id=__span-16-2><a id=__codelineno-16-2 name=__codelineno-16-2 href=#__codelineno-16-2></a>2. Store on multiple devices
-</span><span id=__span-16-3><a id=__codelineno-16-3 name=__codelineno-16-3 href=#__codelineno-16-3></a>3. Use cloud storage with encryption
-</span><span id=__span-16-4><a id=__codelineno-16-4 name=__codelineno-16-4 href=#__codelineno-16-4></a>4. Regular backup verification
-</span></code></pre></div> </div> <div class=tabbed-block> <div class="language-text highlight"><pre><span></span><code><span id=__span-17-1><a id=__codelineno-17-1 name=__codelineno-17-1 href=#__codelineno-17-1></a>1. Use dedicated hardware device
-</span><span id=__span-17-2><a id=__codelineno-17-2 name=__codelineno-17-2 href=#__codelineno-17-2></a>2. Secure with PIN/passphrase
-</span><span id=__span-17-3><a id=__codelineno-17-3 name=__codelineno-17-3 href=#__codelineno-17-3></a>3. Backup seed phrase securely
-</span><span id=__span-17-4><a id=__codelineno-17-4 name=__codelineno-17-4 href=#__codelineno-17-4></a>4. Test recovery process
-</span></code></pre></div> </div> </div> </div> <h2 id=multiple-identities>Multiple Identities<a class=headerlink href=#multiple-identities title="Permanent link">&para;</a></h2> <p>You can have multiple Nostr identities for different purposes:</p> <h3 id=use-cases>Use Cases<a class=headerlink href=#use-cases title="Permanent link">&para;</a></h3> <ul> <li><strong>Personal</strong>: Your main social identity</li> <li><strong>Professional</strong>: Work-related content</li> <li><strong>Anonymous</strong>: Privacy-focused interactions</li> <li><strong>Bot</strong>: Automated accounts</li> <li><strong>Testing</strong>: Development and experimentation</li> </ul> <h3 id=managing-multiple-keys>Managing Multiple Keys<a class=headerlink href=#managing-multiple-keys title="Permanent link">&para;</a></h3> <div class="tabbed-set tabbed-alternate" data-tabs=7:1><input checked=checked id=managing-multiple-keys-javascript name=__tabbed_7 type=radio><div class=tabbed-labels><label for=managing-multiple-keys-javascript>JavaScript</label></div> <div class=tabbed-content> <div class=tabbed-block> <div class="language-javascript highlight"><pre><span></span><code><span id=__span-18-1><a id=__codelineno-18-1 name=__codelineno-18-1 href=#__codelineno-18-1></a><span class=kd>class</span><span class=w> </span><span class=nx>NostrIdentityManager</span><span class=w> </span><span class=p>{</span>
-</span><span id=__span-18-2><a id=__codelineno-18-2 name=__codelineno-18-2 href=#__codelineno-18-2></a><span class=w>    </span><span class=kr>constructor</span><span class=p>()</span><span class=w> </span><span class=p>{</span>
-</span><span id=__span-18-3><a id=__codelineno-18-3 name=__codelineno-18-3 href=#__codelineno-18-3></a><span class=w>        </span><span class=k>this</span><span class=p>.</span><span class=nx>identities</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=ow>new</span><span class=w> </span><span class=nb>Map</span><span class=p>()</span>
-</span><span id=__span-18-4><a id=__codelineno-18-4 name=__codelineno-18-4 href=#__codelineno-18-4></a><span class=w>    </span><span class=p>}</span>
-</span><span id=__span-18-5><a id=__codelineno-18-5 name=__codelineno-18-5 href=#__codelineno-18-5></a>
-</span><span id=__span-18-6><a id=__codelineno-18-6 name=__codelineno-18-6 href=#__codelineno-18-6></a><span class=w>    </span><span class=nx>createIdentity</span><span class=p>(</span><span class=nx>name</span><span class=p>)</span><span class=w> </span><span class=p>{</span>
-</span><span id=__span-18-7><a id=__codelineno-18-7 name=__codelineno-18-7 href=#__codelineno-18-7></a><span class=w>        </span><span class=kd>const</span><span class=w> </span><span class=nx>privateKey</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=nx>generatePrivateKey</span><span class=p>()</span>
-</span><span id=__span-18-8><a id=__codelineno-18-8 name=__codelineno-18-8 href=#__codelineno-18-8></a><span class=w>        </span><span class=kd>const</span><span class=w> </span><span class=nx>publicKey</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=nx>getPublicKey</span><span class=p>(</span><span class=nx>privateKey</span><span class=p>)</span>
-</span><span id=__span-18-9><a id=__codelineno-18-9 name=__codelineno-18-9 href=#__codelineno-18-9></a>
-</span><span id=__span-18-10><a id=__codelineno-18-10 name=__codelineno-18-10 href=#__codelineno-18-10></a><span class=w>        </span><span class=k>this</span><span class=p>.</span><span class=nx>identities</span><span class=p>.</span><span class=nx>set</span><span class=p>(</span><span class=nx>name</span><span class=p>,</span><span class=w> </span><span class=p>{</span>
-</span><span id=__span-18-11><a id=__codelineno-18-11 name=__codelineno-18-11 href=#__codelineno-18-11></a><span class=w>            </span><span class=nx>privateKey</span><span class=p>,</span>
-</span><span id=__span-18-12><a id=__codelineno-18-12 name=__codelineno-18-12 href=#__codelineno-18-12></a><span class=w>            </span><span class=nx>publicKey</span><span class=p>,</span>
-</span><span id=__span-18-13><a id=__codelineno-18-13 name=__codelineno-18-13 href=#__codelineno-18-13></a><span class=w>            </span><span class=nx>npub</span><span class=o>:</span><span class=w> </span><span class=nx>nip19</span><span class=p>.</span><span class=nx>npubEncode</span><span class=p>(</span><span class=nx>publicKey</span><span class=p>)</span>
-</span><span id=__span-18-14><a id=__codelineno-18-14 name=__codelineno-18-14 href=#__codelineno-18-14></a><span class=w>        </span><span class=p>})</span>
-</span><span id=__span-18-15><a id=__codelineno-18-15 name=__codelineno-18-15 href=#__codelineno-18-15></a>
-</span><span id=__span-18-16><a id=__codelineno-18-16 name=__codelineno-18-16 href=#__codelineno-18-16></a><span class=w>        </span><span class=k>return</span><span class=w> </span><span class=k>this</span><span class=p>.</span><span class=nx>identities</span><span class=p>.</span><span class=nx>get</span><span class=p>(</span><span class=nx>name</span><span class=p>)</span>
-</span><span id=__span-18-17><a id=__codelineno-18-17 name=__codelineno-18-17 href=#__codelineno-18-17></a><span class=w>    </span><span class=p>}</span>
-</span><span id=__span-18-18><a id=__codelineno-18-18 name=__codelineno-18-18 href=#__codelineno-18-18></a>
-</span><span id=__span-18-19><a id=__codelineno-18-19 name=__codelineno-18-19 href=#__codelineno-18-19></a><span class=w>    </span><span class=nx>getIdentity</span><span class=p>(</span><span class=nx>name</span><span class=p>)</span><span class=w> </span><span class=p>{</span>
-</span><span id=__span-18-20><a id=__codelineno-18-20 name=__codelineno-18-20 href=#__codelineno-18-20></a><span class=w>        </span><span class=k>return</span><span class=w> </span><span class=k>this</span><span class=p>.</span><span class=nx>identities</span><span class=p>.</span><span class=nx>get</span><span class=p>(</span><span class=nx>name</span><span class=p>)</span>
-</span><span id=__span-18-21><a id=__codelineno-18-21 name=__codelineno-18-21 href=#__codelineno-18-21></a><span class=w>    </span><span class=p>}</span>
-</span><span id=__span-18-22><a id=__codelineno-18-22 name=__codelineno-18-22 href=#__codelineno-18-22></a>
-</span><span id=__span-18-23><a id=__codelineno-18-23 name=__codelineno-18-23 href=#__codelineno-18-23></a><span class=w>    </span><span class=nx>listIdentities</span><span class=p>()</span><span class=w> </span><span class=p>{</span>
-</span><span id=__span-18-24><a id=__codelineno-18-24 name=__codelineno-18-24 href=#__codelineno-18-24></a><span class=w>        </span><span class=k>return</span><span class=w> </span><span class=nb>Array</span><span class=p>.</span><span class=kr>from</span><span class=p>(</span><span class=k>this</span><span class=p>.</span><span class=nx>identities</span><span class=p>.</span><span class=nx>keys</span><span class=p>())</span>
-</span><span id=__span-18-25><a id=__codelineno-18-25 name=__codelineno-18-25 href=#__codelineno-18-25></a><span class=w>    </span><span class=p>}</span>
-</span><span id=__span-18-26><a id=__codelineno-18-26 name=__codelineno-18-26 href=#__codelineno-18-26></a><span class=p>}</span>
-</span></code></pre></div> </div> </div> </div> <h2 id=interactive-exercise>Interactive Exercise<a class=headerlink href=#interactive-exercise title="Permanent link">&para;</a></h2> <p>Let's practice working with keys:</p> <div class="admonition example"> <p class=admonition-title>Try This</p> <ol> <li>Generate a new key pair</li> <li>Convert between hex and bech32 formats</li> <li>Create and sign a simple event</li> <li>Verify the signature</li> </ol> <p>Use the code examples above to experiment with key generation and signing.</p> </div> <h2 id=common-pitfalls>Common Pitfalls<a class=headerlink href=#common-pitfalls title="Permanent link">&para;</a></h2> <div class="admonition warning"> <p class=admonition-title>Avoid These Mistakes</p> <p><strong>Key Confusion</strong> - Mixing up private and public keys - Using wrong key formats - Sharing private keys accidentally</p> <p><strong>Security Issues</strong> - Storing keys insecurely - Not backing up keys - Using weak random number generation</p> <p><strong>Format Errors</strong> - Invalid hex characters - Incorrect bech32 encoding - Wrong key length</p> </div> <h2 id=next-steps>Next Steps<a class=headerlink href=#next-steps title="Permanent link">&para;</a></h2> <p>Now that you understand keys and identity, let's explore how events and messages work in Nostr.</p> <div class=next-lesson> <a href=../events/ class="btn btn-primary"> :material-arrow-right: Events & Messages → </a> </div> <hr> <h2 id=quick-quiz>Quick Quiz<a class=headerlink href=#quick-quiz title="Permanent link">&para;</a></h2> <div class="admonition question"> <p class=admonition-title>Test Your Understanding</p> <ol> <li>What's the difference between a private key and public key?</li> <li>Which key format starts with "npub1"?</li> <li>What happens if you lose your private key?</li> <li>Why doesn't Nostr use usernames and passwords?</li> <li>What is the purpose of digital signatures?</li> </ol> <details class=success> <summary>Answers</summary> <ol> <li>Private key is secret and used for signing; public key is shared and used for verification</li> <li>Public keys in bech32 format start with "npub1"</li> <li>You lose access to that identity forever - there's no recovery</li> <li>Cryptographic keys provide better security, ownership, and censorship resistance</li> <li>Digital signatures prove authenticity and prevent tampering </li> </ol> </details> </div> <aside class=md-source-file> <span class=md-source-file__fact> <span class=md-icon title="Last update"> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg> </span> <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="May 27, 2025 04:44:28 UTC">May 27, 2025</span> </span> <span class=md-source-file__fact> <span class=md-icon title=Created> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg> </span> <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="May 27, 2025 04:44:28 UTC">May 27, 2025</span> </span> </aside> </article> </div> <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script> <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script> </div> <button type=button class="md-top md-icon" data-md-component=top hidden> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg> Back to top </button> </main> <footer class=md-footer> <nav class="md-footer__inner md-grid" aria-label=Footer> <a href=../nostr-fundamentals/ class="md-footer__link md-footer__link--prev" aria-label="Previous: Nostr Fundamentals"> <div class="md-footer__button md-icon"> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg> </div> <div class=md-footer__title> <span class=md-footer__direction> Previous </span> <div class=md-ellipsis> Nostr Fundamentals </div> </div> </a> <a href=../clients/ class="md-footer__link md-footer__link--next" aria-label="Next: Understanding Clients"> <div class=md-footer__title> <span class=md-footer__direction> Next </span> <div class=md-ellipsis> Understanding Clients </div> </div> <div class="md-footer__button md-icon"> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg> </div> </a> </nav> <div class="md-footer-meta md-typeset"> <div class="md-footer-meta__inner md-grid"> <div class=md-copyright> <div class=md-copyright__highlight> Copyright &copy; 2024 LearnNostr </div> Made with <a href=https://squidfunk.github.io/mkdocs-material/ target=_blank rel=noopener> Material for MkDocs </a> </div> <div class=md-social> <a href=https://github.com/cristyalmonte/learnnostr target=_blank rel=noopener title=github.com class=md-social__link> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 496 512"><!-- Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg> </a> <a href=https://twitter.com/learnnostr target=_blank rel=noopener title=twitter.com class=md-social__link> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 512 512"><!-- Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253"/></svg> </a> <a href=https://discord.gg/nostr target=_blank rel=noopener title=discord.gg class=md-social__link> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 640 512"><!-- Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M524.531 69.836a1.5 1.5 0 0 0-.764-.7A485 485 0 0 0 404.081 32.03a1.82 1.82 0 0 0-1.923.91 338 338 0 0 0-14.9 30.6 447.9 447.9 0 0 0-134.426 0 310 310 0 0 0-15.135-30.6 1.89 1.89 0 0 0-1.924-.91 483.7 483.7 0 0 0-119.688 37.107 1.7 1.7 0 0 0-.788.676C39.068 183.651 18.186 294.69 28.43 404.354a2.02 2.02 0 0 0 .765 1.375 487.7 487.7 0 0 0 146.825 74.189 1.9 1.9 0 0 0 2.063-.676A348 348 0 0 0 208.12 430.4a1.86 1.86 0 0 0-1.019-2.588 321 321 0 0 1-45.868-21.853 1.885 1.885 0 0 1-.185-3.126 251 251 0 0 0 9.109-7.137 1.82 1.82 0 0 1 1.9-.256c96.229 43.917 200.41 43.917 295.5 0a1.81 1.81 0 0 1 1.924.233 235 235 0 0 0 9.132 7.16 1.884 1.884 0 0 1-.162 3.126 301.4 301.4 0 0 1-45.89 21.83 1.875 1.875 0 0 0-1 2.611 391 391 0 0 0 30.014 48.815 1.86 1.86 0 0 0 2.063.7A486 486 0 0 0 610.7 405.729a1.88 1.88 0 0 0 .765-1.352c12.264-126.783-20.532-236.912-86.934-334.541M222.491 337.58c-28.972 0-52.844-26.587-52.844-59.239s23.409-59.241 52.844-59.241c29.665 0 53.306 26.82 52.843 59.239 0 32.654-23.41 59.241-52.843 59.241m195.38 0c-28.971 0-52.843-26.587-52.843-59.239s23.409-59.241 52.843-59.241c29.667 0 53.307 26.82 52.844 59.239 0 32.654-23.177 59.241-52.844 59.241"/></svg> </a> </div> </div> </div> </footer> </div> <div class=md-dialog data-md-component=dialog> <div class="md-dialog__inner md-typeset"></div> </div> <div class=md-progress data-md-component=progress role=progressbar></div> <script id=__config type=application/json>{"base": "../..", "features": ["announce.dismiss", "content.action.edit", "content.action.view", "content.code.annotate", "content.code.copy", "content.code.select", "content.tabs.link", "content.tooltips", "header.autohide", "navigation.expand", "navigation.footer", "navigation.indexes", "navigation.instant", "navigation.instant.prefetch", "navigation.instant.progress", "navigation.prune", "navigation.sections", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.tracking", "search.highlight", "search.share", "search.suggest", "toc.follow"], "search": "../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script> <script src=../../assets/javascripts/bundle.13a4f30d.min.js></script> <script src=../../javascripts/extra.js></script> </body> </html>
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="A comprehensive guide to understanding and building on the Nostr protocol">
+      
+      
+        <meta name="author" content="LearnNostr Team">
+      
+      
+        <link rel="canonical" href="https://learnnostr.com/concepts/keys/">
+      
+      
+      
+      
+      <link rel="icon" href="../../assets/favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
+    
+    
+      
+        <title>Keys and Identity in Nostr - Learn Nostr</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.342714a4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/css/custom.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#keys-and-identity-in-nostr" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Learn Nostr" class="md-header__button md-logo" aria-label="Learn Nostr" data-md-component="logo">
+      
+  <img src="../../assets/logo.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Learn Nostr
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Keys and Identity in Nostr
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="purple"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="deep-purple" data-md-color-accent="purple"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        
+  <a href="https://github.com/cristyalmonte/learnnostr" title="LearnNostr" class="md-source" data-md-component="source">
+    <div class="md-source__icon md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </div>
+    <div class="md-source__repository">
+      LearnNostr
+    </div>
+  </a>
+  <!-- Hide GitHub stats only -->
+  <style>
+    .md-source__facts,
+    .md-source__fact {
+      display: none !important;
+    }
+  </style>
+ 
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../getting-started/what-is-nostr/" class="md-tabs__link">
+          
+  
+  
+  Getting Started
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../definitions/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Core Concepts
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../tutorials/simple-client/" class="md-tabs__link">
+          
+  
+  
+  Tutorials
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../support/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Support
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Learn Nostr" class="md-nav__button md-logo" aria-label="Learn Nostr" data-md-component="logo">
+      
+  <img src="../../assets/logo.svg" alt="logo">
+
+    </a>
+    Learn Nostr
+  </label>
+  
+    <div class="md-nav__source">
+      
+  <a href="https://github.com/cristyalmonte/learnnostr" title="LearnNostr" class="md-source" data-md-component="source">
+    <div class="md-source__icon md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </div>
+    <div class="md-source__repository">
+      LearnNostr
+    </div>
+  </a>
+  <!-- Hide GitHub stats only -->
+  <style>
+    .md-source__facts,
+    .md-source__fact {
+      display: none !important;
+    }
+  </style>
+ 
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Getting Started
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Getting Started
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/what-is-nostr/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    What is Nostr?
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/wallet-setup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Wallet Setup
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/nostr-tools/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Nostr Tools
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/relay-setup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Relay Setup
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../definitions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Core Concepts
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Tutorials
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Tutorials
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorials/simple-client/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Build a Simple Client
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../support/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Support
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#cryptographic-identity" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cryptographic Identity
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#understanding-key-pairs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Understanding Key Pairs
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Understanding Key Pairs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cryptographic-fundamentals" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cryptographic Fundamentals
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#private-key-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      Private Key Management
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Private Key Management">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#definition-and-purpose" class="md-nav__link">
+    <span class="md-ellipsis">
+      Definition and Purpose
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#security-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      Security Requirements
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-format-examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Format Examples
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#public-key-distribution" class="md-nav__link">
+    <span class="md-ellipsis">
+      Public Key Distribution
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Public Key Distribution">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#purpose-and-function" class="md-nav__link">
+    <span class="md-ellipsis">
+      Purpose and Function
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sharing-guidelines" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sharing Guidelines
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#public-key-formats" class="md-nav__link">
+    <span class="md-ellipsis">
+      Public Key Formats
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mathematical-relationship" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mathematical Relationship
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Mathematical Relationship">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#key-generation-process" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Generation Process
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#security-properties" class="md-nav__link">
+    <span class="md-ellipsis">
+      Security Properties
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#your-private-key-in-detail" class="md-nav__link">
+    <span class="md-ellipsis">
+      Your Private Key in Detail
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Your Private Key in Detail">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-makes-it-special" class="md-nav__link">
+    <span class="md-ellipsis">
+      What Makes It Special
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-it-looks-like" class="md-nav__link">
+    <span class="md-ellipsis">
+      What It Looks Like
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#creating-your-first-key-pair" class="md-nav__link">
+    <span class="md-ellipsis">
+      Creating Your First Key Pair
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#your-public-key-in-detail" class="md-nav__link">
+    <span class="md-ellipsis">
+      Your Public Key in Detail
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Your Public Key in Detail">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-makes-it-perfect-for-sharing" class="md-nav__link">
+    <span class="md-ellipsis">
+      What Makes It Perfect for Sharing
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-formats-and-encoding" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Formats and Encoding
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Key Formats and Encoding">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#hex-format" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hex Format
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bech32-format-nip-19" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bech32 Format (NIP-19)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#digital-signatures" class="md-nav__link">
+    <span class="md-ellipsis">
+      Digital Signatures
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Digital Signatures">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#how-signatures-work" class="md-nav__link">
+    <span class="md-ellipsis">
+      How Signatures Work
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-signing-an-event" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example: Signing an Event
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#identity-without-usernames" class="md-nav__link">
+    <span class="md-ellipsis">
+      Identity Without Usernames
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Identity Without Usernames">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#traditional-vs-nostr-identity" class="md-nav__link">
+    <span class="md-ellipsis">
+      Traditional vs Nostr Identity
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#benefits-of-cryptographic-identity" class="md-nav__link">
+    <span class="md-ellipsis">
+      Benefits of Cryptographic Identity
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-management-best-practices" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Management Best Practices
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Key Management Best Practices">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#secure-storage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Secure Storage
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-backup-strategies" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Backup Strategies
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#multiple-identities" class="md-nav__link">
+    <span class="md-ellipsis">
+      Multiple Identities
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Multiple Identities">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#use-cases" class="md-nav__link">
+    <span class="md-ellipsis">
+      Use Cases
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#managing-multiple-keys" class="md-nav__link">
+    <span class="md-ellipsis">
+      Managing Multiple Keys
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#interactive-exercise" class="md-nav__link">
+    <span class="md-ellipsis">
+      Interactive Exercise
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#common-pitfalls" class="md-nav__link">
+    <span class="md-ellipsis">
+      Common Pitfalls
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#next-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      Next Steps
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quick-quiz" class="md-nav__link">
+    <span class="md-ellipsis">
+      Quick Quiz
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="keys-and-identity-in-nostr">Keys and Identity in Nostr</h1>
+<div class="admonition info">
+<p class="admonition-title">Learning Objectives</p>
+<p>After this lesson, you'll understand:</p>
+<ul>
+<li>How digital identity works in the Nostr protocol</li>
+<li>The difference between private and public keys</li>
+<li>Different key formats and their purposes</li>
+<li>Best practices for key security and management</li>
+<li>Why Nostr uses cryptographic identity instead of usernames</li>
+</ul>
+</div>
+<h2 id="cryptographic-identity">Cryptographic Identity</h2>
+<p>Nostr uses a fundamentally different approach to identity compared to traditional social media platforms. Instead of usernames and passwords managed by a central authority, Nostr employs cryptographic key pairs to establish and verify identity.</p>
+<p>This approach provides users with complete ownership and control over their digital identity, eliminating dependence on any central platform or service provider.</p>
+<h2 id="understanding-key-pairs">Understanding Key Pairs</h2>
+<h3 id="cryptographic-fundamentals">Cryptographic Fundamentals</h3>
+<p>Cryptographic keys work as mathematically related pairs that enable secure digital communication:</p>
+<ul>
+<li><strong>One-way mathematical relationship</strong>: Public keys are derived from private keys, but the reverse is computationally infeasible</li>
+<li><strong>Digital signatures</strong>: Private keys create signatures that public keys can verify</li>
+<li><strong>Identity verification</strong>: Signatures prove ownership without revealing the private key</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>graph LR
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>    A[Private Key&lt;br/&gt;Secret Component] --&gt;|generates| B[Public Key&lt;br/&gt;Identity Component]
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>    A --&gt;|signs| C[Messages/Events]
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>    B --&gt;|verifies| C
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>    B --&gt;|becomes| D[Nostr Identity]
+</code></pre></div>
+<h2 id="private-key-management">Private Key Management</h2>
+<h3 id="definition-and-purpose">Definition and Purpose</h3>
+<p>The private key serves as the master secret that controls your entire Nostr identity. It is a cryptographically secure random number that:</p>
+<ul>
+<li><strong>Generates your public identity</strong>: Mathematically derives your public key</li>
+<li><strong>Creates digital signatures</strong>: Proves authorship of your events</li>
+<li><strong>Controls all interactions</strong>: Required for posting, following, and other actions</li>
+<li><strong>Cannot be recovered</strong>: Loss results in permanent identity loss</li>
+</ul>
+<h3 id="security-requirements">Security Requirements</h3>
+<p>Private key security is critical for maintaining control of your Nostr identity:</p>
+<div class="admonition danger">
+<p class="admonition-title">Critical Security Practices</p>
+<p><strong>Never Share Your Private Key</strong>
+- Do not transmit via email, messaging, or any digital communication
+- Avoid storing in plain text files or unencrypted formats
+- Never enter into untrusted applications or websites</p>
+<p><strong>Secure Storage Methods</strong>
+- Use hardware wallets for maximum security
+- Employ encrypted password managers
+- Create offline, encrypted backups
+- Store in multiple secure locations</p>
+</div>
+<h3 id="key-format-examples">Key Format Examples</h3>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Hex Format</label><label for="__tabbed_1_2">nsec Format (Bech32)</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>d63b64d9c2c4f8c7b8e9f1a2b3c4d5e6f7a8b9c0d1e2f3a4b5c6d7e8f9a0b1c2
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>nsec1mclkfkwu2n7v0wuwn6d2kwx56mn0029ceuxr6ul6xjm2k6l7qxsqrxqhp8
+</code></pre></div>
+</div>
+</div>
+</div>
+<h2 id="public-key-distribution">Public Key Distribution</h2>
+<h3 id="purpose-and-function">Purpose and Function</h3>
+<p>Your public key serves as your permanent Nostr address and identity. It enables:</p>
+<ul>
+<li><strong>Global identification</strong>: Unique address in the Nostr network</li>
+<li><strong>Signature verification</strong>: Others can verify your message authenticity  </li>
+<li><strong>Social connections</strong>: Followers use this to find and follow you</li>
+<li><strong>Cross-client compatibility</strong>: Works across all Nostr applications</li>
+</ul>
+<h3 id="sharing-guidelines">Sharing Guidelines</h3>
+<p>Unlike private keys, public keys are designed for open distribution:</p>
+<p>✅ <strong>Safe to share publicly</strong>
+✅ <strong>Include in social media profiles</strong><br />
+✅ <strong>Display on websites and business cards</strong>
+✅ <strong>Send via any communication method</strong>
+✅ <strong>Embed in QR codes</strong></p>
+<h3 id="public-key-formats">Public Key Formats</h3>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Hex Format</label><label for="__tabbed_2_2">npub Format (Bech32)</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0c1d2e3f4a5b6c7d8e9f0a1b2
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>npub15xkv85x2um6h3jfgxhj259x54fvv7n7k9c5wxq9ewn64fhux5xeqz8p2qv
+</code></pre></div>
+</div>
+</div>
+</div>
+<h2 id="mathematical-relationship">Mathematical Relationship</h2>
+<p>The relationship between private and public keys relies on elliptic curve cryptography:</p>
+<h3 id="key-generation-process">Key Generation Process</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>graph TB
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>    A[Cryptographically Secure&lt;br/&gt;Random Number] --&gt;|secp256k1| B[Private Key]
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>    B --&gt;|Elliptic Curve&lt;br/&gt;Point Multiplication| C[Public Key]
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>    B --&gt;|ECDSA| D[Digital Signatures]
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>    C --&gt;|verifies| D
+</code></pre></div>
+<h3 id="security-properties">Security Properties</h3>
+<ul>
+<li><strong>One-way function</strong>: Computing public key from private key is fast</li>
+<li><strong>Computational security</strong>: Deriving private key from public key is infeasible</li>
+<li><strong>Signature uniqueness</strong>: Each message produces a unique signature</li>
+<li><strong>Non-repudiation</strong>: Signatures cannot be forged without the private key</li>
+</ul>
+<h2 id="your-private-key-in-detail">Your Private Key in Detail</h2>
+<p>Let's dive deeper into your most important digital possession.</p>
+<h3 id="what-makes-it-special">What Makes It Special</h3>
+<ul>
+<li><strong>Completely random</strong>: Generated using cryptographically secure randomness</li>
+<li><strong>Astronomically unique</strong>: The chances of two people getting the same key are basically zero</li>
+<li><strong>Mathematically powerful</strong>: Can create unlimited verified signatures</li>
+<li><strong>Irreplaceable</strong>: There's no customer service to call if you lose it</li>
+</ul>
+<h3 id="what-it-looks-like">What It Looks Like</h3>
+<div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">Hex Format (Raw)</label><label for="__tabbed_3_2">nsec Format (User-Friendly)</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>d63b64d9c2c4f8c7b8e9f1a2b3c4d5e6f7a8b9c0d1e2f3a4b5c6d7e8f9a0b1c2
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>nsec1mclkfkwu2n7v0wuwn6d2kwx56mn0029ceuxr6ul6xjm2k6l7qxsqrxqhp8
+</code></pre></div>
+</div>
+</div>
+</div>
+<h3 id="creating-your-first-key-pair">Creating Your First Key Pair</h3>
+<div class="tabbed-set tabbed-alternate" data-tabs="4:3"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><input id="__tabbed_4_2" name="__tabbed_4" type="radio" /><input id="__tabbed_4_3" name="__tabbed_4" type="radio" /><div class="tabbed-labels"><label for="__tabbed_4_1">JavaScript</label><label for="__tabbed_4_2">Python</label><label for="__tabbed_4_3">Rust</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">generatePrivateKey</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;nostr-tools&#39;</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="c1">// Generate your unique identity</span>
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="kd">const</span><span class="w"> </span><span class="nx">privateKey</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">generatePrivateKey</span><span class="p">()</span>
+<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Your private key (keep secret!):&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">privateKey</span><span class="p">)</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">nostr.key</span><span class="w"> </span><span class="kn">import</span> <span class="n">PrivateKey</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="o">//</span> <span class="n">Create</span> <span class="n">your</span> <span class="n">digital</span> <span class="n">identity</span>
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="n">private_key</span> <span class="o">=</span> <span class="n">PrivateKey</span><span class="p">()</span>
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Your private key (guard this!): </span><span class="si">{</span><span class="n">private_key</span><span class="o">.</span><span class="n">hex</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="k">use</span><span class="w"> </span><span class="n">nostr_sdk</span><span class="p">::</span><span class="n">prelude</span><span class="p">::</span><span class="o">*</span><span class="p">;</span>
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="c1">// Generate your keys</span>
+<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="kd">let</span><span class="w"> </span><span class="n">keys</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Keys</span><span class="p">::</span><span class="n">generate</span><span class="p">();</span>
+<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a><span class="fm">println!</span><span class="p">(</span><span class="s">&quot;Private key (keep safe!): {}&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">keys</span><span class="p">.</span><span class="n">secret_key</span><span class="p">().</span><span class="n">display_secret</span><span class="p">());</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+<h2 id="your-public-key-in-detail">Your Public Key in Detail</h2>
+<p>Now let's explore your public identity - the part of you that the Nostr world gets to see.</p>
+<h3 id="what-makes-it-perfect-for-sharing">What Makes It Perfect for Sharing</h3>
+<ul>
+<li><strong>Derived from private</strong>: Mathematically created from your private key</li>
+<li><strong>Always the same</strong>: Your private key always generates the same public key</li>
+<li><strong>Safe to broadcast</strong>: No security risk in sharing it widely</li>
+<li><strong>Verifiable</strong>: Others can use it to confirm your signatures are real</li>
+</ul>
+<h2 id="key-formats-and-encoding">Key Formats and Encoding</h2>
+<p>Nostr uses different formats for displaying keys to users:</p>
+<h3 id="hex-format">Hex Format</h3>
+<ul>
+<li><strong>Raw format</strong>: 64 character hexadecimal string</li>
+<li><strong>Use case</strong>: Internal processing, APIs</li>
+<li><strong>Example</strong>: <code>d63b64d9c2c4f8c7b8e9f1a2b3c4d5e6f7a8b9c0d1e2f3a4b5c6d7e8f9a0b1c2</code></li>
+</ul>
+<h3 id="bech32-format-nip-19">Bech32 Format (NIP-19)</h3>
+<ul>
+<li><strong>User-friendly</strong>: Includes checksums and prefixes</li>
+<li><strong>Private keys</strong>: Start with <code>nsec1</code></li>
+<li><strong>Public keys</strong>: Start with <code>npub1</code></li>
+<li><strong>Benefits</strong>: Error detection, easier to copy/paste</li>
+</ul>
+<div class="admonition tip">
+<p class="admonition-title">Format Conversion</p>
+<p>Most Nostr libraries provide functions to convert between formats:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">nip19</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;nostr-tools&#39;</span>
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>
+<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="c1">// Hex to bech32</span>
+<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="kd">const</span><span class="w"> </span><span class="nx">npub</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">nip19</span><span class="p">.</span><span class="nx">npubEncode</span><span class="p">(</span><span class="nx">hexPublicKey</span><span class="p">)</span>
+<a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a><span class="kd">const</span><span class="w"> </span><span class="nx">nsec</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">nip19</span><span class="p">.</span><span class="nx">nsecEncode</span><span class="p">(</span><span class="nx">hexPrivateKey</span><span class="p">)</span>
+<a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a>
+<a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a><span class="c1">// Bech32 to hex</span>
+<a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a><span class="kd">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">type</span><span class="p">,</span><span class="w"> </span><span class="nx">data</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">nip19</span><span class="p">.</span><span class="nx">decode</span><span class="p">(</span><span class="nx">npub</span><span class="p">)</span>
+</code></pre></div>
+</div>
+<h2 id="digital-signatures">Digital Signatures</h2>
+<p>Your private key is used to create digital signatures that prove authenticity:</p>
+<h3 id="how-signatures-work">How Signatures Work</h3>
+<ol>
+<li><strong>Create Event</strong>: You compose a message or event</li>
+<li><strong>Hash Content</strong>: The event content is hashed</li>
+<li><strong>Sign Hash</strong>: Your private key signs the hash</li>
+<li><strong>Attach Signature</strong>: The signature is included with the event</li>
+<li><strong>Verify</strong>: Others use your public key to verify the signature</li>
+</ol>
+<h3 id="example-signing-an-event">Example: Signing an Event</h3>
+<div class="tabbed-set tabbed-alternate" data-tabs="5:2"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio" /><input id="__tabbed_5_2" name="__tabbed_5" type="radio" /><div class="tabbed-labels"><label for="__tabbed_5_1">JavaScript</label><label for="__tabbed_5_2">Python</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">finishEvent</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;nostr-tools&#39;</span>
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>
+<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="kd">const</span><span class="w"> </span><span class="nx">event</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="w">    </span><span class="nx">kind</span><span class="o">:</span><span class="w"> </span><span class="mf">1</span><span class="p">,</span>
+<a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a><span class="w">    </span><span class="nx">created_at</span><span class="o">:</span><span class="w"> </span><span class="nb">Math</span><span class="p">.</span><span class="nx">floor</span><span class="p">(</span><span class="nb">Date</span><span class="p">.</span><span class="nx">now</span><span class="p">()</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mf">1000</span><span class="p">),</span>
+<a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a><span class="w">    </span><span class="nx">tags</span><span class="o">:</span><span class="w"> </span><span class="p">[],</span>
+<a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a><span class="w">    </span><span class="nx">content</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Hello Nostr!&#39;</span>
+<a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a><span class="p">}</span>
+<a id="__codelineno-12-9" name="__codelineno-12-9" href="#__codelineno-12-9"></a>
+<a id="__codelineno-12-10" name="__codelineno-12-10" href="#__codelineno-12-10"></a><span class="kd">const</span><span class="w"> </span><span class="nx">signedEvent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">finishEvent</span><span class="p">(</span><span class="nx">event</span><span class="p">,</span><span class="w"> </span><span class="nx">privateKey</span><span class="p">)</span>
+<a id="__codelineno-12-11" name="__codelineno-12-11" href="#__codelineno-12-11"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Signed event:&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">signedEvent</span><span class="p">)</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">nostr.event</span><span class="w"> </span><span class="kn">import</span> <span class="n">Event</span>
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="kn">from</span><span class="w"> </span><span class="nn">nostr.key</span><span class="w"> </span><span class="kn">import</span> <span class="n">PrivateKey</span>
+<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="kn">import</span><span class="w"> </span><span class="nn">time</span>
+<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>
+<a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a><span class="n">private_key</span> <span class="o">=</span> <span class="n">PrivateKey</span><span class="p">()</span>
+<a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a>
+<a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a><span class="n">event</span> <span class="o">=</span> <span class="n">Event</span><span class="p">(</span>
+<a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a>    <span class="n">kind</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+<a id="__codelineno-13-9" name="__codelineno-13-9" href="#__codelineno-13-9"></a>    <span class="n">content</span><span class="o">=</span><span class="s2">&quot;Hello Nostr!&quot;</span><span class="p">,</span>
+<a id="__codelineno-13-10" name="__codelineno-13-10" href="#__codelineno-13-10"></a>    <span class="n">created_at</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">())</span>
+<a id="__codelineno-13-11" name="__codelineno-13-11" href="#__codelineno-13-11"></a><span class="p">)</span>
+<a id="__codelineno-13-12" name="__codelineno-13-12" href="#__codelineno-13-12"></a>
+<a id="__codelineno-13-13" name="__codelineno-13-13" href="#__codelineno-13-13"></a><span class="n">private_key</span><span class="o">.</span><span class="n">sign_event</span><span class="p">(</span><span class="n">event</span><span class="p">)</span>
+<a id="__codelineno-13-14" name="__codelineno-13-14" href="#__codelineno-13-14"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Signed event: </span><span class="si">{</span><span class="n">event</span><span class="o">.</span><span class="n">to_json</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+<h2 id="identity-without-usernames">Identity Without Usernames</h2>
+<h3 id="traditional-vs-nostr-identity">Traditional vs Nostr Identity</h3>
+<table>
+<thead>
+<tr>
+<th>Traditional Social Media</th>
+<th>Nostr</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Username + Password</td>
+<td>Cryptographic Keys</td>
+</tr>
+<tr>
+<td>Platform controls identity</td>
+<td>You control identity</td>
+</tr>
+<tr>
+<td>Can be banned/suspended</td>
+<td>Censorship resistant</td>
+</tr>
+<tr>
+<td>Tied to one platform</td>
+<td>Portable across clients</td>
+</tr>
+<tr>
+<td>Password can be reset</td>
+<td>Keys cannot be recovered</td>
+</tr>
+</tbody>
+</table>
+<h3 id="benefits-of-cryptographic-identity">Benefits of Cryptographic Identity</h3>
+<div class="admonition success">
+<p class="admonition-title">Advantages</p>
+<ul>
+<li><strong>True Ownership</strong>: You own your identity, not a platform</li>
+<li><strong>Portability</strong>: Use the same identity across all Nostr clients</li>
+<li><strong>Censorship Resistance</strong>: No central authority can ban you</li>
+<li><strong>Verification</strong>: Cryptographic proof of authenticity</li>
+<li><strong>Privacy</strong>: No personal information required</li>
+</ul>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Responsibilities</p>
+<ul>
+<li><strong>Key Security</strong>: You must protect your private key</li>
+<li><strong>No Recovery</strong>: Lost keys mean lost identity</li>
+<li><strong>Backup Important</strong>: Always backup your keys securely</li>
+</ul>
+</div>
+<h2 id="key-management-best-practices">Key Management Best Practices</h2>
+<h3 id="secure-storage">Secure Storage</h3>
+<div class="admonition danger">
+<p class="admonition-title">Never Do This</p>
+<ul>
+<li>Store private keys in plain text files</li>
+<li>Share private keys via email or messaging</li>
+<li>Use the same key across multiple devices without encryption</li>
+<li>Store keys in browser localStorage without encryption</li>
+</ul>
+</div>
+<div class="admonition success">
+<p class="admonition-title">Best Practices</p>
+<ul>
+<li>Use hardware wallets when possible</li>
+<li>Encrypt private keys with strong passwords</li>
+<li>Use secure key management software</li>
+<li>Create offline backups in multiple locations</li>
+<li>Consider using key derivation for multiple identities</li>
+</ul>
+</div>
+<h3 id="key-backup-strategies">Key Backup Strategies</h3>
+<div class="tabbed-set tabbed-alternate" data-tabs="6:3"><input checked="checked" id="__tabbed_6_1" name="__tabbed_6" type="radio" /><input id="__tabbed_6_2" name="__tabbed_6" type="radio" /><input id="__tabbed_6_3" name="__tabbed_6" type="radio" /><div class="tabbed-labels"><label for="__tabbed_6_1">Paper Backup</label><label for="__tabbed_6_2">Digital Backup</label><label for="__tabbed_6_3">Hardware Wallet</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>1. Write down your private key (nsec format)
+<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>2. Store in a fireproof safe
+<a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>3. Consider multiple copies in different locations
+<a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a>4. Use tamper-evident storage
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>1. Encrypt with strong password
+<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>2. Store on multiple devices
+<a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a>3. Use cloud storage with encryption
+<a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a>4. Regular backup verification
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>1. Use dedicated hardware device
+<a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>2. Secure with PIN/passphrase
+<a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a>3. Backup seed phrase securely
+<a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a>4. Test recovery process
+</code></pre></div>
+</div>
+</div>
+</div>
+<h2 id="multiple-identities">Multiple Identities</h2>
+<p>You can have multiple Nostr identities for different purposes:</p>
+<h3 id="use-cases">Use Cases</h3>
+<ul>
+<li><strong>Personal</strong>: Your main social identity</li>
+<li><strong>Professional</strong>: Work-related content</li>
+<li><strong>Anonymous</strong>: Privacy-focused interactions</li>
+<li><strong>Bot</strong>: Automated accounts</li>
+<li><strong>Testing</strong>: Development and experimentation</li>
+</ul>
+<h3 id="managing-multiple-keys">Managing Multiple Keys</h3>
+<div class="tabbed-set tabbed-alternate" data-tabs="7:1"><input checked="checked" id="__tabbed_7_1" name="__tabbed_7" type="radio" /><div class="tabbed-labels"><label for="__tabbed_7_1">JavaScript</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="kd">class</span><span class="w"> </span><span class="nx">NostrIdentityManager</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="w">    </span><span class="kr">constructor</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a><span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="nx">identities</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nb">Map</span><span class="p">()</span>
+<a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a>
+<a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a><span class="w">    </span><span class="nx">createIdentity</span><span class="p">(</span><span class="nx">name</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-17-7" name="__codelineno-17-7" href="#__codelineno-17-7"></a><span class="w">        </span><span class="kd">const</span><span class="w"> </span><span class="nx">privateKey</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">generatePrivateKey</span><span class="p">()</span>
+<a id="__codelineno-17-8" name="__codelineno-17-8" href="#__codelineno-17-8"></a><span class="w">        </span><span class="kd">const</span><span class="w"> </span><span class="nx">publicKey</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">getPublicKey</span><span class="p">(</span><span class="nx">privateKey</span><span class="p">)</span>
+<a id="__codelineno-17-9" name="__codelineno-17-9" href="#__codelineno-17-9"></a>
+<a id="__codelineno-17-10" name="__codelineno-17-10" href="#__codelineno-17-10"></a><span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="nx">identities</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="nx">name</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-17-11" name="__codelineno-17-11" href="#__codelineno-17-11"></a><span class="w">            </span><span class="nx">privateKey</span><span class="p">,</span>
+<a id="__codelineno-17-12" name="__codelineno-17-12" href="#__codelineno-17-12"></a><span class="w">            </span><span class="nx">publicKey</span><span class="p">,</span>
+<a id="__codelineno-17-13" name="__codelineno-17-13" href="#__codelineno-17-13"></a><span class="w">            </span><span class="nx">npub</span><span class="o">:</span><span class="w"> </span><span class="nx">nip19</span><span class="p">.</span><span class="nx">npubEncode</span><span class="p">(</span><span class="nx">publicKey</span><span class="p">)</span>
+<a id="__codelineno-17-14" name="__codelineno-17-14" href="#__codelineno-17-14"></a><span class="w">        </span><span class="p">})</span>
+<a id="__codelineno-17-15" name="__codelineno-17-15" href="#__codelineno-17-15"></a>
+<a id="__codelineno-17-16" name="__codelineno-17-16" href="#__codelineno-17-16"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">identities</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="nx">name</span><span class="p">)</span>
+<a id="__codelineno-17-17" name="__codelineno-17-17" href="#__codelineno-17-17"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-17-18" name="__codelineno-17-18" href="#__codelineno-17-18"></a>
+<a id="__codelineno-17-19" name="__codelineno-17-19" href="#__codelineno-17-19"></a><span class="w">    </span><span class="nx">getIdentity</span><span class="p">(</span><span class="nx">name</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-17-20" name="__codelineno-17-20" href="#__codelineno-17-20"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">identities</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="nx">name</span><span class="p">)</span>
+<a id="__codelineno-17-21" name="__codelineno-17-21" href="#__codelineno-17-21"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-17-22" name="__codelineno-17-22" href="#__codelineno-17-22"></a>
+<a id="__codelineno-17-23" name="__codelineno-17-23" href="#__codelineno-17-23"></a><span class="w">    </span><span class="nx">listIdentities</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-17-24" name="__codelineno-17-24" href="#__codelineno-17-24"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="nb">Array</span><span class="p">.</span><span class="kr">from</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">identities</span><span class="p">.</span><span class="nx">keys</span><span class="p">())</span>
+<a id="__codelineno-17-25" name="__codelineno-17-25" href="#__codelineno-17-25"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-17-26" name="__codelineno-17-26" href="#__codelineno-17-26"></a><span class="p">}</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+<h2 id="interactive-exercise">Interactive Exercise</h2>
+<p>Let's practice working with keys:</p>
+<div class="admonition example">
+<p class="admonition-title">Try This</p>
+<ol>
+<li>Generate a new key pair</li>
+<li>Convert between hex and bech32 formats</li>
+<li>Create and sign a simple event</li>
+<li>Verify the signature</li>
+</ol>
+<p>Use the code examples above to experiment with key generation and signing.</p>
+</div>
+<h2 id="common-pitfalls">Common Pitfalls</h2>
+<div class="admonition warning">
+<p class="admonition-title">Avoid These Mistakes</p>
+<p><strong>Key Confusion</strong>
+- Mixing up private and public keys
+- Using wrong key formats
+- Sharing private keys accidentally</p>
+<p><strong>Security Issues</strong>
+- Storing keys insecurely
+- Not backing up keys
+- Using weak random number generation</p>
+<p><strong>Format Errors</strong>
+- Invalid hex characters
+- Incorrect bech32 encoding
+- Wrong key length</p>
+</div>
+<h2 id="next-steps">Next Steps</h2>
+<p>Now that you understand keys and identity, let's explore how events and messages work in Nostr.</p>
+<div class="next-lesson">
+  <a href="../events/" class="btn btn-primary">
+    :material-arrow-right: Events & Messages →
+  </a>
+</div>
+
+<hr />
+<h2 id="quick-quiz">Quick Quiz</h2>
+<div class="admonition question">
+<p class="admonition-title">Test Your Understanding</p>
+<ol>
+<li>What's the difference between a private key and public key?</li>
+<li>Which key format starts with "npub1"?</li>
+<li>What happens if you lose your private key?</li>
+<li>Why doesn't Nostr use usernames and passwords?</li>
+<li>What is the purpose of digital signatures?</li>
+</ol>
+<details class="success">
+<summary>Answers</summary>
+<ol>
+<li>Private key is secret and used for signing; public key is shared and used for verification</li>
+<li>Public keys in bech32 format start with "npub1"</li>
+<li>You lose access to that identity forever - there's no recovery</li>
+<li>Cryptographic keys provide better security, ownership, and censorship resistance</li>
+<li>Digital signatures prove authenticity and prevent tampering </li>
+</ol>
+</details>
+</div>
+
+
+
+
+
+
+
+  
+    
+  
+  
+
+
+  <aside class="md-source-file">
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Last update">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="May 27, 2025 04:44:28 UTC">May 27, 2025</span>
+  </span>
+
+    
+    
+    
+    
+  </aside>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2024 Learn Nostr
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://discord.gg/BtkVKRkJ" target="_blank" rel="noopener" title="discord.gg" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M524.531 69.836a1.5 1.5 0 0 0-.764-.7A485 485 0 0 0 404.081 32.03a1.82 1.82 0 0 0-1.923.91 338 338 0 0 0-14.9 30.6 447.9 447.9 0 0 0-134.426 0 310 310 0 0 0-15.135-30.6 1.89 1.89 0 0 0-1.924-.91 483.7 483.7 0 0 0-119.688 37.107 1.7 1.7 0 0 0-.788.676C39.068 183.651 18.186 294.69 28.43 404.354a2.02 2.02 0 0 0 .765 1.375 487.7 487.7 0 0 0 146.825 74.189 1.9 1.9 0 0 0 2.063-.676A348 348 0 0 0 208.12 430.4a1.86 1.86 0 0 0-1.019-2.588 321 321 0 0 1-45.868-21.853 1.885 1.885 0 0 1-.185-3.126 251 251 0 0 0 9.109-7.137 1.82 1.82 0 0 1 1.9-.256c96.229 43.917 200.41 43.917 295.5 0a1.81 1.81 0 0 1 1.924.233 235 235 0 0 0 9.132 7.16 1.884 1.884 0 0 1-.162 3.126 301.4 301.4 0 0 1-45.89 21.83 1.875 1.875 0 0 0-1 2.611 391 391 0 0 0 30.014 48.815 1.86 1.86 0 0 0 2.063.7A486 486 0 0 0 610.7 405.729a1.88 1.88 0 0 0 .765-1.352c12.264-126.783-20.532-236.912-86.934-334.541M222.491 337.58c-28.972 0-52.844-26.587-52.844-59.239s23.409-59.241 52.844-59.241c29.665 0 53.306 26.82 52.843 59.239 0 32.654-23.41 59.241-52.843 59.241m195.38 0c-28.971 0-52.843-26.587-52.843-59.239s23.409-59.241 52.843-59.241c29.667 0 53.307 26.82 52.844 59.239 0 32.654-23.177 59.241-52.844 59.241"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="https://github.com/cristyalmonte/learnnostr" target="_blank" rel="noopener" title="GitHub" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.expand", "navigation.top", "search.highlight", "search.share", "content.code.copy", "announce.dismiss", "content.code.annotate", "content.tabs.link", "content.tooltips", "navigation.instant", "navigation.instant.prefetch", "navigation.path", "navigation.tabs.sticky", "navigation.tracking", "search.suggest", "toc.follow"], "search": "../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.13a4f30d.min.js"></script>
+      
+        <script src="../../assets/js/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="../../assets/js/typewriter.js"></script>
+      
+        <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
+      
+    
+  </body>
+</html>

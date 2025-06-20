@@ -1,0 +1,115 @@
+{% extends "base.html" %}
+
+{% block announce %}
+  <a href="https://discord.gg/BtkVKRkJ" target="_blank">
+    <div class="md-banner">
+        💜 Join our Discord community to learn Nostr together, ask questions, and connect with other developers!
+    </div>
+  </a>
+{% endblock %}
+
+{% block tabs %}
+  {{ super() }}
+
+  <!-- Additional styles for landing page -->
+  <style>
+    /* Custom banner color only */
+    .md-banner {
+        background-color: #9C27B0 !important;
+    }
+
+    .mdx-container {
+        background: linear-gradient(to bottom, rgb(255 255 255/.8), #9C27B0 99%, var(--md-default-bg-color) 99%);
+        padding-top: 1rem;
+    }
+    [data-md-color-scheme="slate"] .mdx-container {
+        background: rgba(9, 9, 9, 0.95);
+    }
+
+    .mdx-hero {
+        color: var(--hb-hero-color);
+        margin: 0 0.8rem;
+    }
+    .mdx-hero h1 {
+        color: currentcolor;
+        margin-bottom: 1rem;
+        font-size: 2.6rem;
+    }
+    @media screen and (max-width: 29.9375em) {
+        .mdx-hero h1 {
+            font-size: 1.4rem;
+        }
+    }
+    .mdx-hero__content {
+        padding-bottom: 6rem;
+    }
+    @media screen and (min-width: 60em) {
+        .mdx-hero {
+            align-items: stretch;
+            display: flex;
+        }
+        .mdx-hero__content {
+            margin-top: 3.5rem;
+            max-width: 38rem;
+            padding-bottom: 14vw;
+        }
+        .mdx-hero__image {
+            order: 1;
+            transform: translateX(4rem);
+            width: 38rem;
+        }
+    }
+    @media screen and (min-width: 76.25em) {
+        .mdx-hero__image {
+            transform: translateX(8rem);
+        }
+    }
+    .mdx-hero .md-button {
+        color: var(--hb-hero-color);
+        border-color: var(--hb-hero-color);
+    }
+    [data-md-color-scheme="slate"] .mdx-hero .md-button--primary {
+        color: var(--md-primary-fg-color);
+    }
+    .mdx-hero .md-button--primary {
+        color: var(--md-primary-fg-color);
+        background-color: var(--hb-hero-color);
+        border-color: transparent;
+        margin-right: 0.5rem;
+        margin-top: 0.5rem;
+        margin-bottom: 0.5rem;
+    }
+
+    /* Make tutorials button text black when hovering in dark mode */
+    [data-md-color-scheme="slate"] .mdx-hero .md-button:not(.md-button--primary):hover {
+        color: #000000 !important;
+    }
+
+    .md-main .md-button--primary {
+        color: var(--md-primary-fg-color);
+        background-color: var(--hb-hero-color);
+        border-color: transparent;
+    }
+
+    nav[class="md-tabs"] {
+        border-bottom: none;
+    }
+  </style>
+
+  <section class="mdx-container">
+    <div class="md-grid md-typeset">
+      <div class="mdx-hero">
+        <div class="mdx-hero__content">
+          <h1><span style="color: #9C27B0;">Learn Nostr</span> <div id="typewriter">social protocol</div></h1>
+          <h3 style="color: #9C27B0;">Master Nostr - the simple, open protocol that puts you in control of your digital identity and social interactions.</h3>
+          <a href="/getting-started/what-is-nostr/" class="md-button md-button--primary">
+            Basics
+          </a>
+          <a href="/tutorials/simple-client/" class="md-button">
+            Tutorials
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+{% endblock %}

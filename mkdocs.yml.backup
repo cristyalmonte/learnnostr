@@ -1,0 +1,292 @@
+# yaml-language-server: $schema=https://squidfunk.github.io/mkdocs-material/schema.json
+
+# Project info
+site_name: LearnNostr
+site_description: Interactive tutorials and comprehensive guide to learning Nostr protocol
+site_author: LearnNostr Team
+site_url: https://learnnostr.org
+
+# Repository
+repo_name: 'LearnNostr'
+repo_url: 'https://github.com/cristyalmonte/learnnostr'
+edit_uri: 'edit/main/docs/'
+
+# Copyright
+copyright: Copyright &copy; 2024 LearnNostr
+
+# Configuration
+theme:
+  name: material
+  custom_dir: overrides
+  logo: assets/logo.svg
+  favicon: assets/favicon.ico
+  icon:
+    repo: fontawesome/brands/github
+  palette:
+    # - media: "(prefers-color-scheme: dark)"
+    - scheme: slate
+      accent: amber
+      toggle:
+        icon: material/brightness-2
+        name: "Switch to light mode"
+    # - media: "(prefers-color-scheme: light)"
+    - scheme: default
+      accent: deep purple
+      toggle:
+        icon: material/brightness-5
+        name: "Switch to dark mode"
+  font:
+      text: Noto Sans
+      code: Roboto Mono
+  features:
+    - navigation.instant
+    - navigation.instant.prefetch
+    - navigation.top
+    - navigation.tracking
+    - navigation.tabs
+    - navigation.path
+    - navigation.indexes
+    - navigation.prune
+    - content.code.copy
+    - toc.follow
+    - announce.dismiss
+    # - content.tabs.link
+    # - content.tooltips
+    # - search.highlight
+
+plugins:
+  - search
+  - charts
+  - table-reader
+  - git-revision-date-localized
+  - social:
+      cards_layout_options:
+        background_color: "#151819"
+        color: "#9C27B0"
+  - blog:
+      blog_dir: blog
+      blog_toc: true
+      post_url_format: "{slug}"
+  - blog:
+      blog_dir: academy
+      blog_toc: false
+      post_url_format: "{slug}"
+
+extra:
+  homepage: https://learnnostr.org
+  generator: true
+  social:
+    - icon: fontawesome/brands/discord
+      link: https://discord.gg/BtkVKRkJ
+    - icon: fontawesome/brands/github
+      link: https://github.com/cristyalmonte/learnnostr
+
+extra_css:
+  - assets/css/custom.css
+extra_javascript:
+  - assets/js/mathjax.js
+  - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
+  - assets/js/typewriter.js
+  - https://unpkg.com/typewriter-effect@latest/dist/core.js
+  - https://cdn.jsdelivr.net/npm/vega@5
+  - https://cdn.jsdelivr.net/npm/vega-lite@5
+  - https://cdn.jsdelivr.net/npm/vega-embed@6
+
+# Extensions
+markdown_extensions:
+  - admonition
+  - abbr
+  - attr_list
+  - md_in_html
+  - def_list
+  - footnotes
+  # - meta
+  - pymdownx.caret
+  - pymdownx.mark
+  - pymdownx.tilde
+  - pymdownx.critic
+  - pymdownx.details
+  - pymdownx.emoji:
+        emoji_index: !!python/name:material.extensions.emoji.twemoji
+        emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.keys
+  # - pymdownx.magiclink:
+  #     user: hummingbot
+  #     repo: hummingbot
+  #     repo_url_shorthand: true
+  - pymdownx.smartsymbols
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences:
+      custom_fences:
+        - name: vegalite
+          class: vegalite
+          format: !!python/name:mkdocs_charts_plugin.fences.fence_vegalite
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.arithmatex:
+      generic: true
+  - toc:
+      permalink: true
+  - tables
+
+# Navigation
+nav:
+  - Home: index.md
+  - Getting Started:
+    - What is Nostr?: getting-started/what-is-nostr.md
+    - Why Nostr?: getting-started/why-nostr.md
+    - Setup & Installation: getting-started/setup.md
+    - Your First Event: getting-started/first-event.md
+  - Core Concepts:
+    - Nostr Fundamentals: concepts/nostr-fundamentals.md
+    - Keys & Identity: concepts/keys.md
+    - Events: concepts/events.md
+    - Relays: concepts/relays.md
+    - Clients: concepts/clients.md
+    - NIPs (Protocol Standards): concepts/nips.md
+    - Zaps & Bitcoin Integration: concepts/zaps.md
+  - Tutorials:
+    - Build a Simple Client: tutorials/simple-client.md
+    - Create a Bot: tutorials/bot.md
+    - Run Your Own Relay: tutorials/relay.md
+    - Advanced Topics: tutorials/advanced.md
+  - Developer Resources:
+    - Libraries & Tools: dev/libraries.md
+    - Best Practices: dev/best-practices.md
+    - Testing: dev/testing.md
+    - Deployment: dev/deployment.md
+  - Reference:
+    - Event Kinds: reference/event-kinds.md
+    - NIPs Reference: reference/nips.md
+    - Tools & Utilities: reference/tools.md
+  - Community:
+    - Contributing: community/contributing.md
+    - Code of Conduct: community/code-of-conduct.md
+    - Discord ↗️: https://discord.gg/BtkVKRkJ
+    - GitHub ↗️: https://github.com/cristyalmonte/learnnostr
+  - Exchanges:
+    - Exchanges: exchanges/index.md
+    - 🔥 Bitmart: exchanges/bitmart/index.md
+    - 🔥 Binance: exchanges/binance/index.md
+    - 🔥 Derive: exchanges/derive/index.md
+    - 🔥 dYdX: exchanges/dydx.md
+    - 🔥 Gate.io: exchanges/gate-io/index.md
+    - 🔥 HTX: exchanges/htx/index.md
+    - 🔥 Hyperliquid: exchanges/hyperliquid.md
+    - 🔥 Kucoin: exchanges/kucoin/index.md
+    - 🔥 OKX: exchanges/okx/index.md
+    - 🔥 XRP Ledger: exchanges/xrpl.md
+    - AscendEx : exchanges/ascendex/index.md
+    - Balancer: exchanges/gateway/balancer.md
+    - Bitstamp: exchanges/bitstamp/index.md
+    - Bitrue: exchanges/bitrue.md
+    - Bitget: exchanges/bitget-perpetual.md
+    - BingX: exchanges/bing_x/index.md
+    - Bybit: exchanges/bybit.md
+    - BTC Markets: exchanges/btc-markets.md
+    - Carbon: exchanges/gateway/carbon.md
+    - Coinbase: exchanges/coinbase.md
+    - Cube: exchanges/cube/index.md
+    - Curve: exchanges/gateway/curve.md
+    - Dexalot: exchanges/dexalot.md
+    - ETCSwap: exchanges/gateway/etcSwap.md
+    - Hashkey: exchanges/hashkey/index.md
+    - Injective Helix: exchanges/injective.md
+    - Jupiter: exchanges/gateway/jupiter.md
+    - Kraken: exchanges/kraken/index.md
+    - Meteora: exchanges/gateway/meteora.md
+    - MEXC: exchanges/mexc/index.md
+    - NDAX: exchanges/ndax.md
+    - Osmosis: exchanges/gateway/osmosis.md
+    - Mad Meerkat: exchanges/gateway/mad-meerkat.md
+    - Pancakeswap: exchanges/gateway/pancakeswap.md
+    - Raydium: exchanges/gateway/raydium.md
+    - Quickswap: exchanges/gateway/quickswap.md
+    - Sushiswap: exchanges/gateway/sushiswap.md
+    - Tinyman: exchanges/gateway/tinyman.md
+    - TraderJoe: exchanges/gateway/traderjoe.md
+    - Uniswap : exchanges/gateway/uniswap.md
+    - Tegro: exchanges/tegro/index.md
+    - Vertex: exchanges/vertex.md
+    - VVS: exchanges/gateway/vvs.md    
+  - Community:
+    - Community: community/index.md
+    - Discord Server: community/discord.md
+    - Reward Programs: community/rewards.md
+    - Developer Resources:
+      - Developer Resources: developers/index.md
+      - Using Debugger Tools: installation/debug.md
+      - Debugging & Testing Connectors: developers/connectors/debug.md
+    - Certification Program:
+      - Certification: certification/index.md
+      - Certifications List: certification/list.md
+      - Botcamp ↗️: https://www.botcamp.xyz
+      - Botcamp FAQ: botcamp/faq.md
+    - Upcoming Events ↗️: https://lu.ma/hummingbot
+  - Releases:
+    - Releases: release-notes/index.md
+    - Release Process: governance/releases.md
+    - 2.5.0: release-notes/2.5.0.md
+    - 2.4.0: release-notes/2.4.0.md
+    - 2.3.0: release-notes/2.3.0.md
+    - 2.2.0: release-notes/2.2.0.md
+    - 2.1.0: release-notes/2.1.0.md
+    - 2.0.1: release-notes/2.0.1.md
+    - 2.0.0: release-notes/2.0.0.md
+    - 1.28.0: release-notes/1.28.0.md
+    - 1.27.0: release-notes/1.27.0.md
+    - 1.26.0: release-notes/1.26.0.md
+    - 1.25.0: release-notes/1.25.0.md
+    - 1.24.0: release-notes/1.24.0.md
+    - 1.23.0: release-notes/1.23.0.md
+    - 1.22.0: release-notes/1.22.0.md
+    - 1.21.0: release-notes/1.21.0.md
+    - 1.20.0: release-notes/1.20.0.md
+    - 1.19.0: release-notes/1.19.0.md
+    - 1.18.0: release-notes/1.18.0.md
+    - 1.17.0: release-notes/1.17.0.md
+    - 1.16.0: release-notes/1.16.0.md
+    - 1.15.0: release-notes/1.15.0.md
+    - 1.14.0: release-notes/1.14.0.md
+    - 1.13.0: release-notes/1.13.0.md 
+    - 1.12.0: release-notes/1.12.0.md
+    - 1.11.0: release-notes/1.11.0.md
+    - 1.10.0: release-notes/1.10.0.md
+    - 1.9.0: release-notes/1.9.0.md
+    - 1.8.0: release-notes/1.8.0.md
+    - 1.7.0: release-notes/1.7.0.md
+    - 1.6.0: release-notes/1.6.0.md
+    - 1.5.0: release-notes/1.5.0.md
+    - 1.4.0: release-notes/1.4.0.md
+    - 1.3.0: release-notes/1.3.0.md
+    - 1.2.0: release-notes/1.2.0.md
+    - 1.1.1: release-notes/1.1.1.md
+    - 1.1.0: release-notes/1.1.0.md
+    - 1.0.1: release-notes/1.0.1.md
+    - 1.0.0: release-notes/1.0.0.md
+  - Bounties: 
+    - Bounties: bounties/index.md
+    - Lifecycle of a Bounty: bounties/lifecycle.md
+    - Pricing & Payments: bounties/pricing.md
+    - Bounties FAQ: bounties/faq.md
+    - Contributors Guide: bounties/contributors.md
+    - Bounties Board ↗️: https://github.com/orgs/hummingbot/projects/7/views/1
+  - Foundation:
+    - Foundation: about/index.md
+    - HBOT Token: about/hbot.md
+    - Board of Directors: about/board.md
+    - Governance:
+      - Governance: governance/index.md
+      - Polls: governance/polls.md
+      - Proposals: governance/proposals.md
+      - Epochs: governance/epochs.md
+      - Whitepaper: governance/whitepaper.md
+  - Blog: 
+    - blog/index.md

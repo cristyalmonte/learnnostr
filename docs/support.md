@@ -3,368 +3,269 @@
 !!! tip "Help Keep This Resource Free"
     LearnNostr is a community-driven educational platform. Your support helps us maintain and expand this comprehensive Nostr learning resource for everyone.
 
-## ⚡ Zap the Creator
+## ⚡ Support LearnNostr
 
-Show your appreciation for LearnNostr with Bitcoin zaps! Every contribution helps keep this educational resource free and growing.
+Donate to LearnNostr via Bitcoin Lightning:
 
-<div class="zap-interface">
-  <div class="zap-amounts">
-    <h3>Choose Amount</h3>
-    <div class="amount-buttons">
-      <button class="amount-btn" data-amount="21" data-sats="21">
-        <span class="sats">21</span>
-        <span class="label">sats</span>
-        <span class="usd">~$0.01</span>
-      </button>
-      <button class="amount-btn" data-amount="100" data-sats="100">
-        <span class="sats">100</span>
-        <span class="label">sats</span>
-        <span class="usd">~$0.03</span>
-      </button>
-      <button class="amount-btn popular" data-amount="500" data-sats="500">
-        <span class="sats">500</span>
-        <span class="label">sats</span>
-        <span class="usd">~$0.15</span>
-        <span class="popular-badge">Popular</span>
-      </button>
-      <button class="amount-btn" data-amount="1000" data-sats="1000">
-        <span class="sats">1,000</span>
-        <span class="label">sats</span>
-        <span class="usd">~$0.30</span>
-      </button>
-      <button class="amount-btn" data-amount="5000" data-sats="5000">
-        <span class="sats">5,000</span>
-        <span class="label">sats</span>
-        <span class="usd">~$1.50</span>
-      </button>
-      <button class="amount-btn generous" data-amount="10000" data-sats="10000">
-        <span class="sats">10,000</span>
-        <span class="label">sats</span>
-        <span class="usd">~$3.00</span>
-        <span class="generous-badge">Generous</span>
-      </button>
-    </div>
-    
-    <div class="custom-amount">
-      <label for="custom-sats">Custom Amount (sats):</label>
-      <input type="number" id="custom-sats" placeholder="Enter amount..." min="1" max="1000000">
-    </div>
-  </div>
+```
+greenmiracle695447@getalby.com
+```
 
-  <div class="zap-message">
-    <h3>Add a Message (Optional)</h3>
-    <textarea id="zap-message" placeholder="Thanks for LearnNostr! 🚀" maxlength="280"></textarea>
-    <div class="char-count">
-      <span id="char-count">0</span>/280
-    </div>
-  </div>
-
-  <div class="zap-actions">
-    <button id="zap-btn" class="zap-button" disabled>
-      <span class="zap-icon">⚡</span>
-      <span class="zap-text">Send Zap</span>
-      <span class="zap-amount">0 sats</span>
-    </button>
-    
-    <div class="lightning-address">
-      <p>Or zap directly to: <code>greenmiracle695447@getalby.com</code></p>
-    </div>
-  </div>
-
-  <div class="zap-status" id="zap-status" style="display: none;">
-    <div class="status-message"></div>
-  </div>
-</div>
-
-## Other Ways to Support
-
-### 🌟 Share LearnNostr
-Help others discover this resource:
-- Share on social media
-- Recommend to friends learning about Nostr
-- Link from your blog or website
-
-### 🐛 Report Issues
-Found a bug or have suggestions?
-- [Open an issue on GitHub](https://github.com/cristyalmonte/learnnostr/issues)
-- Suggest improvements or corrections
-- Help us keep the content accurate
-
-### 📝 Contribute Content
-Want to help improve LearnNostr?
-- Submit pull requests with improvements
-- Suggest new topics or tutorials
-- Help translate content
-
-### 💜 Follow the Project
-Stay updated with LearnNostr:
-- ⭐ [Star on GitHub](https://github.com/cristyalmonte/learnnostr)
-- 🐦 Follow updates on social media
-- 📧 Subscribe to announcements
-
----
-
-## Why Support LearnNostr?
-
-**🎯 Mission**: Make Nostr accessible to everyone through comprehensive, beginner-friendly education.
-
-**💰 Costs**: Hosting, domain, development time, and content creation.
-
-**🚀 Impact**: Your support helps us:
-- Keep the site ad-free and fast
-- Add new tutorials and guides
-- Maintain accurate, up-to-date information
-- Expand to new topics and use cases
-
-**🙏 Transparency**: All funds go directly to maintaining and improving LearnNostr.
-
-<div class="support-thanks">
-  <h3>Thank You! 🧡</h3>
-  <p>Every zap, no matter how small, makes a difference. You're helping build the future of decentralized social media education.</p>
-</div>
+Copy and paste the address above into your Lightning wallet to support this project!
 
 <style>
+/* Compact container with smaller overall size */
 .zap-interface {
-  background: linear-gradient(135deg, #f8f4ff, #f0e6ff);
-  border-radius: 16px;
-  padding: 2rem;
-  margin: 2rem 0;
-  border: 2px solid #e1bee7;
+  max-width: 400px !important;
+  margin: 1.5rem auto;
+  padding: 1.5rem;
+  background: var(--md-default-bg-color);
+  border: 1px solid var(--md-default-fg-color--lightest);
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
-.zap-amounts h3 {
-  color: #6a1b9a;
-  margin-bottom: 1rem;
-  text-align: center;
+/* Smaller typography throughout */
+.zap-interface h2 {
+  font-size: 1.1rem !important;
+  margin-bottom: 0.8rem !important;
 }
 
+.zap-interface p {
+  font-size: 0.85rem !important;
+  margin-bottom: 1rem !important;
+}
+
+/* Compact amount buttons grid */
 .amount-buttons {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-  gap: 1rem;
-  margin-bottom: 1.5rem;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.75rem;
+  margin-bottom: 1rem;
 }
 
+/* Compact zap buttons with lightning design */
 .amount-btn {
-  background: white;
-  border: 2px solid #e1bee7;
-  border-radius: 12px;
-  padding: 1rem;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
-  min-height: 80px;
+  justify-content: center;
+  padding: 0.75rem 0.5rem;
+  background: linear-gradient(135deg, #8b5cf6, #a855f7);
+  border: none;
+  border-radius: 12px;
+  color: white;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  position: relative;
+  min-height: 65px;
+  box-shadow: 0 2px 4px rgba(139, 92, 246, 0.3);
 }
 
 .amount-btn:hover {
-  border-color: #9c27b0;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(156, 39, 176, 0.2);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(139, 92, 246, 0.4);
+  background: linear-gradient(135deg, #7c3aed, #9333ea);
 }
 
 .amount-btn.selected {
-  background: linear-gradient(135deg, #9c27b0, #673ab7);
-  color: white;
-  border-color: #9c27b0;
+  background: linear-gradient(135deg, #6d28d9, #7c3aed);
+  box-shadow: 0 0 0 2px #8b5cf6;
+  transform: scale(1.02);
 }
 
-.amount-btn .sats {
-  font-size: 1.2rem;
-  font-weight: bold;
-  color: #6a1b9a;
+.lightning-icon {
+  font-size: 1.25rem;
+  margin-bottom: 0.25rem;
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.3));
 }
 
-.amount-btn.selected .sats {
-  color: white;
-}
-
-.amount-btn .label {
-  font-size: 0.8rem;
-  color: #9e9e9e;
-  margin: 0.2rem 0;
-}
-
-.amount-btn.selected .label {
-  color: #e1bee7;
-}
-
-.amount-btn .usd {
-  font-size: 0.7rem;
-  color: #757575;
-}
-
-.amount-btn.selected .usd {
-  color: #f3e5f5;
-}
-
-.popular-badge, .generous-badge {
-  position: absolute;
-  top: -8px;
-  right: -8px;
-  background: #ff9800;
-  color: white;
-  font-size: 0.6rem;
-  padding: 2px 6px;
-  border-radius: 8px;
-  font-weight: bold;
-}
-
-.generous-badge {
-  background: #4caf50;
-}
-
-.custom-amount {
-  margin-top: 1rem;
+.amount-text {
+  font-size: 0.75rem;
+  font-weight: 600;
   text-align: center;
+  line-height: 1.2;
+  margin-bottom: 0.125rem;
 }
 
-.custom-amount label {
-  display: block;
-  margin-bottom: 0.5rem;
-  color: #6a1b9a;
+.amount-text small {
+  font-size: 0.65rem;
+  opacity: 0.9;
+}
+
+.usd-price {
+  font-size: 0.7rem;
+  opacity: 0.85;
   font-weight: 500;
 }
 
+/* Compact custom amount input */
+.custom-amount {
+  margin-bottom: 1rem;
+}
+
 .custom-amount input {
-  padding: 0.75rem;
-  border: 2px solid #e1bee7;
+  width: 100%;
+  padding: 0.6rem 0.75rem;
+  border: 1px solid var(--md-default-fg-color--lightest);
   border-radius: 8px;
-  width: 200px;
-  text-align: center;
-  font-size: 1rem;
+  background: var(--md-default-bg-color);
+  color: var(--md-default-fg-color);
+  font-size: 0.85rem;
+  transition: border-color 0.2s ease;
 }
 
 .custom-amount input:focus {
   outline: none;
-  border-color: #9c27b0;
+  border-color: #8b5cf6;
+  box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.1);
 }
 
+/* Compact message section */
 .zap-message {
-  margin: 2rem 0;
-}
-
-.zap-message h3 {
-  color: #6a1b9a;
+  position: relative;
   margin-bottom: 1rem;
 }
 
 .zap-message textarea {
   width: 100%;
-  padding: 1rem;
-  border: 2px solid #e1bee7;
+  padding: 0.6rem 0.75rem;
+  border: 1px solid var(--md-default-fg-color--lightest);
   border-radius: 8px;
-  resize: vertical;
-  min-height: 80px;
+  background: var(--md-default-bg-color);
+  color: var(--md-default-fg-color);
+  font-size: 0.85rem;
   font-family: inherit;
+  resize: vertical;
+  min-height: 60px;
+  transition: border-color 0.2s ease;
 }
 
 .zap-message textarea:focus {
   outline: none;
-  border-color: #9c27b0;
+  border-color: #8b5cf6;
+  box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.1);
 }
 
 .char-count {
-  text-align: right;
-  font-size: 0.8rem;
-  color: #9e9e9e;
-  margin-top: 0.5rem;
+  position: absolute;
+  bottom: 0.5rem;
+  right: 0.75rem;
+  font-size: 0.7rem;
+  color: var(--md-default-fg-color--light);
+  background: var(--md-default-bg-color);
+  padding: 0 0.25rem;
 }
 
-.zap-actions {
-  text-align: center;
-}
-
+/* Compact zap button */
 .zap-button {
-  background: linear-gradient(135deg, #9c27b0, #673ab7);
-  color: white;
+  width: 100%;
+  padding: 0.75rem;
+  background: linear-gradient(135deg, #10b981, #059669);
   border: none;
-  border-radius: 50px;
-  padding: 1rem 2rem;
-  font-size: 1.1rem;
-  font-weight: bold;
+  border-radius: 8px;
+  color: white;
+  font-size: 0.9rem;
+  font-weight: 600;
   cursor: pointer;
-  transition: all 0.3s ease;
-  display: inline-flex;
+  transition: all 0.2s ease;
+  display: flex;
   align-items: center;
+  justify-content: center;
   gap: 0.5rem;
-  margin-bottom: 1rem;
+  box-shadow: 0 2px 4px rgba(16, 185, 129, 0.3);
 }
 
 .zap-button:hover:not(:disabled) {
-  transform: scale(1.05);
-  box-shadow: 0 6px 20px rgba(156, 39, 176, 0.3);
+  background: linear-gradient(135deg, #059669, #047857);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(16, 185, 129, 0.4);
 }
 
 .zap-button:disabled {
-  opacity: 0.5;
+  background: var(--md-default-fg-color--lightest);
   cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
 }
 
 .zap-icon {
-  font-size: 1.3rem;
+  font-size: 1rem;
 }
 
-.lightning-address {
-  margin-top: 1rem;
+.zap-amount {
+  font-size: 0.8rem;
+  opacity: 0.9;
 }
 
-.lightning-address code {
-  background: #f3e5f5;
-  padding: 0.5rem 1rem;
-  border-radius: 6px;
-  color: #6a1b9a;
-  font-weight: 500;
-}
-
+/* Compact status messages */
 .zap-status {
-  margin-top: 1rem;
-  padding: 1rem;
-  border-radius: 8px;
+  margin-top: 0.75rem;
+  padding: 0.5rem;
+  border-radius: 6px;
+  font-size: 0.8rem;
   text-align: center;
+  display: none;
 }
 
 .zap-status.success {
-  background: #e8f5e8;
-  color: #2e7d32;
-  border: 1px solid #4caf50;
+  background: rgba(16, 185, 129, 0.1);
+  color: #059669;
+  border: 1px solid rgba(16, 185, 129, 0.3);
+  display: block;
 }
 
 .zap-status.error {
-  background: #ffebee;
-  color: #c62828;
-  border: 1px solid #f44336;
+  background: rgba(239, 68, 68, 0.1);
+  color: #dc2626;
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  display: block;
 }
 
-.zap-status.loading {
-  background: #e3f2fd;
-  color: #1565c0;
-  border: 1px solid #2196f3;
+/* Dark mode adjustments */
+[data-md-color-scheme="slate"] .zap-interface {
+  background: var(--md-code-bg-color);
+  border-color: var(--md-default-fg-color--lightest);
 }
 
-.support-thanks {
-  background: linear-gradient(135deg, #fff3e0, #ffe0b2);
-  border-radius: 12px;
-  padding: 2rem;
-  text-align: center;
-  margin: 2rem 0;
-  border: 2px solid #ffcc02;
+[data-md-color-scheme="slate"] .custom-amount input,
+[data-md-color-scheme="slate"] .zap-message textarea {
+  background: var(--md-code-bg-color);
+  border-color: var(--md-default-fg-color--lightest);
 }
 
-.support-thanks h3 {
-  color: #ef6c00;
-  margin-bottom: 1rem;
+[data-md-color-scheme="slate"] .char-count {
+  background: var(--md-code-bg-color);
 }
 
-@media (max-width: 768px) {
-  .amount-buttons {
-    grid-template-columns: repeat(2, 1fr);
+/* Responsive design for mobile */
+@media (max-width: 480px) {
+  .zap-interface {
+    max-width: 100% !important;
+    margin: 1rem;
+    padding: 1rem;
   }
   
-  .zap-interface {
-    padding: 1rem;
+  .amount-buttons {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.5rem;
+  }
+  
+  .amount-btn {
+    padding: 0.6rem 0.4rem;
+    min-height: 60px;
+  }
+  
+  .lightning-icon {
+    font-size: 1.1rem;
+  }
+  
+  .amount-text {
+    font-size: 0.7rem;
+  }
+  
+  .usd-price {
+    font-size: 0.65rem;
   }
 }
 </style>
@@ -478,7 +379,9 @@ document.addEventListener('DOMContentLoaded', function() {
     throw new Error('Invoice generation not implemented - using fallback');
   }
   
-  // Set default selection
-  document.querySelector('[data-amount="500"]').click();
+  // Set default selection to first button (10k sats)
+  if (amountButtons.length > 0) {
+    amountButtons[0].click();
+  }
 });
 </script> 

@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Install Python dependencies
-pip install -r requirements.txt
+python3 -m pip install -r requirements.txt
 
 # Build the MkDocs site
-mkdocs build --strict 
+python3 -m mkdocs build --strict 

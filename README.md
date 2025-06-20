@@ -48,8 +48,4 @@ MIT License - see [LICENSE](LICENSE) for details.
 
 ---
 
-Built with ❤️ for the Nostr community
-<<<<<<< HEAD
-
-=======
 

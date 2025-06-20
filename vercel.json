@@ -1,16 +1,6 @@
 {
   "name": "learnnostr",
   "version": 2,
-  "framework": null,
-  "builds": [
-    {
-      "src": "mkdocs.yml",
-      "use": "@vercel/static-build",
-      "config": {
-        "distDir": "site"
-      }
-    }
-  ],
   "installCommand": "pip install -r requirements.txt",
   "buildCommand": "mkdocs build --strict",
   "outputDirectory": "site",

@@ -7,7 +7,7 @@ hide:
   - feedback
 ---
 
-# Why Learn Nostr?
+# Why LearnNostr?
 
 <div class="grid cards" markdown>
 

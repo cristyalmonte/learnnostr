@@ -1,7 +1,7 @@
 # yaml-language-server: $schema=https://squidfunk.github.io/mkdocs-material/schema.json
 
 # Project info
-site_name: Learn Nostr
+site_name: LearnNostr
 site_description: A comprehensive guide to understanding and building on the Nostr protocol
 site_author: LearnNostr Team
 site_url: https://learnnostr.com

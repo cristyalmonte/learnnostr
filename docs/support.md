@@ -3,9 +3,7 @@
 !!! tip "Help Keep This Resource Free"
     LearnNostr is a community-driven educational platform. Your support helps us maintain and expand this comprehensive Nostr learning resource for everyone.
 
-## ⚡ Support LearnNostr
-
-Donate to LearnNostr via Bitcoin Lightning:
+## ⚡ Donate to LearnNostr via Bitcoin Lightning:
 
 ```
 greenmiracle695447@getalby.com

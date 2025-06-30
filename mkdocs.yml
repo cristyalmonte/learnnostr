@@ -114,7 +114,16 @@ nav:
     - Wallet Setup: getting-started/wallet-setup.md
     - Nostr Tools: getting-started/nostr-tools.md
     - Relay Setup: getting-started/relay-setup.md
-  - Core Concepts: definitions.md
+  - Core Concepts:
+    - Clients: concepts/clients.md
+    - Events and Messages: concepts/events-and-messages.md
+    - Keys: concepts/keys.md
+    - NIPs: concepts/nips.md
+    - Nostr Fundamentals: concepts/nostr-fundamentals.md
+    - Relays: concepts/relays.md
+    - Zaps: concepts/zaps.md
   - Tutorials:
     - Build a Simple Client: tutorials/simple-client.md
+    - Relay Communication: tutorials/relay-communication.md
+    - Understanding Events: tutorials/understanding-events.md
   - Support: support.md

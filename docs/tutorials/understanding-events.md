@@ -480,9 +480,6 @@ graph LR
 Now that you understand events, you can:
 
 - Learn about [relay communication](./relay-communication.md)
-- Explore [advanced tagging strategies](./advanced-tags.md)
-- Build a [custom event type](./custom-event-types.md)
-- Study [event deletion and updates](./event-management.md)
 
 ---
 

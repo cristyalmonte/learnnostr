@@ -330,7 +330,7 @@ hr {
 • Protocol specifications (NIPs)  
 • Development tools and libraries
 
-[:octicons-arrow-right-24: Browse Definitions](/support/){ .md-button }
+[:octicons-arrow-right-24: Browse Definitions](/definitions/){ .md-button }
 
 </div>
 

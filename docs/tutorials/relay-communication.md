@@ -113,18 +113,12 @@ Let's start with a basic relay connection:
 
 Now you can explore:
 
-- [Private messaging and encryption](./private-messaging.md)
-- [Building a Nostr bot](./nostr-bot.md)
-- [Advanced event types](./advanced-events.md)
-- [Relay development](./building-relay.md)
+- [Understanding Events](./understanding-events.md)
 
 ---
 
 <div class="tutorial-navigation">
   <a href="./understanding-events.md" class="btn btn-outline">
-    ← Previous: Understanding Events
-  </a>
-  <a href="./private-messaging.md" class="btn btn-primary">
-    Next: Private Messaging →
+     Previous: Understanding Events
   </a>
 </div>

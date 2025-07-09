@@ -80,6 +80,8 @@ plugins:
           build: true
           site_name: "LearnNostr"
           site_description: "Una guía completa para entender y construir sobre el protocolo Nostr"
+          extra:
+            announcement: 💜 ¡Únete a nuestra comunidad de Discord para aprender Nostr juntos, hacer preguntas y conectar con otros desarrolladores! <a href="https://discord.gg/BtkVKRkJ">Únete a Discord</a>
           nav_translations:
             Home: Inicio
             Getting Started: Comenzar
@@ -115,10 +117,10 @@ extra:
       name: GitHub
   alternate:
     - name: English
-      link: ./
+      link: /
       lang: en
     - name: Español
-      link: ./es/
+      link: /es/
       lang: es
 
 extra_css:

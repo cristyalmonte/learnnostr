@@ -18,7 +18,7 @@
         <link rel="prev" href="../nostr-tools/">
       
       
-        <link rel="next" href="../../definitions/">
+        <link rel="next" href="../../concepts/clients/">
       
       
       <link rel="icon" href="../../assets/favicon.ico">
@@ -26,7 +26,7 @@
     
     
       
-        <title>Relay Setup - Learn Nostr</title>
+        <title>Relay Setup - LearnNostr</title>
       
     
     
@@ -80,7 +80,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#setting-up-a-nostr-relay" class="md-skip">
+        <a href="#relay-infrastructure-deployment" class="md-skip">
           Skip to content
         </a>
       
@@ -96,7 +96,7 @@
 
 <header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../.." title="Learn Nostr" class="md-header__button md-logo" aria-label="Learn Nostr" data-md-component="logo">
+    <a href="../.." title="LearnNostr" class="md-header__button md-logo" aria-label="LearnNostr" data-md-component="logo">
       
   <img src="../../assets/logo.svg" alt="logo">
 
@@ -109,7 +109,7 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            Learn Nostr
+            LearnNostr
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
@@ -151,6 +151,32 @@
     
       <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
     
+    
+      <div class="md-header__option">
+  <div class="md-select">
+    
+    <button class="md-header__button md-icon" aria-label="Select language">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.5 17.5 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2zm-2.62 7 1.62-4.33L19.12 17z"/></svg>
+    </button>
+    <div class="md-select__inner">
+      <ul class="md-select__list">
+        
+          <li class="md-select__item">
+            <a href="./" hreflang="en" class="md-select__link">
+              English
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="../../es/getting-started/relay-setup/" hreflang="es" class="md-select__link">
+              Español
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
     
     
       
@@ -276,17 +302,18 @@
   
   
   
-    <li class="md-tabs__item">
-      <a href="../../definitions/" class="md-tabs__link">
-        
-  
-  
     
+    
+      <li class="md-tabs__item">
+        <a href="../../concepts/clients/" class="md-tabs__link">
+          
+  
   
   Core Concepts
 
-      </a>
-    </li>
+        </a>
+      </li>
+    
   
 
       
@@ -357,12 +384,12 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="Learn Nostr" class="md-nav__button md-logo" aria-label="Learn Nostr" data-md-component="logo">
+    <a href="../.." title="LearnNostr" class="md-nav__button md-logo" aria-label="LearnNostr" data-md-component="logo">
       
   <img src="../../assets/logo.svg" alt="logo">
 
     </a>
-    Learn Nostr
+    LearnNostr
   </label>
   
     <div class="md-nav__source">
@@ -584,55 +611,154 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#what-youll-learn" class="md-nav__link">
+  <a href="#relay-infrastructure-overview" class="md-nav__link">
     <span class="md-ellipsis">
-      What You'll Learn
+      Relay Infrastructure Overview
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#prerequisites" class="md-nav__link">
+  <a href="#deployment-architecture-considerations" class="md-nav__link">
     <span class="md-ellipsis">
-      Prerequisites
+      Deployment Architecture Considerations
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#popular-relay-implementations" class="md-nav__link">
-    <span class="md-ellipsis">
-      Popular Relay Implementations
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Popular Relay Implementations">
+    <nav class="md-nav" aria-label="Deployment Architecture Considerations">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#1-strfry-recommended-for-beginners" class="md-nav__link">
+  <a href="#system-requirements" class="md-nav__link">
     <span class="md-ellipsis">
-      1. Strfry (Recommended for Beginners)
+      System Requirements
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="System Requirements">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#minimum-production-specifications" class="md-nav__link">
+    <span class="md-ellipsis">
+      Minimum Production Specifications
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#2-nostream-nodejs" class="md-nav__link">
+  <a href="#scaling-considerations" class="md-nav__link">
     <span class="md-ellipsis">
-      2. Nostream (Node.js)
+      Scaling Considerations
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#software-architecture-options" class="md-nav__link">
+    <span class="md-ellipsis">
+      Software Architecture Options
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Software Architecture Options">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#strfry-c-implementation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Strfry (C++ Implementation)
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#3-relay-pool-go" class="md-nav__link">
+  <a href="#nostream-typescriptnodejs" class="md-nav__link">
     <span class="md-ellipsis">
-      3. Relay Pool (Go)
+      Nostream (TypeScript/Node.js)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#production-deployment-strfry-implementation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Production Deployment: Strfry Implementation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Production Deployment: Strfry Implementation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#system-preparation" class="md-nav__link">
+    <span class="md-ellipsis">
+      System Preparation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#strfry-compilation-and-installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Strfry Compilation and Installation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuration-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuration Management
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reverse-proxy-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Reverse Proxy Configuration
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ssl-certificate-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      SSL Certificate Management
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#system-service-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      System Service Configuration
     </span>
   </a>
   
@@ -644,169 +770,19 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#basic-configuration" class="md-nav__link">
+  <a href="#monitoring-and-maintenance" class="md-nav__link">
     <span class="md-ellipsis">
-      Basic Configuration
+      Monitoring and Maintenance
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Basic Configuration">
+    <nav class="md-nav" aria-label="Monitoring and Maintenance">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#strfry-configuration" class="md-nav__link">
+  <a href="#performance-monitoring" class="md-nav__link">
     <span class="md-ellipsis">
-      Strfry Configuration
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#running-your-relay" class="md-nav__link">
-    <span class="md-ellipsis">
-      Running Your Relay
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#setting-up-reverse-proxy-nginx" class="md-nav__link">
-    <span class="md-ellipsis">
-      Setting Up Reverse Proxy (Nginx)
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#ssltls-setup" class="md-nav__link">
-    <span class="md-ellipsis">
-      SSL/TLS Setup
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#relay-policies-and-moderation" class="md-nav__link">
-    <span class="md-ellipsis">
-      Relay Policies and Moderation
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Relay Policies and Moderation">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#content-filtering" class="md-nav__link">
-    <span class="md-ellipsis">
-      Content Filtering
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#rate-limiting" class="md-nav__link">
-    <span class="md-ellipsis">
-      Rate Limiting
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#monitoring-your-relay" class="md-nav__link">
-    <span class="md-ellipsis">
-      Monitoring Your Relay
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Monitoring Your Relay">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#basic-monitoring" class="md-nav__link">
-    <span class="md-ellipsis">
-      Basic Monitoring
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#advanced-monitoring" class="md-nav__link">
-    <span class="md-ellipsis">
-      Advanced Monitoring
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#relay-discovery" class="md-nav__link">
-    <span class="md-ellipsis">
-      Relay Discovery
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Relay Discovery">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#nip-11-relay-information" class="md-nav__link">
-    <span class="md-ellipsis">
-      NIP-11 Relay Information
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#adding-to-relay-lists" class="md-nav__link">
-    <span class="md-ellipsis">
-      Adding to Relay Lists
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#maintenance-and-updates" class="md-nav__link">
-    <span class="md-ellipsis">
-      Maintenance and Updates
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Maintenance and Updates">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#regular-tasks" class="md-nav__link">
-    <span class="md-ellipsis">
-      Regular Tasks
+      Performance Monitoring
     </span>
   </a>
   
@@ -821,34 +797,109 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#security-hardening" class="md-nav__link">
+    <span class="md-ellipsis">
+      Security Hardening
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#troubleshooting" class="md-nav__link">
+  <a href="#practical-exercise-relay-deployment-laboratory" class="md-nav__link">
     <span class="md-ellipsis">
-      Troubleshooting
+      Practical Exercise: Relay Deployment Laboratory
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Troubleshooting">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scaling-and-optimization" class="md-nav__link">
+    <span class="md-ellipsis">
+      Scaling and Optimization
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Scaling and Optimization">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#common-issues" class="md-nav__link">
+  <a href="#performance-optimization" class="md-nav__link">
     <span class="md-ellipsis">
-      Common Issues
+      Performance Optimization
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#debug-mode" class="md-nav__link">
+  <a href="#horizontal-scaling-strategies" class="md-nav__link">
     <span class="md-ellipsis">
-      Debug Mode
+      Horizontal Scaling Strategies
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#troubleshooting-and-diagnostics" class="md-nav__link">
+    <span class="md-ellipsis">
+      Troubleshooting and Diagnostics
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Troubleshooting and Diagnostics">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#common-issues-and-resolution" class="md-nav__link">
+    <span class="md-ellipsis">
+      Common Issues and Resolution
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#advanced-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Advanced Configuration
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Advanced Configuration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#custom-event-filtering" class="md-nav__link">
+    <span class="md-ellipsis">
+      Custom Event Filtering
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#analytics-and-reporting" class="md-nav__link">
+    <span class="md-ellipsis">
+      Analytics and Reporting
     </span>
   </a>
   
@@ -869,9 +920,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#resources" class="md-nav__link">
+  <a href="#infrastructure-mastery-assessment" class="md-nav__link">
     <span class="md-ellipsis">
-      Resources
+      Infrastructure Mastery Assessment
     </span>
   </a>
   
@@ -899,9 +950,27 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../../definitions/" class="md-nav__link">
+    
+    
+    
+    
+      
+      
         
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
   
   
   <span class="md-ellipsis">
@@ -910,7 +979,180 @@
   </span>
   
 
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Core Concepts
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../concepts/clients/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Clients
+    
+  </span>
+  
+
       </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../concepts/events-and-messages/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Events and Messages
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../concepts/keys/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Keys
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../concepts/nips/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    NIPs
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../concepts/nostr-fundamentals/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Nostr Fundamentals
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../concepts/relays/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Relays
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../concepts/zaps/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Zaps
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -983,6 +1225,52 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorials/relay-communication/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Relay Communication
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorials/understanding-events/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Understanding Events
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1039,55 +1327,154 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#what-youll-learn" class="md-nav__link">
+  <a href="#relay-infrastructure-overview" class="md-nav__link">
     <span class="md-ellipsis">
-      What You'll Learn
+      Relay Infrastructure Overview
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#prerequisites" class="md-nav__link">
+  <a href="#deployment-architecture-considerations" class="md-nav__link">
     <span class="md-ellipsis">
-      Prerequisites
+      Deployment Architecture Considerations
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#popular-relay-implementations" class="md-nav__link">
-    <span class="md-ellipsis">
-      Popular Relay Implementations
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Popular Relay Implementations">
+    <nav class="md-nav" aria-label="Deployment Architecture Considerations">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#1-strfry-recommended-for-beginners" class="md-nav__link">
+  <a href="#system-requirements" class="md-nav__link">
     <span class="md-ellipsis">
-      1. Strfry (Recommended for Beginners)
+      System Requirements
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="System Requirements">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#minimum-production-specifications" class="md-nav__link">
+    <span class="md-ellipsis">
+      Minimum Production Specifications
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#2-nostream-nodejs" class="md-nav__link">
+  <a href="#scaling-considerations" class="md-nav__link">
     <span class="md-ellipsis">
-      2. Nostream (Node.js)
+      Scaling Considerations
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#software-architecture-options" class="md-nav__link">
+    <span class="md-ellipsis">
+      Software Architecture Options
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Software Architecture Options">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#strfry-c-implementation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Strfry (C++ Implementation)
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#3-relay-pool-go" class="md-nav__link">
+  <a href="#nostream-typescriptnodejs" class="md-nav__link">
     <span class="md-ellipsis">
-      3. Relay Pool (Go)
+      Nostream (TypeScript/Node.js)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#production-deployment-strfry-implementation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Production Deployment: Strfry Implementation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Production Deployment: Strfry Implementation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#system-preparation" class="md-nav__link">
+    <span class="md-ellipsis">
+      System Preparation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#strfry-compilation-and-installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Strfry Compilation and Installation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuration-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuration Management
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reverse-proxy-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Reverse Proxy Configuration
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ssl-certificate-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      SSL Certificate Management
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#system-service-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      System Service Configuration
     </span>
   </a>
   
@@ -1099,169 +1486,19 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#basic-configuration" class="md-nav__link">
+  <a href="#monitoring-and-maintenance" class="md-nav__link">
     <span class="md-ellipsis">
-      Basic Configuration
+      Monitoring and Maintenance
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Basic Configuration">
+    <nav class="md-nav" aria-label="Monitoring and Maintenance">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#strfry-configuration" class="md-nav__link">
+  <a href="#performance-monitoring" class="md-nav__link">
     <span class="md-ellipsis">
-      Strfry Configuration
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#running-your-relay" class="md-nav__link">
-    <span class="md-ellipsis">
-      Running Your Relay
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#setting-up-reverse-proxy-nginx" class="md-nav__link">
-    <span class="md-ellipsis">
-      Setting Up Reverse Proxy (Nginx)
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#ssltls-setup" class="md-nav__link">
-    <span class="md-ellipsis">
-      SSL/TLS Setup
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#relay-policies-and-moderation" class="md-nav__link">
-    <span class="md-ellipsis">
-      Relay Policies and Moderation
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Relay Policies and Moderation">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#content-filtering" class="md-nav__link">
-    <span class="md-ellipsis">
-      Content Filtering
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#rate-limiting" class="md-nav__link">
-    <span class="md-ellipsis">
-      Rate Limiting
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#monitoring-your-relay" class="md-nav__link">
-    <span class="md-ellipsis">
-      Monitoring Your Relay
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Monitoring Your Relay">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#basic-monitoring" class="md-nav__link">
-    <span class="md-ellipsis">
-      Basic Monitoring
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#advanced-monitoring" class="md-nav__link">
-    <span class="md-ellipsis">
-      Advanced Monitoring
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#relay-discovery" class="md-nav__link">
-    <span class="md-ellipsis">
-      Relay Discovery
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Relay Discovery">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#nip-11-relay-information" class="md-nav__link">
-    <span class="md-ellipsis">
-      NIP-11 Relay Information
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#adding-to-relay-lists" class="md-nav__link">
-    <span class="md-ellipsis">
-      Adding to Relay Lists
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#maintenance-and-updates" class="md-nav__link">
-    <span class="md-ellipsis">
-      Maintenance and Updates
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Maintenance and Updates">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#regular-tasks" class="md-nav__link">
-    <span class="md-ellipsis">
-      Regular Tasks
+      Performance Monitoring
     </span>
   </a>
   
@@ -1276,34 +1513,109 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#security-hardening" class="md-nav__link">
+    <span class="md-ellipsis">
+      Security Hardening
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#troubleshooting" class="md-nav__link">
+  <a href="#practical-exercise-relay-deployment-laboratory" class="md-nav__link">
     <span class="md-ellipsis">
-      Troubleshooting
+      Practical Exercise: Relay Deployment Laboratory
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Troubleshooting">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scaling-and-optimization" class="md-nav__link">
+    <span class="md-ellipsis">
+      Scaling and Optimization
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Scaling and Optimization">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#common-issues" class="md-nav__link">
+  <a href="#performance-optimization" class="md-nav__link">
     <span class="md-ellipsis">
-      Common Issues
+      Performance Optimization
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#debug-mode" class="md-nav__link">
+  <a href="#horizontal-scaling-strategies" class="md-nav__link">
     <span class="md-ellipsis">
-      Debug Mode
+      Horizontal Scaling Strategies
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#troubleshooting-and-diagnostics" class="md-nav__link">
+    <span class="md-ellipsis">
+      Troubleshooting and Diagnostics
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Troubleshooting and Diagnostics">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#common-issues-and-resolution" class="md-nav__link">
+    <span class="md-ellipsis">
+      Common Issues and Resolution
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#advanced-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Advanced Configuration
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Advanced Configuration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#custom-event-filtering" class="md-nav__link">
+    <span class="md-ellipsis">
+      Custom Event Filtering
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#analytics-and-reporting" class="md-nav__link">
+    <span class="md-ellipsis">
+      Analytics and Reporting
     </span>
   </a>
   
@@ -1324,9 +1636,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#resources" class="md-nav__link">
+  <a href="#infrastructure-mastery-assessment" class="md-nav__link">
     <span class="md-ellipsis">
-      Resources
+      Infrastructure Mastery Assessment
     </span>
   </a>
   
@@ -1351,316 +1663,542 @@
   
 
 
-<h1 id="setting-up-a-nostr-relay">Setting Up a Nostr Relay</h1>
-<p>A Nostr relay is a server that stores and forwards Nostr events. Running your own relay gives you control over your data and helps strengthen the Nostr network's decentralization.</p>
-<h2 id="what-youll-learn">What You'll Learn</h2>
+<h1 id="relay-infrastructure-deployment">Relay Infrastructure Deployment</h1>
+<div class="admonition info">
+<p class="admonition-title">Learning Objectives</p>
+<p>By the end of this lesson, you'll understand:</p>
 <ul>
-<li>How to choose the right relay software</li>
-<li>Setting up a basic relay</li>
-<li>Configuring relay policies</li>
-<li>Monitoring and maintenance</li>
+<li>Relay architecture and operational requirements</li>
+<li>Installation and configuration procedures for production deployment</li>
+<li>Security hardening and performance optimization techniques</li>
+<li>Monitoring, maintenance, and scaling strategies</li>
 </ul>
-<h2 id="prerequisites">Prerequisites</h2>
-<ul>
-<li>Basic command line knowledge</li>
-<li>A server or VPS (Virtual Private Server)</li>
-<li>Domain name (optional but recommended)</li>
-</ul>
-<h2 id="popular-relay-implementations">Popular Relay Implementations</h2>
-<h3 id="1-strfry-recommended-for-beginners">1. Strfry (Recommended for Beginners)</h3>
-<p><strong>Strfry</strong> is a high-performance relay written in C++ that's easy to set up and configure.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1"># Install dependencies (Ubuntu/Debian)</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>sudo<span class="w"> </span>apt<span class="w"> </span>update
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>git<span class="w"> </span>build-essential<span class="w"> </span>libtool<span class="w"> </span>autotools-dev<span class="w"> </span>automake<span class="w"> </span>pkg-config<span class="w"> </span>libssl-dev<span class="w"> </span>libevent-dev<span class="w"> </span>bsdmainutils<span class="w"> </span>python3
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="c1"># Clone and build strfry</span>
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/hoytech/strfry.git
-<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="nb">cd</span><span class="w"> </span>strfry
-<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>git<span class="w"> </span>submodule<span class="w"> </span>update<span class="w"> </span>--init
-<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>make<span class="w"> </span>setup-golpe
-<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>make<span class="w"> </span>-j4
-</code></pre></div>
-<h3 id="2-nostream-nodejs">2. Nostream (Node.js)</h3>
-<p><strong>Nostream</strong> is a TypeScript/Node.js relay that's feature-rich and actively maintained.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># Install Node.js and npm</span>
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>curl<span class="w"> </span>-fsSL<span class="w"> </span>https://deb.nodesource.com/setup_18.x<span class="w"> </span><span class="p">|</span><span class="w"> </span>sudo<span class="w"> </span>-E<span class="w"> </span>bash<span class="w"> </span>-
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>nodejs
-<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>
-<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="c1"># Clone and setup nostream</span>
-<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/Cameri/nostream.git
-<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="nb">cd</span><span class="w"> </span>nostream
-<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>npm<span class="w"> </span>install
-</code></pre></div>
-<h3 id="3-relay-pool-go">3. Relay Pool (Go)</h3>
-<p><strong>Relay Pool</strong> is a lightweight Go implementation that's simple to deploy.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1"># Install Go</span>
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>wget<span class="w"> </span>https://go.dev/dl/go1.21.0.linux-amd64.tar.gz
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>sudo<span class="w"> </span>tar<span class="w"> </span>-C<span class="w"> </span>/usr/local<span class="w"> </span>-xzf<span class="w"> </span>go1.21.0.linux-amd64.tar.gz
-<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="nb">export</span><span class="w"> </span><span class="nv">PATH</span><span class="o">=</span><span class="nv">$PATH</span>:/usr/local/go/bin
-<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>
-<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="c1"># Clone and build</span>
-<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/fiatjaf/relay-pool.git
-<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="nb">cd</span><span class="w"> </span>relay-pool
-<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>go<span class="w"> </span>build
-</code></pre></div>
-<h2 id="basic-configuration">Basic Configuration</h2>
-<h3 id="strfry-configuration">Strfry Configuration</h3>
-<p>Create a configuration file <code>strfry.conf</code>:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c1">##</span>
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="c1">## Default strfry config</span>
-<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="c1">##</span>
-<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>
-<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="c1"># Directory that contains the strfry LMDB database (restart required)</span>
-<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="n">db</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;./strfry-db/&quot;</span>
-<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>
-<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="n">dbParams</span><span class="w"> </span><span class="err">{</span>
-<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="w">    </span><span class="c1"># Maximum number of threads/processes that can simultaneously have LMDB transactions open (restart required)</span>
-<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="w">    </span><span class="n">maxreaders</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">256</span>
-<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>
-<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a><span class="w">    </span><span class="c1"># Size of mmap to use when loading LMDB (restart required)</span>
-<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a><span class="w">    </span><span class="n">mapsize</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="n">TB</span>
-<a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a><span class="err">}</span>
-<a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a>
-<a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a><span class="n">relay</span><span class="w"> </span><span class="err">{</span>
-<a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a><span class="w">    </span><span class="c1"># Interface to listen on. Use 0.0.0.0 to listen on all interfaces (restart required)</span>
-<a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a><span class="w">    </span><span class="n">bind</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;0.0.0.0&quot;</span>
-<a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a>
-<a id="__codelineno-3-20" name="__codelineno-3-20" href="#__codelineno-3-20"></a><span class="w">    </span><span class="c1"># Port to open for the nostr websocket protocol (restart required)</span>
-<a id="__codelineno-3-21" name="__codelineno-3-21" href="#__codelineno-3-21"></a><span class="w">    </span><span class="n">port</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">7777</span>
-<a id="__codelineno-3-22" name="__codelineno-3-22" href="#__codelineno-3-22"></a>
-<a id="__codelineno-3-23" name="__codelineno-3-23" href="#__codelineno-3-23"></a><span class="w">    </span><span class="c1"># Set OS-limit on maximum number of open files/sockets (if 0, don&#39;t attempt to set) (restart required)</span>
-<a id="__codelineno-3-24" name="__codelineno-3-24" href="#__codelineno-3-24"></a><span class="w">    </span><span class="n">nofiles</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1000000</span>
-<a id="__codelineno-3-25" name="__codelineno-3-25" href="#__codelineno-3-25"></a>
-<a id="__codelineno-3-26" name="__codelineno-3-26" href="#__codelineno-3-26"></a><span class="w">    </span><span class="c1"># HTTP header that contains the client&#39;s real IP, before reverse proxying (ie x-real-ip) (MUST be all lower-case)</span>
-<a id="__codelineno-3-27" name="__codelineno-3-27" href="#__codelineno-3-27"></a><span class="w">    </span><span class="n">realIpHeader</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
-<a id="__codelineno-3-28" name="__codelineno-3-28" href="#__codelineno-3-28"></a>
-<a id="__codelineno-3-29" name="__codelineno-3-29" href="#__codelineno-3-29"></a><span class="w">    </span><span class="n">info</span><span class="w"> </span><span class="err">{</span>
-<a id="__codelineno-3-30" name="__codelineno-3-30" href="#__codelineno-3-30"></a><span class="w">        </span><span class="c1"># NIP-11: Name of this server. Short/descriptive (&lt; 30 characters)</span>
-<a id="__codelineno-3-31" name="__codelineno-3-31" href="#__codelineno-3-31"></a><span class="w">        </span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;My Nostr Relay&quot;</span>
-<a id="__codelineno-3-32" name="__codelineno-3-32" href="#__codelineno-3-32"></a>
-<a id="__codelineno-3-33" name="__codelineno-3-33" href="#__codelineno-3-33"></a><span class="w">        </span><span class="c1"># NIP-11: Detailed plain-text description of relay</span>
-<a id="__codelineno-3-34" name="__codelineno-3-34" href="#__codelineno-3-34"></a><span class="w">        </span><span class="n">description</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;A personal Nostr relay&quot;</span>
-<a id="__codelineno-3-35" name="__codelineno-3-35" href="#__codelineno-3-35"></a>
-<a id="__codelineno-3-36" name="__codelineno-3-36" href="#__codelineno-3-36"></a><span class="w">        </span><span class="c1"># NIP-11: Administrative nostr pubkey, for contact purposes</span>
-<a id="__codelineno-3-37" name="__codelineno-3-37" href="#__codelineno-3-37"></a><span class="w">        </span><span class="n">pubkey</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;your-pubkey-here&quot;</span>
-<a id="__codelineno-3-38" name="__codelineno-3-38" href="#__codelineno-3-38"></a>
-<a id="__codelineno-3-39" name="__codelineno-3-39" href="#__codelineno-3-39"></a><span class="w">        </span><span class="c1"># NIP-11: Alternative administrative contact (email, website, etc)</span>
-<a id="__codelineno-3-40" name="__codelineno-3-40" href="#__codelineno-3-40"></a><span class="w">        </span><span class="n">contact</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;admin@yourrelay.com&quot;</span>
-<a id="__codelineno-3-41" name="__codelineno-3-41" href="#__codelineno-3-41"></a><span class="w">    </span><span class="err">}</span>
-<a id="__codelineno-3-42" name="__codelineno-3-42" href="#__codelineno-3-42"></a>
-<a id="__codelineno-3-43" name="__codelineno-3-43" href="#__codelineno-3-43"></a><span class="w">    </span><span class="c1"># Maximum accepted incoming websocket frame size (should be larger than max event and yesstr msg size)</span>
-<a id="__codelineno-3-44" name="__codelineno-3-44" href="#__codelineno-3-44"></a><span class="w">    </span><span class="n">maxWebsocketPayloadSize</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">131072</span>
-<a id="__codelineno-3-45" name="__codelineno-3-45" href="#__codelineno-3-45"></a>
-<a id="__codelineno-3-46" name="__codelineno-3-46" href="#__codelineno-3-46"></a><span class="w">    </span><span class="c1"># Websocket-level PING message frequency (should be less than any reverse proxy idle timeouts)</span>
-<a id="__codelineno-3-47" name="__codelineno-3-47" href="#__codelineno-3-47"></a><span class="w">    </span><span class="n">autoPingSeconds</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">55</span>
-<a id="__codelineno-3-48" name="__codelineno-3-48" href="#__codelineno-3-48"></a>
-<a id="__codelineno-3-49" name="__codelineno-3-49" href="#__codelineno-3-49"></a><span class="w">    </span><span class="c1"># If TCP keep-alive should be enabled (detect dropped connections to upstream reverse proxy)</span>
-<a id="__codelineno-3-50" name="__codelineno-3-50" href="#__codelineno-3-50"></a><span class="w">    </span><span class="n">enableTcpKeepalive</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">false</span>
-<a id="__codelineno-3-51" name="__codelineno-3-51" href="#__codelineno-3-51"></a>
-<a id="__codelineno-3-52" name="__codelineno-3-52" href="#__codelineno-3-52"></a><span class="w">    </span><span class="c1"># How much uninterrupted CPU time a REQ query should get during its DB scan</span>
-<a id="__codelineno-3-53" name="__codelineno-3-53" href="#__codelineno-3-53"></a><span class="w">    </span><span class="n">queryTimesliceBudgetMicroseconds</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10000</span>
-<a id="__codelineno-3-54" name="__codelineno-3-54" href="#__codelineno-3-54"></a>
-<a id="__codelineno-3-55" name="__codelineno-3-55" href="#__codelineno-3-55"></a><span class="w">    </span><span class="c1"># Maximum records that can be returned per filter</span>
-<a id="__codelineno-3-56" name="__codelineno-3-56" href="#__codelineno-3-56"></a><span class="w">    </span><span class="n">maxFilterLimit</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">500</span>
-<a id="__codelineno-3-57" name="__codelineno-3-57" href="#__codelineno-3-57"></a>
-<a id="__codelineno-3-58" name="__codelineno-3-58" href="#__codelineno-3-58"></a><span class="w">    </span><span class="c1"># Maximum number of subscriptions (concurrent REQs) a connection can have open at any time</span>
-<a id="__codelineno-3-59" name="__codelineno-3-59" href="#__codelineno-3-59"></a><span class="w">    </span><span class="n">maxSubsPerConnection</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">20</span>
-<a id="__codelineno-3-60" name="__codelineno-3-60" href="#__codelineno-3-60"></a>
-<a id="__codelineno-3-61" name="__codelineno-3-61" href="#__codelineno-3-61"></a><span class="w">    </span><span class="n">writePolicy</span><span class="w"> </span><span class="err">{</span>
-<a id="__codelineno-3-62" name="__codelineno-3-62" href="#__codelineno-3-62"></a><span class="w">        </span><span class="c1"># If non-empty, path to an executable script that implements the writePolicy plugin logic</span>
-<a id="__codelineno-3-63" name="__codelineno-3-63" href="#__codelineno-3-63"></a><span class="w">        </span><span class="n">plugin</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
-<a id="__codelineno-3-64" name="__codelineno-3-64" href="#__codelineno-3-64"></a><span class="w">    </span><span class="err">}</span>
-<a id="__codelineno-3-65" name="__codelineno-3-65" href="#__codelineno-3-65"></a>
-<a id="__codelineno-3-66" name="__codelineno-3-66" href="#__codelineno-3-66"></a><span class="w">    </span><span class="n">compression</span><span class="w"> </span><span class="err">{</span>
-<a id="__codelineno-3-67" name="__codelineno-3-67" href="#__codelineno-3-67"></a><span class="w">        </span><span class="c1"># Use permessage-deflate compression if supported by client. Reduces bandwidth, but uses more CPU (restart required)</span>
-<a id="__codelineno-3-68" name="__codelineno-3-68" href="#__codelineno-3-68"></a><span class="w">        </span><span class="n">enabled</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span>
-<a id="__codelineno-3-69" name="__codelineno-3-69" href="#__codelineno-3-69"></a>
-<a id="__codelineno-3-70" name="__codelineno-3-70" href="#__codelineno-3-70"></a><span class="w">        </span><span class="c1"># Maintain a sliding window buffer for each connection. Improves compression, but uses more memory (restart required)</span>
-<a id="__codelineno-3-71" name="__codelineno-3-71" href="#__codelineno-3-71"></a><span class="w">        </span><span class="n">slidingWindow</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span>
-<a id="__codelineno-3-72" name="__codelineno-3-72" href="#__codelineno-3-72"></a><span class="w">    </span><span class="err">}</span>
-<a id="__codelineno-3-73" name="__codelineno-3-73" href="#__codelineno-3-73"></a><span class="err">}</span>
-<a id="__codelineno-3-74" name="__codelineno-3-74" href="#__codelineno-3-74"></a>
-<a id="__codelineno-3-75" name="__codelineno-3-75" href="#__codelineno-3-75"></a><span class="n">events</span><span class="w"> </span><span class="err">{</span>
-<a id="__codelineno-3-76" name="__codelineno-3-76" href="#__codelineno-3-76"></a><span class="w">    </span><span class="c1"># Maximum size of normalised JSON, in bytes</span>
-<a id="__codelineno-3-77" name="__codelineno-3-77" href="#__codelineno-3-77"></a><span class="w">    </span><span class="n">maxEventSize</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">65536</span>
-<a id="__codelineno-3-78" name="__codelineno-3-78" href="#__codelineno-3-78"></a>
-<a id="__codelineno-3-79" name="__codelineno-3-79" href="#__codelineno-3-79"></a><span class="w">    </span><span class="c1"># Events newer than this will be rejected</span>
-<a id="__codelineno-3-80" name="__codelineno-3-80" href="#__codelineno-3-80"></a><span class="w">    </span><span class="n">rejectEventsNewerThanSeconds</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">900</span>
-<a id="__codelineno-3-81" name="__codelineno-3-81" href="#__codelineno-3-81"></a>
-<a id="__codelineno-3-82" name="__codelineno-3-82" href="#__codelineno-3-82"></a><span class="w">    </span><span class="c1"># Events older than this will be rejected</span>
-<a id="__codelineno-3-83" name="__codelineno-3-83" href="#__codelineno-3-83"></a><span class="w">    </span><span class="n">rejectEventsOlderThanSeconds</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">94608000</span>
-<a id="__codelineno-3-84" name="__codelineno-3-84" href="#__codelineno-3-84"></a>
-<a id="__codelineno-3-85" name="__codelineno-3-85" href="#__codelineno-3-85"></a><span class="w">    </span><span class="c1"># Ephemeral events older than this will be rejected</span>
-<a id="__codelineno-3-86" name="__codelineno-3-86" href="#__codelineno-3-86"></a><span class="w">    </span><span class="n">rejectEphemeralEventsOlderThanSeconds</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">60</span>
-<a id="__codelineno-3-87" name="__codelineno-3-87" href="#__codelineno-3-87"></a>
-<a id="__codelineno-3-88" name="__codelineno-3-88" href="#__codelineno-3-88"></a><span class="w">    </span><span class="c1"># Ephemeral events newer than this will be rejected</span>
-<a id="__codelineno-3-89" name="__codelineno-3-89" href="#__codelineno-3-89"></a><span class="w">    </span><span class="n">rejectEphemeralEventsNewerThanSeconds</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">60</span>
-<a id="__codelineno-3-90" name="__codelineno-3-90" href="#__codelineno-3-90"></a>
-<a id="__codelineno-3-91" name="__codelineno-3-91" href="#__codelineno-3-91"></a><span class="w">    </span><span class="c1"># Maximum number of tags allowed</span>
-<a id="__codelineno-3-92" name="__codelineno-3-92" href="#__codelineno-3-92"></a><span class="w">    </span><span class="n">maxNumTags</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2000</span>
-<a id="__codelineno-3-93" name="__codelineno-3-93" href="#__codelineno-3-93"></a>
-<a id="__codelineno-3-94" name="__codelineno-3-94" href="#__codelineno-3-94"></a><span class="w">    </span><span class="c1"># Maximum size for tag values</span>
-<a id="__codelineno-3-95" name="__codelineno-3-95" href="#__codelineno-3-95"></a><span class="w">    </span><span class="n">maxTagValSize</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1024</span>
-<a id="__codelineno-3-96" name="__codelineno-3-96" href="#__codelineno-3-96"></a><span class="err">}</span>
-</code></pre></div>
-<h3 id="running-your-relay">Running Your Relay</h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1"># Start strfry</span>
-<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>./strfry<span class="w"> </span>relay
-<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>
-<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="c1"># Or run in background</span>
-<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>nohup<span class="w"> </span>./strfry<span class="w"> </span>relay<span class="w"> </span>&gt;<span class="w"> </span>relay.log<span class="w"> </span><span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span><span class="w"> </span><span class="p">&amp;</span>
-</code></pre></div>
-<h2 id="setting-up-reverse-proxy-nginx">Setting Up Reverse Proxy (Nginx)</h2>
-<p>For production deployment, use a reverse proxy like Nginx:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="k">server</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">    </span><span class="kn">listen</span><span class="w"> </span><span class="mi">80</span><span class="p">;</span>
-<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">    </span><span class="kn">server_name</span><span class="w"> </span><span class="s">your-relay-domain.com</span><span class="p">;</span>
-<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>
-<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="w">    </span><span class="kn">location</span><span class="w"> </span><span class="s">/</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="w">        </span><span class="kn">proxy_pass</span><span class="w"> </span><span class="s">http://127.0.0.1:7777</span><span class="p">;</span>
-<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="w">        </span><span class="kn">proxy_http_version</span><span class="w"> </span><span class="mi">1</span><span class="s">.1</span><span class="p">;</span>
-<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="w">        </span><span class="kn">proxy_set_header</span><span class="w"> </span><span class="s">Upgrade</span><span class="w"> </span><span class="nv">$http_upgrade</span><span class="p">;</span>
-<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="w">        </span><span class="kn">proxy_set_header</span><span class="w"> </span><span class="s">Connection</span><span class="w"> </span><span class="s">&quot;upgrade&quot;</span><span class="p">;</span>
-<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a><span class="w">        </span><span class="kn">proxy_set_header</span><span class="w"> </span><span class="s">Host</span><span class="w"> </span><span class="nv">$host</span><span class="p">;</span>
-<a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a><span class="w">        </span><span class="kn">proxy_set_header</span><span class="w"> </span><span class="s">X-Real-IP</span><span class="w"> </span><span class="nv">$remote_addr</span><span class="p">;</span>
-<a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a><span class="w">        </span><span class="kn">proxy_set_header</span><span class="w"> </span><span class="s">X-Forwarded-For</span><span class="w"> </span><span class="nv">$proxy_add_x_forwarded_for</span><span class="p">;</span>
-<a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a><span class="w">        </span><span class="kn">proxy_set_header</span><span class="w"> </span><span class="s">X-Forwarded-Proto</span><span class="w"> </span><span class="nv">$scheme</span><span class="p">;</span>
-<a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a><span class="w">    </span><span class="p">}</span>
-<a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a><span class="p">}</span>
-</code></pre></div>
-<h2 id="ssltls-setup">SSL/TLS Setup</h2>
-<p>Use Let's Encrypt for free SSL certificates:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="c1"># Install certbot</span>
-<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>certbot<span class="w"> </span>python3-certbot-nginx
-<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>
-<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="c1"># Get certificate</span>
-<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>sudo<span class="w"> </span>certbot<span class="w"> </span>--nginx<span class="w"> </span>-d<span class="w"> </span>your-relay-domain.com
-<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>
-<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="c1"># Auto-renewal</span>
-<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>sudo<span class="w"> </span>crontab<span class="w"> </span>-e
-<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a><span class="c1"># Add: 0 12 * * * /usr/bin/certbot renew --quiet</span>
-</code></pre></div>
-<h2 id="relay-policies-and-moderation">Relay Policies and Moderation</h2>
-<h3 id="content-filtering">Content Filtering</h3>
-<p>You can implement content filtering using plugins or built-in policies:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="c1"># Example strfry write policy script</span>
-<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="c1">#!/bin/bash</span>
-<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="c1"># This script can accept or reject events based on custom logic</span>
-<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>
-<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="c1"># Read the event from stdin</span>
-<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="nv">event</span><span class="o">=</span><span class="k">$(</span>cat<span class="k">)</span>
-<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a>
-<a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a><span class="c1"># Example: Reject events with certain keywords</span>
-<a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a><span class="k">if</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$event</span><span class="s2">&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>-q<span class="w"> </span><span class="s2">&quot;spam\|scam&quot;</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
-<a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a><span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s1">&#39;{&quot;action&quot;: &quot;reject&quot;, &quot;msg&quot;: &quot;Content policy violation&quot;}&#39;</span>
-<a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a><span class="w">    </span><span class="nb">exit</span><span class="w"> </span><span class="m">0</span>
-<a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a><span class="k">fi</span>
-<a id="__codelineno-7-13" name="__codelineno-7-13" href="#__codelineno-7-13"></a>
-<a id="__codelineno-7-14" name="__codelineno-7-14" href="#__codelineno-7-14"></a><span class="c1"># Accept the event</span>
-<a id="__codelineno-7-15" name="__codelineno-7-15" href="#__codelineno-7-15"></a><span class="nb">echo</span><span class="w"> </span><span class="s1">&#39;{&quot;action&quot;: &quot;accept&quot;}&#39;</span>
-</code></pre></div>
-<h3 id="rate-limiting">Rate Limiting</h3>
-<p>Configure rate limiting to prevent abuse:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="c1"># In strfry.conf</span>
-<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="n">writePolicy</span><span class="w"> </span><span class="err">{</span>
-<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="w">    </span><span class="n">plugin</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;./write-policy.sh&quot;</span>
-<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>
-<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="w">    </span><span class="c1"># Rate limiting settings</span>
-<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a><span class="w">    </span><span class="n">rateLimitPerSecond</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span>
-<a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a><span class="w">    </span><span class="n">rateLimitBurst</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">50</span>
-<a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a><span class="err">}</span>
-</code></pre></div>
-<h2 id="monitoring-your-relay">Monitoring Your Relay</h2>
-<h3 id="basic-monitoring">Basic Monitoring</h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="c1"># Check relay status</span>
-<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>curl<span class="w"> </span>-H<span class="w"> </span><span class="s2">&quot;Accept: application/nostr+json&quot;</span><span class="w"> </span>http://your-relay.com
-<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>
-<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="c1"># Monitor logs</span>
-<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>tail<span class="w"> </span>-f<span class="w"> </span>relay.log
-<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>
-<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a><span class="c1"># Check database size</span>
-<a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a>du<span class="w"> </span>-sh<span class="w"> </span>strfry-db/
-</code></pre></div>
-<h3 id="advanced-monitoring">Advanced Monitoring</h3>
-<p>Set up monitoring with tools like:</p>
-<ul>
-<li><strong>Prometheus + Grafana</strong> for metrics</li>
-<li><strong>Uptime monitoring</strong> services</li>
-<li><strong>Log aggregation</strong> tools</li>
-</ul>
-<h2 id="relay-discovery">Relay Discovery</h2>
-<h3 id="nip-11-relay-information">NIP-11 Relay Information</h3>
-<p>Ensure your relay provides proper NIP-11 information:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="p">{</span>
-<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="w">  </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;My Nostr Relay&quot;</span><span class="p">,</span>
-<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="w">  </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;A personal relay for the Nostr network&quot;</span><span class="p">,</span>
-<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="w">  </span><span class="nt">&quot;pubkey&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;your-pubkey-here&quot;</span><span class="p">,</span>
-<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a><span class="w">  </span><span class="nt">&quot;contact&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;admin@yourrelay.com&quot;</span><span class="p">,</span>
-<a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a><span class="w">  </span><span class="nt">&quot;supported_nips&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">9</span><span class="p">,</span><span class="w"> </span><span class="mi">11</span><span class="p">,</span><span class="w"> </span><span class="mi">12</span><span class="p">,</span><span class="w"> </span><span class="mi">15</span><span class="p">,</span><span class="w"> </span><span class="mi">16</span><span class="p">,</span><span class="w"> </span><span class="mi">20</span><span class="p">,</span><span class="w"> </span><span class="mi">22</span><span class="p">],</span>
-<a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a><span class="w">  </span><span class="nt">&quot;software&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;strfry&quot;</span><span class="p">,</span>
-<a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a><span class="w">  </span><span class="nt">&quot;version&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0.9.6&quot;</span>
-<a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a><span class="p">}</span>
-</code></pre></div>
-<h3 id="adding-to-relay-lists">Adding to Relay Lists</h3>
-<p>Submit your relay to:</p>
-<ul>
-<li><a href="https://nostr.watch">Nostr.watch</a></li>
-<li><a href="https://github.com/fiatjaf/nostr-relay-registry">Relay registries</a></li>
-<li>Community relay lists</li>
-</ul>
-<h2 id="maintenance-and-updates">Maintenance and Updates</h2>
-<h3 id="regular-tasks">Regular Tasks</h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="c1"># Backup database</span>
-<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>cp<span class="w"> </span>-r<span class="w"> </span>strfry-db/<span class="w"> </span>backup-<span class="k">$(</span>date<span class="w"> </span>+%Y%m%d<span class="k">)</span>/
-<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>
-<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="c1"># Update software</span>
-<a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a>git<span class="w"> </span>pull
-<a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a>make<span class="w"> </span>-j4
-<a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a>
-<a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a><span class="c1"># Restart relay</span>
-<a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a>pkill<span class="w"> </span>strfry
-<a id="__codelineno-11-10" name="__codelineno-11-10" href="#__codelineno-11-10"></a>nohup<span class="w"> </span>./strfry<span class="w"> </span>relay<span class="w"> </span>&gt;<span class="w"> </span>relay.log<span class="w"> </span><span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span><span class="w"> </span><span class="p">&amp;</span>
-</code></pre></div>
-<h3 id="database-maintenance">Database Maintenance</h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="c1"># Compact database (strfry)</span>
-<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>./strfry<span class="w"> </span>compact
-<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>
-<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="c1"># Check database integrity</span>
-<a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a>./strfry<span class="w"> </span>verify
-</code></pre></div>
-<h2 id="troubleshooting">Troubleshooting</h2>
-<h3 id="common-issues">Common Issues</h3>
-<ol>
-<li><strong>Connection refused</strong>: Check firewall and port configuration</li>
-<li><strong>SSL errors</strong>: Verify certificate installation</li>
-<li><strong>High memory usage</strong>: Adjust database parameters</li>
-<li><strong>Slow queries</strong>: Optimize database settings</li>
-</ol>
-<h3 id="debug-mode">Debug Mode</h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="c1"># Run with debug logging</span>
-<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>./strfry<span class="w"> </span>relay<span class="w"> </span>--verbose
-<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>
-<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a><span class="c1"># Check specific event</span>
-<a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a>./strfry<span class="w"> </span><span class="nb">export</span><span class="w"> </span>--since<span class="o">=</span>1hour<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span><span class="s2">&quot;event-id&quot;</span>
-</code></pre></div>
-<h2 id="next-steps">Next Steps</h2>
-<ul>
-<li>Join relay operator communities</li>
-<li>Implement custom policies</li>
-<li>Set up monitoring and alerting</li>
-<li>Consider clustering for high availability</li>
-</ul>
-<h2 id="resources">Resources</h2>
-<ul>
-<li><a href="https://github.com/hoytech/strfry">Strfry Documentation</a></li>
-<li><a href="https://github.com/Cameri/nostream">Nostream Guide</a></li>
-<li><a href="https://t.me/nostr_relay_operators">Relay Operator Chat</a></li>
-<li><a href="https://github.com/nostr-protocol/nips/blob/master/11.md">NIP-11 Specification</a></li>
-</ul>
-<div class="admonition tip">
-<p class="admonition-title">Pro Tip</p>
-<p>Start with a simple setup and gradually add features. Monitor your relay's performance and adjust configurations based on usage patterns. </p>
 </div>
+<h2 id="relay-infrastructure-overview">Relay Infrastructure Overview</h2>
+<p>Nostr relays serve as the foundational infrastructure for the decentralized protocol, providing event storage, retrieval, and distribution services. Operating a relay contributes to network resilience while offering control over data persistence and access policies.</p>
+<p>Understanding relay deployment enables participation in protocol infrastructure and supports advanced use cases including private networks, content curation, and specialized services.</p>
+<h2 id="deployment-architecture-considerations">Deployment Architecture Considerations</h2>
+<h3 id="system-requirements">System Requirements</h3>
+<h4 id="minimum-production-specifications">Minimum Production Specifications</h4>
+<ul>
+<li><strong>CPU</strong>: 2+ cores with modern instruction set support</li>
+<li><strong>Memory</strong>: 4GB RAM minimum, 8GB+ recommended for higher throughput</li>
+<li><strong>Storage</strong>: 50GB+ SSD with expansion capability for event database growth</li>
+<li><strong>Network</strong>: Reliable internet connection with adequate bandwidth allocation</li>
+<li><strong>Operating System</strong>: Linux distribution with current security updates</li>
+</ul>
+<h4 id="scaling-considerations">Scaling Considerations</h4>
+<ul>
+<li>Database storage grows approximately 1-10GB per month depending on relay policies</li>
+<li>Network bandwidth requirements scale with user count and activity patterns</li>
+<li>CPU utilization correlates with event validation and cryptographic operations</li>
+<li>Memory usage depends on connection concurrency and caching strategies</li>
+</ul>
+<h3 id="software-architecture-options">Software Architecture Options</h3>
+<h4 id="strfry-c-implementation">Strfry (C++ Implementation)</h4>
+<p><strong>Technical Characteristics:</strong>
+- High-performance implementation optimized for throughput and latency
+- LMDB database backend providing ACID compliance and crash resistance
+- Minimal resource footprint with efficient memory management
+- Plugin architecture for custom event filtering and policy enforcement</p>
+<p><strong>Operational Benefits:</strong>
+- Proven stability under high-load conditions
+- Comprehensive administrative tooling for database management
+- Active development with regular security and performance updates
+- Extensive deployment documentation and community support</p>
+<h4 id="nostream-typescriptnodejs">Nostream (TypeScript/Node.js)</h4>
+<p><strong>Technical Characteristics:</strong>
+- JavaScript ecosystem integration with extensive library support
+- PostgreSQL or SQLite database options for different deployment scales
+- Built-in payment processing and Lightning Network integration
+- Modular architecture supporting custom plugins and extensions</p>
+<p><strong>Operational Benefits:</strong>
+- Familiar development environment for web developers
+- Comprehensive API endpoints for monitoring and administration
+- Advanced features including analytics and user management
+- Docker containerization support for simplified deployment</p>
+<h2 id="production-deployment-strfry-implementation">Production Deployment: Strfry Implementation</h2>
+<h3 id="system-preparation">System Preparation</h3>
+<p><strong>Server Provisioning:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1"># System updates and security hardening</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>apt<span class="w"> </span>update<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>apt<span class="w"> </span>upgrade<span class="w"> </span>-y
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>apt<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>ufw<span class="w"> </span>fail2ban<span class="w"> </span>unattended-upgrades
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="c1"># Firewall configuration</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>ufw<span class="w"> </span>default<span class="w"> </span>deny<span class="w"> </span>incoming
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>ufw<span class="w"> </span>default<span class="w"> </span>allow<span class="w"> </span>outgoing
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>ufw<span class="w"> </span>allow<span class="w"> </span>ssh
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>ufw<span class="w"> </span>allow<span class="w"> </span><span class="m">80</span>/tcp
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>ufw<span class="w"> </span>allow<span class="w"> </span><span class="m">443</span>/tcp
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>ufw<span class="w"> </span><span class="nb">enable</span>
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="c1"># Create dedicated system user</span>
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>useradd<span class="w"> </span>-r<span class="w"> </span>-s<span class="w"> </span>/bin/false<span class="w"> </span>-d<span class="w"> </span>/opt/strfry<span class="w"> </span>strfry
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>mkdir<span class="w"> </span>-p<span class="w"> </span>/opt/strfry
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>chown<span class="w"> </span>strfry:strfry<span class="w"> </span>/opt/strfry
+</code></pre></div></p>
+<p><strong>Dependency Installation:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># Build dependencies</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>apt<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>git<span class="w"> </span>build-essential<span class="w"> </span>libtool<span class="w"> </span>autotools-dev<span class="w"> </span>automake<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>pkg-config<span class="w"> </span>libssl-dev<span class="w"> </span>libevent-dev<span class="w"> </span>bsdmainutils<span class="w"> </span>python3<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>nginx<span class="w"> </span>certbot<span class="w"> </span>python3-certbot-nginx
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="c1"># Performance optimization libraries</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>apt<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>libjemalloc2<span class="w"> </span>libjemalloc-dev
+</code></pre></div></p>
+<h3 id="strfry-compilation-and-installation">Strfry Compilation and Installation</h3>
+<p><strong>Source Code Preparation:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nb">cd</span><span class="w"> </span>/opt/strfry
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>sudo<span class="w"> </span>-u<span class="w"> </span>strfry<span class="w"> </span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/hoytech/strfry.git<span class="w"> </span>.
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>sudo<span class="w"> </span>-u<span class="w"> </span>strfry<span class="w"> </span>git<span class="w"> </span>submodule<span class="w"> </span>update<span class="w"> </span>--init
+</code></pre></div></p>
+<p><strong>Build Configuration:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c1"># Configure build environment</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>sudo<span class="w"> </span>-u<span class="w"> </span>strfry<span class="w"> </span>make<span class="w"> </span>setup-golpe
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="c1"># Compile with optimizations</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>sudo<span class="w"> </span>-u<span class="w"> </span>strfry<span class="w"> </span>make<span class="w"> </span>-j<span class="k">$(</span>nproc<span class="k">)</span><span class="w"> </span><span class="nv">CXXFLAGS</span><span class="o">=</span><span class="s2">&quot;-O3 -march=native&quot;</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="c1"># Verify build integrity</span>
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>sudo<span class="w"> </span>-u<span class="w"> </span>strfry<span class="w"> </span>./strfry<span class="w"> </span>--version
+</code></pre></div></p>
+<h3 id="configuration-management">Configuration Management</h3>
+<p><strong>Primary Configuration File (<code>/opt/strfry/strfry.conf</code>):</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1"># Database configuration</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="n">db</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;/opt/strfry/data/strfry-db/&quot;</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="n">dbParams</span><span class="w"> </span><span class="err">{</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="w">    </span><span class="n">maxreaders</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">512</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="w">    </span><span class="n">mapsize</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="n">TB</span>
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="err">}</span>
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>
+<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="c1"># Network configuration</span>
+<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="n">relay</span><span class="w"> </span><span class="err">{</span>
+<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a><span class="w">    </span><span class="n">bind</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;127.0.0.1&quot;</span>
+<a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a><span class="w">    </span><span class="n">port</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">7777</span>
+<a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a><span class="w">    </span><span class="n">nofiles</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">65536</span>
+<a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a>
+<a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a><span class="w">    </span><span class="c1"># Performance tuning</span>
+<a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a><span class="w">    </span><span class="n">maxWebsocketPayloadSize</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">131072</span>
+<a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a><span class="w">    </span><span class="n">autoPingSeconds</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">30</span>
+<a id="__codelineno-4-18" name="__codelineno-4-18" href="#__codelineno-4-18"></a><span class="w">    </span><span class="n">enableTcpKeepalive</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span>
+<a id="__codelineno-4-19" name="__codelineno-4-19" href="#__codelineno-4-19"></a><span class="w">    </span><span class="n">queryTimesliceBudgetMicroseconds</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">5000</span>
+<a id="__codelineno-4-20" name="__codelineno-4-20" href="#__codelineno-4-20"></a>
+<a id="__codelineno-4-21" name="__codelineno-4-21" href="#__codelineno-4-21"></a><span class="w">    </span><span class="c1"># Rate limiting</span>
+<a id="__codelineno-4-22" name="__codelineno-4-22" href="#__codelineno-4-22"></a><span class="w">    </span><span class="n">maxFilterLimit</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1000</span>
+<a id="__codelineno-4-23" name="__codelineno-4-23" href="#__codelineno-4-23"></a><span class="w">    </span><span class="n">maxSubsPerConnection</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">50</span>
+<a id="__codelineno-4-24" name="__codelineno-4-24" href="#__codelineno-4-24"></a>
+<a id="__codelineno-4-25" name="__codelineno-4-25" href="#__codelineno-4-25"></a><span class="w">    </span><span class="c1"># Relay metadata (NIP-11)</span>
+<a id="__codelineno-4-26" name="__codelineno-4-26" href="#__codelineno-4-26"></a><span class="w">    </span><span class="n">info</span><span class="w"> </span><span class="err">{</span>
+<a id="__codelineno-4-27" name="__codelineno-4-27" href="#__codelineno-4-27"></a><span class="w">        </span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Production Nostr Relay&quot;</span>
+<a id="__codelineno-4-28" name="__codelineno-4-28" href="#__codelineno-4-28"></a><span class="w">        </span><span class="n">description</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;High-performance Nostr relay infrastructure&quot;</span>
+<a id="__codelineno-4-29" name="__codelineno-4-29" href="#__codelineno-4-29"></a><span class="w">        </span><span class="n">pubkey</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;&lt;relay_operator_pubkey&gt;&quot;</span>
+<a id="__codelineno-4-30" name="__codelineno-4-30" href="#__codelineno-4-30"></a><span class="w">        </span><span class="n">contact</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;admin@relay.example.com&quot;</span>
+<a id="__codelineno-4-31" name="__codelineno-4-31" href="#__codelineno-4-31"></a><span class="w">        </span><span class="n">supported_nips</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">9</span><span class="p">,</span><span class="w"> </span><span class="mi">11</span><span class="p">,</span><span class="w"> </span><span class="mi">12</span><span class="p">,</span><span class="w"> </span><span class="mi">15</span><span class="p">,</span><span class="w"> </span><span class="mi">16</span><span class="p">,</span><span class="w"> </span><span class="mi">20</span><span class="p">,</span><span class="w"> </span><span class="mi">22</span><span class="p">]</span>
+<a id="__codelineno-4-32" name="__codelineno-4-32" href="#__codelineno-4-32"></a><span class="w">        </span><span class="n">software</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;strfry&quot;</span>
+<a id="__codelineno-4-33" name="__codelineno-4-33" href="#__codelineno-4-33"></a><span class="w">        </span><span class="n">version</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;0.9.6&quot;</span>
+<a id="__codelineno-4-34" name="__codelineno-4-34" href="#__codelineno-4-34"></a><span class="w">    </span><span class="err">}</span>
+<a id="__codelineno-4-35" name="__codelineno-4-35" href="#__codelineno-4-35"></a><span class="err">}</span>
+<a id="__codelineno-4-36" name="__codelineno-4-36" href="#__codelineno-4-36"></a>
+<a id="__codelineno-4-37" name="__codelineno-4-37" href="#__codelineno-4-37"></a><span class="c1"># Event filtering and validation</span>
+<a id="__codelineno-4-38" name="__codelineno-4-38" href="#__codelineno-4-38"></a><span class="n">events</span><span class="w"> </span><span class="err">{</span>
+<a id="__codelineno-4-39" name="__codelineno-4-39" href="#__codelineno-4-39"></a><span class="w">    </span><span class="n">maxEventSize</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">65536</span>
+<a id="__codelineno-4-40" name="__codelineno-4-40" href="#__codelineno-4-40"></a><span class="w">    </span><span class="n">rejectEventsNewerThanSeconds</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">900</span>
+<a id="__codelineno-4-41" name="__codelineno-4-41" href="#__codelineno-4-41"></a><span class="w">    </span><span class="n">rejectEventsOlderThanSeconds</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">31536000</span>
+<a id="__codelineno-4-42" name="__codelineno-4-42" href="#__codelineno-4-42"></a><span class="w">    </span><span class="n">rejectEphemeralEventsOlderThanSeconds</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">60</span>
+<a id="__codelineno-4-43" name="__codelineno-4-43" href="#__codelineno-4-43"></a><span class="w">    </span><span class="n">maxNumTags</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1000</span>
+<a id="__codelineno-4-44" name="__codelineno-4-44" href="#__codelineno-4-44"></a><span class="w">    </span><span class="n">maxTagValSize</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1024</span>
+<a id="__codelineno-4-45" name="__codelineno-4-45" href="#__codelineno-4-45"></a><span class="err">}</span>
+<a id="__codelineno-4-46" name="__codelineno-4-46" href="#__codelineno-4-46"></a>
+<a id="__codelineno-4-47" name="__codelineno-4-47" href="#__codelineno-4-47"></a><span class="c1"># Write policy configuration</span>
+<a id="__codelineno-4-48" name="__codelineno-4-48" href="#__codelineno-4-48"></a><span class="n">writePolicy</span><span class="w"> </span><span class="err">{</span>
+<a id="__codelineno-4-49" name="__codelineno-4-49" href="#__codelineno-4-49"></a><span class="w">    </span><span class="n">plugin</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;/opt/strfry/write-policy.sh&quot;</span>
+<a id="__codelineno-4-50" name="__codelineno-4-50" href="#__codelineno-4-50"></a><span class="err">}</span>
+</code></pre></div></p>
+<p><strong>Write Policy Implementation (<code>/opt/strfry/write-policy.sh</code>):</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="ch">#!/bin/bash</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="c1"># Read event from stdin</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="nv">event</span><span class="o">=</span><span class="k">$(</span>cat<span class="k">)</span>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="c1"># Extract event properties for analysis</span>
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="nv">kind</span><span class="o">=</span><span class="k">$(</span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$event</span><span class="s2">&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>jq<span class="w"> </span>-r<span class="w"> </span><span class="s1">&#39;.kind&#39;</span><span class="k">)</span>
+<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="nv">pubkey</span><span class="o">=</span><span class="k">$(</span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$event</span><span class="s2">&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>jq<span class="w"> </span>-r<span class="w"> </span><span class="s1">&#39;.pubkey&#39;</span><span class="k">)</span>
+<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="nv">content</span><span class="o">=</span><span class="k">$(</span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$event</span><span class="s2">&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>jq<span class="w"> </span>-r<span class="w"> </span><span class="s1">&#39;.content&#39;</span><span class="k">)</span>
+<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>
+<a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a><span class="c1"># Basic content filtering</span>
+<a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a><span class="k">if</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$content</span><span class="s2">&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>-qi<span class="w"> </span><span class="s2">&quot;spam\|scam\|malware&quot;</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a><span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s1">&#39;{&quot;action&quot;: &quot;reject&quot;, &quot;msg&quot;: &quot;Content policy violation&quot;}&#39;</span>
+<a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a><span class="w">    </span><span class="nb">exit</span><span class="w"> </span><span class="m">0</span>
+<a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a><span class="k">fi</span>
+<a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a>
+<a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a><span class="c1"># Rate limiting by pubkey (implement with external storage)</span>
+<a id="__codelineno-5-18" name="__codelineno-5-18" href="#__codelineno-5-18"></a><span class="c1"># rate_limit_check &quot;$pubkey&quot; || {</span>
+<a id="__codelineno-5-19" name="__codelineno-5-19" href="#__codelineno-5-19"></a><span class="c1">#     echo &#39;{&quot;action&quot;: &quot;reject&quot;, &quot;msg&quot;: &quot;Rate limit exceeded&quot;}&#39;</span>
+<a id="__codelineno-5-20" name="__codelineno-5-20" href="#__codelineno-5-20"></a><span class="c1">#     exit 0</span>
+<a id="__codelineno-5-21" name="__codelineno-5-21" href="#__codelineno-5-21"></a><span class="c1"># }</span>
+<a id="__codelineno-5-22" name="__codelineno-5-22" href="#__codelineno-5-22"></a>
+<a id="__codelineno-5-23" name="__codelineno-5-23" href="#__codelineno-5-23"></a><span class="c1"># Accept compliant events</span>
+<a id="__codelineno-5-24" name="__codelineno-5-24" href="#__codelineno-5-24"></a><span class="nb">echo</span><span class="w"> </span><span class="s1">&#39;{&quot;action&quot;: &quot;accept&quot;}&#39;</span>
+</code></pre></div></p>
+<h3 id="reverse-proxy-configuration">Reverse Proxy Configuration</h3>
+<p><strong>Nginx Configuration (<code>/etc/nginx/sites-available/nostr-relay</code>):</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="k">upstream</span><span class="w"> </span><span class="s">strfry_backend</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="w">    </span><span class="kn">server</span><span class="w"> </span><span class="n">127.0.0.1</span><span class="p">:</span><span class="mi">7777</span><span class="p">;</span>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="w">    </span><span class="kn">keepalive</span><span class="w"> </span><span class="mi">32</span><span class="p">;</span>
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="p">}</span>
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="k">server</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="w">    </span><span class="kn">listen</span><span class="w"> </span><span class="mi">80</span><span class="p">;</span>
+<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="w">    </span><span class="kn">server_name</span><span class="w"> </span><span class="s">relay.example.com</span><span class="p">;</span>
+<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a>
+<a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a><span class="w">    </span><span class="c1"># Redirect to HTTPS</span>
+<a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a><span class="w">    </span><span class="kn">return</span><span class="w"> </span><span class="mi">301</span><span class="w"> </span><span class="s">https://</span><span class="nv">$server_name$request_uri</span><span class="p">;</span>
+<a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a><span class="p">}</span>
+<a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a>
+<a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a><span class="k">server</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-6-15" name="__codelineno-6-15" href="#__codelineno-6-15"></a><span class="w">    </span><span class="kn">listen</span><span class="w"> </span><span class="mi">443</span><span class="w"> </span><span class="s">ssl</span><span class="w"> </span><span class="s">http2</span><span class="p">;</span>
+<a id="__codelineno-6-16" name="__codelineno-6-16" href="#__codelineno-6-16"></a><span class="w">    </span><span class="kn">server_name</span><span class="w"> </span><span class="s">relay.example.com</span><span class="p">;</span>
+<a id="__codelineno-6-17" name="__codelineno-6-17" href="#__codelineno-6-17"></a>
+<a id="__codelineno-6-18" name="__codelineno-6-18" href="#__codelineno-6-18"></a><span class="w">    </span><span class="c1"># SSL configuration</span>
+<a id="__codelineno-6-19" name="__codelineno-6-19" href="#__codelineno-6-19"></a><span class="w">    </span><span class="kn">ssl_certificate</span><span class="w"> </span><span class="s">/etc/letsencrypt/live/relay.example.com/fullchain.pem</span><span class="p">;</span>
+<a id="__codelineno-6-20" name="__codelineno-6-20" href="#__codelineno-6-20"></a><span class="w">    </span><span class="kn">ssl_certificate_key</span><span class="w"> </span><span class="s">/etc/letsencrypt/live/relay.example.com/privkey.pem</span><span class="p">;</span>
+<a id="__codelineno-6-21" name="__codelineno-6-21" href="#__codelineno-6-21"></a><span class="w">    </span><span class="kn">ssl_protocols</span><span class="w"> </span><span class="s">TLSv1.2</span><span class="w"> </span><span class="s">TLSv1.3</span><span class="p">;</span>
+<a id="__codelineno-6-22" name="__codelineno-6-22" href="#__codelineno-6-22"></a><span class="w">    </span><span class="kn">ssl_ciphers</span><span class="w"> </span><span class="s">ECDHE-RSA-AES128-GCM-SHA256:ECDHE-RSA-AES256-GCM-SHA384</span><span class="p">;</span>
+<a id="__codelineno-6-23" name="__codelineno-6-23" href="#__codelineno-6-23"></a><span class="w">    </span><span class="kn">ssl_prefer_server_ciphers</span><span class="w"> </span><span class="no">off</span><span class="p">;</span>
+<a id="__codelineno-6-24" name="__codelineno-6-24" href="#__codelineno-6-24"></a>
+<a id="__codelineno-6-25" name="__codelineno-6-25" href="#__codelineno-6-25"></a><span class="w">    </span><span class="c1"># Performance optimization</span>
+<a id="__codelineno-6-26" name="__codelineno-6-26" href="#__codelineno-6-26"></a><span class="w">    </span><span class="kn">keepalive_timeout</span><span class="w"> </span><span class="mi">65</span><span class="p">;</span>
+<a id="__codelineno-6-27" name="__codelineno-6-27" href="#__codelineno-6-27"></a><span class="w">    </span><span class="kn">keepalive_requests</span><span class="w"> </span><span class="mi">1000</span><span class="p">;</span>
+<a id="__codelineno-6-28" name="__codelineno-6-28" href="#__codelineno-6-28"></a>
+<a id="__codelineno-6-29" name="__codelineno-6-29" href="#__codelineno-6-29"></a><span class="w">    </span><span class="c1"># WebSocket proxy configuration</span>
+<a id="__codelineno-6-30" name="__codelineno-6-30" href="#__codelineno-6-30"></a><span class="w">    </span><span class="kn">location</span><span class="w"> </span><span class="s">/</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-6-31" name="__codelineno-6-31" href="#__codelineno-6-31"></a><span class="w">        </span><span class="kn">proxy_pass</span><span class="w"> </span><span class="s">http://strfry_backend</span><span class="p">;</span>
+<a id="__codelineno-6-32" name="__codelineno-6-32" href="#__codelineno-6-32"></a><span class="w">        </span><span class="kn">proxy_http_version</span><span class="w"> </span><span class="mi">1</span><span class="s">.1</span><span class="p">;</span>
+<a id="__codelineno-6-33" name="__codelineno-6-33" href="#__codelineno-6-33"></a><span class="w">        </span><span class="kn">proxy_set_header</span><span class="w"> </span><span class="s">Upgrade</span><span class="w"> </span><span class="nv">$http_upgrade</span><span class="p">;</span>
+<a id="__codelineno-6-34" name="__codelineno-6-34" href="#__codelineno-6-34"></a><span class="w">        </span><span class="kn">proxy_set_header</span><span class="w"> </span><span class="s">Connection</span><span class="w"> </span><span class="s">&quot;upgrade&quot;</span><span class="p">;</span>
+<a id="__codelineno-6-35" name="__codelineno-6-35" href="#__codelineno-6-35"></a><span class="w">        </span><span class="kn">proxy_set_header</span><span class="w"> </span><span class="s">Host</span><span class="w"> </span><span class="nv">$host</span><span class="p">;</span>
+<a id="__codelineno-6-36" name="__codelineno-6-36" href="#__codelineno-6-36"></a><span class="w">        </span><span class="kn">proxy_set_header</span><span class="w"> </span><span class="s">X-Real-IP</span><span class="w"> </span><span class="nv">$remote_addr</span><span class="p">;</span>
+<a id="__codelineno-6-37" name="__codelineno-6-37" href="#__codelineno-6-37"></a><span class="w">        </span><span class="kn">proxy_set_header</span><span class="w"> </span><span class="s">X-Forwarded-For</span><span class="w"> </span><span class="nv">$proxy_add_x_forwarded_for</span><span class="p">;</span>
+<a id="__codelineno-6-38" name="__codelineno-6-38" href="#__codelineno-6-38"></a><span class="w">        </span><span class="kn">proxy_set_header</span><span class="w"> </span><span class="s">X-Forwarded-Proto</span><span class="w"> </span><span class="nv">$scheme</span><span class="p">;</span>
+<a id="__codelineno-6-39" name="__codelineno-6-39" href="#__codelineno-6-39"></a>
+<a id="__codelineno-6-40" name="__codelineno-6-40" href="#__codelineno-6-40"></a><span class="w">        </span><span class="c1"># Timeout configuration</span>
+<a id="__codelineno-6-41" name="__codelineno-6-41" href="#__codelineno-6-41"></a><span class="w">        </span><span class="kn">proxy_connect_timeout</span><span class="w"> </span><span class="s">60s</span><span class="p">;</span>
+<a id="__codelineno-6-42" name="__codelineno-6-42" href="#__codelineno-6-42"></a><span class="w">        </span><span class="kn">proxy_send_timeout</span><span class="w"> </span><span class="s">60s</span><span class="p">;</span>
+<a id="__codelineno-6-43" name="__codelineno-6-43" href="#__codelineno-6-43"></a><span class="w">        </span><span class="kn">proxy_read_timeout</span><span class="w"> </span><span class="s">60s</span><span class="p">;</span>
+<a id="__codelineno-6-44" name="__codelineno-6-44" href="#__codelineno-6-44"></a>
+<a id="__codelineno-6-45" name="__codelineno-6-45" href="#__codelineno-6-45"></a><span class="w">        </span><span class="c1"># Buffer configuration</span>
+<a id="__codelineno-6-46" name="__codelineno-6-46" href="#__codelineno-6-46"></a><span class="w">        </span><span class="kn">proxy_buffering</span><span class="w"> </span><span class="no">off</span><span class="p">;</span>
+<a id="__codelineno-6-47" name="__codelineno-6-47" href="#__codelineno-6-47"></a><span class="w">        </span><span class="kn">proxy_request_buffering</span><span class="w"> </span><span class="no">off</span><span class="p">;</span>
+<a id="__codelineno-6-48" name="__codelineno-6-48" href="#__codelineno-6-48"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-6-49" name="__codelineno-6-49" href="#__codelineno-6-49"></a>
+<a id="__codelineno-6-50" name="__codelineno-6-50" href="#__codelineno-6-50"></a><span class="w">    </span><span class="c1"># NIP-11 relay information</span>
+<a id="__codelineno-6-51" name="__codelineno-6-51" href="#__codelineno-6-51"></a><span class="w">    </span><span class="kn">location</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">/</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-6-52" name="__codelineno-6-52" href="#__codelineno-6-52"></a><span class="w">        </span><span class="kn">add_header</span><span class="w"> </span><span class="s">Content-Type</span><span class="w"> </span><span class="s">application/nostr+json</span><span class="p">;</span>
+<a id="__codelineno-6-53" name="__codelineno-6-53" href="#__codelineno-6-53"></a><span class="w">        </span><span class="kn">add_header</span><span class="w"> </span><span class="s">Access-Control-Allow-Origin</span><span class="w"> </span><span class="s">*</span><span class="p">;</span>
+<a id="__codelineno-6-54" name="__codelineno-6-54" href="#__codelineno-6-54"></a><span class="w">        </span><span class="kn">add_header</span><span class="w"> </span><span class="s">Access-Control-Allow-Methods</span><span class="w"> </span><span class="s">&quot;GET,</span><span class="w"> </span><span class="s">POST,</span><span class="w"> </span><span class="s">OPTIONS&quot;</span><span class="p">;</span>
+<a id="__codelineno-6-55" name="__codelineno-6-55" href="#__codelineno-6-55"></a><span class="w">        </span><span class="kn">add_header</span><span class="w"> </span><span class="s">Access-Control-Allow-Headers</span><span class="w"> </span><span class="s">&quot;Content-Type&quot;</span><span class="p">;</span>
+<a id="__codelineno-6-56" name="__codelineno-6-56" href="#__codelineno-6-56"></a>
+<a id="__codelineno-6-57" name="__codelineno-6-57" href="#__codelineno-6-57"></a><span class="w">        </span><span class="kn">if</span><span class="w"> </span><span class="s">(</span><span class="nv">$http_accept</span><span class="w"> </span><span class="p">~</span><span class="sr">*</span><span class="w"> </span><span class="s">&quot;application/nostr\+json&quot;)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-6-58" name="__codelineno-6-58" href="#__codelineno-6-58"></a><span class="w">            </span><span class="kn">proxy_pass</span><span class="w"> </span><span class="s">http://strfry_backend</span><span class="p">;</span>
+<a id="__codelineno-6-59" name="__codelineno-6-59" href="#__codelineno-6-59"></a><span class="w">        </span><span class="p">}</span>
+<a id="__codelineno-6-60" name="__codelineno-6-60" href="#__codelineno-6-60"></a>
+<a id="__codelineno-6-61" name="__codelineno-6-61" href="#__codelineno-6-61"></a><span class="w">        </span><span class="c1"># Default response for web browsers</span>
+<a id="__codelineno-6-62" name="__codelineno-6-62" href="#__codelineno-6-62"></a><span class="w">        </span><span class="kn">return</span><span class="w"> </span><span class="mi">200</span><span class="w"> </span><span class="s">&#39;</span><span class="p">{</span><span class="kn">&quot;name&quot;:&quot;Production</span><span class="w"> </span><span class="s">Nostr</span><span class="w"> </span><span class="s">Relay&quot;,&quot;description&quot;:&quot;High-performance</span><span class="w"> </span><span class="s">relay</span><span class="w"> </span><span class="s">infrastructure&quot;,&quot;supported_nips&quot;:[1,2,9,11,12,15,16,20,22],&quot;software&quot;:&quot;strfry&quot;,&quot;version&quot;:&quot;0.9.6&quot;</span><span class="err">}</span><span class="s">&#39;</span><span class="p">;</span>
+<a id="__codelineno-6-63" name="__codelineno-6-63" href="#__codelineno-6-63"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-6-64" name="__codelineno-6-64" href="#__codelineno-6-64"></a><span class="p">}</span>
+</code></pre></div></p>
+<h3 id="ssl-certificate-management">SSL Certificate Management</h3>
+<p><strong>Let's Encrypt Configuration:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="c1"># Initial certificate generation</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>certbot<span class="w"> </span>--nginx<span class="w"> </span>-d<span class="w"> </span>relay.example.com<span class="w"> </span>--email<span class="w"> </span>admin@example.com<span class="w"> </span>--agree-tos
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="c1"># Automatic renewal configuration</span>
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>cat<span class="w"> </span>&gt;<span class="w"> </span>/etc/cron.d/certbot<span class="w"> </span><span class="s">&lt;&lt; EOF</span>
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="s">0 12 * * * root certbot renew --quiet --post-hook &quot;systemctl reload nginx&quot;</span>
+<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="s">EOF</span>
+</code></pre></div></p>
+<h3 id="system-service-configuration">System Service Configuration</h3>
+<p><strong>Systemd Service Unit (<code>/etc/systemd/system/strfry.service</code>):</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="k">[Unit]</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="na">Description</span><span class="o">=</span><span class="s">Strfry Nostr Relay</span>
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="na">After</span><span class="o">=</span><span class="s">network.target</span>
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="na">Wants</span><span class="o">=</span><span class="s">network.target</span>
+<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>
+<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a><span class="k">[Service]</span>
+<a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a><span class="na">Type</span><span class="o">=</span><span class="s">simple</span>
+<a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a><span class="na">User</span><span class="o">=</span><span class="s">strfry</span>
+<a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a><span class="na">Group</span><span class="o">=</span><span class="s">strfry</span>
+<a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a><span class="na">WorkingDirectory</span><span class="o">=</span><span class="s">/opt/strfry</span>
+<a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a><span class="na">ExecStart</span><span class="o">=</span><span class="s">/opt/strfry/strfry relay</span>
+<a id="__codelineno-8-12" name="__codelineno-8-12" href="#__codelineno-8-12"></a><span class="na">Restart</span><span class="o">=</span><span class="s">always</span>
+<a id="__codelineno-8-13" name="__codelineno-8-13" href="#__codelineno-8-13"></a><span class="na">RestartSec</span><span class="o">=</span><span class="s">5</span>
+<a id="__codelineno-8-14" name="__codelineno-8-14" href="#__codelineno-8-14"></a><span class="na">StandardOutput</span><span class="o">=</span><span class="s">journal</span>
+<a id="__codelineno-8-15" name="__codelineno-8-15" href="#__codelineno-8-15"></a><span class="na">StandardError</span><span class="o">=</span><span class="s">journal</span>
+<a id="__codelineno-8-16" name="__codelineno-8-16" href="#__codelineno-8-16"></a>
+<a id="__codelineno-8-17" name="__codelineno-8-17" href="#__codelineno-8-17"></a><span class="c1"># Security hardening</span>
+<a id="__codelineno-8-18" name="__codelineno-8-18" href="#__codelineno-8-18"></a><span class="na">NoNewPrivileges</span><span class="o">=</span><span class="s">true</span>
+<a id="__codelineno-8-19" name="__codelineno-8-19" href="#__codelineno-8-19"></a><span class="na">PrivateTmp</span><span class="o">=</span><span class="s">true</span>
+<a id="__codelineno-8-20" name="__codelineno-8-20" href="#__codelineno-8-20"></a><span class="na">ProtectSystem</span><span class="o">=</span><span class="s">strict</span>
+<a id="__codelineno-8-21" name="__codelineno-8-21" href="#__codelineno-8-21"></a><span class="na">ProtectHome</span><span class="o">=</span><span class="s">true</span>
+<a id="__codelineno-8-22" name="__codelineno-8-22" href="#__codelineno-8-22"></a><span class="na">ReadWritePaths</span><span class="o">=</span><span class="s">/opt/strfry/data</span>
+<a id="__codelineno-8-23" name="__codelineno-8-23" href="#__codelineno-8-23"></a>
+<a id="__codelineno-8-24" name="__codelineno-8-24" href="#__codelineno-8-24"></a><span class="c1"># Resource limits</span>
+<a id="__codelineno-8-25" name="__codelineno-8-25" href="#__codelineno-8-25"></a><span class="na">LimitNOFILE</span><span class="o">=</span><span class="s">65536</span>
+<a id="__codelineno-8-26" name="__codelineno-8-26" href="#__codelineno-8-26"></a><span class="na">LimitNPROC</span><span class="o">=</span><span class="s">4096</span>
+<a id="__codelineno-8-27" name="__codelineno-8-27" href="#__codelineno-8-27"></a>
+<a id="__codelineno-8-28" name="__codelineno-8-28" href="#__codelineno-8-28"></a><span class="k">[Install]</span>
+<a id="__codelineno-8-29" name="__codelineno-8-29" href="#__codelineno-8-29"></a><span class="na">WantedBy</span><span class="o">=</span><span class="s">multi-user.target</span>
+</code></pre></div></p>
+<p><strong>Service Management:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="c1"># Enable and start service</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>systemctl<span class="w"> </span>daemon-reload
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>systemctl<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>strfry
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>systemctl<span class="w"> </span>start<span class="w"> </span>strfry
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>
+<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a><span class="c1"># Verify operation</span>
+<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a>systemctl<span class="w"> </span>status<span class="w"> </span>strfry
+<a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a>journalctl<span class="w"> </span>-u<span class="w"> </span>strfry<span class="w"> </span>-f
+</code></pre></div></p>
+<h2 id="monitoring-and-maintenance">Monitoring and Maintenance</h2>
+<h3 id="performance-monitoring">Performance Monitoring</h3>
+<p><strong>System Metrics Collection:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="c1"># Install monitoring tools</span>
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>apt<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>htop<span class="w"> </span>iotop<span class="w"> </span>nethogs
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>
+<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="c1"># Database size monitoring</span>
+<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>du<span class="w"> </span>-sh<span class="w"> </span>/opt/strfry/data/strfry-db/
+<a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a>
+<a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a><span class="c1"># Connection monitoring</span>
+<a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a>ss<span class="w"> </span>-tuln<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>:7777
+<a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a>netstat<span class="w"> </span>-an<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>:443<span class="w"> </span><span class="p">|</span><span class="w"> </span>wc<span class="w"> </span>-l
+</code></pre></div></p>
+<p><strong>Application Metrics:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="c1"># Relay statistics</span>
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>/opt/strfry/strfry<span class="w"> </span><span class="nb">export</span><span class="w"> </span>--count
+<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>
+<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="c1"># Event analysis</span>
+<a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a>/opt/strfry/strfry<span class="w"> </span><span class="nb">export</span><span class="w"> </span>--since<span class="o">=</span>1hour<span class="w"> </span><span class="p">|</span><span class="w"> </span>jq<span class="w"> </span><span class="s1">&#39;.kind&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sort<span class="w"> </span><span class="p">|</span><span class="w"> </span>uniq<span class="w"> </span>-c
+<a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a>
+<a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a><span class="c1"># Performance testing</span>
+<a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a><span class="nb">echo</span><span class="w"> </span><span class="s1">&#39;[&quot;REQ&quot;,&quot;test&quot;,{&quot;kinds&quot;:[1],&quot;limit&quot;:10}]&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>websocat<span class="w"> </span>wss://relay.example.com
+</code></pre></div></p>
+<h3 id="database-maintenance">Database Maintenance</h3>
+<p><strong>Routine Maintenance Operations:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="c1"># Database compaction</span>
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>systemctl<span class="w"> </span>stop<span class="w"> </span>strfry
+<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>sudo<span class="w"> </span>-u<span class="w"> </span>strfry<span class="w"> </span>/opt/strfry/strfry<span class="w"> </span>compact
+<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a>systemctl<span class="w"> </span>start<span class="w"> </span>strfry
+<a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a>
+<a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a><span class="c1"># Backup procedures</span>
+<a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a>sudo<span class="w"> </span>-u<span class="w"> </span>strfry<span class="w"> </span>/opt/strfry/strfry<span class="w"> </span><span class="nb">export</span><span class="w"> </span>&gt;<span class="w"> </span>backup-<span class="k">$(</span>date<span class="w"> </span>+%Y%m%d<span class="k">)</span>.jsonl
+<a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a>tar<span class="w"> </span>-czf<span class="w"> </span>backup-<span class="k">$(</span>date<span class="w"> </span>+%Y%m%d<span class="k">)</span>.tar.gz<span class="w"> </span>/opt/strfry/data/
+<a id="__codelineno-12-9" name="__codelineno-12-9" href="#__codelineno-12-9"></a>
+<a id="__codelineno-12-10" name="__codelineno-12-10" href="#__codelineno-12-10"></a><span class="c1"># Database verification</span>
+<a id="__codelineno-12-11" name="__codelineno-12-11" href="#__codelineno-12-11"></a>sudo<span class="w"> </span>-u<span class="w"> </span>strfry<span class="w"> </span>/opt/strfry/strfry<span class="w"> </span>verify
+</code></pre></div></p>
+<h3 id="security-hardening">Security Hardening</h3>
+<p><strong>Access Control Implementation:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="c1"># Fail2ban configuration for WebSocket abuse</span>
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>cat<span class="w"> </span>&gt;<span class="w"> </span>/etc/fail2ban/jail.d/strfry.conf<span class="w"> </span><span class="s">&lt;&lt; EOF</span>
+<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="s">[strfry]</span>
+<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a><span class="s">enabled = true</span>
+<a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a><span class="s">port = 443</span>
+<a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a><span class="s">filter = strfry</span>
+<a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a><span class="s">logpath = /var/log/nginx/access.log</span>
+<a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a><span class="s">maxretry = 10</span>
+<a id="__codelineno-13-9" name="__codelineno-13-9" href="#__codelineno-13-9"></a><span class="s">bantime = 3600</span>
+<a id="__codelineno-13-10" name="__codelineno-13-10" href="#__codelineno-13-10"></a><span class="s">findtime = 600</span>
+<a id="__codelineno-13-11" name="__codelineno-13-11" href="#__codelineno-13-11"></a><span class="s">EOF</span>
+<a id="__codelineno-13-12" name="__codelineno-13-12" href="#__codelineno-13-12"></a>
+<a id="__codelineno-13-13" name="__codelineno-13-13" href="#__codelineno-13-13"></a><span class="c1"># Rate limiting at nginx level</span>
+<a id="__codelineno-13-14" name="__codelineno-13-14" href="#__codelineno-13-14"></a><span class="c1"># Add to nginx configuration:</span>
+<a id="__codelineno-13-15" name="__codelineno-13-15" href="#__codelineno-13-15"></a><span class="c1"># limit_req_zone $binary_remote_addr zone=websocket:10m rate=10r/s;</span>
+<a id="__codelineno-13-16" name="__codelineno-13-16" href="#__codelineno-13-16"></a><span class="c1"># limit_req zone=websocket burst=20 nodelay;</span>
+</code></pre></div></p>
+<p><strong>Network Security:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="c1"># DDoS protection configuration</span>
+<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="nb">echo</span><span class="w"> </span><span class="s1">&#39;net.core.rmem_default = 262144&#39;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>/etc/sysctl.conf
+<a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a><span class="nb">echo</span><span class="w"> </span><span class="s1">&#39;net.core.rmem_max = 16777216&#39;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>/etc/sysctl.conf
+<a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a><span class="nb">echo</span><span class="w"> </span><span class="s1">&#39;net.core.wmem_default = 262144&#39;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>/etc/sysctl.conf
+<a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a><span class="nb">echo</span><span class="w"> </span><span class="s1">&#39;net.core.wmem_max = 16777216&#39;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>/etc/sysctl.conf
+<a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a>sysctl<span class="w"> </span>-p
+</code></pre></div></p>
+<h2 id="practical-exercise-relay-deployment-laboratory">Practical Exercise: Relay Deployment Laboratory</h2>
+<div class="admonition example">
+<p class="admonition-title">Production Relay Implementation</p>
+<p><strong>Objective:</strong> Deploy and configure a production-ready Nostr relay</p>
+<p><strong>Phase 1: Infrastructure Setup</strong>
+1. Provision VPS with appropriate specifications
+2. Complete security hardening and system preparation
+3. Install and configure all required dependencies
+4. Implement monitoring and logging infrastructure</p>
+<p><strong>Phase 2: Relay Configuration</strong>
+1. Compile and install Strfry with optimizations
+2. Configure relay policies and operational parameters
+3. Implement reverse proxy with SSL termination
+4. Create systemd service for process management</p>
+<p><strong>Phase 3: Testing and Validation</strong>
+1. Verify WebSocket connectivity and protocol compliance
+2. Test event publishing and retrieval functionality
+3. Validate SSL certificate configuration and renewal
+4. Perform load testing and performance optimization</p>
+<p><strong>Phase 4: Operational Procedures</strong>
+1. Implement backup and recovery procedures
+2. Configure monitoring and alerting systems
+3. Document maintenance procedures and troubleshooting
+4. Establish security update and patch management processes</p>
+</div>
+<h2 id="scaling-and-optimization">Scaling and Optimization</h2>
+<h3 id="performance-optimization">Performance Optimization</h3>
+<p><strong>Database Tuning:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="c1"># Advanced LMDB configuration</span>
+<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="n">dbParams</span><span class="w"> </span><span class="err">{</span>
+<a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a><span class="w">    </span><span class="n">maxreaders</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1024</span>
+<a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a><span class="w">    </span><span class="n">mapsize</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">5</span><span class="n">TB</span>
+<a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a>
+<a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a><span class="w">    </span><span class="c1"># Memory mapping optimization</span>
+<a id="__codelineno-15-7" name="__codelineno-15-7" href="#__codelineno-15-7"></a><span class="w">    </span><span class="n">mdb_env_set_mapsize</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">5497558138880</span><span class="w">  </span><span class="c1"># 5TB in bytes</span>
+<a id="__codelineno-15-8" name="__codelineno-15-8" href="#__codelineno-15-8"></a><span class="w">    </span><span class="n">mdb_env_set_maxdbs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">16</span>
+<a id="__codelineno-15-9" name="__codelineno-15-9" href="#__codelineno-15-9"></a><span class="err">}</span>
+</code></pre></div></p>
+<p><strong>Connection Optimization:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="n">relay</span><span class="w"> </span><span class="err">{</span>
+<a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="w">    </span><span class="c1"># Increase connection limits</span>
+<a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a><span class="w">    </span><span class="n">nofiles</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">131072</span>
+<a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a><span class="w">    </span><span class="n">maxSubsPerConnection</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">100</span>
+<a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a>
+<a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a><span class="w">    </span><span class="c1"># Optimize query performance</span>
+<a id="__codelineno-16-7" name="__codelineno-16-7" href="#__codelineno-16-7"></a><span class="w">    </span><span class="n">queryTimesliceBudgetMicroseconds</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10000</span>
+<a id="__codelineno-16-8" name="__codelineno-16-8" href="#__codelineno-16-8"></a><span class="w">    </span><span class="n">maxFilterLimit</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2000</span>
+<a id="__codelineno-16-9" name="__codelineno-16-9" href="#__codelineno-16-9"></a>
+<a id="__codelineno-16-10" name="__codelineno-16-10" href="#__codelineno-16-10"></a><span class="w">    </span><span class="c1"># Network tuning</span>
+<a id="__codelineno-16-11" name="__codelineno-16-11" href="#__codelineno-16-11"></a><span class="w">    </span><span class="n">autoPingSeconds</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">25</span>
+<a id="__codelineno-16-12" name="__codelineno-16-12" href="#__codelineno-16-12"></a><span class="w">    </span><span class="n">enableTcpKeepalive</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span>
+<a id="__codelineno-16-13" name="__codelineno-16-13" href="#__codelineno-16-13"></a><span class="err">}</span>
+</code></pre></div></p>
+<h3 id="horizontal-scaling-strategies">Horizontal Scaling Strategies</h3>
+<p><strong>Load Balancing Configuration:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="k">upstream</span><span class="w"> </span><span class="s">strfry_cluster</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="w">    </span><span class="kn">least_conn</span><span class="p">;</span>
+<a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a><span class="w">    </span><span class="kn">server</span><span class="w"> </span><span class="n">10.0.1.10</span><span class="p">:</span><span class="mi">7777</span><span class="w"> </span><span class="s">weight=3</span><span class="p">;</span>
+<a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a><span class="w">    </span><span class="kn">server</span><span class="w"> </span><span class="n">10.0.1.11</span><span class="p">:</span><span class="mi">7777</span><span class="w"> </span><span class="s">weight=3</span><span class="p">;</span>
+<a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a><span class="w">    </span><span class="kn">server</span><span class="w"> </span><span class="n">10.0.1.12</span><span class="p">:</span><span class="mi">7777</span><span class="w"> </span><span class="s">weight=2</span><span class="p">;</span>
+<a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a>
+<a id="__codelineno-17-7" name="__codelineno-17-7" href="#__codelineno-17-7"></a><span class="w">    </span><span class="kn">keepalive</span><span class="w"> </span><span class="mi">64</span><span class="p">;</span>
+<a id="__codelineno-17-8" name="__codelineno-17-8" href="#__codelineno-17-8"></a><span class="p">}</span>
+</code></pre></div></p>
+<p><strong>Database Replication:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="c1"># Master-slave replication setup</span>
+<a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a>/opt/strfry/strfry<span class="w"> </span>sync<span class="w"> </span>--source<span class="w"> </span>wss://master-relay.example.com<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a><span class="w">                        </span>--target<span class="w"> </span>/opt/strfry/data/strfry-db/
+</code></pre></div></p>
+<h2 id="troubleshooting-and-diagnostics">Troubleshooting and Diagnostics</h2>
+<h3 id="common-issues-and-resolution">Common Issues and Resolution</h3>
+<p><strong>Connection Problems:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="c1"># WebSocket connectivity testing</span>
+<a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a>wscat<span class="w"> </span>-c<span class="w"> </span>wss://relay.example.com
+<a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a>
+<a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a><span class="c1"># SSL certificate validation</span>
+<a id="__codelineno-19-5" name="__codelineno-19-5" href="#__codelineno-19-5"></a>openssl<span class="w"> </span>s_client<span class="w"> </span>-connect<span class="w"> </span>relay.example.com:443<span class="w"> </span>-servername<span class="w"> </span>relay.example.com
+<a id="__codelineno-19-6" name="__codelineno-19-6" href="#__codelineno-19-6"></a>
+<a id="__codelineno-19-7" name="__codelineno-19-7" href="#__codelineno-19-7"></a><span class="c1"># Network connectivity analysis</span>
+<a id="__codelineno-19-8" name="__codelineno-19-8" href="#__codelineno-19-8"></a>tcptraceroute<span class="w"> </span>relay.example.com<span class="w"> </span><span class="m">443</span>
+</code></pre></div></p>
+<p><strong>Performance Issues:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="c1"># Resource utilization analysis</span>
+<a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a>htop
+<a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a>iotop<span class="w"> </span>-a
+<a id="__codelineno-20-4" name="__codelineno-20-4" href="#__codelineno-20-4"></a>iostat<span class="w"> </span>-x<span class="w"> </span><span class="m">1</span>
+<a id="__codelineno-20-5" name="__codelineno-20-5" href="#__codelineno-20-5"></a>
+<a id="__codelineno-20-6" name="__codelineno-20-6" href="#__codelineno-20-6"></a><span class="c1"># Database performance monitoring</span>
+<a id="__codelineno-20-7" name="__codelineno-20-7" href="#__codelineno-20-7"></a>/opt/strfry/strfry<span class="w"> </span>stats
+<a id="__codelineno-20-8" name="__codelineno-20-8" href="#__codelineno-20-8"></a>lmdb_stat<span class="w"> </span>/opt/strfry/data/strfry-db/
+</code></pre></div></p>
+<p><strong>Event Processing Problems:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="c1"># Event validation testing</span>
+<a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a><span class="nb">echo</span><span class="w"> </span><span class="s1">&#39;{&quot;id&quot;:&quot;test&quot;,&quot;pubkey&quot;:&quot;test&quot;,&quot;created_at&quot;:1234567890,&quot;kind&quot;:1,&quot;tags&quot;:[],&quot;content&quot;:&quot;test&quot;,&quot;sig&quot;:&quot;test&quot;}&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>/opt/strfry/strfry<span class="w"> </span>import
+<a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a>
+<a id="__codelineno-21-4" name="__codelineno-21-4" href="#__codelineno-21-4"></a><span class="c1"># Write policy debugging</span>
+<a id="__codelineno-21-5" name="__codelineno-21-5" href="#__codelineno-21-5"></a><span class="nb">echo</span><span class="w"> </span><span class="s1">&#39;{&quot;kind&quot;:1,&quot;content&quot;:&quot;test content&quot;}&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>/opt/strfry/write-policy.sh
+</code></pre></div></p>
+<h2 id="advanced-configuration">Advanced Configuration</h2>
+<h3 id="custom-event-filtering">Custom Event Filtering</h3>
+<p><strong>Advanced Write Policy:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="ch">#!/bin/bash</span>
+<a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a>
+<a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a><span class="nv">event</span><span class="o">=</span><span class="k">$(</span>cat<span class="k">)</span>
+<a id="__codelineno-22-4" name="__codelineno-22-4" href="#__codelineno-22-4"></a>
+<a id="__codelineno-22-5" name="__codelineno-22-5" href="#__codelineno-22-5"></a><span class="c1"># Extract event metadata</span>
+<a id="__codelineno-22-6" name="__codelineno-22-6" href="#__codelineno-22-6"></a><span class="nv">kind</span><span class="o">=</span><span class="k">$(</span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$event</span><span class="s2">&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>jq<span class="w"> </span>-r<span class="w"> </span><span class="s1">&#39;.kind&#39;</span><span class="k">)</span>
+<a id="__codelineno-22-7" name="__codelineno-22-7" href="#__codelineno-22-7"></a><span class="nv">pubkey</span><span class="o">=</span><span class="k">$(</span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$event</span><span class="s2">&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>jq<span class="w"> </span>-r<span class="w"> </span><span class="s1">&#39;.pubkey&#39;</span><span class="k">)</span>
+<a id="__codelineno-22-8" name="__codelineno-22-8" href="#__codelineno-22-8"></a><span class="nv">created_at</span><span class="o">=</span><span class="k">$(</span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$event</span><span class="s2">&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>jq<span class="w"> </span>-r<span class="w"> </span><span class="s1">&#39;.created_at&#39;</span><span class="k">)</span>
+<a id="__codelineno-22-9" name="__codelineno-22-9" href="#__codelineno-22-9"></a><span class="nv">content</span><span class="o">=</span><span class="k">$(</span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$event</span><span class="s2">&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>jq<span class="w"> </span>-r<span class="w"> </span><span class="s1">&#39;.content&#39;</span><span class="k">)</span>
+<a id="__codelineno-22-10" name="__codelineno-22-10" href="#__codelineno-22-10"></a>
+<a id="__codelineno-22-11" name="__codelineno-22-11" href="#__codelineno-22-11"></a><span class="c1"># Timestamp validation</span>
+<a id="__codelineno-22-12" name="__codelineno-22-12" href="#__codelineno-22-12"></a><span class="nv">current_time</span><span class="o">=</span><span class="k">$(</span>date<span class="w"> </span>+%s<span class="k">)</span>
+<a id="__codelineno-22-13" name="__codelineno-22-13" href="#__codelineno-22-13"></a><span class="nv">time_diff</span><span class="o">=</span><span class="k">$((</span><span class="nv">current_time</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="nv">created_at</span><span class="k">))</span>
+<a id="__codelineno-22-14" name="__codelineno-22-14" href="#__codelineno-22-14"></a>
+<a id="__codelineno-22-15" name="__codelineno-22-15" href="#__codelineno-22-15"></a><span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="nv">$time_diff</span><span class="w"> </span>-gt<span class="w"> </span><span class="m">300</span><span class="w"> </span><span class="o">]</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="nv">$time_diff</span><span class="w"> </span>-lt<span class="w"> </span>-60<span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<a id="__codelineno-22-16" name="__codelineno-22-16" href="#__codelineno-22-16"></a><span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s1">&#39;{&quot;action&quot;: &quot;reject&quot;, &quot;msg&quot;: &quot;Invalid timestamp&quot;}&#39;</span>
+<a id="__codelineno-22-17" name="__codelineno-22-17" href="#__codelineno-22-17"></a><span class="w">    </span><span class="nb">exit</span><span class="w"> </span><span class="m">0</span>
+<a id="__codelineno-22-18" name="__codelineno-22-18" href="#__codelineno-22-18"></a><span class="k">fi</span>
+<a id="__codelineno-22-19" name="__codelineno-22-19" href="#__codelineno-22-19"></a>
+<a id="__codelineno-22-20" name="__codelineno-22-20" href="#__codelineno-22-20"></a><span class="c1"># Content length validation</span>
+<a id="__codelineno-22-21" name="__codelineno-22-21" href="#__codelineno-22-21"></a><span class="nv">content_length</span><span class="o">=</span><span class="si">${#</span><span class="nv">content</span><span class="si">}</span>
+<a id="__codelineno-22-22" name="__codelineno-22-22" href="#__codelineno-22-22"></a><span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="nv">$content_length</span><span class="w"> </span>-gt<span class="w"> </span><span class="m">10000</span><span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<a id="__codelineno-22-23" name="__codelineno-22-23" href="#__codelineno-22-23"></a><span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s1">&#39;{&quot;action&quot;: &quot;reject&quot;, &quot;msg&quot;: &quot;Content too long&quot;}&#39;</span>
+<a id="__codelineno-22-24" name="__codelineno-22-24" href="#__codelineno-22-24"></a><span class="w">    </span><span class="nb">exit</span><span class="w"> </span><span class="m">0</span>
+<a id="__codelineno-22-25" name="__codelineno-22-25" href="#__codelineno-22-25"></a><span class="k">fi</span>
+<a id="__codelineno-22-26" name="__codelineno-22-26" href="#__codelineno-22-26"></a>
+<a id="__codelineno-22-27" name="__codelineno-22-27" href="#__codelineno-22-27"></a><span class="c1"># Whitelist/blacklist implementation</span>
+<a id="__codelineno-22-28" name="__codelineno-22-28" href="#__codelineno-22-28"></a><span class="k">if</span><span class="w"> </span>grep<span class="w"> </span>-q<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$pubkey</span><span class="s2">&quot;</span><span class="w"> </span>/opt/strfry/blacklist.txt<span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<a id="__codelineno-22-29" name="__codelineno-22-29" href="#__codelineno-22-29"></a><span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s1">&#39;{&quot;action&quot;: &quot;reject&quot;, &quot;msg&quot;: &quot;Blocked user&quot;}&#39;</span>
+<a id="__codelineno-22-30" name="__codelineno-22-30" href="#__codelineno-22-30"></a><span class="w">    </span><span class="nb">exit</span><span class="w"> </span><span class="m">0</span>
+<a id="__codelineno-22-31" name="__codelineno-22-31" href="#__codelineno-22-31"></a><span class="k">fi</span>
+<a id="__codelineno-22-32" name="__codelineno-22-32" href="#__codelineno-22-32"></a>
+<a id="__codelineno-22-33" name="__codelineno-22-33" href="#__codelineno-22-33"></a><span class="nb">echo</span><span class="w"> </span><span class="s1">&#39;{&quot;action&quot;: &quot;accept&quot;}&#39;</span>
+</code></pre></div></p>
+<h3 id="analytics-and-reporting">Analytics and Reporting</h3>
+<p><strong>Event Analytics Implementation:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="c1"># Daily event statistics</span>
+<a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a>/opt/strfry/strfry<span class="w"> </span><span class="nb">export</span><span class="w"> </span>--since<span class="o">=</span>1day<span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-23-3" name="__codelineno-23-3" href="#__codelineno-23-3"></a>jq<span class="w"> </span>-r<span class="w"> </span><span class="s1">&#39;[.kind, .pubkey[0:8]] | @csv&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-23-4" name="__codelineno-23-4" href="#__codelineno-23-4"></a>sort<span class="w"> </span><span class="p">|</span><span class="w"> </span>uniq<span class="w"> </span>-c<span class="w"> </span><span class="p">|</span><span class="w"> </span>sort<span class="w"> </span>-nr<span class="w"> </span>&gt;<span class="w"> </span>daily-stats.txt
+<a id="__codelineno-23-5" name="__codelineno-23-5" href="#__codelineno-23-5"></a>
+<a id="__codelineno-23-6" name="__codelineno-23-6" href="#__codelineno-23-6"></a><span class="c1"># User activity analysis</span>
+<a id="__codelineno-23-7" name="__codelineno-23-7" href="#__codelineno-23-7"></a>/opt/strfry/strfry<span class="w"> </span><span class="nb">export</span><span class="w"> </span>--since<span class="o">=</span>1week<span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-23-8" name="__codelineno-23-8" href="#__codelineno-23-8"></a>jq<span class="w"> </span>-r<span class="w"> </span><span class="s1">&#39;.pubkey&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sort<span class="w"> </span><span class="p">|</span><span class="w"> </span>uniq<span class="w"> </span>-c<span class="w"> </span><span class="p">|</span><span class="w"> </span>sort<span class="w"> </span>-nr<span class="w"> </span><span class="p">|</span><span class="w"> </span>head<span class="w"> </span>-20
+</code></pre></div></p>
+<h2 id="next-steps">Next Steps</h2>
+<p>Successful relay deployment provides hands-on experience with Nostr infrastructure and prepares you for advanced protocol development. Understanding operational requirements enables effective contribution to network infrastructure and specialized service development.</p>
+<div class="next-lesson">
+  <a href="../../concepts/" class="btn btn-primary">
+    Advanced Protocol Concepts →
+  </a>
+</div>
+
+<hr />
+<h2 id="infrastructure-mastery-assessment">Infrastructure Mastery Assessment</h2>
+<div class="admonition question">
+<p class="admonition-title">Relay Operations Proficiency</p>
+<ol>
+<li>What are the critical considerations for relay database configuration and optimization?</li>
+<li>How do write policies enable content moderation while maintaining decentralization principles?</li>
+<li>What security measures are essential for production relay deployment?</li>
+<li>How can relay operators balance performance, scalability, and resource costs?</li>
+</ol>
+<details class="success">
+<summary>Infrastructure Analysis</summary>
+<ol>
+<li><strong>Database configuration</strong> must balance storage efficiency, query performance, and concurrent access patterns while ensuring data integrity and crash resistance</li>
+<li><strong>Write policies</strong> provide programmatic content filtering at the relay level, allowing operators to implement custom rules while users retain the ability to choose relays that align with their preferences</li>
+<li><strong>Security measures</strong> include system hardening, network protection, SSL/TLS encryption, access control, monitoring, and regular security updates to protect against various attack vectors</li>
+<li><strong>Performance optimization</strong> requires careful tuning of database parameters, connection limits, caching strategies, and hardware resources while implementing cost-effective scaling strategies</li>
+</ol>
+</details>
+</div>
+<hr />
 
 
 
@@ -1681,7 +2219,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="May 27, 2025 04:44:28 UTC">May 27, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="July 9, 2025 18:04:12 UTC">July 9, 2025</span>
   </span>
 
     
@@ -1777,6 +2315,8 @@
         <script src="../../assets/js/typewriter.js"></script>
       
         <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
+      
+        <script src="https://unpkg.com/mermaid@10.9.0/dist/mermaid.min.js"></script>
       
     
   </body>

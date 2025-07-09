@@ -15,6 +15,10 @@
         <link rel="canonical" href="https://learnnostr.com/concepts/nips/">
       
       
+        <link rel="prev" href="../keys/">
+      
+      
+        <link rel="next" href="../nostr-fundamentals/">
       
       
       <link rel="icon" href="../../assets/favicon.ico">
@@ -22,7 +26,7 @@
     
     
       
-        <title>Understanding NIPs (Nostr Implementation Possibilities) - Learn Nostr</title>
+        <title>NIPs - LearnNostr</title>
       
     
     
@@ -92,7 +96,7 @@
 
 <header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../.." title="Learn Nostr" class="md-header__button md-logo" aria-label="Learn Nostr" data-md-component="logo">
+    <a href="../.." title="LearnNostr" class="md-header__button md-logo" aria-label="LearnNostr" data-md-component="logo">
       
   <img src="../../assets/logo.svg" alt="logo">
 
@@ -105,13 +109,13 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            Learn Nostr
+            LearnNostr
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Understanding NIPs (Nostr Implementation Possibilities)
+              NIPs
             
           </span>
         </div>
@@ -147,6 +151,32 @@
     
       <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
     
+    
+      <div class="md-header__option">
+  <div class="md-select">
+    
+    <button class="md-header__button md-icon" aria-label="Select language">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.5 17.5 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2zm-2.62 7 1.62-4.33L19.12 17z"/></svg>
+    </button>
+    <div class="md-select__inner">
+      <ul class="md-select__list">
+        
+          <li class="md-select__item">
+            <a href="./" hreflang="en" class="md-select__link">
+              English
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="../../es/concepts/nips/" hreflang="es" class="md-select__link">
+              Español
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
     
     
       
@@ -269,18 +299,21 @@
   
   
   
-  
-    <li class="md-tabs__item">
-      <a href="../../definitions/" class="md-tabs__link">
-        
+    
   
   
     
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../clients/" class="md-tabs__link">
+          
+  
   
   Core Concepts
 
-      </a>
-    </li>
+        </a>
+      </li>
+    
   
 
       
@@ -351,12 +384,12 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="Learn Nostr" class="md-nav__button md-logo" aria-label="Learn Nostr" data-md-component="logo">
+    <a href="../.." title="LearnNostr" class="md-nav__button md-logo" aria-label="LearnNostr" data-md-component="logo">
       
   <img src="../../assets/logo.svg" alt="logo">
 
     </a>
-    Learn Nostr
+    LearnNostr
   </label>
   
     <div class="md-nav__source">
@@ -552,11 +585,32 @@
       
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../definitions/" class="md-nav__link">
+  
+    
+    
+    
+    
+      
         
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
   
   
   <span class="md-ellipsis">
@@ -565,7 +619,846 @@
   </span>
   
 
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Core Concepts
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../clients/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Clients
+    
+  </span>
+  
+
       </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../events-and-messages/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Events and Messages
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../keys/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Keys
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    NIPs
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    NIPs
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-are-nips" class="md-nav__link">
+    <span class="md-ellipsis">
+      What are NIPs?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#why-nips-matter" class="md-nav__link">
+    <span class="md-ellipsis">
+      Why NIPs Matter
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Why NIPs Matter">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#interoperability" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔗 Interoperability
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#innovation" class="md-nav__link">
+    <span class="md-ellipsis">
+      🚀 Innovation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#standardization" class="md-nav__link">
+    <span class="md-ellipsis">
+      📋 Standardization
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#evolution" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔄 Evolution
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#core-nips-essential" class="md-nav__link">
+    <span class="md-ellipsis">
+      Core NIPs (Essential)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Core NIPs (Essential)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#nip-01-basic-protocol-flow-description" class="md-nav__link">
+    <span class="md-ellipsis">
+      NIP-01: Basic Protocol Flow Description
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nip-02-follow-list" class="md-nav__link">
+    <span class="md-ellipsis">
+      NIP-02: Follow List
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nip-19-bech32-encoded-entities" class="md-nav__link">
+    <span class="md-ellipsis">
+      NIP-19: bech32-encoded entities
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#communication-nips" class="md-nav__link">
+    <span class="md-ellipsis">
+      Communication NIPs
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Communication NIPs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#nip-04-encrypted-direct-message-deprecated" class="md-nav__link">
+    <span class="md-ellipsis">
+      NIP-04: Encrypted Direct Message (Deprecated)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nip-17-private-direct-messages-current-standard" class="md-nav__link">
+    <span class="md-ellipsis">
+      NIP-17: Private Direct Messages (Current Standard)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nip-10-text-notes-and-threads" class="md-nav__link">
+    <span class="md-ellipsis">
+      NIP-10: Text Notes and Threads
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#identity-and-verification" class="md-nav__link">
+    <span class="md-ellipsis">
+      Identity and Verification
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Identity and Verification">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#nip-05-mapping-nostr-keys-to-dns-based-internet-identifiers" class="md-nav__link">
+    <span class="md-ellipsis">
+      NIP-05: Mapping Nostr keys to DNS-based internet identifiers
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nip-39-external-identities-in-profiles" class="md-nav__link">
+    <span class="md-ellipsis">
+      NIP-39: External Identities in Profiles
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#content-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      Content Types
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Content Types">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#nip-23-long-form-content" class="md-nav__link">
+    <span class="md-ellipsis">
+      NIP-23: Long-form Content
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nip-25-reactions" class="md-nav__link">
+    <span class="md-ellipsis">
+      NIP-25: Reactions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nip-18-reposts" class="md-nav__link">
+    <span class="md-ellipsis">
+      NIP-18: Reposts
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lightning-integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lightning Integration
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Lightning Integration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#nip-57-lightning-zaps" class="md-nav__link">
+    <span class="md-ellipsis">
+      NIP-57: Lightning Zaps
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nip-47-wallet-connect" class="md-nav__link">
+    <span class="md-ellipsis">
+      NIP-47: Wallet Connect
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#relay-operations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Relay Operations
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Relay Operations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#nip-11-relay-information-document" class="md-nav__link">
+    <span class="md-ellipsis">
+      NIP-11: Relay Information Document
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nip-42-authentication-of-clients-to-relays" class="md-nav__link">
+    <span class="md-ellipsis">
+      NIP-42: Authentication of clients to relays
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nip-50-search-capability" class="md-nav__link">
+    <span class="md-ellipsis">
+      NIP-50: Search Capability
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#advanced-features" class="md-nav__link">
+    <span class="md-ellipsis">
+      Advanced Features
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Advanced Features">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#nip-26-delegated-event-signing-unrecommended" class="md-nav__link">
+    <span class="md-ellipsis">
+      NIP-26: Delegated Event Signing (Unrecommended)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nip-44-encrypted-payloads-versioned" class="md-nav__link">
+    <span class="md-ellipsis">
+      NIP-44: Encrypted Payloads (Versioned)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nip-59-gift-wrap" class="md-nav__link">
+    <span class="md-ellipsis">
+      NIP-59: Gift Wrap
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nip-65-relay-list-metadata" class="md-nav__link">
+    <span class="md-ellipsis">
+      NIP-65: Relay List Metadata
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#specialized-applications" class="md-nav__link">
+    <span class="md-ellipsis">
+      Specialized Applications
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Specialized Applications">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#nip-15-nostr-marketplace" class="md-nav__link">
+    <span class="md-ellipsis">
+      NIP-15: Nostr Marketplace
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nip-52-calendar-events" class="md-nav__link">
+    <span class="md-ellipsis">
+      NIP-52: Calendar Events
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nip-53-live-activities" class="md-nav__link">
+    <span class="md-ellipsis">
+      NIP-53: Live Activities
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#development-and-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      Development and Management
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Development and Management">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#nip-34-git-stuff" class="md-nav__link">
+    <span class="md-ellipsis">
+      NIP-34: git stuff
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nip-90-data-vending-machines" class="md-nav__link">
+    <span class="md-ellipsis">
+      NIP-90: Data Vending Machines
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#complete-nip-reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      Complete NIP Reference
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Complete NIP Reference">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#core-protocol" class="md-nav__link">
+    <span class="md-ellipsis">
+      Core Protocol
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#communication-social" class="md-nav__link">
+    <span class="md-ellipsis">
+      Communication &amp; Social
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#advanced-features_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Advanced Features
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#authentication-security" class="md-nav__link">
+    <span class="md-ellipsis">
+      Authentication &amp; Security
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#discovery-search" class="md-nav__link">
+    <span class="md-ellipsis">
+      Discovery &amp; Search
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#specialized-applications_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Specialized Applications
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#infrastructure-tools" class="md-nav__link">
+    <span class="md-ellipsis">
+      Infrastructure &amp; Tools
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#nip-status-and-development" class="md-nav__link">
+    <span class="md-ellipsis">
+      NIP Status and Development
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="NIP Status and Development">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#status-levels" class="md-nav__link">
+    <span class="md-ellipsis">
+      Status Levels
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#development-process" class="md-nav__link">
+    <span class="md-ellipsis">
+      Development Process
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#contributing-to-nips" class="md-nav__link">
+    <span class="md-ellipsis">
+      Contributing to NIPs
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#implementation-strategy" class="md-nav__link">
+    <span class="md-ellipsis">
+      Implementation Strategy
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Implementation Strategy">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#for-client-developers" class="md-nav__link">
+    <span class="md-ellipsis">
+      For Client Developers
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#for-relay-operators" class="md-nav__link">
+    <span class="md-ellipsis">
+      For Relay Operators
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#testing-nip-compatibility" class="md-nav__link">
+    <span class="md-ellipsis">
+      Testing NIP Compatibility
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Testing NIP Compatibility">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#client-testing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Client Testing
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#relay-testing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Relay Testing
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resources" class="md-nav__link">
+    <span class="md-ellipsis">
+      Resources
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#next-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      Next Steps
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nostr-fundamentals/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Nostr Fundamentals
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../relays/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Relays
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../zaps/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Zaps
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -628,6 +1521,52 @@
   
   <span class="md-ellipsis">
     Build a Simple Client
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorials/relay-communication/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Relay Communication
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorials/understanding-events/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Understanding Events
     
   </span>
   
@@ -754,16 +1693,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#nip-categories" class="md-nav__link">
-    <span class="md-ellipsis">
-      NIP Categories
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="NIP Categories">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
   <a href="#core-nips-essential" class="md-nav__link">
     <span class="md-ellipsis">
       Core NIPs (Essential)
@@ -774,27 +1703,27 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#nip-01-basic-protocol-flow" class="md-nav__link">
+  <a href="#nip-01-basic-protocol-flow-description" class="md-nav__link">
     <span class="md-ellipsis">
-      NIP-01: Basic Protocol Flow
+      NIP-01: Basic Protocol Flow Description
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#nip-02-contact-list-and-petnames" class="md-nav__link">
+  <a href="#nip-02-follow-list" class="md-nav__link">
     <span class="md-ellipsis">
-      NIP-02: Contact List and Petnames
+      NIP-02: Follow List
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#nip-04-encrypted-direct-messages" class="md-nav__link">
+  <a href="#nip-19-bech32-encoded-entities" class="md-nav__link">
     <span class="md-ellipsis">
-      NIP-04: Encrypted Direct Messages
+      NIP-19: bech32-encoded entities
     </span>
   </a>
   
@@ -804,39 +1733,39 @@
     </nav>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#event-types-kind-numbers" class="md-nav__link">
+      
+        <li class="md-nav__item">
+  <a href="#communication-nips" class="md-nav__link">
     <span class="md-ellipsis">
-      Event Types (Kind Numbers)
+      Communication NIPs
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Event Types (Kind Numbers)">
+    <nav class="md-nav" aria-label="Communication NIPs">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#text-notes-kind-1" class="md-nav__link">
+  <a href="#nip-04-encrypted-direct-message-deprecated" class="md-nav__link">
     <span class="md-ellipsis">
-      Text Notes (Kind 1)
+      NIP-04: Encrypted Direct Message (Deprecated)
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#metadata-kind-0" class="md-nav__link">
+  <a href="#nip-17-private-direct-messages-current-standard" class="md-nav__link">
     <span class="md-ellipsis">
-      Metadata (Kind 0)
+      NIP-17: Private Direct Messages (Current Standard)
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#reactions-kind-7" class="md-nav__link">
+  <a href="#nip-10-text-notes-and-threads" class="md-nav__link">
     <span class="md-ellipsis">
-      Reactions (Kind 7)
+      NIP-10: Text Notes and Threads
     </span>
   </a>
   
@@ -846,34 +1775,49 @@
     </nav>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#advanced-nips" class="md-nav__link">
+      
+        <li class="md-nav__item">
+  <a href="#identity-and-verification" class="md-nav__link">
     <span class="md-ellipsis">
-      Advanced NIPs
+      Identity and Verification
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Advanced NIPs">
+    <nav class="md-nav" aria-label="Identity and Verification">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#nip-09-event-deletion" class="md-nav__link">
+  <a href="#nip-05-mapping-nostr-keys-to-dns-based-internet-identifiers" class="md-nav__link">
     <span class="md-ellipsis">
-      NIP-09: Event Deletion
+      NIP-05: Mapping Nostr keys to DNS-based internet identifiers
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#nip-10-text-note-references" class="md-nav__link">
+  <a href="#nip-39-external-identities-in-profiles" class="md-nav__link">
     <span class="md-ellipsis">
-      NIP-10: Text Note References
+      NIP-39: External Identities in Profiles
     </span>
   </a>
   
 </li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#content-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      Content Types
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Content Types">
+      <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#nip-23-long-form-content" class="md-nav__link">
@@ -884,8 +1828,21 @@
   
 </li>
         
-      </ul>
-    </nav>
+          <li class="md-nav__item">
+  <a href="#nip-25-reactions" class="md-nav__link">
+    <span class="md-ellipsis">
+      NIP-25: Reactions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nip-18-reposts" class="md-nav__link">
+    <span class="md-ellipsis">
+      NIP-18: Reposts
+    </span>
+  </a>
   
 </li>
         
@@ -895,13 +1852,13 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#lightning-integration-nips" class="md-nav__link">
+  <a href="#lightning-integration" class="md-nav__link">
     <span class="md-ellipsis">
-      Lightning Integration NIPs
+      Lightning Integration
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Lightning Integration NIPs">
+    <nav class="md-nav" aria-label="Lightning Integration">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -928,13 +1885,13 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#relay-nips" class="md-nav__link">
+  <a href="#relay-operations" class="md-nav__link">
     <span class="md-ellipsis">
-      Relay NIPs
+      Relay Operations
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Relay NIPs">
+    <nav class="md-nav" aria-label="Relay Operations">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -947,93 +1904,18 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#nip-20-command-results" class="md-nav__link">
-    <span class="md-ellipsis">
-      NIP-20: Command Results
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#client-nips" class="md-nav__link">
-    <span class="md-ellipsis">
-      Client NIPs
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Client NIPs">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#nip-07-browser-extension-interface" class="md-nav__link">
-    <span class="md-ellipsis">
-      NIP-07: Browser Extension Interface
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#nip-19-bech32-encoded-entities" class="md-nav__link">
-    <span class="md-ellipsis">
-      NIP-19: Bech32-encoded Entities
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#specialized-nips" class="md-nav__link">
-    <span class="md-ellipsis">
-      Specialized NIPs
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Specialized NIPs">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#nip-26-delegated-event-signing" class="md-nav__link">
-    <span class="md-ellipsis">
-      NIP-26: Delegated Event Signing
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#nip-28-public-chat" class="md-nav__link">
-    <span class="md-ellipsis">
-      NIP-28: Public Chat
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#nip-40-expiration-timestamp" class="md-nav__link">
-    <span class="md-ellipsis">
-      NIP-40: Expiration Timestamp
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#nip-42-authentication-of-clients-to-relays" class="md-nav__link">
     <span class="md-ellipsis">
-      NIP-42: Authentication of Clients to Relays
+      NIP-42: Authentication of clients to relays
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nip-50-search-capability" class="md-nav__link">
+    <span class="md-ellipsis">
+      NIP-50: Search Capability
     </span>
   </a>
   
@@ -1045,55 +1927,46 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#nip-development-process" class="md-nav__link">
+  <a href="#advanced-features" class="md-nav__link">
     <span class="md-ellipsis">
-      NIP Development Process
+      Advanced Features
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="NIP Development Process">
+    <nav class="md-nav" aria-label="Advanced Features">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#1-proposal" class="md-nav__link">
+  <a href="#nip-26-delegated-event-signing-unrecommended" class="md-nav__link">
     <span class="md-ellipsis">
-      1. Proposal
+      NIP-26: Delegated Event Signing (Unrecommended)
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#2-discussion" class="md-nav__link">
+  <a href="#nip-44-encrypted-payloads-versioned" class="md-nav__link">
     <span class="md-ellipsis">
-      2. Discussion
+      NIP-44: Encrypted Payloads (Versioned)
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#3-implementation" class="md-nav__link">
+  <a href="#nip-59-gift-wrap" class="md-nav__link">
     <span class="md-ellipsis">
-      3. Implementation
+      NIP-59: Gift Wrap
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#4-adoption" class="md-nav__link">
+  <a href="#nip-65-relay-list-metadata" class="md-nav__link">
     <span class="md-ellipsis">
-      4. Adoption
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#5-finalization" class="md-nav__link">
-    <span class="md-ellipsis">
-      5. Finalization
+      NIP-65: Relay List Metadata
     </span>
   </a>
   
@@ -1105,46 +1978,37 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#nip-status-levels" class="md-nav__link">
+  <a href="#specialized-applications" class="md-nav__link">
     <span class="md-ellipsis">
-      NIP Status Levels
+      Specialized Applications
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="NIP Status Levels">
+    <nav class="md-nav" aria-label="Specialized Applications">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#draft" class="md-nav__link">
+  <a href="#nip-15-nostr-marketplace" class="md-nav__link">
     <span class="md-ellipsis">
-      Draft
+      NIP-15: Nostr Marketplace
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#proposed" class="md-nav__link">
+  <a href="#nip-52-calendar-events" class="md-nav__link">
     <span class="md-ellipsis">
-      Proposed
+      NIP-52: Calendar Events
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#final" class="md-nav__link">
+  <a href="#nip-53-live-activities" class="md-nav__link">
     <span class="md-ellipsis">
-      Final
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#deprecated" class="md-nav__link">
-    <span class="md-ellipsis">
-      Deprecated
+      NIP-53: Live Activities
     </span>
   </a>
   
@@ -1156,28 +2020,28 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#reading-nips" class="md-nav__link">
+  <a href="#development-and-management" class="md-nav__link">
     <span class="md-ellipsis">
-      Reading NIPs
+      Development and Management
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Reading NIPs">
+    <nav class="md-nav" aria-label="Development and Management">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#structure" class="md-nav__link">
+  <a href="#nip-34-git-stuff" class="md-nav__link">
     <span class="md-ellipsis">
-      Structure
+      NIP-34: git stuff
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#example-nip-structure" class="md-nav__link">
+  <a href="#nip-90-data-vending-machines" class="md-nav__link">
     <span class="md-ellipsis">
-      Example NIP Structure
+      NIP-90: Data Vending Machines
     </span>
   </a>
   
@@ -1189,28 +2053,73 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#implementing-nips" class="md-nav__link">
+  <a href="#complete-nip-reference" class="md-nav__link">
     <span class="md-ellipsis">
-      Implementing NIPs
+      Complete NIP Reference
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Implementing NIPs">
+    <nav class="md-nav" aria-label="Complete NIP Reference">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#for-developers" class="md-nav__link">
+  <a href="#core-protocol" class="md-nav__link">
     <span class="md-ellipsis">
-      For Developers
+      Core Protocol
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#core-nips-to-implement" class="md-nav__link">
+  <a href="#communication-social" class="md-nav__link">
     <span class="md-ellipsis">
-      Core NIPs to Implement
+      Communication &amp; Social
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#advanced-features_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Advanced Features
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#authentication-security" class="md-nav__link">
+    <span class="md-ellipsis">
+      Authentication &amp; Security
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#discovery-search" class="md-nav__link">
+    <span class="md-ellipsis">
+      Discovery &amp; Search
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#specialized-applications_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Specialized Applications
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#infrastructure-tools" class="md-nav__link">
+    <span class="md-ellipsis">
+      Infrastructure &amp; Tools
     </span>
   </a>
   
@@ -1222,70 +2131,103 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#nip-compatibility" class="md-nav__link">
+  <a href="#nip-status-and-development" class="md-nav__link">
     <span class="md-ellipsis">
-      NIP Compatibility
+      NIP Status and Development
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="NIP Compatibility">
+    <nav class="md-nav" aria-label="NIP Status and Development">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#client-compatibility" class="md-nav__link">
+  <a href="#status-levels" class="md-nav__link">
     <span class="md-ellipsis">
-      Client Compatibility
+      Status Levels
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#relay-compatibility" class="md-nav__link">
+  <a href="#development-process" class="md-nav__link">
     <span class="md-ellipsis">
-      Relay Compatibility
+      Development Process
     </span>
   </a>
   
 </li>
         
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#future-nips" class="md-nav__link">
-    <span class="md-ellipsis">
-      Future NIPs
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
+          <li class="md-nav__item">
   <a href="#contributing-to-nips" class="md-nav__link">
     <span class="md-ellipsis">
       Contributing to NIPs
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Contributing to NIPs">
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#implementation-strategy" class="md-nav__link">
+    <span class="md-ellipsis">
+      Implementation Strategy
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Implementation Strategy">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#how-to-contribute" class="md-nav__link">
+  <a href="#for-client-developers" class="md-nav__link">
     <span class="md-ellipsis">
-      How to Contribute
+      For Client Developers
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#nip-writing-guidelines" class="md-nav__link">
+  <a href="#for-relay-operators" class="md-nav__link">
     <span class="md-ellipsis">
-      NIP Writing Guidelines
+      For Relay Operators
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#testing-nip-compatibility" class="md-nav__link">
+    <span class="md-ellipsis">
+      Testing NIP Compatibility
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Testing NIP Compatibility">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#client-testing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Client Testing
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#relay-testing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Relay Testing
     </span>
   </a>
   
@@ -1300,6 +2242,15 @@
   <a href="#resources" class="md-nav__link">
     <span class="md-ellipsis">
       Resources
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#next-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      Next Steps
     </span>
   </a>
   
@@ -1325,6 +2276,17 @@
 
 
 <h1 id="understanding-nips-nostr-implementation-possibilities">Understanding NIPs (Nostr Implementation Possibilities)</h1>
+<div class="admonition info">
+<p class="admonition-title">Learning Objectives</p>
+<p>After this lesson, you'll understand:</p>
+<ul>
+<li>What NIPs are and why they're essential</li>
+<li>How NIPs enable interoperability and innovation</li>
+<li>Core NIPs that every implementation should support</li>
+<li>The NIP development and adoption process</li>
+<li>How to read and implement NIPs</li>
+</ul>
+</div>
 <p>NIPs are the backbone of Nostr's extensibility and standardization. They define how different parts of the protocol work and enable interoperability between clients and relays.</p>
 <h2 id="what-are-nips">What are NIPs?</h2>
 <p><strong>NIP</strong> stands for <strong>Nostr Implementation Possibility</strong>. NIPs are technical specifications that describe:</p>
@@ -1345,10 +2307,15 @@
 <p>Common patterns and best practices are documented for developers.</p>
 <h3 id="evolution">🔄 <strong>Evolution</strong></h3>
 <p>The protocol can evolve while maintaining backward compatibility.</p>
-<h2 id="nip-categories">NIP Categories</h2>
-<h3 id="core-nips-essential">Core NIPs (Essential)</h3>
-<h4 id="nip-01-basic-protocol-flow"><strong>NIP-01: Basic Protocol Flow</strong></h4>
+<h2 id="core-nips-essential">Core NIPs (Essential)</h2>
+<p>These NIPs form the foundation of Nostr and should be implemented by all clients:</p>
+<h3 id="nip-01-basic-protocol-flow-description"><strong>NIP-01: Basic Protocol Flow Description</strong></h3>
 <p>The foundation of Nostr - defines events, signatures, and basic communication.</p>
+<p><strong>Key concepts:</strong>
+- Event structure and serialization
+- Digital signatures using Schnorr
+- Basic relay communication patterns
+- Event kinds and their meanings</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="p">{</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">  </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;event-id&quot;</span><span class="p">,</span>
 <a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">  </span><span class="nt">&quot;pubkey&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;author-pubkey&quot;</span><span class="p">,</span>
@@ -1359,7 +2326,7 @@
 <a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">  </span><span class="nt">&quot;sig&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;signature&quot;</span>
 <a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="p">}</span>
 </code></pre></div>
-<h4 id="nip-02-contact-list-and-petnames"><strong>NIP-02: Contact List and Petnames</strong></h4>
+<h3 id="nip-02-follow-list"><strong>NIP-02: Follow List</strong></h3>
 <p>Defines how users follow each other and manage contact lists.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="p">{</span>
 <a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">  </span><span class="nt">&quot;kind&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span>
@@ -1370,271 +2337,464 @@
 <a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">  </span><span class="nt">&quot;content&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
 <a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="p">}</span>
 </code></pre></div>
-<h4 id="nip-04-encrypted-direct-messages"><strong>NIP-04: Encrypted Direct Messages</strong></h4>
-<p>Enables private messaging between users.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="p">{</span>
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">  </span><span class="nt">&quot;kind&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span>
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">  </span><span class="nt">&quot;tags&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[[</span><span class="s2">&quot;p&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;recipient-pubkey&quot;</span><span class="p">]],</span>
-<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">  </span><span class="nt">&quot;content&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;encrypted-message-content&quot;</span>
-<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="p">}</span>
+<p><strong>Use cases:</strong>
+- Building social graphs
+- Contact management
+- Relay recommendations
+- Petname systems</p>
+<h3 id="nip-19-bech32-encoded-entities"><strong>NIP-19: bech32-encoded entities</strong></h3>
+<p>Human-readable identifiers for Nostr entities.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>npub1... (public keys)
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>nsec1... (private keys)  
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>note1... (note IDs)
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>nprofile1... (profiles with relay hints)
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>nevent1... (events with relay hints)
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>naddr1... (addresses for replaceable events)
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>nrelay1... (relay URLs)
 </code></pre></div>
-<h3 id="event-types-kind-numbers">Event Types (Kind Numbers)</h3>
-<h4 id="text-notes-kind-1"><strong>Text Notes (Kind 1)</strong></h4>
+<h2 id="communication-nips">Communication NIPs</h2>
+<h3 id="nip-04-encrypted-direct-message-deprecated"><strong>NIP-04: Encrypted Direct Message</strong> (Deprecated)</h3>
+<p>⚠️ <strong>Note: Deprecated in favor of NIP-17</strong></p>
+<p>Enables private messaging between users using shared secrets.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="p">{</span>
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">  </span><span class="nt">&quot;kind&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
-<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">  </span><span class="nt">&quot;content&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;This is a text note&quot;</span>
-<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="p">}</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">  </span><span class="nt">&quot;kind&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">  </span><span class="nt">&quot;tags&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[[</span><span class="s2">&quot;p&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;recipient-pubkey&quot;</span><span class="p">]],</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">  </span><span class="nt">&quot;content&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;encrypted-message-content?iv=initialization-vector&quot;</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="p">}</span>
 </code></pre></div>
-<h4 id="metadata-kind-0"><strong>Metadata (Kind 0)</strong></h4>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="p">{</span>
-<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">  </span><span class="nt">&quot;kind&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
-<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">  </span><span class="nt">&quot;content&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;{\&quot;name\&quot;:\&quot;Alice\&quot;,\&quot;about\&quot;:\&quot;Nostr enthusiast\&quot;}&quot;</span>
-<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="p">}</span>
-</code></pre></div>
-<h4 id="reactions-kind-7"><strong>Reactions (Kind 7)</strong></h4>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="p">{</span>
-<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">  </span><span class="nt">&quot;kind&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span>
-<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">  </span><span class="nt">&quot;tags&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[[</span><span class="s2">&quot;e&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;note-id&quot;</span><span class="p">],</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;p&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;author-pubkey&quot;</span><span class="p">]],</span>
-<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="w">  </span><span class="nt">&quot;content&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;🤙&quot;</span>
-<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="p">}</span>
-</code></pre></div>
-<h3 id="advanced-nips">Advanced NIPs</h3>
-<h4 id="nip-09-event-deletion"><strong>NIP-09: Event Deletion</strong></h4>
-<p>Allows users to request deletion of their events.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="p">{</span>
-<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="w">  </span><span class="nt">&quot;kind&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span>
-<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="w">  </span><span class="nt">&quot;tags&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[[</span><span class="s2">&quot;e&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;event-to-delete-id&quot;</span><span class="p">]],</span>
-<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="w">  </span><span class="nt">&quot;content&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Deleting this note&quot;</span>
-<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="p">}</span>
-</code></pre></div>
-<h4 id="nip-10-text-note-references"><strong>NIP-10: Text Note References</strong></h4>
+<h3 id="nip-17-private-direct-messages-current-standard"><strong>NIP-17: Private Direct Messages</strong> (Current Standard)</h3>
+<p>Modern encrypted messaging with improved security.</p>
+<p><strong>Key improvements:</strong>
+- Gift wrap pattern for metadata protection
+- Better forward secrecy
+- Reduced metadata leakage</p>
+<h3 id="nip-10-text-notes-and-threads"><strong>NIP-10: Text Notes and Threads</strong></h3>
 <p>Standardizes how to reference other notes and create threads.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="p">{</span>
-<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="w">  </span><span class="nt">&quot;kind&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
-<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="w">  </span><span class="nt">&quot;tags&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="w">    </span><span class="p">[</span><span class="s2">&quot;e&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;root-event-id&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;root&quot;</span><span class="p">],</span>
-<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="w">    </span><span class="p">[</span><span class="s2">&quot;e&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;reply-to-id&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;reply&quot;</span><span class="p">],</span>
-<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="w">    </span><span class="p">[</span><span class="s2">&quot;p&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;mentioned-pubkey&quot;</span><span class="p">]</span>
-<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="w">  </span><span class="p">],</span>
-<a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a><span class="w">  </span><span class="nt">&quot;content&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;This is a reply&quot;</span>
-<a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a><span class="p">}</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="p">{</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">  </span><span class="nt">&quot;kind&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">  </span><span class="nt">&quot;tags&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">    </span><span class="p">[</span><span class="s2">&quot;e&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;root-event-id&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;root&quot;</span><span class="p">],</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="w">    </span><span class="p">[</span><span class="s2">&quot;e&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;reply-to-id&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;reply&quot;</span><span class="p">],</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="w">    </span><span class="p">[</span><span class="s2">&quot;p&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;mentioned-pubkey&quot;</span><span class="p">]</span>
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="w">  </span><span class="p">],</span>
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="w">  </span><span class="nt">&quot;content&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;This is a reply&quot;</span>
+<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="p">}</span>
 </code></pre></div>
-<h4 id="nip-23-long-form-content"><strong>NIP-23: Long-form Content</strong></h4>
+<p><strong>Tag markers:</strong>
+- <code>root</code>: Points to the thread root
+- <code>reply</code>: Points to the direct parent
+- <code>mention</code>: References without reply semantics</p>
+<h2 id="identity-and-verification">Identity and Verification</h2>
+<h3 id="nip-05-mapping-nostr-keys-to-dns-based-internet-identifiers"><strong>NIP-05: Mapping Nostr keys to DNS-based internet identifiers</strong></h3>
+<p>Links Nostr identities to domain names for verification.</p>
+<p><strong>Process:</strong>
+1. User sets <code>nip05</code> field in profile: <code>"alice@example.com"</code>
+2. Client fetches <code>https://example.com/.well-known/nostr.json?name=alice</code>
+3. Verifies pubkey matches</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="p">{</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">  </span><span class="nt">&quot;names&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">    </span><span class="nt">&quot;alice&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;npub1...&quot;</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="w">  </span><span class="p">},</span>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="w">  </span><span class="nt">&quot;relays&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="w">    </span><span class="nt">&quot;npub1...&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;wss://relay.example.com&quot;</span><span class="p">]</span>
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="w">  </span><span class="p">}</span>
+<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="p">}</span>
+</code></pre></div>
+<h3 id="nip-39-external-identities-in-profiles"><strong>NIP-39: External Identities in Profiles</strong></h3>
+<p>Link external platforms to Nostr profiles.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="p">{</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="w">  </span><span class="nt">&quot;kind&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="w">  </span><span class="nt">&quot;content&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;{\&quot;name\&quot;:\&quot;Alice\&quot;}&quot;</span><span class="p">,</span>
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="w">  </span><span class="nt">&quot;tags&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="w">    </span><span class="p">[</span><span class="s2">&quot;i&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;github:alice&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;https://github.com/alice&quot;</span><span class="p">],</span>
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="w">    </span><span class="p">[</span><span class="s2">&quot;i&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;twitter:alice_crypto&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;https://twitter.com/alice_crypto&quot;</span><span class="p">]</span>
+<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="w">  </span><span class="p">]</span>
+<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="p">}</span>
+</code></pre></div>
+<h2 id="content-types">Content Types</h2>
+<h3 id="nip-23-long-form-content"><strong>NIP-23: Long-form Content</strong></h3>
 <p>Enables publishing articles and long-form content.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="p">{</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="w">  </span><span class="nt">&quot;kind&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">30023</span><span class="p">,</span>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="w">  </span><span class="nt">&quot;tags&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="w">    </span><span class="p">[</span><span class="s2">&quot;d&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;article-slug&quot;</span><span class="p">],</span>
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="w">    </span><span class="p">[</span><span class="s2">&quot;title&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;My Article Title&quot;</span><span class="p">],</span>
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="w">    </span><span class="p">[</span><span class="s2">&quot;summary&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Article summary&quot;</span><span class="p">],</span>
+<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="w">    </span><span class="p">[</span><span class="s2">&quot;published_at&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;1234567890&quot;</span><span class="p">]</span>
+<a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a><span class="w">  </span><span class="p">],</span>
+<a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a><span class="w">  </span><span class="nt">&quot;content&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;# Article Content\n\nThis is a long article...&quot;</span>
+<a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a><span class="p">}</span>
+</code></pre></div>
+<h3 id="nip-25-reactions"><strong>NIP-25: Reactions</strong></h3>
+<p>Standardizes reactions (likes, hearts, etc.) to events.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="p">{</span>
-<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="w">  </span><span class="nt">&quot;kind&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">30023</span><span class="p">,</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="w">  </span><span class="nt">&quot;kind&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span>
 <a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="w">  </span><span class="nt">&quot;tags&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="w">    </span><span class="p">[</span><span class="s2">&quot;d&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;article-identifier&quot;</span><span class="p">],</span>
-<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="w">    </span><span class="p">[</span><span class="s2">&quot;title&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;My Article Title&quot;</span><span class="p">],</span>
-<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a><span class="w">    </span><span class="p">[</span><span class="s2">&quot;summary&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Article summary&quot;</span><span class="p">]</span>
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="w">    </span><span class="p">[</span><span class="s2">&quot;e&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;reacted-event-id&quot;</span><span class="p">],</span>
+<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="w">    </span><span class="p">[</span><span class="s2">&quot;p&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;reacted-event-author&quot;</span><span class="p">],</span>
+<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a><span class="w">    </span><span class="p">[</span><span class="s2">&quot;k&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;1&quot;</span><span class="p">]</span>
 <a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a><span class="w">  </span><span class="p">],</span>
-<a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a><span class="w">  </span><span class="nt">&quot;content&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;# Article Content\n\nThis is a long article...&quot;</span>
+<a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a><span class="w">  </span><span class="nt">&quot;content&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;🤙&quot;</span>
 <a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a><span class="p">}</span>
 </code></pre></div>
-<h2 id="lightning-integration-nips">Lightning Integration NIPs</h2>
+<h3 id="nip-18-reposts"><strong>NIP-18: Reposts</strong></h3>
+<p>Two types of reposts:</p>
+<p><strong>Generic Repost (Kind 6):</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="p">{</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="w">  </span><span class="nt">&quot;kind&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span>
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="w">  </span><span class="nt">&quot;tags&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[[</span><span class="s2">&quot;e&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;reposted-event-id&quot;</span><span class="p">]],</span>
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="w">  </span><span class="nt">&quot;content&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="p">}</span>
+</code></pre></div></p>
+<p><strong>Quote Repost (Kind 1):</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="p">{</span>
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="w">  </span><span class="nt">&quot;kind&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="w">  </span><span class="nt">&quot;tags&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[[</span><span class="s2">&quot;q&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;quoted-event-id&quot;</span><span class="p">]],</span>
+<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="w">  </span><span class="nt">&quot;content&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;This is interesting: nostr:note1...&quot;</span>
+<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a><span class="p">}</span>
+</code></pre></div></p>
+<h2 id="lightning-integration">Lightning Integration</h2>
 <h3 id="nip-57-lightning-zaps"><strong>NIP-57: Lightning Zaps</strong></h3>
 <p>Enables Bitcoin Lightning payments (zaps) on Nostr.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="p">{</span>
-<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="w">  </span><span class="nt">&quot;kind&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">9735</span><span class="p">,</span>
-<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="w">  </span><span class="nt">&quot;tags&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="w">    </span><span class="p">[</span><span class="s2">&quot;bolt11&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;lightning-invoice&quot;</span><span class="p">],</span>
-<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="w">    </span><span class="p">[</span><span class="s2">&quot;description&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;zap-request&quot;</span><span class="p">],</span>
-<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a><span class="w">    </span><span class="p">[</span><span class="s2">&quot;p&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;recipient-pubkey&quot;</span><span class="p">]</span>
-<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a><span class="w">  </span><span class="p">]</span>
-<a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a><span class="p">}</span>
-</code></pre></div>
+<p><strong>Zap Request (Kind 9734):</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="p">{</span>
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="w">  </span><span class="nt">&quot;kind&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">9734</span><span class="p">,</span>
+<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="w">  </span><span class="nt">&quot;tags&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="w">    </span><span class="p">[</span><span class="s2">&quot;p&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;recipient-pubkey&quot;</span><span class="p">],</span>
+<a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a><span class="w">    </span><span class="p">[</span><span class="s2">&quot;amount&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;21000&quot;</span><span class="p">],</span>
+<a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a><span class="w">    </span><span class="p">[</span><span class="s2">&quot;relays&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;wss://relay1.com&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;wss://relay2.com&quot;</span><span class="p">]</span>
+<a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a><span class="w">  </span><span class="p">],</span>
+<a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a><span class="w">  </span><span class="nt">&quot;content&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Great post! ⚡&quot;</span>
+<a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a><span class="p">}</span>
+</code></pre></div></p>
+<p><strong>Zap Receipt (Kind 9735):</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="p">{</span>
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="w">  </span><span class="nt">&quot;kind&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">9735</span><span class="p">,</span>
+<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="w">  </span><span class="nt">&quot;tags&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="w">    </span><span class="p">[</span><span class="s2">&quot;bolt11&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;lightning-invoice&quot;</span><span class="p">],</span>
+<a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a><span class="w">    </span><span class="p">[</span><span class="s2">&quot;description&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;zap-request-event&quot;</span><span class="p">],</span>
+<a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a><span class="w">    </span><span class="p">[</span><span class="s2">&quot;p&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;recipient-pubkey&quot;</span><span class="p">]</span>
+<a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a><span class="w">  </span><span class="p">]</span>
+<a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a><span class="p">}</span>
+</code></pre></div></p>
 <h3 id="nip-47-wallet-connect"><strong>NIP-47: Wallet Connect</strong></h3>
 <p>Allows remote wallet control for Lightning payments.</p>
-<h2 id="relay-nips">Relay NIPs</h2>
+<p><strong>Supported commands:</strong>
+- <code>pay_invoice</code>
+- <code>pay_keysend</code>
+- <code>make_invoice</code>
+- <code>lookup_invoice</code>
+- <code>get_balance</code>
+- <code>get_info</code></p>
+<h2 id="relay-operations">Relay Operations</h2>
 <h3 id="nip-11-relay-information-document"><strong>NIP-11: Relay Information Document</strong></h3>
 <p>Relays provide metadata about their capabilities.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="p">{</span>
-<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="w">  </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;My Relay&quot;</span><span class="p">,</span>
-<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="w">  </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;A Nostr relay&quot;</span><span class="p">,</span>
-<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="w">  </span><span class="nt">&quot;pubkey&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;relay-pubkey&quot;</span><span class="p">,</span>
-<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a><span class="w">  </span><span class="nt">&quot;contact&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;admin@relay.com&quot;</span><span class="p">,</span>
-<a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a><span class="w">  </span><span class="nt">&quot;supported_nips&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">9</span><span class="p">,</span><span class="w"> </span><span class="mi">11</span><span class="p">,</span><span class="w"> </span><span class="mi">12</span><span class="p">,</span><span class="w"> </span><span class="mi">15</span><span class="p">,</span><span class="w"> </span><span class="mi">16</span><span class="p">,</span><span class="w"> </span><span class="mi">20</span><span class="p">,</span><span class="w"> </span><span class="mi">22</span><span class="p">],</span>
-<a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a><span class="w">  </span><span class="nt">&quot;software&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;strfry&quot;</span><span class="p">,</span>
-<a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a><span class="w">  </span><span class="nt">&quot;version&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0.9.6&quot;</span>
-<a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a><span class="p">}</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="p">{</span>
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="w">  </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;My Relay&quot;</span><span class="p">,</span>
+<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="w">  </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;A Nostr relay&quot;</span><span class="p">,</span>
+<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a><span class="w">  </span><span class="nt">&quot;pubkey&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;relay-pubkey&quot;</span><span class="p">,</span>
+<a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a><span class="w">  </span><span class="nt">&quot;contact&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;admin@relay.com&quot;</span><span class="p">,</span>
+<a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a><span class="w">  </span><span class="nt">&quot;supported_nips&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">9</span><span class="p">,</span><span class="w"> </span><span class="mi">11</span><span class="p">,</span><span class="w"> </span><span class="mi">15</span><span class="p">,</span><span class="w"> </span><span class="mi">16</span><span class="p">,</span><span class="w"> </span><span class="mi">20</span><span class="p">,</span><span class="w"> </span><span class="mi">22</span><span class="p">],</span>
+<a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a><span class="w">  </span><span class="nt">&quot;software&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;strfry&quot;</span><span class="p">,</span>
+<a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a><span class="w">  </span><span class="nt">&quot;version&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0.9.6&quot;</span><span class="p">,</span>
+<a id="__codelineno-13-9" name="__codelineno-13-9" href="#__codelineno-13-9"></a><span class="w">  </span><span class="nt">&quot;limitation&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-13-10" name="__codelineno-13-10" href="#__codelineno-13-10"></a><span class="w">    </span><span class="nt">&quot;max_message_length&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">16384</span><span class="p">,</span>
+<a id="__codelineno-13-11" name="__codelineno-13-11" href="#__codelineno-13-11"></a><span class="w">    </span><span class="nt">&quot;max_subscriptions&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">300</span><span class="p">,</span>
+<a id="__codelineno-13-12" name="__codelineno-13-12" href="#__codelineno-13-12"></a><span class="w">    </span><span class="nt">&quot;max_limit&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">5000</span><span class="p">,</span>
+<a id="__codelineno-13-13" name="__codelineno-13-13" href="#__codelineno-13-13"></a><span class="w">    </span><span class="nt">&quot;auth_required&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<a id="__codelineno-13-14" name="__codelineno-13-14" href="#__codelineno-13-14"></a><span class="w">    </span><span class="nt">&quot;payment_required&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span>
+<a id="__codelineno-13-15" name="__codelineno-13-15" href="#__codelineno-13-15"></a><span class="w">  </span><span class="p">}</span>
+<a id="__codelineno-13-16" name="__codelineno-13-16" href="#__codelineno-13-16"></a><span class="p">}</span>
 </code></pre></div>
-<h3 id="nip-20-command-results"><strong>NIP-20: Command Results</strong></h3>
-<p>Standardizes relay responses to client commands.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="p">[</span><span class="s2">&quot;OK&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;event-id&quot;</span><span class="p">,</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">]</span>
-<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="p">[</span><span class="s2">&quot;OK&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;event-id&quot;</span><span class="p">,</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;blocked: content policy violation&quot;</span><span class="p">]</span>
-</code></pre></div>
-<h2 id="client-nips">Client NIPs</h2>
-<h3 id="nip-07-browser-extension-interface"><strong>NIP-07: Browser Extension Interface</strong></h3>
-<p>Defines how web clients interact with browser extensions for key management.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="c1">// Request signing from extension</span>
-<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="kd">const</span><span class="w"> </span><span class="nx">event</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nb">window</span><span class="p">.</span><span class="nx">nostr</span><span class="p">.</span><span class="nx">signEvent</span><span class="p">({</span>
-<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="w">  </span><span class="nx">kind</span><span class="o">:</span><span class="w"> </span><span class="mf">1</span><span class="p">,</span>
-<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="w">  </span><span class="nx">created_at</span><span class="o">:</span><span class="w"> </span><span class="nb">Math</span><span class="p">.</span><span class="nx">floor</span><span class="p">(</span><span class="nb">Date</span><span class="p">.</span><span class="nx">now</span><span class="p">()</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mf">1000</span><span class="p">),</span>
-<a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a><span class="w">  </span><span class="nx">tags</span><span class="o">:</span><span class="w"> </span><span class="p">[],</span>
-<a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a><span class="w">  </span><span class="nx">content</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Hello from browser!&quot;</span>
-<a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a><span class="p">})</span>
-</code></pre></div>
-<h3 id="nip-19-bech32-encoded-entities"><strong>NIP-19: Bech32-encoded Entities</strong></h3>
-<p>Defines human-readable identifiers for Nostr entities.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>npub1... (public key)
-<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>nsec1... (private key)  
-<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>note1... (note ID)
-<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>nprofile1... (profile with relay hints)
-<a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a>nevent1... (event with relay hints)
-</code></pre></div>
-<h2 id="specialized-nips">Specialized NIPs</h2>
-<h3 id="nip-26-delegated-event-signing"><strong>NIP-26: Delegated Event Signing</strong></h3>
-<p>Allows delegation of signing authority to other keys.</p>
-<h3 id="nip-28-public-chat"><strong>NIP-28: Public Chat</strong></h3>
-<p>Defines public chat rooms and channels.</p>
-<h3 id="nip-40-expiration-timestamp"><strong>NIP-40: Expiration Timestamp</strong></h3>
-<p>Events can specify when they should expire.</p>
-<h3 id="nip-42-authentication-of-clients-to-relays"><strong>NIP-42: Authentication of Clients to Relays</strong></h3>
+<h3 id="nip-42-authentication-of-clients-to-relays"><strong>NIP-42: Authentication of clients to relays</strong></h3>
 <p>Enables authenticated connections to relays.</p>
-<h2 id="nip-development-process">NIP Development Process</h2>
-<h3 id="1-proposal">1. <strong>Proposal</strong></h3>
-<ul>
-<li>Identify a need or improvement</li>
-<li>Write initial specification</li>
-<li>Submit as GitHub issue/PR</li>
-</ul>
-<h3 id="2-discussion">2. <strong>Discussion</strong></h3>
-<ul>
-<li>Community review and feedback</li>
-<li>Technical discussion</li>
-<li>Refinement of specification</li>
-</ul>
-<h3 id="3-implementation">3. <strong>Implementation</strong></h3>
-<ul>
-<li>Prototype implementations</li>
-<li>Testing and validation</li>
-<li>Real-world usage</li>
-</ul>
-<h3 id="4-adoption">4. <strong>Adoption</strong></h3>
-<ul>
-<li>Multiple implementations</li>
-<li>Client and relay support</li>
-<li>Community acceptance</li>
-</ul>
-<h3 id="5-finalization">5. <strong>Finalization</strong></h3>
-<ul>
-<li>Specification stabilizes</li>
-<li>Becomes part of standard</li>
-</ul>
-<h2 id="nip-status-levels">NIP Status Levels</h2>
-<h3 id="draft"><strong>Draft</strong></h3>
-<ul>
-<li>Initial proposal</li>
-<li>Under active development</li>
-<li>Subject to major changes</li>
-</ul>
-<h3 id="proposed"><strong>Proposed</strong></h3>
-<ul>
-<li>Stable specification</li>
-<li>Ready for implementation</li>
-<li>Minor changes possible</li>
-</ul>
-<h3 id="final"><strong>Final</strong></h3>
-<ul>
-<li>Widely implemented</li>
-<li>Stable and mature</li>
-<li>Breaking changes unlikely</li>
-</ul>
-<h3 id="deprecated"><strong>Deprecated</strong></h3>
-<ul>
-<li>No longer recommended</li>
-<li>Superseded by newer NIPs</li>
-<li>Legacy support only</li>
-</ul>
-<h2 id="reading-nips">Reading NIPs</h2>
-<p>NIPs are hosted on GitHub: <a href="https://github.com/nostr-protocol/nips">github.com/nostr-protocol/nips</a></p>
-<h3 id="structure">Structure</h3>
-<p>Each NIP typically includes:</p>
-<ol>
-<li><strong>Abstract</strong> - Brief summary</li>
-<li><strong>Motivation</strong> - Why it's needed</li>
-<li><strong>Specification</strong> - Technical details</li>
-<li><strong>Examples</strong> - Code samples</li>
-<li><strong>Implementation</strong> - Notes for developers</li>
-</ol>
-<h3 id="example-nip-structure">Example NIP Structure</h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="gh"># NIP-XX: Feature Name</span>
-<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>
-<a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a><span class="gu">## Abstract</span>
-<a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a>Brief description of the feature.
-<a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a>
-<a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a><span class="gu">## Motivation</span>
-<a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a>Why this feature is needed.
-<a id="__codelineno-14-8" name="__codelineno-14-8" href="#__codelineno-14-8"></a>
-<a id="__codelineno-14-9" name="__codelineno-14-9" href="#__codelineno-14-9"></a><span class="gu">## Specification</span>
-<a id="__codelineno-14-10" name="__codelineno-14-10" href="#__codelineno-14-10"></a>Technical implementation details.
-<a id="__codelineno-14-11" name="__codelineno-14-11" href="#__codelineno-14-11"></a>
-<a id="__codelineno-14-12" name="__codelineno-14-12" href="#__codelineno-14-12"></a><span class="gu">## Examples</span>
-<a id="__codelineno-14-13" name="__codelineno-14-13" href="#__codelineno-14-13"></a>Code examples and use cases.
-<a id="__codelineno-14-14" name="__codelineno-14-14" href="#__codelineno-14-14"></a>
-<a id="__codelineno-14-15" name="__codelineno-14-15" href="#__codelineno-14-15"></a><span class="gu">## Security Considerations</span>
-<a id="__codelineno-14-16" name="__codelineno-14-16" href="#__codelineno-14-16"></a>Potential security implications.
+<p><strong>Authentication flow:</strong>
+1. Relay sends AUTH challenge
+2. Client signs challenge with private key
+3. Relay verifies signature
+4. Authenticated session established</p>
+<h3 id="nip-50-search-capability"><strong>NIP-50: Search Capability</strong></h3>
+<p>Standardizes search functionality across relays.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="p">{</span>
+<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="w">  </span><span class="nt">&quot;kinds&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="p">],</span>
+<a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a><span class="w">  </span><span class="nt">&quot;search&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;nostr protocol&quot;</span><span class="p">,</span>
+<a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a><span class="w">  </span><span class="nt">&quot;limit&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span>
+<a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a><span class="p">}</span>
 </code></pre></div>
-<h2 id="implementing-nips">Implementing NIPs</h2>
-<h3 id="for-developers">For Developers</h3>
+<h2 id="advanced-features">Advanced Features</h2>
+<h3 id="nip-26-delegated-event-signing-unrecommended"><strong>NIP-26: Delegated Event Signing</strong> (Unrecommended)</h3>
+<p>⚠️ <strong>Note: Adds complexity for little gain</strong></p>
+<p>Allows delegation of signing authority to other keys.</p>
+<h3 id="nip-44-encrypted-payloads-versioned"><strong>NIP-44: Encrypted Payloads (Versioned)</strong></h3>
+<p>Improved encryption standard for sensitive data.</p>
+<p><strong>Version 2 features:</strong>
+- ChaCha20-Poly1305 encryption
+- HMAC authentication
+- Versioned format for upgrades</p>
+<h3 id="nip-59-gift-wrap"><strong>NIP-59: Gift Wrap</strong></h3>
+<p>Advanced encryption pattern for maximum privacy.</p>
+<p><strong>Layers:</strong>
+1. <strong>Rumor</strong>: The actual event content
+2. <strong>Seal</strong>: Encrypted rumor with metadata
+3. <strong>Gift Wrap</strong>: Public event containing the seal</p>
+<h3 id="nip-65-relay-list-metadata"><strong>NIP-65: Relay List Metadata</strong></h3>
+<p>Users publish their preferred relays.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="p">{</span>
+<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="w">  </span><span class="nt">&quot;kind&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">10002</span><span class="p">,</span>
+<a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a><span class="w">  </span><span class="nt">&quot;tags&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a><span class="w">    </span><span class="p">[</span><span class="s2">&quot;r&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;wss://relay1.com&quot;</span><span class="p">],</span>
+<a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a><span class="w">    </span><span class="p">[</span><span class="s2">&quot;r&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;wss://relay2.com&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;write&quot;</span><span class="p">],</span>
+<a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a><span class="w">    </span><span class="p">[</span><span class="s2">&quot;r&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;wss://relay3.com&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;read&quot;</span><span class="p">]</span>
+<a id="__codelineno-15-7" name="__codelineno-15-7" href="#__codelineno-15-7"></a><span class="w">  </span><span class="p">]</span>
+<a id="__codelineno-15-8" name="__codelineno-15-8" href="#__codelineno-15-8"></a><span class="p">}</span>
+</code></pre></div>
+<h2 id="specialized-applications">Specialized Applications</h2>
+<h3 id="nip-15-nostr-marketplace"><strong>NIP-15: Nostr Marketplace</strong></h3>
+<p>E-commerce on Nostr.</p>
+<p><strong>Product listing (Kind 30017):</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="p">{</span>
+<a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="w">  </span><span class="nt">&quot;kind&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">30017</span><span class="p">,</span>
+<a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a><span class="w">  </span><span class="nt">&quot;tags&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a><span class="w">    </span><span class="p">[</span><span class="s2">&quot;d&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;product-id&quot;</span><span class="p">],</span>
+<a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a><span class="w">    </span><span class="p">[</span><span class="s2">&quot;title&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Product Name&quot;</span><span class="p">],</span>
+<a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a><span class="w">    </span><span class="p">[</span><span class="s2">&quot;price&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;100&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;USD&quot;</span><span class="p">],</span>
+<a id="__codelineno-16-7" name="__codelineno-16-7" href="#__codelineno-16-7"></a><span class="w">    </span><span class="p">[</span><span class="s2">&quot;location&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;New York, NY&quot;</span><span class="p">]</span>
+<a id="__codelineno-16-8" name="__codelineno-16-8" href="#__codelineno-16-8"></a><span class="w">  </span><span class="p">],</span>
+<a id="__codelineno-16-9" name="__codelineno-16-9" href="#__codelineno-16-9"></a><span class="w">  </span><span class="nt">&quot;content&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;{\&quot;name\&quot;:\&quot;Product\&quot;,\&quot;description\&quot;:\&quot;...\&quot;}&quot;</span>
+<a id="__codelineno-16-10" name="__codelineno-16-10" href="#__codelineno-16-10"></a><span class="p">}</span>
+</code></pre></div></p>
+<h3 id="nip-52-calendar-events"><strong>NIP-52: Calendar Events</strong></h3>
+<p>Event planning and scheduling.</p>
+<p><strong>Time-based event (Kind 31923):</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="p">{</span>
+<a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="w">  </span><span class="nt">&quot;kind&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">31923</span><span class="p">,</span>
+<a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a><span class="w">  </span><span class="nt">&quot;tags&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a><span class="w">    </span><span class="p">[</span><span class="s2">&quot;d&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;event-id&quot;</span><span class="p">],</span>
+<a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a><span class="w">    </span><span class="p">[</span><span class="s2">&quot;title&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Nostr Meetup&quot;</span><span class="p">],</span>
+<a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a><span class="w">    </span><span class="p">[</span><span class="s2">&quot;start&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;1234567890&quot;</span><span class="p">],</span>
+<a id="__codelineno-17-7" name="__codelineno-17-7" href="#__codelineno-17-7"></a><span class="w">    </span><span class="p">[</span><span class="s2">&quot;end&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;1234571490&quot;</span><span class="p">],</span>
+<a id="__codelineno-17-8" name="__codelineno-17-8" href="#__codelineno-17-8"></a><span class="w">    </span><span class="p">[</span><span class="s2">&quot;location&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;San Francisco&quot;</span><span class="p">]</span>
+<a id="__codelineno-17-9" name="__codelineno-17-9" href="#__codelineno-17-9"></a><span class="w">  </span><span class="p">]</span>
+<a id="__codelineno-17-10" name="__codelineno-17-10" href="#__codelineno-17-10"></a><span class="p">}</span>
+</code></pre></div></p>
+<h3 id="nip-53-live-activities"><strong>NIP-53: Live Activities</strong></h3>
+<p>Real-time streaming and live events.</p>
+<p><strong>Live event (Kind 30311):</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="p">{</span>
+<a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a><span class="w">  </span><span class="nt">&quot;kind&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">30311</span><span class="p">,</span>
+<a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a><span class="w">  </span><span class="nt">&quot;tags&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a><span class="w">    </span><span class="p">[</span><span class="s2">&quot;d&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;stream-id&quot;</span><span class="p">],</span>
+<a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a><span class="w">    </span><span class="p">[</span><span class="s2">&quot;title&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Live Coding Session&quot;</span><span class="p">],</span>
+<a id="__codelineno-18-6" name="__codelineno-18-6" href="#__codelineno-18-6"></a><span class="w">    </span><span class="p">[</span><span class="s2">&quot;streaming&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;https://stream.example.com&quot;</span><span class="p">],</span>
+<a id="__codelineno-18-7" name="__codelineno-18-7" href="#__codelineno-18-7"></a><span class="w">    </span><span class="p">[</span><span class="s2">&quot;status&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;live&quot;</span><span class="p">]</span>
+<a id="__codelineno-18-8" name="__codelineno-18-8" href="#__codelineno-18-8"></a><span class="w">  </span><span class="p">]</span>
+<a id="__codelineno-18-9" name="__codelineno-18-9" href="#__codelineno-18-9"></a><span class="p">}</span>
+</code></pre></div></p>
+<h2 id="development-and-management">Development and Management</h2>
+<h3 id="nip-34-git-stuff"><strong>NIP-34: git stuff</strong></h3>
+<p>Git repository management on Nostr.</p>
+<p><strong>Repository announcement (Kind 30617):</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="p">{</span>
+<a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a><span class="w">  </span><span class="nt">&quot;kind&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">30617</span><span class="p">,</span>
+<a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a><span class="w">  </span><span class="nt">&quot;tags&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a><span class="w">    </span><span class="p">[</span><span class="s2">&quot;d&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;repo-id&quot;</span><span class="p">],</span>
+<a id="__codelineno-19-5" name="__codelineno-19-5" href="#__codelineno-19-5"></a><span class="w">    </span><span class="p">[</span><span class="s2">&quot;name&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;my-project&quot;</span><span class="p">],</span>
+<a id="__codelineno-19-6" name="__codelineno-19-6" href="#__codelineno-19-6"></a><span class="w">    </span><span class="p">[</span><span class="s2">&quot;clone&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;https://github.com/user/repo&quot;</span><span class="p">],</span>
+<a id="__codelineno-19-7" name="__codelineno-19-7" href="#__codelineno-19-7"></a><span class="w">    </span><span class="p">[</span><span class="s2">&quot;web&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;https://github.com/user/repo&quot;</span><span class="p">]</span>
+<a id="__codelineno-19-8" name="__codelineno-19-8" href="#__codelineno-19-8"></a><span class="w">  </span><span class="p">]</span>
+<a id="__codelineno-19-9" name="__codelineno-19-9" href="#__codelineno-19-9"></a><span class="p">}</span>
+</code></pre></div></p>
+<h3 id="nip-90-data-vending-machines"><strong>NIP-90: Data Vending Machines</strong></h3>
+<p>Decentralized computing services.</p>
+<p><strong>Job request (Kind 5000-5999):</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="p">{</span>
+<a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a><span class="w">  </span><span class="nt">&quot;kind&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">5000</span><span class="p">,</span>
+<a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a><span class="w">  </span><span class="nt">&quot;tags&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<a id="__codelineno-20-4" name="__codelineno-20-4" href="#__codelineno-20-4"></a><span class="w">    </span><span class="p">[</span><span class="s2">&quot;i&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;input-data&quot;</span><span class="p">],</span>
+<a id="__codelineno-20-5" name="__codelineno-20-5" href="#__codelineno-20-5"></a><span class="w">    </span><span class="p">[</span><span class="s2">&quot;output&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;text/plain&quot;</span><span class="p">],</span>
+<a id="__codelineno-20-6" name="__codelineno-20-6" href="#__codelineno-20-6"></a><span class="w">    </span><span class="p">[</span><span class="s2">&quot;relays&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;wss://relay.com&quot;</span><span class="p">]</span>
+<a id="__codelineno-20-7" name="__codelineno-20-7" href="#__codelineno-20-7"></a><span class="w">  </span><span class="p">],</span>
+<a id="__codelineno-20-8" name="__codelineno-20-8" href="#__codelineno-20-8"></a><span class="w">  </span><span class="nt">&quot;content&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Please analyze this data&quot;</span>
+<a id="__codelineno-20-9" name="__codelineno-20-9" href="#__codelineno-20-9"></a><span class="p">}</span>
+</code></pre></div></p>
+<h2 id="complete-nip-reference">Complete NIP Reference</h2>
+<p>Based on the protocol document, here are all current NIPs:</p>
+<h3 id="core-protocol">Core Protocol</h3>
+<ul>
+<li><strong>NIP-01</strong>: Basic protocol flow description</li>
+<li><strong>NIP-02</strong>: Follow List</li>
+<li><strong>NIP-03</strong>: OpenTimestamps Attestations for Events</li>
+<li><strong>NIP-04</strong>: Encrypted Direct Message (deprecated)</li>
+<li><strong>NIP-05</strong>: Mapping Nostr keys to DNS-based internet identifiers</li>
+<li><strong>NIP-06</strong>: Basic key derivation from mnemonic seed phrase</li>
+<li><strong>NIP-07</strong>: window.nostr capability for web browsers</li>
+<li><strong>NIP-08</strong>: Handling Mentions (deprecated)</li>
+<li><strong>NIP-09</strong>: Event Deletion Request</li>
+<li><strong>NIP-10</strong>: Text Notes and Threads</li>
+<li><strong>NIP-11</strong>: Relay Information Document</li>
+<li><strong>NIP-13</strong>: Proof of Work</li>
+<li><strong>NIP-14</strong>: Subject tag in text events</li>
+<li><strong>NIP-15</strong>: Nostr Marketplace</li>
+</ul>
+<h3 id="communication-social">Communication &amp; Social</h3>
+<ul>
+<li><strong>NIP-17</strong>: Private Direct Messages</li>
+<li><strong>NIP-18</strong>: Reposts</li>
+<li><strong>NIP-19</strong>: bech32-encoded entities</li>
+<li><strong>NIP-21</strong>: nostr: URI scheme</li>
+<li><strong>NIP-22</strong>: Comment</li>
+<li><strong>NIP-23</strong>: Long-form Content</li>
+<li><strong>NIP-24</strong>: Extra metadata fields and tags</li>
+<li><strong>NIP-25</strong>: Reactions</li>
+<li><strong>NIP-26</strong>: Delegated Event Signing (unrecommended)</li>
+<li><strong>NIP-27</strong>: Text Note References</li>
+<li><strong>NIP-28</strong>: Public Chat</li>
+</ul>
+<h3 id="advanced-features_1">Advanced Features</h3>
+<ul>
+<li><strong>NIP-29</strong>: Relay-based Groups</li>
+<li><strong>NIP-30</strong>: Custom Emoji</li>
+<li><strong>NIP-31</strong>: Dealing with Unknown Events</li>
+<li><strong>NIP-32</strong>: Labeling</li>
+<li><strong>NIP-34</strong>: git stuff</li>
+<li><strong>NIP-35</strong>: Torrents</li>
+<li><strong>NIP-36</strong>: Sensitive Content</li>
+<li><strong>NIP-37</strong>: Draft Events</li>
+<li><strong>NIP-38</strong>: User Statuses</li>
+<li><strong>NIP-39</strong>: External Identities in Profiles</li>
+<li><strong>NIP-40</strong>: Expiration Timestamp</li>
+</ul>
+<h3 id="authentication-security">Authentication &amp; Security</h3>
+<ul>
+<li><strong>NIP-42</strong>: Authentication of clients to relays</li>
+<li><strong>NIP-44</strong>: Encrypted Payloads (Versioned)</li>
+<li><strong>NIP-45</strong>: Counting results</li>
+<li><strong>NIP-46</strong>: Nostr Remote Signing</li>
+<li><strong>NIP-47</strong>: Nostr Wallet Connect</li>
+<li><strong>NIP-48</strong>: Proxy Tags</li>
+<li><strong>NIP-49</strong>: Private Key Encryption</li>
+</ul>
+<h3 id="discovery-search">Discovery &amp; Search</h3>
+<ul>
+<li><strong>NIP-50</strong>: Search Capability</li>
+<li><strong>NIP-51</strong>: Lists</li>
+<li><strong>NIP-52</strong>: Calendar Events</li>
+<li><strong>NIP-53</strong>: Live Activities</li>
+<li><strong>NIP-54</strong>: Wiki</li>
+<li><strong>NIP-55</strong>: Android Signer Application</li>
+<li><strong>NIP-56</strong>: Reporting</li>
+<li><strong>NIP-57</strong>: Lightning Zaps</li>
+<li><strong>NIP-58</strong>: Badges</li>
+<li><strong>NIP-59</strong>: Gift Wrap</li>
+</ul>
+<h3 id="specialized-applications_1">Specialized Applications</h3>
+<ul>
+<li><strong>NIP-60</strong>: Cashu Wallet</li>
+<li><strong>NIP-61</strong>: Nutzaps</li>
+<li><strong>NIP-62</strong>: Request to Vanish</li>
+<li><strong>NIP-64</strong>: Chess (PGN)</li>
+<li><strong>NIP-65</strong>: Relay List Metadata</li>
+<li><strong>NIP-66</strong>: Relay Discovery and Liveness Monitoring</li>
+<li><strong>NIP-68</strong>: Picture-first feeds</li>
+<li><strong>NIP-69</strong>: Peer-to-peer Order events</li>
+<li><strong>NIP-70</strong>: Protected Events</li>
+<li><strong>NIP-71</strong>: Video Events</li>
+<li><strong>NIP-72</strong>: Moderated Communities</li>
+<li><strong>NIP-73</strong>: External Content IDs</li>
+<li><strong>NIP-75</strong>: Zap Goals</li>
+<li><strong>NIP-77</strong>: Negentropy Syncing</li>
+<li><strong>NIP-78</strong>: Application-specific data</li>
+<li><strong>NIP-7D</strong>: Threads</li>
+<li><strong>NIP-84</strong>: Highlights</li>
+</ul>
+<h3 id="infrastructure-tools">Infrastructure &amp; Tools</h3>
+<ul>
+<li><strong>NIP-86</strong>: Relay Management API</li>
+<li><strong>NIP-88</strong>: Polls</li>
+<li><strong>NIP-89</strong>: Recommended Application Handlers</li>
+<li><strong>NIP-90</strong>: Data Vending Machines</li>
+<li><strong>NIP-92</strong>: Media Attachments</li>
+<li><strong>NIP-94</strong>: File Metadata</li>
+<li><strong>NIP-96</strong>: HTTP File Storage Integration</li>
+<li><strong>NIP-98</strong>: HTTP Auth</li>
+<li><strong>NIP-99</strong>: Classified Listings</li>
+</ul>
+<h2 id="nip-status-and-development">NIP Status and Development</h2>
+<h3 id="status-levels">Status Levels</h3>
+<ul>
+<li><strong>Draft</strong>: Under active development, subject to changes</li>
+<li><strong>Proposed</strong>: Stable specification, ready for implementation  </li>
+<li><strong>Final</strong>: Widely implemented and stable</li>
+<li><strong>Deprecated</strong>: No longer recommended</li>
+</ul>
+<h3 id="development-process">Development Process</h3>
 <ol>
-<li><strong>Choose relevant NIPs</strong> for your application</li>
-<li><strong>Read specifications</strong> carefully</li>
-<li><strong>Implement incrementally</strong> starting with core NIPs</li>
-<li><strong>Test interoperability</strong> with other clients</li>
-<li><strong>Contribute feedback</strong> to improve specifications</li>
+<li><strong>Proposal</strong>: Identify need and write initial specification</li>
+<li><strong>Discussion</strong>: Community review and feedback</li>
+<li><strong>Implementation</strong>: Prototype and test</li>
+<li><strong>Adoption</strong>: Multiple implementations and usage</li>
+<li><strong>Finalization</strong>: Specification stabilizes</li>
 </ol>
-<h3 id="core-nips-to-implement">Core NIPs to Implement</h3>
+<h3 id="contributing-to-nips">Contributing to NIPs</h3>
+<p><strong>How to contribute:</strong>
+- Join discussions on GitHub and Telegram
+- Propose improvements to existing NIPs
+- Submit new NIPs for missing functionality
+- Implement and test proposed specifications
+- Provide feedback on draft NIPs</p>
+<p><strong>NIP writing guidelines:</strong>
+- Be specific and unambiguous
+- Include examples and test cases
+- Consider security implications
+- Ensure backward compatibility when possible
+- Follow existing formatting conventions</p>
+<h2 id="implementation-strategy">Implementation Strategy</h2>
+<h3 id="for-client-developers">For Client Developers</h3>
 <p><strong>Minimum viable client:</strong>
 - NIP-01 (Basic protocol)
 - NIP-02 (Contact lists)
-- NIP-19 (Bech32 encoding)</p>
-<p><strong>Enhanced client:</strong>
-- NIP-04 (Direct messages)
-- NIP-09 (Event deletion)
-- NIP-10 (Text note references)
+- NIP-19 (Bech32 encoding)
 - NIP-25 (Reactions)</p>
-<p><strong>Advanced client:</strong>
-- NIP-07 (Browser extension)
+<p><strong>Enhanced client:</strong>
+- NIP-10 (Text note references)
+- NIP-17 (Private messages)
 - NIP-23 (Long-form content)
 - NIP-57 (Lightning zaps)</p>
-<h2 id="nip-compatibility">NIP Compatibility</h2>
-<h3 id="client-compatibility">Client Compatibility</h3>
-<p>Check which NIPs a client supports:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="c1">// Many clients expose supported NIPs</span>
-<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="kd">const</span><span class="w"> </span><span class="nx">supportedNIPs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">client</span><span class="p">.</span><span class="nx">getSupportedNIPs</span><span class="p">()</span>
-<a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">supportedNIPs</span><span class="p">)</span><span class="w"> </span><span class="c1">// [1, 2, 4, 9, 10, 25, ...]</span>
+<p><strong>Advanced client:</strong>
+- NIP-42 (Relay authentication)
+- NIP-50 (Search)
+- NIP-65 (Relay lists)
+- Application-specific NIPs</p>
+<h3 id="for-relay-operators">For Relay Operators</h3>
+<p><strong>Basic relay:</strong>
+- NIP-01 (Basic protocol)
+- NIP-11 (Relay information)
+- NIP-20 (Command results)</p>
+<p><strong>Enhanced relay:</strong>
+- NIP-42 (Authentication)
+- NIP-50 (Search)
+- NIP-65 (Relay metadata)</p>
+<h2 id="testing-nip-compatibility">Testing NIP Compatibility</h2>
+<h3 id="client-testing">Client Testing</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="c1">// Check which NIPs a client supports</span>
+<a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a><span class="kd">const</span><span class="w"> </span><span class="nx">supportedNIPs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">client</span><span class="p">.</span><span class="nx">getSupportedNIPs</span><span class="p">()</span>
+<a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Supported NIPs:&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">supportedNIPs</span><span class="p">)</span>
+<a id="__codelineno-21-4" name="__codelineno-21-4" href="#__codelineno-21-4"></a>
+<a id="__codelineno-21-5" name="__codelineno-21-5" href="#__codelineno-21-5"></a><span class="c1">// Test specific functionality</span>
+<a id="__codelineno-21-6" name="__codelineno-21-6" href="#__codelineno-21-6"></a><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">supportedNIPs</span><span class="p">.</span><span class="nx">includes</span><span class="p">(</span><span class="mf">57</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-21-7" name="__codelineno-21-7" href="#__codelineno-21-7"></a><span class="w">  </span><span class="c1">// Client supports zaps</span>
+<a id="__codelineno-21-8" name="__codelineno-21-8" href="#__codelineno-21-8"></a><span class="w">  </span><span class="nx">enableZapFeatures</span><span class="p">()</span>
+<a id="__codelineno-21-9" name="__codelineno-21-9" href="#__codelineno-21-9"></a><span class="p">}</span>
 </code></pre></div>
-<h3 id="relay-compatibility">Relay Compatibility</h3>
-<p>Query relay information:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>curl<span class="w"> </span>-H<span class="w"> </span><span class="s2">&quot;Accept: application/nostr+json&quot;</span><span class="w"> </span>https://relay.example.com
+<h3 id="relay-testing">Relay Testing</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="c1"># Query relay information</span>
+<a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a>curl<span class="w"> </span>-H<span class="w"> </span><span class="s2">&quot;Accept: application/nostr+json&quot;</span><span class="w"> </span>https://relay.example.com
+<a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a>
+<a id="__codelineno-22-4" name="__codelineno-22-4" href="#__codelineno-22-4"></a><span class="c1"># Check supported NIPs</span>
+<a id="__codelineno-22-5" name="__codelineno-22-5" href="#__codelineno-22-5"></a><span class="o">{</span>
+<a id="__codelineno-22-6" name="__codelineno-22-6" href="#__codelineno-22-6"></a><span class="w">  </span><span class="s2">&quot;supported_nips&quot;</span>:<span class="w"> </span><span class="o">[</span><span class="m">1</span>,<span class="w"> </span><span class="m">2</span>,<span class="w"> </span><span class="m">9</span>,<span class="w"> </span><span class="m">11</span>,<span class="w"> </span><span class="m">15</span>,<span class="w"> </span><span class="m">16</span>,<span class="w"> </span><span class="m">20</span>,<span class="w"> </span><span class="m">22</span>,<span class="w"> </span><span class="m">33</span>,<span class="w"> </span><span class="m">40</span><span class="o">]</span>
+<a id="__codelineno-22-7" name="__codelineno-22-7" href="#__codelineno-22-7"></a><span class="o">}</span>
 </code></pre></div>
-<h2 id="future-nips">Future NIPs</h2>
-<p>The Nostr protocol continues to evolve with new NIPs being proposed for:</p>
-<ul>
-<li><strong>Enhanced privacy</strong> (better encryption, metadata protection)</li>
-<li><strong>Scalability</strong> (efficient data sync, caching strategies)</li>
-<li><strong>Rich media</strong> (video, audio, file sharing)</li>
-<li><strong>Decentralized identity</strong> (verification, reputation systems)</li>
-<li><strong>Economic features</strong> (marketplaces, subscriptions)</li>
-</ul>
-<h2 id="contributing-to-nips">Contributing to NIPs</h2>
-<h3 id="how-to-contribute">How to Contribute</h3>
-<ol>
-<li><strong>Join discussions</strong> on GitHub and Telegram</li>
-<li><strong>Propose improvements</strong> to existing NIPs</li>
-<li><strong>Submit new NIPs</strong> for missing functionality</li>
-<li><strong>Implement and test</strong> proposed specifications</li>
-<li><strong>Provide feedback</strong> on draft NIPs</li>
-</ol>
-<h3 id="nip-writing-guidelines">NIP Writing Guidelines</h3>
-<ul>
-<li><strong>Be specific</strong> and unambiguous</li>
-<li><strong>Include examples</strong> and test cases</li>
-<li><strong>Consider security</strong> implications</li>
-<li><strong>Ensure backward compatibility</strong> when possible</li>
-<li><strong>Follow existing</strong> formatting conventions</li>
-</ul>
 <h2 id="resources">Resources</h2>
 <ul>
 <li><strong>NIPs Repository</strong>: <a href="https://github.com/nostr-protocol/nips">github.com/nostr-protocol/nips</a></li>
@@ -1648,8 +2808,15 @@
 </div>
 <div class="admonition tip">
 <p class="admonition-title">Implementation Strategy</p>
-<p>Start with core NIPs (1, 2, 19) and gradually add more advanced features. Focus on interoperability and user experience over feature completeness. </p>
+<p>Start with core NIPs (1, 2, 19) and gradually add more advanced features. Focus on interoperability and user experience over feature completeness.</p>
 </div>
+<h2 id="next-steps">Next Steps</h2>
+<p>Now that you understand NIPs, explore:</p>
+<ul>
+<li><a href="../relays/">Relays and Communication</a> - How NIPs work in practice</li>
+<li><a href="../../tutorials/">Building Applications</a> - Implementing NIPs in code</li>
+<li><a href="../advanced/">Advanced Features</a> - Specialized NIPs for your use case</li>
+</ul>
 
 
 
@@ -1670,7 +2837,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="May 27, 2025 04:44:28 UTC">May 27, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="July 9, 2025 18:04:12 UTC">July 9, 2025</span>
   </span>
 
     
@@ -1766,6 +2933,8 @@
         <script src="../../assets/js/typewriter.js"></script>
       
         <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
+      
+        <script src="https://unpkg.com/mermaid@10.9.0/dist/mermaid.min.js"></script>
       
     
   </body>

@@ -18,6 +18,7 @@ copyright: Copyright &copy; 2024 Learn Nostr
 theme:
   name: material
   custom_dir: overrides
+  language: en
   features:
     - navigation.tabs
     - navigation.sections
@@ -60,11 +61,48 @@ theme:
 
 # Plugins
 plugins:
+  - search:
+      separator: '[\s\-,:!=\[\]()"/]+|(?!\b)(?=[A-Z][a-z])|\.(?!\d)|&[lg]t;'
+  - i18n:
+      docs_structure: folder
+      fallback_to_default: true
+      reconfigure_material: true
+      reconfigure_search: true
+      languages:
+        - locale: en
+          default: true
+          name: English
+          build: true
+          site_name: "LearnNostr"
+          site_description: "A comprehensive guide to understanding and building on the Nostr protocol"
+        - locale: es
+          name: Español
+          build: true
+          site_name: "LearnNostr"
+          site_description: "Una guía completa para entender y construir sobre el protocolo Nostr"
+          nav_translations:
+            Home: Inicio
+            Getting Started: Comenzar
+            Core Concepts: Conceptos Centrales
+            Tutorials: Tutoriales
+            Support: Soporte
+            What is Nostr?: ¿Qué es Nostr?
+            Wallet Setup: Configuración de Billetera
+            Nostr Tools: Herramientas de Nostr
+            Relay Setup: Configuración de Relé
+            Clients: Clientes
+            Events and Messages: Eventos y Mensajes
+            Keys: Llaves
+            NIPs: NIPs
+            Nostr Fundamentals: Fundamentos de Nostr
+            Relays: Relés
+            Zaps: Zaps
+            Build a Simple Client: Construir un Cliente Simple
+            Relay Communication: Comunicación con Relés
+            Understanding Events: Entendiendo Eventos
   - git-revision-date-localized:
       type: date
       fallback_to_build_date: true
-  - search:
-      separator: '[\s\-,:!=\[\]()"/]+|(?!\b)(?=[A-Z][a-z])|\.(?!\d)|&[lg]t;'
 
 # Customization
 extra:
@@ -75,6 +113,13 @@ extra:
     - icon: fontawesome/brands/github
       link: https://github.com/cristyalmonte/learnnostr
       name: GitHub
+  alternate:
+    - name: English
+      link: ./
+      lang: en
+    - name: Español
+      link: ./es/
+      lang: es
 
 extra_css:
   - assets/css/custom.css

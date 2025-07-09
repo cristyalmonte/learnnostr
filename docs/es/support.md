@@ -1,9 +1,11 @@
-# Soporte
+# Apoyar LearnNostr
 
-Esta página está siendo traducida al español.
+!!! tip "Ayuda a Mantener Este Recurso Gratuito"
+    LearnNostr es una plataforma educativa impulsada por la comunidad. Tu apoyo nos ayuda a mantener y expandir este recurso integral de aprendizaje de Nostr para todos.
 
-**Página original en inglés:** [Support](/en/support/)
+## ⚡ Dona a LearnNostr vía Bitcoin Lightning:
 
----
+```
+greenmiracle695447@getalby.com
+```
 
-*Esta traducción está en progreso. Visita la versión en inglés para el contenido completo.*

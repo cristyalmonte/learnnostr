@@ -1,9 +1,11 @@
 {% extends "base.html" %}
 
+{% set is_spanish = '/es/' in page.url or config.theme.language == 'es' or page.meta.lang == 'es' %}
+
 {% block announce %}
   <a href="https://discord.gg/BtkVKRkJ" target="_blank">
     <div class="md-banner">
-        {% if page.locale == 'es' %}💜 ¡Únete a nuestra comunidad de Discord para aprender Nostr juntos, hacer preguntas y conectar con otros desarrolladores!{% else %}💜 Join our Discord community to learn Nostr together, ask questions, and connect with other developers!{% endif %}
+        {% if is_spanish %}💜 ¡Únete a nuestra comunidad de Discord para aprender Nostr juntos, hacer preguntas y conectar con otros desarrolladores!{% else %}💜 Join our Discord community to learn Nostr together, ask questions, and connect with other developers!{% endif %}
     </div>
   </a>
 {% endblock %}
@@ -100,13 +102,13 @@
     <div class="md-grid md-typeset">
       <div class="mdx-hero">
         <div class="mdx-hero__content">
-          <h1><span style="color: #9C27B0;">LearnNostr</span> <div id="typewriter">{% if page.locale == 'es' %}protocolo social{% else %}social protocol{% endif %}</div></h1>
-          <h3 style="color: #9C27B0;">{% if page.locale == 'es' %}Domina Nostr - el protocolo simple y abierto que te pone en control de tu identidad digital e interacciones sociales.{% else %}Master Nostr - the simple, open protocol that puts you in control of your digital identity and social interactions.{% endif %}</h3>
-          <a href="{% if page.locale == 'es' %}/es/getting-started/what-is-nostr/{% else %}/getting-started/what-is-nostr/{% endif %}" class="md-button md-button--primary">
-            {% if page.locale == 'es' %}Básicos{% else %}Basics{% endif %}
+          <h1><span style="color: #9C27B0;">LearnNostr</span> <div id="typewriter">{% if is_spanish %}protocolo social{% else %}social protocol{% endif %}</div></h1>
+          <h3 style="color: #9C27B0;">{% if is_spanish %}Domina Nostr - el protocolo simple y abierto que te pone en control de tu identidad digital e interacciones sociales.{% else %}Master Nostr - the simple, open protocol that puts you in control of your digital identity and social interactions.{% endif %}</h3>
+          <a href="{% if is_spanish %}getting-started/what-is-nostr/{% else %}getting-started/what-is-nostr/{% endif %}" class="md-button md-button--primary">
+            {% if is_spanish %}Básicos{% else %}Basics{% endif %}
           </a>
-          <a href="{% if page.locale == 'es' %}/es/tutorials/simple-client/{% else %}/tutorials/simple-client/{% endif %}" class="md-button">
-            {% if page.locale == 'es' %}Tutoriales{% else %}Tutorials{% endif %}
+          <a href="{% if is_spanish %}tutorials/simple-client/{% else %}tutorials/simple-client/{% endif %}" class="md-button">
+            {% if is_spanish %}Tutoriales{% else %}Tutorials{% endif %}
           </a>
         </div>
       </div>

@@ -17,7 +17,7 @@ hide:
 
     Own your identity with cryptographic keys. No central authority can delete your account, censor your content, or control your digital presence.
 
-    [:octicons-arrow-right-24: Learn About Keys](/concepts/keys/)
+    [:octicons-arrow-right-24: Learn About Keys](concepts/keys.md)
 
 -   :material-network:{ .lg .middle } __Censorship Resistant__
 
@@ -25,7 +25,7 @@ hide:
 
     Built on a decentralized network of relays that no single entity controls. Your voice can't be silenced by corporations or governments.
 
-    [:octicons-arrow-right-24: Getting Started](/getting-started/what-is-nostr/)
+    [:octicons-arrow-right-24: Getting Started](getting-started/what-is-nostr.md)
 
 -   :material-lightning-bolt:{ .lg .middle } __Lightning Integration__
 
@@ -33,7 +33,7 @@ hide:
 
     Seamless Bitcoin payments through Lightning Network integration. Send and receive value instantly across the protocol.
 
-    [:octicons-arrow-right-24: Build Applications](/tutorials/simple-client/)
+    [:octicons-arrow-right-24: Build Applications](tutorials/simple-client.md)
 
 </div>
 
@@ -276,7 +276,7 @@ hr {
 • Decentralization vs. centralized platforms  
 • Basic terminology and concepts
 
-[:octicons-arrow-right-24: Start Learning](/getting-started/what-is-nostr/){ .md-button }
+[:octicons-arrow-right-24: Start Learning](getting-started/what-is-nostr.md){ .md-button }
 
 </div>
 
@@ -294,7 +294,7 @@ hr {
 • Digital identity and signatures  
 • Security best practices
 
-[:octicons-arrow-right-24: Master Keys](/concepts/keys/){ .md-button }
+[:octicons-arrow-right-24: Master Keys](concepts/keys.md){ .md-button }
 
 </div>
 
@@ -312,7 +312,7 @@ hr {
 • Event publishing system  
 • Relay communication
 
-[:octicons-arrow-right-24: Start Building](/tutorials/simple-client/){ .md-button }
+[:octicons-arrow-right-24: Start Building](tutorials/simple-client.md){ .md-button }
 
 </div>
 
@@ -330,7 +330,7 @@ hr {
 • Protocol specifications (NIPs)  
 • Development tools and libraries
 
-[:octicons-arrow-right-24: Browse Definitions](/definitions/){ .md-button }
+[:octicons-arrow-right-24: Browse Definitions](definitions.md){ .md-button }
 
 </div>
 

@@ -17,7 +17,7 @@ hide:
 
     Posee tu identidad con llaves criptográficas. Ninguna autoridad central puede eliminar tu cuenta, censurar tu contenido o controlar tu presencia digital.
 
-    [:octicons-arrow-right-24: Aprende sobre las Llaves](/es/concepts/keys/)
+    [:octicons-arrow-right-24: Aprende sobre las Llaves](concepts/keys.md)
 
 -   :material-network:{ .lg .middle } __Resistente a la Censura__
 
@@ -25,7 +25,7 @@ hide:
 
     Construido sobre una red descentralizada de relés que ninguna entidad singular controla. Tu voz no puede ser silenciada por corporaciones o gobiernos.
 
-    [:octicons-arrow-right-24: Comenzar](/es/getting-started/what-is-nostr/)
+    [:octicons-arrow-right-24: Comenzar](getting-started/what-is-nostr.md)
 
 -   :material-lightning-bolt:{ .lg .middle } __Integración Lightning__
 
@@ -33,7 +33,7 @@ hide:
 
     Pagos Bitcoin sin fricciones a través de la integración con Lightning Network. Envía y recibe valor instantáneamente a través del protocolo.
 
-    [:octicons-arrow-right-24: Construir Aplicaciones](/es/tutorials/simple-client/)
+    [:octicons-arrow-right-24: Construir Aplicaciones](tutorials/simple-client.md)
 
 </div>
 
@@ -276,7 +276,7 @@ hr {
 • Descentralización vs. plataformas centralizadas  
 • Terminología y conceptos básicos
 
-[:octicons-arrow-right-24: Comenzar a Aprender](/es/getting-started/what-is-nostr/){ .md-button }
+[:octicons-arrow-right-24: Comenzar a Aprender](getting-started/what-is-nostr.md){ .md-button }
 
 </div>
 
@@ -294,7 +294,7 @@ hr {
 • Identidad digital y firmas  
 • Mejores prácticas de seguridad
 
-[:octicons-arrow-right-24: Dominar Llaves](/es/concepts/keys/){ .md-button }
+[:octicons-arrow-right-24: Dominar Llaves](concepts/keys.md){ .md-button }
 
 </div>
 
@@ -312,7 +312,7 @@ hr {
 • Sistema de publicación de eventos  
 • Comunicación con relés
 
-[:octicons-arrow-right-24: Comenzar a Construir](/es/tutorials/simple-client/){ .md-button }
+[:octicons-arrow-right-24: Comenzar a Construir](tutorials/simple-client.md){ .md-button }
 
 </div>
 
@@ -330,7 +330,7 @@ hr {
 • Especificaciones del protocolo (NIPs)  
 • Herramientas y librerías de desarrollo
 
-[:octicons-arrow-right-24: Explorar Definiciones](/es/definitions/){ .md-button }
+[:octicons-arrow-right-24: Explorar Definiciones](definitions.md){ .md-button }
 
 </div>
 

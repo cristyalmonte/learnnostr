@@ -6,5 +6,6 @@ mkdocs-awesome-pages-plugin>=2.9.2
 mkdocs-git-revision-date-localized-plugin>=1.2.1
 mkdocs-minify-plugin>=0.7.1
 mkdocs-redirects>=1.2.1
+mkdocs-static-i18n>=1.2.0
 pillow>=10.0.0
-cairosvg>=2.7.1 
+cairosvg>=2.7.1

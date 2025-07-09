@@ -15,6 +15,10 @@
         <link rel="canonical" href="https://learnnostr.com/concepts/relays/">
       
       
+        <link rel="prev" href="../nostr-fundamentals/">
+      
+      
+        <link rel="next" href="../zaps/">
       
       
       <link rel="icon" href="../../assets/favicon.ico">
@@ -22,7 +26,7 @@
     
     
       
-        <title>Understanding Nostr Relays - Learn Nostr</title>
+        <title>Relays - LearnNostr</title>
       
     
     
@@ -76,7 +80,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#understanding-nostr-relays" class="md-skip">
+        <a href="#relays-the-infrastructure-of-nostr" class="md-skip">
           Skip to content
         </a>
       
@@ -92,7 +96,7 @@
 
 <header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../.." title="Learn Nostr" class="md-header__button md-logo" aria-label="Learn Nostr" data-md-component="logo">
+    <a href="../.." title="LearnNostr" class="md-header__button md-logo" aria-label="LearnNostr" data-md-component="logo">
       
   <img src="../../assets/logo.svg" alt="logo">
 
@@ -105,13 +109,13 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            Learn Nostr
+            LearnNostr
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Understanding Nostr Relays
+              Relays
             
           </span>
         </div>
@@ -147,6 +151,32 @@
     
       <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
     
+    
+      <div class="md-header__option">
+  <div class="md-select">
+    
+    <button class="md-header__button md-icon" aria-label="Select language">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.5 17.5 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2zm-2.62 7 1.62-4.33L19.12 17z"/></svg>
+    </button>
+    <div class="md-select__inner">
+      <ul class="md-select__list">
+        
+          <li class="md-select__item">
+            <a href="./" hreflang="en" class="md-select__link">
+              English
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="../../es/concepts/relays/" hreflang="es" class="md-select__link">
+              Español
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
     
     
       
@@ -269,18 +299,21 @@
   
   
   
-  
-    <li class="md-tabs__item">
-      <a href="../../definitions/" class="md-tabs__link">
-        
+    
   
   
     
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../clients/" class="md-tabs__link">
+          
+  
   
   Core Concepts
 
-      </a>
-    </li>
+        </a>
+      </li>
+    
   
 
       
@@ -351,12 +384,12 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="Learn Nostr" class="md-nav__button md-logo" aria-label="Learn Nostr" data-md-component="logo">
+    <a href="../.." title="LearnNostr" class="md-nav__button md-logo" aria-label="LearnNostr" data-md-component="logo">
       
   <img src="../../assets/logo.svg" alt="logo">
 
     </a>
-    Learn Nostr
+    LearnNostr
   </label>
   
     <div class="md-nav__source">
@@ -552,11 +585,32 @@
       
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../definitions/" class="md-nav__link">
+  
+    
+    
+    
+    
+      
         
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
   
   
   <span class="md-ellipsis">
@@ -565,7 +619,795 @@
   </span>
   
 
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Core Concepts
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../clients/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Clients
+    
+  </span>
+  
+
       </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../events-and-messages/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Events and Messages
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../keys/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Keys
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nips/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    NIPs
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nostr-fundamentals/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Nostr Fundamentals
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Relays
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Relays
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-are-relays" class="md-nav__link">
+    <span class="md-ellipsis">
+      What are Relays?
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="What are Relays?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#key-characteristics" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Characteristics
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-relays-work" class="md-nav__link">
+    <span class="md-ellipsis">
+      How Relays Work
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="How Relays Work">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#basic-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Basic Functions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#relay-client-communication" class="md-nav__link">
+    <span class="md-ellipsis">
+      Relay-Client Communication
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#message-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      Message Types
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Message Types">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#client-to-relay-messages" class="md-nav__link">
+    <span class="md-ellipsis">
+      Client to Relay Messages
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Client to Relay Messages">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#event-publishing-events" class="md-nav__link">
+    <span class="md-ellipsis">
+      EVENT - Publishing Events
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#req-subscribing-to-events" class="md-nav__link">
+    <span class="md-ellipsis">
+      REQ - Subscribing to Events
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#close-closing-subscriptions" class="md-nav__link">
+    <span class="md-ellipsis">
+      CLOSE - Closing Subscriptions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#auth-authentication" class="md-nav__link">
+    <span class="md-ellipsis">
+      AUTH - Authentication
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#count-requesting-event-counts" class="md-nav__link">
+    <span class="md-ellipsis">
+      COUNT - Requesting Event Counts
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#relay-to-client-messages" class="md-nav__link">
+    <span class="md-ellipsis">
+      Relay to Client Messages
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Relay to Client Messages">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#event-sending-events" class="md-nav__link">
+    <span class="md-ellipsis">
+      EVENT - Sending Events
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#eose-end-of-stored-events" class="md-nav__link">
+    <span class="md-ellipsis">
+      EOSE - End of Stored Events
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ok-event-acceptance-response" class="md-nav__link">
+    <span class="md-ellipsis">
+      OK - Event Acceptance Response
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#closed-subscription-closed" class="md-nav__link">
+    <span class="md-ellipsis">
+      CLOSED - Subscription Closed
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#notice-human-readable-messages" class="md-nav__link">
+    <span class="md-ellipsis">
+      NOTICE - Human-Readable Messages
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#auth-authentication-challenge" class="md-nav__link">
+    <span class="md-ellipsis">
+      AUTH - Authentication Challenge
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#count-event-count-response" class="md-nav__link">
+    <span class="md-ellipsis">
+      COUNT - Event Count Response
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#relay-information-document-nip-11" class="md-nav__link">
+    <span class="md-ellipsis">
+      Relay Information Document (NIP-11)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Relay Information Document (NIP-11)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#key-information-fields" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Information Fields
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Key Information Fields">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#basic-info" class="md-nav__link">
+    <span class="md-ellipsis">
+      Basic Info
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#capabilities" class="md-nav__link">
+    <span class="md-ellipsis">
+      Capabilities
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#types-of-relays" class="md-nav__link">
+    <span class="md-ellipsis">
+      Types of Relays
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Types of Relays">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#by-access-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      By Access Model
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="By Access Model">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#public-relays" class="md-nav__link">
+    <span class="md-ellipsis">
+      Public Relays
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#private-relays" class="md-nav__link">
+    <span class="md-ellipsis">
+      Private Relays
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#paid-relays" class="md-nav__link">
+    <span class="md-ellipsis">
+      Paid Relays
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#by-purpose" class="md-nav__link">
+    <span class="md-ellipsis">
+      By Purpose
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="By Purpose">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#general-purpose" class="md-nav__link">
+    <span class="md-ellipsis">
+      General Purpose
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#specialized-relays" class="md-nav__link">
+    <span class="md-ellipsis">
+      Specialized Relays
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#personal-relays" class="md-nav__link">
+    <span class="md-ellipsis">
+      Personal Relays
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#by-retention-policy" class="md-nav__link">
+    <span class="md-ellipsis">
+      By Retention Policy
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="By Retention Policy">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#archive-relays" class="md-nav__link">
+    <span class="md-ellipsis">
+      Archive Relays
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ephemeral-relays" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ephemeral Relays
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#filtered-relays" class="md-nav__link">
+    <span class="md-ellipsis">
+      Filtered Relays
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#running-your-own-relay" class="md-nav__link">
+    <span class="md-ellipsis">
+      Running Your Own Relay
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Running Your Own Relay">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#why-run-a-relay" class="md-nav__link">
+    <span class="md-ellipsis">
+      Why Run a Relay?
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Why Run a Relay?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#personal-benefits" class="md-nav__link">
+    <span class="md-ellipsis">
+      Personal Benefits
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#community-benefits" class="md-nav__link">
+    <span class="md-ellipsis">
+      Community Benefits
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#popular-relay-software" class="md-nav__link">
+    <span class="md-ellipsis">
+      Popular Relay Software
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Popular Relay Software">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#strfry" class="md-nav__link">
+    <span class="md-ellipsis">
+      strfry
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nostream" class="md-nav__link">
+    <span class="md-ellipsis">
+      nostream
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#khatru" class="md-nav__link">
+    <span class="md-ellipsis">
+      khatru
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#relay-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Relay Configuration
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Relay Configuration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#basic-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Basic Configuration
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#access-control" class="md-nav__link">
+    <span class="md-ellipsis">
+      Access Control
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hosting-options" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hosting Options
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Hosting Options">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#self-hosted" class="md-nav__link">
+    <span class="md-ellipsis">
+      Self-Hosted
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vpscloud" class="md-nav__link">
+    <span class="md-ellipsis">
+      VPS/Cloud
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#docker-deployment" class="md-nav__link">
+    <span class="md-ellipsis">
+      Docker Deployment
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#next-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      Next Steps
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../zaps/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Zaps
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -638,6 +1480,52 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorials/relay-communication/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Relay Communication
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorials/understanding-events/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Understanding Events
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -694,11 +1582,26 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#what-is-a-relay" class="md-nav__link">
+  <a href="#what-are-relays" class="md-nav__link">
     <span class="md-ellipsis">
-      What is a Relay?
+      What are Relays?
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="What are Relays?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#key-characteristics" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Characteristics
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -713,20 +1616,221 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#basic-operation-flow" class="md-nav__link">
+  <a href="#basic-functions" class="md-nav__link">
     <span class="md-ellipsis">
-      Basic Operation Flow
+      Basic Functions
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#websocket-communication" class="md-nav__link">
+  <a href="#relay-client-communication" class="md-nav__link">
     <span class="md-ellipsis">
-      WebSocket Communication
+      Relay-Client Communication
     </span>
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#message-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      Message Types
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Message Types">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#client-to-relay-messages" class="md-nav__link">
+    <span class="md-ellipsis">
+      Client to Relay Messages
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Client to Relay Messages">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#event-publishing-events" class="md-nav__link">
+    <span class="md-ellipsis">
+      EVENT - Publishing Events
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#req-subscribing-to-events" class="md-nav__link">
+    <span class="md-ellipsis">
+      REQ - Subscribing to Events
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#close-closing-subscriptions" class="md-nav__link">
+    <span class="md-ellipsis">
+      CLOSE - Closing Subscriptions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#auth-authentication" class="md-nav__link">
+    <span class="md-ellipsis">
+      AUTH - Authentication
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#count-requesting-event-counts" class="md-nav__link">
+    <span class="md-ellipsis">
+      COUNT - Requesting Event Counts
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#relay-to-client-messages" class="md-nav__link">
+    <span class="md-ellipsis">
+      Relay to Client Messages
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Relay to Client Messages">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#event-sending-events" class="md-nav__link">
+    <span class="md-ellipsis">
+      EVENT - Sending Events
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#eose-end-of-stored-events" class="md-nav__link">
+    <span class="md-ellipsis">
+      EOSE - End of Stored Events
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ok-event-acceptance-response" class="md-nav__link">
+    <span class="md-ellipsis">
+      OK - Event Acceptance Response
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#closed-subscription-closed" class="md-nav__link">
+    <span class="md-ellipsis">
+      CLOSED - Subscription Closed
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#notice-human-readable-messages" class="md-nav__link">
+    <span class="md-ellipsis">
+      NOTICE - Human-Readable Messages
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#auth-authentication-challenge" class="md-nav__link">
+    <span class="md-ellipsis">
+      AUTH - Authentication Challenge
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#count-event-count-response" class="md-nav__link">
+    <span class="md-ellipsis">
+      COUNT - Event Count Response
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#relay-information-document-nip-11" class="md-nav__link">
+    <span class="md-ellipsis">
+      Relay Information Document (NIP-11)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Relay Information Document (NIP-11)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#key-information-fields" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Information Fields
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Key Information Fields">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#basic-info" class="md-nav__link">
+    <span class="md-ellipsis">
+      Basic Info
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#capabilities" class="md-nav__link">
+    <span class="md-ellipsis">
+      Capabilities
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -746,9 +1850,19 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#by-access-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      By Access Model
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="By Access Model">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#public-relays" class="md-nav__link">
     <span class="md-ellipsis">
-      🌐 Public Relays
+      Public Relays
     </span>
   </a>
   
@@ -757,7 +1871,7 @@
           <li class="md-nav__item">
   <a href="#private-relays" class="md-nav__link">
     <span class="md-ellipsis">
-      🔒 Private Relays
+      Private Relays
     </span>
   </a>
   
@@ -766,7 +1880,31 @@
           <li class="md-nav__item">
   <a href="#paid-relays" class="md-nav__link">
     <span class="md-ellipsis">
-      💰 Paid Relays
+      Paid Relays
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#by-purpose" class="md-nav__link">
+    <span class="md-ellipsis">
+      By Purpose
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="By Purpose">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#general-purpose" class="md-nav__link">
+    <span class="md-ellipsis">
+      General Purpose
     </span>
   </a>
   
@@ -775,143 +1913,16 @@
           <li class="md-nav__item">
   <a href="#specialized-relays" class="md-nav__link">
     <span class="md-ellipsis">
-      🎯 Specialized Relays
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#relay-policies" class="md-nav__link">
-    <span class="md-ellipsis">
-      Relay Policies
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Relay Policies">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#content-policies" class="md-nav__link">
-    <span class="md-ellipsis">
-      Content Policies
+      Specialized Relays
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#rate-limiting" class="md-nav__link">
+  <a href="#personal-relays" class="md-nav__link">
     <span class="md-ellipsis">
-      Rate Limiting
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#storage-policies" class="md-nav__link">
-    <span class="md-ellipsis">
-      Storage Policies
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#relay-discovery" class="md-nav__link">
-    <span class="md-ellipsis">
-      Relay Discovery
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Relay Discovery">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#nip-11-relay-information" class="md-nav__link">
-    <span class="md-ellipsis">
-      NIP-11 Relay Information
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#relay-lists-and-directories" class="md-nav__link">
-    <span class="md-ellipsis">
-      Relay Lists and Directories
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#choosing-relays" class="md-nav__link">
-    <span class="md-ellipsis">
-      Choosing Relays
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Choosing Relays">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#factors-to-consider" class="md-nav__link">
-    <span class="md-ellipsis">
-      Factors to Consider
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Factors to Consider">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#reliability" class="md-nav__link">
-    <span class="md-ellipsis">
-      Reliability
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#policies" class="md-nav__link">
-    <span class="md-ellipsis">
-      Policies
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#geographic-location" class="md-nav__link">
-    <span class="md-ellipsis">
-      Geographic Location
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#community" class="md-nav__link">
-    <span class="md-ellipsis">
-      Community
+      Personal Relays
     </span>
   </a>
   
@@ -923,118 +1934,37 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#recommended-strategy" class="md-nav__link">
+  <a href="#by-retention-policy" class="md-nav__link">
     <span class="md-ellipsis">
-      Recommended Strategy
+      By Retention Policy
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Recommended Strategy">
+    <nav class="md-nav" aria-label="By Retention Policy">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#diversification" class="md-nav__link">
+  <a href="#archive-relays" class="md-nav__link">
     <span class="md-ellipsis">
-      Diversification
+      Archive Relays
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#read-vs-write-relays" class="md-nav__link">
+  <a href="#ephemeral-relays" class="md-nav__link">
     <span class="md-ellipsis">
-      Read vs Write Relays
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#relay-performance" class="md-nav__link">
-    <span class="md-ellipsis">
-      Relay Performance
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Relay Performance">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#key-metrics" class="md-nav__link">
-    <span class="md-ellipsis">
-      Key Metrics
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Key Metrics">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#latency" class="md-nav__link">
-    <span class="md-ellipsis">
-      Latency
+      Ephemeral Relays
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#throughput" class="md-nav__link">
+  <a href="#filtered-relays" class="md-nav__link">
     <span class="md-ellipsis">
-      Throughput
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#storage" class="md-nav__link">
-    <span class="md-ellipsis">
-      Storage
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#monitoring-tools" class="md-nav__link">
-    <span class="md-ellipsis">
-      Monitoring Tools
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Monitoring Tools">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#nostrwatch" class="md-nav__link">
-    <span class="md-ellipsis">
-      Nostr.watch
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#relaytools" class="md-nav__link">
-    <span class="md-ellipsis">
-      Relay.tools
+      Filtered Relays
     </span>
   </a>
   
@@ -1061,11 +1991,35 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#benefits" class="md-nav__link">
+  <a href="#why-run-a-relay" class="md-nav__link">
     <span class="md-ellipsis">
-      Benefits
+      Why Run a Relay?
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Why Run a Relay?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#personal-benefits" class="md-nav__link">
+    <span class="md-ellipsis">
+      Personal Benefits
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#community-benefits" class="md-nav__link">
+    <span class="md-ellipsis">
+      Community Benefits
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -1080,27 +2034,27 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#strfry-c" class="md-nav__link">
+  <a href="#strfry" class="md-nav__link">
     <span class="md-ellipsis">
-      Strfry (C++)
+      strfry
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#nostream-typescript" class="md-nav__link">
+  <a href="#nostream" class="md-nav__link">
     <span class="md-ellipsis">
-      Nostream (TypeScript)
+      nostream
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#relay-pool-go" class="md-nav__link">
+  <a href="#khatru" class="md-nav__link">
     <span class="md-ellipsis">
-      Relay Pool (Go)
+      khatru
     </span>
   </a>
   
@@ -1112,154 +2066,28 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#basic-setup-example" class="md-nav__link">
+  <a href="#relay-configuration" class="md-nav__link">
     <span class="md-ellipsis">
-      Basic Setup Example
+      Relay Configuration
     </span>
   </a>
   
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#relay-economics" class="md-nav__link">
-    <span class="md-ellipsis">
-      Relay Economics
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Relay Economics">
+    <nav class="md-nav" aria-label="Relay Configuration">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#cost-factors" class="md-nav__link">
+  <a href="#basic-configuration" class="md-nav__link">
     <span class="md-ellipsis">
-      Cost Factors
+      Basic Configuration
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#revenue-models" class="md-nav__link">
+  <a href="#access-control" class="md-nav__link">
     <span class="md-ellipsis">
-      Revenue Models
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#lightning-integration" class="md-nav__link">
-    <span class="md-ellipsis">
-      Lightning Integration
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#relay-security" class="md-nav__link">
-    <span class="md-ellipsis">
-      Relay Security
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Relay Security">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#authentication" class="md-nav__link">
-    <span class="md-ellipsis">
-      Authentication
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#spam-protection" class="md-nav__link">
-    <span class="md-ellipsis">
-      Spam Protection
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#privacy-considerations" class="md-nav__link">
-    <span class="md-ellipsis">
-      Privacy Considerations
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#relay-interoperability" class="md-nav__link">
-    <span class="md-ellipsis">
-      Relay Interoperability
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Relay Interoperability">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#nips-for-relays" class="md-nav__link">
-    <span class="md-ellipsis">
-      NIPs for Relays
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="NIPs for Relays">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#nip-01-basic-protocol" class="md-nav__link">
-    <span class="md-ellipsis">
-      NIP-01 - Basic Protocol
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#nip-11-relay-information-document" class="md-nav__link">
-    <span class="md-ellipsis">
-      NIP-11 - Relay Information Document
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#nip-20-command-results" class="md-nav__link">
-    <span class="md-ellipsis">
-      NIP-20 - Command Results
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#nip-42-authentication" class="md-nav__link">
-    <span class="md-ellipsis">
-      NIP-42 - Authentication
+      Access Control
     </span>
   </a>
   
@@ -1271,94 +2099,37 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#cross-relay-compatibility" class="md-nav__link">
+  <a href="#hosting-options" class="md-nav__link">
     <span class="md-ellipsis">
-      Cross-Relay Compatibility
+      Hosting Options
     </span>
   </a>
   
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#troubleshooting-relay-issues" class="md-nav__link">
-    <span class="md-ellipsis">
-      Troubleshooting Relay Issues
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Troubleshooting Relay Issues">
+    <nav class="md-nav" aria-label="Hosting Options">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#common-problems" class="md-nav__link">
+  <a href="#self-hosted" class="md-nav__link">
     <span class="md-ellipsis">
-      Common Problems
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Common Problems">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#connection-issues" class="md-nav__link">
-    <span class="md-ellipsis">
-      Connection Issues
+      Self-Hosted
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#slow-performance" class="md-nav__link">
+  <a href="#vpscloud" class="md-nav__link">
     <span class="md-ellipsis">
-      Slow Performance
+      VPS/Cloud
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#missing-events" class="md-nav__link">
+  <a href="#docker-deployment" class="md-nav__link">
     <span class="md-ellipsis">
-      Missing Events
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#debugging-tools" class="md-nav__link">
-    <span class="md-ellipsis">
-      Debugging Tools
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Debugging Tools">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#browser-developer-tools" class="md-nav__link">
-    <span class="md-ellipsis">
-      Browser Developer Tools
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#command-line-tools" class="md-nav__link">
-    <span class="md-ellipsis">
-      Command Line Tools
+      Docker Deployment
     </span>
   </a>
   
@@ -1375,119 +2146,11 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#best-practices" class="md-nav__link">
+  <a href="#next-steps" class="md-nav__link">
     <span class="md-ellipsis">
-      Best Practices
+      Next Steps
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="Best Practices">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#for-users" class="md-nav__link">
-    <span class="md-ellipsis">
-      For Users
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#for-relay-operators" class="md-nav__link">
-    <span class="md-ellipsis">
-      For Relay Operators
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#for-developers" class="md-nav__link">
-    <span class="md-ellipsis">
-      For Developers
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#future-of-relays" class="md-nav__link">
-    <span class="md-ellipsis">
-      Future of Relays
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Future of Relays">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#emerging-trends" class="md-nav__link">
-    <span class="md-ellipsis">
-      Emerging Trends
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#technical-improvements" class="md-nav__link">
-    <span class="md-ellipsis">
-      Technical Improvements
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#resources" class="md-nav__link">
-    <span class="md-ellipsis">
-      Resources
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Resources">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#relay-lists" class="md-nav__link">
-    <span class="md-ellipsis">
-      Relay Lists
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#documentation" class="md-nav__link">
-    <span class="md-ellipsis">
-      Documentation
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#software" class="md-nav__link">
-    <span class="md-ellipsis">
-      Software
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -1510,422 +2173,362 @@
   
 
 
-<h1 id="understanding-nostr-relays">Understanding Nostr Relays</h1>
-<p>Relays are the backbone of the Nostr network - simple servers that store and forward events between clients. Understanding how relays work is crucial for using Nostr effectively.</p>
-<h2 id="what-is-a-relay">What is a Relay?</h2>
-<p>A <strong>relay</strong> is a server that:
-- Accepts events from clients
-- Stores events (temporarily or permanently)
-- Forwards events to other connected clients
-- Implements filtering and subscription logic
-- Can enforce its own policies and rules</p>
-<p>Think of relays as <strong>post offices</strong> for the Nostr network - they receive, store, and deliver messages between users.</p>
+<h1 id="relays-the-infrastructure-of-nostr">Relays: The Infrastructure of Nostr</h1>
+<div class="admonition info">
+<p class="admonition-title">Learning Objectives</p>
+<p>After this lesson, you'll understand:</p>
+<ul>
+<li>What relays are and how they work</li>
+<li>The relay-client communication protocol</li>
+<li>Different types of relays and their purposes</li>
+<li>How to choose and manage relays</li>
+<li>Relay policies and limitations</li>
+</ul>
+</div>
+<h2 id="what-are-relays">What are Relays?</h2>
+<p>Relays are the servers that form the backbone of the Nostr network. They store, forward, and serve events to clients. Unlike traditional social media where one company controls all the servers, Nostr's relay system is decentralized - anyone can run a relay.</p>
+<h3 id="key-characteristics">Key Characteristics</h3>
+<ul>
+<li><strong>Simple servers</strong>: Store and forward JSON events</li>
+<li><strong>WebSocket-based</strong>: Real-time bidirectional communication</li>
+<li><strong>No complex logic</strong>: Focus on data storage and delivery</li>
+<li><strong>Interchangeable</strong>: Clients can use any relay</li>
+<li><strong>Independently operated</strong>: Different people run different relays</li>
+</ul>
 <h2 id="how-relays-work">How Relays Work</h2>
-<h3 id="basic-operation-flow">Basic Operation Flow</h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>sequenceDiagram
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>    participant C1 as Client 1
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>    participant R as Relay
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>    participant C2 as Client 2
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>    C1-&gt;&gt;R: Connect (WebSocket)
-<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>    C2-&gt;&gt;R: Connect (WebSocket)
-<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>    C1-&gt;&gt;R: Publish Event
-<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>    R-&gt;&gt;R: Store Event
-<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>    C2-&gt;&gt;R: Subscribe to Events
-<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>    R-&gt;&gt;C2: Send Matching Events
-<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>    C1-&gt;&gt;R: New Event
-<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>    R-&gt;&gt;C2: Forward New Event
+<h3 id="basic-functions">Basic Functions</h3>
+<ol>
+<li><strong>Accept events</strong> from clients</li>
+<li><strong>Store events</strong> (temporarily or permanently)</li>
+<li><strong>Forward events</strong> to subscribed clients</li>
+<li><strong>Filter requests</strong> based on client queries</li>
+<li><strong>Enforce policies</strong> (rate limiting, content rules, etc.)</li>
+</ol>
+<h3 id="relay-client-communication">Relay-Client Communication</h3>
+<p>Communication happens over WebSocket connections using simple JSON messages:</p>
+<pre class="mermaid"><code>graph TB
+    A[Client] &lt;--&gt;|WebSocket| B[Relay]
+    B --&gt; C[Event Storage]
+    B --&gt; D[Other Clients]
+    A --&gt; E[Publish Events]
+    A --&gt; F[Subscribe to Events]
+    A --&gt; G[Query Events]</code></pre>
+<h2 id="message-types">Message Types</h2>
+<h3 id="client-to-relay-messages">Client to Relay Messages</h3>
+<h4 id="event-publishing-events"><strong>EVENT</strong> - Publishing Events</h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="p">[</span><span class="s2">&quot;EVENT&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">  </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;event-id&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">  </span><span class="nt">&quot;pubkey&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;author-pubkey&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">  </span><span class="nt">&quot;created_at&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1234567890</span><span class="p">,</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">  </span><span class="nt">&quot;kind&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">  </span><span class="nt">&quot;tags&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">  </span><span class="nt">&quot;content&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Hello Nostr!&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">  </span><span class="nt">&quot;sig&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;signature&quot;</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="p">}]</span>
 </code></pre></div>
-<h3 id="websocket-communication">WebSocket Communication</h3>
-<p>Relays communicate with clients using WebSocket connections and JSON messages:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1">// Client connects to relay</span>
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="kd">const</span><span class="w"> </span><span class="nx">relay</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">WebSocket</span><span class="p">(</span><span class="s1">&#39;wss://relay.example.com&#39;</span><span class="p">)</span>
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>
-<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="c1">// Client publishes an event</span>
-<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="nx">relay</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="nb">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">([</span><span class="s1">&#39;EVENT&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">signedEvent</span><span class="p">]))</span>
-<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>
-<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="c1">// Client subscribes to events</span>
-<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="nx">relay</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="nb">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">([</span><span class="s1">&#39;REQ&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">subscriptionId</span><span class="p">,</span><span class="w"> </span><span class="nx">filter</span><span class="p">]))</span>
-<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>
-<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="c1">// Relay sends events to client</span>
-<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="c1">// [&quot;EVENT&quot;, subscriptionId, event]</span>
+<h4 id="req-subscribing-to-events"><strong>REQ</strong> - Subscribing to Events</h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="p">[</span><span class="s2">&quot;REQ&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;subscription-id&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">  </span><span class="nt">&quot;kinds&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="p">],</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">  </span><span class="nt">&quot;authors&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;pubkey1&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;pubkey2&quot;</span><span class="p">],</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">  </span><span class="nt">&quot;since&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1234567890</span><span class="p">,</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">  </span><span class="nt">&quot;limit&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="p">}]</span>
 </code></pre></div>
+<h4 id="close-closing-subscriptions"><strong>CLOSE</strong> - Closing Subscriptions</h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="p">[</span><span class="s2">&quot;CLOSE&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;subscription-id&quot;</span><span class="p">]</span>
+</code></pre></div>
+<h4 id="auth-authentication"><strong>AUTH</strong> - Authentication</h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="p">[</span><span class="s2">&quot;AUTH&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">  </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;challenge-event-id&quot;</span><span class="p">,</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">  </span><span class="nt">&quot;pubkey&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;client-pubkey&quot;</span><span class="p">,</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">  </span><span class="nt">&quot;created_at&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1234567890</span><span class="p">,</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">  </span><span class="nt">&quot;kind&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">22242</span><span class="p">,</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="w">  </span><span class="nt">&quot;tags&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[[</span><span class="s2">&quot;challenge&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;challenge-string&quot;</span><span class="p">]],</span>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="w">  </span><span class="nt">&quot;content&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="w">  </span><span class="nt">&quot;sig&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;signature&quot;</span>
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="p">}]</span>
+</code></pre></div>
+<h4 id="count-requesting-event-counts"><strong>COUNT</strong> - Requesting Event Counts</h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="p">[</span><span class="s2">&quot;COUNT&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;subscription-id&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">  </span><span class="nt">&quot;kinds&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="p">],</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">  </span><span class="nt">&quot;authors&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;pubkey&quot;</span><span class="p">]</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="p">}]</span>
+</code></pre></div>
+<h3 id="relay-to-client-messages">Relay to Client Messages</h3>
+<h4 id="event-sending-events"><strong>EVENT</strong> - Sending Events</h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="p">[</span><span class="s2">&quot;EVENT&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;subscription-id&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">  </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;event-id&quot;</span><span class="p">,</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">  </span><span class="nt">&quot;pubkey&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;author-pubkey&quot;</span><span class="p">,</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="w">  </span><span class="nt">&quot;created_at&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1234567890</span><span class="p">,</span>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="w">  </span><span class="nt">&quot;kind&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="w">  </span><span class="nt">&quot;tags&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span>
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="w">  </span><span class="nt">&quot;content&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Hello Nostr!&quot;</span><span class="p">,</span>
+<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="w">  </span><span class="nt">&quot;sig&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;signature&quot;</span>
+<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="p">}]</span>
+</code></pre></div>
+<h4 id="eose-end-of-stored-events"><strong>EOSE</strong> - End of Stored Events</h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="p">[</span><span class="s2">&quot;EOSE&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;subscription-id&quot;</span><span class="p">]</span>
+</code></pre></div>
+<h4 id="ok-event-acceptance-response"><strong>OK</strong> - Event Acceptance Response</h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="p">[</span><span class="s2">&quot;OK&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;event-id&quot;</span><span class="p">,</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">]</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="p">[</span><span class="s2">&quot;OK&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;event-id&quot;</span><span class="p">,</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;blocked: content policy violation&quot;</span><span class="p">]</span>
+</code></pre></div>
+<h4 id="closed-subscription-closed"><strong>CLOSED</strong> - Subscription Closed</h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="p">[</span><span class="s2">&quot;CLOSED&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;subscription-id&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;rate-limited: too many subscriptions&quot;</span><span class="p">]</span>
+</code></pre></div>
+<h4 id="notice-human-readable-messages"><strong>NOTICE</strong> - Human-Readable Messages</h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="p">[</span><span class="s2">&quot;NOTICE&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;This relay requires authentication&quot;</span><span class="p">]</span>
+</code></pre></div>
+<h4 id="auth-authentication-challenge"><strong>AUTH</strong> - Authentication Challenge</h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="p">[</span><span class="s2">&quot;AUTH&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;challenge-string&quot;</span><span class="p">]</span>
+</code></pre></div>
+<h4 id="count-event-count-response"><strong>COUNT</strong> - Event Count Response</h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="p">[</span><span class="s2">&quot;COUNT&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;subscription-id&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="nt">&quot;count&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">42</span><span class="p">}]</span>
+</code></pre></div>
+<h2 id="relay-information-document-nip-11">Relay Information Document (NIP-11)</h2>
+<p>Relays can provide metadata about their capabilities:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>curl<span class="w"> </span>-H<span class="w"> </span><span class="s2">&quot;Accept: application/nostr+json&quot;</span><span class="w"> </span>https://relay.example.com
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="p">{</span>
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="w">  </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;My Nostr Relay&quot;</span><span class="p">,</span>
+<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="w">  </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;A relay for the Nostr community&quot;</span><span class="p">,</span>
+<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a><span class="w">  </span><span class="nt">&quot;pubkey&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;relay-admin-pubkey&quot;</span><span class="p">,</span>
+<a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a><span class="w">  </span><span class="nt">&quot;contact&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;admin@relay.example.com&quot;</span><span class="p">,</span>
+<a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a><span class="w">  </span><span class="nt">&quot;supported_nips&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">9</span><span class="p">,</span><span class="w"> </span><span class="mi">11</span><span class="p">,</span><span class="w"> </span><span class="mi">12</span><span class="p">,</span><span class="w"> </span><span class="mi">15</span><span class="p">,</span><span class="w"> </span><span class="mi">16</span><span class="p">,</span><span class="w"> </span><span class="mi">20</span><span class="p">,</span><span class="w"> </span><span class="mi">22</span><span class="p">],</span>
+<a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a><span class="w">  </span><span class="nt">&quot;software&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;strfry&quot;</span><span class="p">,</span>
+<a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a><span class="w">  </span><span class="nt">&quot;version&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0.9.6&quot;</span><span class="p">,</span>
+<a id="__codelineno-13-9" name="__codelineno-13-9" href="#__codelineno-13-9"></a><span class="w">  </span><span class="nt">&quot;limitation&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-13-10" name="__codelineno-13-10" href="#__codelineno-13-10"></a><span class="w">    </span><span class="nt">&quot;max_message_length&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">16384</span><span class="p">,</span>
+<a id="__codelineno-13-11" name="__codelineno-13-11" href="#__codelineno-13-11"></a><span class="w">    </span><span class="nt">&quot;max_subscriptions&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">300</span><span class="p">,</span>
+<a id="__codelineno-13-12" name="__codelineno-13-12" href="#__codelineno-13-12"></a><span class="w">    </span><span class="nt">&quot;max_limit&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">5000</span><span class="p">,</span>
+<a id="__codelineno-13-13" name="__codelineno-13-13" href="#__codelineno-13-13"></a><span class="w">    </span><span class="nt">&quot;max_subid_length&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span>
+<a id="__codelineno-13-14" name="__codelineno-13-14" href="#__codelineno-13-14"></a><span class="w">    </span><span class="nt">&quot;max_event_tags&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span>
+<a id="__codelineno-13-15" name="__codelineno-13-15" href="#__codelineno-13-15"></a><span class="w">    </span><span class="nt">&quot;max_content_length&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">8196</span><span class="p">,</span>
+<a id="__codelineno-13-16" name="__codelineno-13-16" href="#__codelineno-13-16"></a><span class="w">    </span><span class="nt">&quot;min_pow_difficulty&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<a id="__codelineno-13-17" name="__codelineno-13-17" href="#__codelineno-13-17"></a><span class="w">    </span><span class="nt">&quot;auth_required&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<a id="__codelineno-13-18" name="__codelineno-13-18" href="#__codelineno-13-18"></a><span class="w">    </span><span class="nt">&quot;payment_required&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<a id="__codelineno-13-19" name="__codelineno-13-19" href="#__codelineno-13-19"></a><span class="w">    </span><span class="nt">&quot;restricted_writes&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span>
+<a id="__codelineno-13-20" name="__codelineno-13-20" href="#__codelineno-13-20"></a><span class="w">  </span><span class="p">},</span>
+<a id="__codelineno-13-21" name="__codelineno-13-21" href="#__codelineno-13-21"></a><span class="w">  </span><span class="nt">&quot;relay_countries&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;US&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;CA&quot;</span><span class="p">],</span>
+<a id="__codelineno-13-22" name="__codelineno-13-22" href="#__codelineno-13-22"></a><span class="w">  </span><span class="nt">&quot;language_tags&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;en&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;en-419&quot;</span><span class="p">],</span>
+<a id="__codelineno-13-23" name="__codelineno-13-23" href="#__codelineno-13-23"></a><span class="w">  </span><span class="nt">&quot;tags&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;sfw-only&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;bitcoin-only&quot;</span><span class="p">],</span>
+<a id="__codelineno-13-24" name="__codelineno-13-24" href="#__codelineno-13-24"></a><span class="w">  </span><span class="nt">&quot;posting_policy&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://relay.example.com/policy&quot;</span>
+<a id="__codelineno-13-25" name="__codelineno-13-25" href="#__codelineno-13-25"></a><span class="p">}</span>
+</code></pre></div>
+<h3 id="key-information-fields">Key Information Fields</h3>
+<h4 id="basic-info"><strong>Basic Info</strong></h4>
+<ul>
+<li><code>name</code>: Human-readable relay name</li>
+<li><code>description</code>: Detailed information about the relay</li>
+<li><code>pubkey</code>: Admin's public key for contact</li>
+<li><code>contact</code>: Alternative contact method</li>
+<li><code>software</code>: Relay implementation name</li>
+<li><code>version</code>: Software version</li>
+</ul>
+<h4 id="capabilities"><strong>Capabilities</strong></h4>
+<ul>
+<li><code>supported_nips</code>: Which NIPs are implemented</li>
+<li><code>limitation</code>: Technical limits and requirements</li>
+<li><code>relay_countries</code>: Legal jurisdictions</li>
+<li><code>language_tags</code>: Primary languages</li>
+<li><code>tags</code>: Content policies and focus areas</li>
+</ul>
 <h2 id="types-of-relays">Types of Relays</h2>
-<h3 id="public-relays">🌐 Public Relays</h3>
+<h3 id="by-access-model">By Access Model</h3>
+<h4 id="public-relays"><strong>Public Relays</strong></h4>
 <ul>
 <li>Open to everyone</li>
 <li>No registration required</li>
-<li>Usually free to use</li>
 <li>May have rate limits</li>
+<li>Examples: <code>relay.damus.io</code>, <code>nos.lol</code></li>
 </ul>
-<p><strong>Examples:</strong>
-- <code>wss://relay.damus.io</code>
-- <code>wss://nos.lol</code>
-- <code>wss://relay.nostr.band</code></p>
-<h3 id="private-relays">🔒 Private Relays</h3>
+<h4 id="private-relays"><strong>Private Relays</strong></h4>
 <ul>
 <li>Restricted access</li>
 <li>Invitation or whitelist only</li>
-<li>Better privacy and control</li>
-<li>Often used by communities</li>
+<li>Often for specific communities</li>
+<li>Examples: Family relays, corporate relays</li>
 </ul>
-<h3 id="paid-relays">💰 Paid Relays</h3>
+<h4 id="paid-relays"><strong>Paid Relays</strong></h4>
 <ul>
 <li>Require payment for access</li>
-<li>Better performance and reliability</li>
-<li>Spam protection through economic incentives</li>
-<li>Professional support</li>
+<li>Better spam protection</li>
+<li>Often higher reliability</li>
+<li>May offer premium features</li>
 </ul>
-<h3 id="specialized-relays">🎯 Specialized Relays</h3>
+<h3 id="by-purpose">By Purpose</h3>
+<h4 id="general-purpose"><strong>General Purpose</strong></h4>
 <ul>
-<li>Focus on specific content types</li>
-<li>Custom filtering and policies</li>
-<li>Optimized for particular use cases</li>
+<li>Accept all kinds of events</li>
+<li>Serve broad communities</li>
+<li>Most common type</li>
 </ul>
-<p><strong>Examples:</strong>
-- Media-only relays
-- Long-form content relays
-- Lightning payment relays
-- Geographic relays</p>
-<h2 id="relay-policies">Relay Policies</h2>
-<h3 id="content-policies">Content Policies</h3>
-<p>Relays can implement various content policies:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="p">{</span>
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">  </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Family Friendly Relay&quot;</span><span class="p">,</span>
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">  </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;No adult content allowed&quot;</span><span class="p">,</span>
-<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">  </span><span class="nt">&quot;content_policy&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">    </span><span class="nt">&quot;prohibited&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;adult&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;violence&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;spam&quot;</span><span class="p">],</span>
-<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">    </span><span class="nt">&quot;required_tags&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;content-warning&quot;</span><span class="p">],</span>
-<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w">    </span><span class="nt">&quot;max_content_length&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">280</span>
-<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="w">  </span><span class="p">}</span>
-<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="p">}</span>
-</code></pre></div>
-<h3 id="rate-limiting">Rate Limiting</h3>
-<p>Prevent spam and abuse:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="p">{</span>
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">  </span><span class="nt">&quot;rate_limits&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">    </span><span class="nt">&quot;events_per_minute&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span>
-<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">    </span><span class="nt">&quot;subscriptions_per_connection&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="p">,</span>
-<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">    </span><span class="nt">&quot;max_filters_per_subscription&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span>
-<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="w">  </span><span class="p">}</span>
-<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="p">}</span>
-</code></pre></div>
-<h3 id="storage-policies">Storage Policies</h3>
-<p>Different retention strategies:</p>
+<h4 id="specialized-relays"><strong>Specialized Relays</strong></h4>
 <ul>
-<li><strong>Permanent storage</strong> - Keep all events forever</li>
-<li><strong>Time-based expiration</strong> - Delete events after X days</li>
-<li><strong>Size-based limits</strong> - Keep only recent events</li>
-<li><strong>Kind-based policies</strong> - Different rules for different event types</li>
+<li>Focus on specific event kinds</li>
+<li>Examples:</li>
+<li>Media relays (images, videos)</li>
+<li>Long-form content relays</li>
+<li>Lightning zap relays</li>
+<li>Marketplace relays</li>
 </ul>
-<h2 id="relay-discovery">Relay Discovery</h2>
-<h3 id="nip-11-relay-information">NIP-11 Relay Information</h3>
-<p>Relays provide metadata about their capabilities:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>curl<span class="w"> </span>-H<span class="w"> </span><span class="s2">&quot;Accept: application/nostr+json&quot;</span><span class="w"> </span>https://relay.example.com
-</code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="p">{</span>
-<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">  </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;My Awesome Relay&quot;</span><span class="p">,</span>
-<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">  </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;A relay for the Nostr community&quot;</span><span class="p">,</span>
-<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="w">  </span><span class="nt">&quot;pubkey&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;relay-operator-pubkey&quot;</span><span class="p">,</span>
-<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="w">  </span><span class="nt">&quot;contact&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;admin@relay.example.com&quot;</span><span class="p">,</span>
-<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="w">  </span><span class="nt">&quot;supported_nips&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">9</span><span class="p">,</span><span class="w"> </span><span class="mi">11</span><span class="p">,</span><span class="w"> </span><span class="mi">12</span><span class="p">,</span><span class="w"> </span><span class="mi">15</span><span class="p">,</span><span class="w"> </span><span class="mi">16</span><span class="p">,</span><span class="w"> </span><span class="mi">20</span><span class="p">,</span><span class="w"> </span><span class="mi">22</span><span class="p">],</span>
-<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="w">  </span><span class="nt">&quot;software&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;strfry&quot;</span><span class="p">,</span>
-<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="w">  </span><span class="nt">&quot;version&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0.9.6&quot;</span><span class="p">,</span>
-<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="w">  </span><span class="nt">&quot;limitation&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a><span class="w">    </span><span class="nt">&quot;max_message_length&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">65536</span><span class="p">,</span>
-<a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a><span class="w">    </span><span class="nt">&quot;max_subscriptions&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="p">,</span>
-<a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a><span class="w">    </span><span class="nt">&quot;max_filters&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span>
-<a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a><span class="w">    </span><span class="nt">&quot;max_limit&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">5000</span><span class="p">,</span>
-<a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a><span class="w">    </span><span class="nt">&quot;max_subid_length&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span>
-<a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a><span class="w">    </span><span class="nt">&quot;min_prefix&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span>
-<a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a><span class="w">    </span><span class="nt">&quot;max_event_tags&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span>
-<a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a><span class="w">    </span><span class="nt">&quot;max_content_length&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">8196</span><span class="p">,</span>
-<a id="__codelineno-5-18" name="__codelineno-5-18" href="#__codelineno-5-18"></a><span class="w">    </span><span class="nt">&quot;min_pow_difficulty&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">30</span><span class="p">,</span>
-<a id="__codelineno-5-19" name="__codelineno-5-19" href="#__codelineno-5-19"></a><span class="w">    </span><span class="nt">&quot;auth_required&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
-<a id="__codelineno-5-20" name="__codelineno-5-20" href="#__codelineno-5-20"></a><span class="w">    </span><span class="nt">&quot;payment_required&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span>
-<a id="__codelineno-5-21" name="__codelineno-5-21" href="#__codelineno-5-21"></a><span class="w">  </span><span class="p">},</span>
-<a id="__codelineno-5-22" name="__codelineno-5-22" href="#__codelineno-5-22"></a><span class="w">  </span><span class="nt">&quot;payments_url&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://relay.example.com/payments&quot;</span><span class="p">,</span>
-<a id="__codelineno-5-23" name="__codelineno-5-23" href="#__codelineno-5-23"></a><span class="w">  </span><span class="nt">&quot;fees&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-5-24" name="__codelineno-5-24" href="#__codelineno-5-24"></a><span class="w">    </span><span class="nt">&quot;admission&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="nt">&quot;amount&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">5000000</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;unit&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;msats&quot;</span><span class="p">}],</span>
-<a id="__codelineno-5-25" name="__codelineno-5-25" href="#__codelineno-5-25"></a><span class="w">    </span><span class="nt">&quot;subscription&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="nt">&quot;amount&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1000000</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;unit&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;msats&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;period&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2592000</span><span class="p">}],</span>
-<a id="__codelineno-5-26" name="__codelineno-5-26" href="#__codelineno-5-26"></a><span class="w">    </span><span class="nt">&quot;publication&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="nt">&quot;amount&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;unit&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;msats&quot;</span><span class="p">}]</span>
-<a id="__codelineno-5-27" name="__codelineno-5-27" href="#__codelineno-5-27"></a><span class="w">  </span><span class="p">}</span>
-<a id="__codelineno-5-28" name="__codelineno-5-28" href="#__codelineno-5-28"></a><span class="p">}</span>
-</code></pre></div>
-<h3 id="relay-lists-and-directories">Relay Lists and Directories</h3>
+<h4 id="personal-relays"><strong>Personal Relays</strong></h4>
 <ul>
-<li><strong>Nostr.watch</strong> - Real-time relay monitoring</li>
-<li><strong>Relay registries</strong> - Curated lists of relays</li>
-<li><strong>Client recommendations</strong> - Built-in relay suggestions</li>
+<li>Run by individuals</li>
+<li>Store personal backup</li>
+<li>Share with friends/family</li>
+<li>Complete data control</li>
 </ul>
-<h2 id="choosing-relays">Choosing Relays</h2>
-<h3 id="factors-to-consider">Factors to Consider</h3>
-<h4 id="reliability"><strong>Reliability</strong></h4>
+<h3 id="by-retention-policy">By Retention Policy</h3>
+<h4 id="archive-relays"><strong>Archive Relays</strong></h4>
 <ul>
-<li>Uptime and availability</li>
-<li>Response time and latency</li>
-<li>Historical performance</li>
+<li>Store events permanently</li>
+<li>Historical data preservation</li>
+<li>May charge for long-term storage</li>
 </ul>
-<h4 id="policies"><strong>Policies</strong></h4>
+<h4 id="ephemeral-relays"><strong>Ephemeral Relays</strong></h4>
 <ul>
-<li>Content moderation approach</li>
-<li>Rate limiting rules</li>
-<li>Storage duration</li>
+<li>Short-term storage</li>
+<li>Focus on real-time communication</li>
+<li>Lower storage costs</li>
 </ul>
-<h4 id="geographic-location"><strong>Geographic Location</strong></h4>
+<h4 id="filtered-relays"><strong>Filtered Relays</strong></h4>
 <ul>
-<li>Closer relays = lower latency</li>
-<li>Legal jurisdiction considerations</li>
-<li>Data sovereignty requirements</li>
+<li>Selective storage</li>
+<li>Content moderation</li>
+<li>Topic-specific focus</li>
 </ul>
-<h4 id="community"><strong>Community</strong></h4>
-<ul>
-<li>Who else uses this relay?</li>
-<li>Moderation quality</li>
-<li>Community standards</li>
-</ul>
-<h3 id="recommended-strategy">Recommended Strategy</h3>
-<h4 id="diversification"><strong>Diversification</strong></h4>
-<p>Use multiple relays for redundancy:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">relays</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
-<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="w">  </span><span class="s1">&#39;wss://relay.damus.io&#39;</span><span class="p">,</span><span class="w">      </span><span class="c1">// Popular public relay</span>
-<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="w">  </span><span class="s1">&#39;wss://nos.lol&#39;</span><span class="p">,</span><span class="w">             </span><span class="c1">// Alternative public relay</span>
-<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="w">  </span><span class="s1">&#39;wss://relay.nostr.band&#39;</span><span class="p">,</span><span class="w">    </span><span class="c1">// Search-optimized relay</span>
-<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="w">  </span><span class="s1">&#39;wss://private.relay.com&#39;</span><span class="w">    </span><span class="c1">// Your private relay</span>
-<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="p">]</span>
-</code></pre></div>
-<h4 id="read-vs-write-relays"><strong>Read vs Write Relays</strong></h4>
-<ul>
-<li><strong>Write relays</strong> - Where you publish your events</li>
-<li><strong>Read relays</strong> - Where you discover content</li>
-</ul>
-<p>Many clients allow different relay sets for reading and writing.</p>
-<h2 id="relay-performance">Relay Performance</h2>
-<h3 id="key-metrics">Key Metrics</h3>
-<h4 id="latency"><strong>Latency</strong></h4>
-<p>Time for events to propagate:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="c1"># Test relay response time</span>
-<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="nb">time</span><span class="w"> </span>curl<span class="w"> </span>-s<span class="w"> </span>wss://relay.example.com<span class="w"> </span>&gt;<span class="w"> </span>/dev/null
-</code></pre></div></p>
-<h4 id="throughput"><strong>Throughput</strong></h4>
-<p>Events processed per second:
-- Small relays: 10-100 events/sec
-- Large relays: 1000+ events/sec</p>
-<h4 id="storage"><strong>Storage</strong></h4>
-<p>How much data the relay stores:
-- Event count
-- Total storage size
-- Retention policies</p>
-<h3 id="monitoring-tools">Monitoring Tools</h3>
-<h4 id="nostrwatch"><strong>Nostr.watch</strong></h4>
-<p>Real-time relay statistics:
-- Uptime monitoring
-- Response time tracking
-- Geographic distribution
-- NIP support matrix</p>
-<h4 id="relaytools"><strong>Relay.tools</strong></h4>
-<p>Comprehensive relay analysis:
-- Performance benchmarks
-- Feature comparison
-- Historical data</p>
 <h2 id="running-your-own-relay">Running Your Own Relay</h2>
-<h3 id="benefits">Benefits</h3>
+<h3 id="why-run-a-relay">Why Run a Relay?</h3>
+<h4 id="personal-benefits"><strong>Personal Benefits</strong></h4>
 <ul>
-<li><strong>Full control</strong> over policies and data</li>
-<li><strong>Privacy</strong> for your communications</li>
-<li><strong>Reliability</strong> for your content</li>
-<li><strong>Community building</strong> around your relay</li>
+<li>Complete data control</li>
+<li>Custom policies</li>
+<li>Data backup and preservation</li>
+<li>Privacy and security</li>
+<li>No dependence on third parties</li>
+</ul>
+<h4 id="community-benefits"><strong>Community Benefits</strong></h4>
+<ul>
+<li>Support network decentralization</li>
+<li>Provide service to community</li>
+<li>Enable free speech</li>
+<li>Reduce censorship risks</li>
 </ul>
 <h3 id="popular-relay-software">Popular Relay Software</h3>
-<h4 id="strfry-c"><strong>Strfry</strong> (C++)</h4>
+<h4 id="strfry"><strong>strfry</strong></h4>
 <ul>
-<li>High performance</li>
-<li>Easy configuration</li>
+<li>High-performance C++ implementation</li>
+<li>Efficient storage and indexing</li>
+<li>Production-ready</li>
 <li>Active development</li>
-<li>Good documentation</li>
 </ul>
-<h4 id="nostream-typescript"><strong>Nostream</strong> (TypeScript)</h4>
-<ul>
-<li>Feature-rich</li>
-<li>Easy to customize</li>
-<li>Good for developers</li>
-<li>Active community</li>
-</ul>
-<h4 id="relay-pool-go"><strong>Relay Pool</strong> (Go)</h4>
-<ul>
-<li>Lightweight</li>
-<li>Simple deployment</li>
-<li>Good for beginners</li>
-</ul>
-<h3 id="basic-setup-example">Basic Setup Example</h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="c1"># Install strfry</span>
-<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/hoytech/strfry.git
-<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="nb">cd</span><span class="w"> </span>strfry
-<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>make<span class="w"> </span>setup-golpe
-<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>make<span class="w"> </span>-j4
-<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>
-<a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a><span class="c1"># Configure</span>
-<a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a>cp<span class="w"> </span>strfry.conf.example<span class="w"> </span>strfry.conf
-<a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a><span class="c1"># Edit configuration...</span>
-<a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a>
-<a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a><span class="c1"># Run relay</span>
-<a id="__codelineno-8-12" name="__codelineno-8-12" href="#__codelineno-8-12"></a>./strfry<span class="w"> </span>relay
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="c1"># Install strfry</span>
+<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/hoytech/strfry.git
+<a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a><span class="nb">cd</span><span class="w"> </span>strfry
+<a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a>make<span class="w"> </span>setup-golpe
+<a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a>make<span class="w"> </span>-j4
 </code></pre></div>
-<h2 id="relay-economics">Relay Economics</h2>
-<h3 id="cost-factors">Cost Factors</h3>
+<h4 id="nostream"><strong>nostream</strong></h4>
 <ul>
-<li><strong>Server hosting</strong> - VPS or dedicated server</li>
-<li><strong>Bandwidth</strong> - Data transfer costs</li>
-<li><strong>Storage</strong> - Disk space for events</li>
-<li><strong>Maintenance</strong> - Time and expertise</li>
+<li>TypeScript/Node.js implementation</li>
+<li>Easy to modify and extend</li>
+<li>Good for development</li>
+<li>PostgreSQL backend</li>
 </ul>
-<h3 id="revenue-models">Revenue Models</h3>
-<ul>
-<li><strong>Free/donation-based</strong> - Community supported</li>
-<li><strong>Subscription fees</strong> - Monthly/yearly payments</li>
-<li><strong>Pay-per-use</strong> - Micropayments per event</li>
-<li><strong>Premium features</strong> - Enhanced services</li>
-</ul>
-<h3 id="lightning-integration">Lightning Integration</h3>
-<p>Many relays integrate Bitcoin Lightning for payments:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="p">{</span>
-<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="w">  </span><span class="nt">&quot;fees&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="w">    </span><span class="nt">&quot;admission&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="nt">&quot;amount&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">5000</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;unit&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;msats&quot;</span><span class="p">}],</span>
-<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="w">    </span><span class="nt">&quot;publication&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="nt">&quot;amount&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;unit&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;msats&quot;</span><span class="p">}]</span>
-<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="w">  </span><span class="p">}</span>
-<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a><span class="p">}</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="c1"># Install nostream</span>
+<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/Cameri/nostream.git
+<a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a><span class="nb">cd</span><span class="w"> </span>nostream
+<a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a>npm<span class="w"> </span>install
+<a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a>npm<span class="w"> </span>run<span class="w"> </span>build
 </code></pre></div>
-<h2 id="relay-security">Relay Security</h2>
-<h3 id="authentication">Authentication</h3>
-<p>Some relays require authentication:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="c1">// NIP-42 Authentication</span>
-<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="kd">const</span><span class="w"> </span><span class="nx">authEvent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="w">  </span><span class="nx">kind</span><span class="o">:</span><span class="w"> </span><span class="mf">22242</span><span class="p">,</span>
-<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="w">  </span><span class="nx">tags</span><span class="o">:</span><span class="w"> </span><span class="p">[</span>
-<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a><span class="w">    </span><span class="p">[</span><span class="s1">&#39;relay&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;wss://relay.example.com&#39;</span><span class="p">],</span>
-<a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a><span class="w">    </span><span class="p">[</span><span class="s1">&#39;challenge&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">challengeString</span><span class="p">]</span>
-<a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a><span class="w">  </span><span class="p">],</span>
-<a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a><span class="w">  </span><span class="nx">content</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;&#39;</span>
-<a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a><span class="p">}</span>
+<h4 id="khatru"><strong>khatru</strong></h4>
+<ul>
+<li>Go implementation</li>
+<li>Simple and lightweight</li>
+<li>Easy to deploy</li>
+<li>Good performance</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="c1"># Install khatru</span>
+<a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>go<span class="w"> </span>install<span class="w"> </span>github.com/fiatjaf/khatru@latest
 </code></pre></div>
-<h3 id="spam-protection">Spam Protection</h3>
-<p>Common anti-spam measures:
-- <strong>Rate limiting</strong> - Limit events per time period
-- <strong>Proof of work</strong> - Require computational effort
-- <strong>Payment requirements</strong> - Economic spam deterrent
-- <strong>Content filtering</strong> - Automated moderation</p>
-<h3 id="privacy-considerations">Privacy Considerations</h3>
-<ul>
-<li><strong>IP logging</strong> - Some relays log connection data</li>
-<li><strong>Event correlation</strong> - Timing analysis possible</li>
-<li><strong>Metadata exposure</strong> - Connection patterns visible</li>
-</ul>
-<h2 id="relay-interoperability">Relay Interoperability</h2>
-<h3 id="nips-for-relays">NIPs for Relays</h3>
-<h4 id="nip-01-basic-protocol"><strong>NIP-01</strong> - Basic Protocol</h4>
-<p>Core event handling and WebSocket communication.</p>
-<h4 id="nip-11-relay-information-document"><strong>NIP-11</strong> - Relay Information Document</h4>
-<p>Standardized relay metadata format.</p>
-<h4 id="nip-20-command-results"><strong>NIP-20</strong> - Command Results</h4>
-<p>Standardized responses to client commands.</p>
-<h4 id="nip-42-authentication"><strong>NIP-42</strong> - Authentication</h4>
-<p>Optional authentication for relay access.</p>
-<h3 id="cross-relay-compatibility">Cross-Relay Compatibility</h3>
-<p>All compliant relays should:
-- Accept standard event formats
-- Implement basic filtering
-- Provide NIP-11 information
-- Handle WebSocket connections properly</p>
-<h2 id="troubleshooting-relay-issues">Troubleshooting Relay Issues</h2>
-<h3 id="common-problems">Common Problems</h3>
-<h4 id="connection-issues"><strong>Connection Issues</strong></h4>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="c1"># Test WebSocket connection</span>
-<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>websocat<span class="w"> </span>wss://relay.example.com
+<h3 id="relay-configuration">Relay Configuration</h3>
+<h4 id="basic-configuration"><strong>Basic Configuration</strong></h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="c1"># strfry.conf</span>
+<a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="l l-Scalar l-Scalar-Plain">db = &quot;./strfry-db/&quot;</span>
+<a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a><span class="l l-Scalar l-Scalar-Plain">bind = &quot;0.0.0.0:7777&quot;</span>
+<a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a><span class="l l-Scalar l-Scalar-Plain">nofiles = 1000000</span>
+<a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a>
+<a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a><span class="l l-Scalar l-Scalar-Plain">relay</span><span class="p p-Indicator">:</span>
+<a id="__codelineno-17-7" name="__codelineno-17-7" href="#__codelineno-17-7"></a><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;My</span><span class="nv"> </span><span class="s">Personal</span><span class="nv"> </span><span class="s">Relay&quot;</span>
+<a id="__codelineno-17-8" name="__codelineno-17-8" href="#__codelineno-17-8"></a><span class="w">  </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;A</span><span class="nv"> </span><span class="s">relay</span><span class="nv"> </span><span class="s">for</span><span class="nv"> </span><span class="s">my</span><span class="nv"> </span><span class="s">friends</span><span class="nv"> </span><span class="s">and</span><span class="nv"> </span><span class="s">family&quot;</span>
+<a id="__codelineno-17-9" name="__codelineno-17-9" href="#__codelineno-17-9"></a><span class="w">  </span><span class="nt">pubkey</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;your-pubkey-here&quot;</span>
+<a id="__codelineno-17-10" name="__codelineno-17-10" href="#__codelineno-17-10"></a><span class="w">  </span><span class="nt">contact</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;admin@myrelay.com&quot;</span>
+<a id="__codelineno-17-11" name="__codelineno-17-11" href="#__codelineno-17-11"></a>
+<a id="__codelineno-17-12" name="__codelineno-17-12" href="#__codelineno-17-12"></a><span class="nt">rejectFilters</span><span class="p">:</span>
+<a id="__codelineno-17-13" name="__codelineno-17-13" href="#__codelineno-17-13"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">kinds</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[]</span>
+<a id="__codelineno-17-14" name="__codelineno-17-14" href="#__codelineno-17-14"></a><span class="w">    </span><span class="nt">authors</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[]</span>
+<a id="__codelineno-17-15" name="__codelineno-17-15" href="#__codelineno-17-15"></a><span class="w">    </span><span class="nt">tags</span><span class="p">:</span>
+<a id="__codelineno-17-16" name="__codelineno-17-16" href="#__codelineno-17-16"></a><span class="w">      </span><span class="s">&quot;#t&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&quot;spam&quot;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&quot;inappropriate&quot;</span><span class="p p-Indicator">]</span>
 </code></pre></div>
-<h4 id="slow-performance"><strong>Slow Performance</strong></h4>
-<ul>
-<li>Check relay location</li>
-<li>Monitor network latency</li>
-<li>Verify relay load</li>
-</ul>
-<h4 id="missing-events"><strong>Missing Events</strong></h4>
-<ul>
-<li>Check relay policies</li>
-<li>Verify event signatures</li>
-<li>Confirm relay synchronization</li>
-</ul>
-<h3 id="debugging-tools">Debugging Tools</h3>
-<h4 id="browser-developer-tools"><strong>Browser Developer Tools</strong></h4>
-<p>Monitor WebSocket connections and messages.</p>
-<h4 id="command-line-tools"><strong>Command Line Tools</strong></h4>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="c1"># Test relay with nak</span>
-<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>nak<span class="w"> </span>req<span class="w"> </span>-k<span class="w"> </span><span class="m">1</span><span class="w"> </span>--limit<span class="w"> </span><span class="m">10</span><span class="w"> </span>wss://relay.example.com
-<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>
-<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="c1"># Monitor relay with websocat</span>
-<a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a><span class="nb">echo</span><span class="w"> </span><span class="s1">&#39;[&quot;REQ&quot;,&quot;test&quot;,{&quot;kinds&quot;:[1],&quot;limit&quot;:1}]&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>websocat<span class="w"> </span>wss://relay.example.com
+<h4 id="access-control"><strong>Access Control</strong></h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="c1"># Authentication required</span>
+<a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a><span class="nt">auth</span><span class="p">:</span>
+<a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a><span class="w">  </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a><span class="w">  </span><span class="nt">whitelist</span><span class="p">:</span>
+<a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;pubkey1&quot;</span>
+<a id="__codelineno-18-6" name="__codelineno-18-6" href="#__codelineno-18-6"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;pubkey2&quot;</span>
+<a id="__codelineno-18-7" name="__codelineno-18-7" href="#__codelineno-18-7"></a>
+<a id="__codelineno-18-8" name="__codelineno-18-8" href="#__codelineno-18-8"></a><span class="c1"># Payment required</span>
+<a id="__codelineno-18-9" name="__codelineno-18-9" href="#__codelineno-18-9"></a><span class="nt">payment</span><span class="p">:</span>
+<a id="__codelineno-18-10" name="__codelineno-18-10" href="#__codelineno-18-10"></a><span class="w">  </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<a id="__codelineno-18-11" name="__codelineno-18-11" href="#__codelineno-18-11"></a><span class="w">  </span><span class="nt">amount</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span><span class="w">  </span><span class="c1"># sats per month</span>
+<a id="__codelineno-18-12" name="__codelineno-18-12" href="#__codelineno-18-12"></a><span class="w">  </span><span class="nt">bolt11</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;payment-address&quot;</span>
 </code></pre></div>
-<h2 id="best-practices">Best Practices</h2>
-<h3 id="for-users">For Users</h3>
-<ol>
-<li><strong>Use multiple relays</strong> for redundancy</li>
-<li><strong>Choose reliable relays</strong> with good uptime</li>
-<li><strong>Respect relay policies</strong> and rate limits</li>
-<li><strong>Support relay operators</strong> if possible</li>
-</ol>
-<h3 id="for-relay-operators">For Relay Operators</h3>
-<ol>
-<li><strong>Implement proper monitoring</strong> and alerting</li>
-<li><strong>Have clear policies</strong> and communicate them</li>
-<li><strong>Keep software updated</strong> for security</li>
-<li><strong>Engage with the community</strong> for feedback</li>
-</ol>
-<h3 id="for-developers">For Developers</h3>
-<ol>
-<li><strong>Handle relay failures</strong> gracefully</li>
-<li><strong>Implement proper retry logic</strong></li>
-<li><strong>Respect rate limits</strong> and policies</li>
-<li><strong>Test with multiple relays</strong></li>
-</ol>
-<h2 id="future-of-relays">Future of Relays</h2>
-<h3 id="emerging-trends">Emerging Trends</h3>
+<h3 id="hosting-options">Hosting Options</h3>
+<h4 id="self-hosted"><strong>Self-Hosted</strong></h4>
 <ul>
-<li><strong>Specialized relays</strong> for specific use cases</li>
-<li><strong>Economic incentives</strong> through Lightning integration</li>
-<li><strong>Enhanced privacy</strong> features</li>
-<li><strong>Better discovery</strong> mechanisms</li>
+<li>Complete control</li>
+<li>Custom hardware</li>
+<li>Network requirements</li>
+<li>Maintenance responsibility</li>
 </ul>
-<h3 id="technical-improvements">Technical Improvements</h3>
+<h4 id="vpscloud"><strong>VPS/Cloud</strong></h4>
 <ul>
-<li><strong>Improved efficiency</strong> and performance</li>
-<li><strong>Better spam protection</strong></li>
-<li><strong>Enhanced monitoring</strong> and analytics</li>
-<li><strong>Standardized APIs</strong> for management</li>
+<li>Professional hosting</li>
+<li>Managed infrastructure</li>
+<li>Scalable resources</li>
+<li>Geographic distribution</li>
 </ul>
-<h2 id="resources">Resources</h2>
-<h3 id="relay-lists">Relay Lists</h3>
+<h4 id="docker-deployment"><strong>Docker Deployment</strong></h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="k">FROM</span><span class="w"> </span><span class="s">ubuntu:22.04</span>
+<a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a>
+<a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a><span class="c"># Install dependencies</span>
+<a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a><span class="k">RUN</span><span class="w"> </span>apt-get<span class="w"> </span>update<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-19-5" name="__codelineno-19-5" href="#__codelineno-19-5"></a><span class="w">    </span>build-essential<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-19-6" name="__codelineno-19-6" href="#__codelineno-19-6"></a><span class="w">    </span>git<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-19-7" name="__codelineno-19-7" href="#__codelineno-19-7"></a><span class="w">    </span>pkg-config
+<a id="__codelineno-19-8" name="__codelineno-19-8" href="#__codelineno-19-8"></a>
+<a id="__codelineno-19-9" name="__codelineno-19-9" href="#__codelineno-19-9"></a><span class="c"># Clone and build strfry</span>
+<a id="__codelineno-19-10" name="__codelineno-19-10" href="#__codelineno-19-10"></a><span class="k">RUN</span><span class="w"> </span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/hoytech/strfry.git
+<a id="__codelineno-19-11" name="__codelineno-19-11" href="#__codelineno-19-11"></a><span class="k">WORKDIR</span><span class="w"> </span><span class="s">/strfry</span>
+<a id="__codelineno-19-12" name="__codelineno-19-12" href="#__codelineno-19-12"></a><span class="k">RUN</span><span class="w"> </span>make<span class="w"> </span>setup-golpe<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>make<span class="w"> </span>-j4
+<a id="__codelineno-19-13" name="__codelineno-19-13" href="#__codelineno-19-13"></a>
+<a id="__codelineno-19-14" name="__codelineno-19-14" href="#__codelineno-19-14"></a><span class="c"># Configure and run</span>
+<a id="__codelineno-19-15" name="__codelineno-19-15" href="#__codelineno-19-15"></a><span class="k">COPY</span><span class="w"> </span>strfry.conf<span class="w"> </span>.
+<a id="__codelineno-19-16" name="__codelineno-19-16" href="#__codelineno-19-16"></a><span class="k">EXPOSE</span><span class="w"> </span><span class="s">7777</span>
+<a id="__codelineno-19-17" name="__codelineno-19-17" href="#__codelineno-19-17"></a><span class="k">CMD</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;./strfry&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;relay&quot;</span><span class="p">]</span>
+</code></pre></div>
+<h2 id="next-steps">Next Steps</h2>
+<p>Now that you understand relays, explore:</p>
 <ul>
-<li><a href="https://nostr.watch">Nostr.watch</a> - Live relay monitoring</li>
-<li><a href="https://relay.tools">Relay.tools</a> - Relay comparison</li>
-<li><a href="https://nostr.info/relays">Nostr.info</a> - Relay directory</li>
-</ul>
-<h3 id="documentation">Documentation</h3>
-<ul>
-<li><a href="https://github.com/nostr-protocol/nips/blob/master/11.md">NIP-11 Specification</a></li>
-<li><a href="https://github.com/nostr-protocol/nostr/blob/master/README.md">Relay Implementation Guide</a></li>
-</ul>
-<h3 id="software">Software</h3>
-<ul>
-<li><a href="https://github.com/hoytech/strfry">Strfry</a></li>
-<li><a href="https://github.com/Cameri/nostream">Nostream</a></li>
-<li><a href="https://github.com/fiatjaf/relay-pool">Relay Pool</a></li>
+<li><a href="../events-and-messages/">Events and Messages</a> - What relays store and forward</li>
+<li><a href="../../tutorials/">Building Applications</a> - How to work with relays in code</li>
+<li><a href="../advanced/">Advanced Topics</a> - Specialized relay features</li>
 </ul>
 <div class="admonition tip">
-<p class="admonition-title">Relay Selection</p>
-<p>Start with popular, reliable public relays, then gradually add specialized or private relays based on your needs. Always use multiple relays for redundancy.</p>
-</div>
-<div class="admonition warning">
-<p class="admonition-title">Relay Trust</p>
-<p>Remember that relay operators can see all events sent to their relay. Choose relays operated by people or organizations you trust, especially for sensitive communications. </p>
+<p class="admonition-title">Getting Started</p>
+<p>Start by understanding how to use relays as a client, then experiment with running your own relay for learning. Consider the community and economic factors when deciding whether to run a public relay.</p>
 </div>
 
 
@@ -1947,7 +2550,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="May 27, 2025 04:44:28 UTC">May 27, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="July 9, 2025 18:04:12 UTC">July 9, 2025</span>
   </span>
 
     
@@ -2043,6 +2646,8 @@
         <script src="../../assets/js/typewriter.js"></script>
       
         <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
+      
+        <script src="https://unpkg.com/mermaid@10.9.0/dist/mermaid.min.js"></script>
       
     
   </body>

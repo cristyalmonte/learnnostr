@@ -15,10 +15,10 @@
         <link rel="canonical" href="https://learnnostr.com/tutorials/simple-client/">
       
       
-        <link rel="prev" href="../../definitions/">
+        <link rel="prev" href="../../concepts/zaps/">
       
       
-        <link rel="next" href="../../support/">
+        <link rel="next" href="../relay-communication/">
       
       
       <link rel="icon" href="../../assets/favicon.ico">
@@ -26,7 +26,7 @@
     
     
       
-        <title>Build a Simple Client - Learn Nostr</title>
+        <title>Build a Simple Client - LearnNostr</title>
       
     
     
@@ -96,7 +96,7 @@
 
 <header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../.." title="Learn Nostr" class="md-header__button md-logo" aria-label="Learn Nostr" data-md-component="logo">
+    <a href="../.." title="LearnNostr" class="md-header__button md-logo" aria-label="LearnNostr" data-md-component="logo">
       
   <img src="../../assets/logo.svg" alt="logo">
 
@@ -109,7 +109,7 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            Learn Nostr
+            LearnNostr
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
@@ -151,6 +151,32 @@
     
       <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
     
+    
+      <div class="md-header__option">
+  <div class="md-select">
+    
+    <button class="md-header__button md-icon" aria-label="Select language">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.5 17.5 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2zm-2.62 7 1.62-4.33L19.12 17z"/></svg>
+    </button>
+    <div class="md-select__inner">
+      <ul class="md-select__list">
+        
+          <li class="md-select__item">
+            <a href="./" hreflang="en" class="md-select__link">
+              English
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="../../es/tutorials/simple-client/" hreflang="es" class="md-select__link">
+              Español
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
     
     
       
@@ -274,17 +300,18 @@
   
   
   
-    <li class="md-tabs__item">
-      <a href="../../definitions/" class="md-tabs__link">
-        
-  
-  
     
+    
+      <li class="md-tabs__item">
+        <a href="../../concepts/clients/" class="md-tabs__link">
+          
+  
   
   Core Concepts
 
-      </a>
-    </li>
+        </a>
+      </li>
+    
   
 
       
@@ -357,12 +384,12 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="Learn Nostr" class="md-nav__button md-logo" aria-label="Learn Nostr" data-md-component="logo">
+    <a href="../.." title="LearnNostr" class="md-nav__button md-logo" aria-label="LearnNostr" data-md-component="logo">
       
   <img src="../../assets/logo.svg" alt="logo">
 
     </a>
-    Learn Nostr
+    LearnNostr
   </label>
   
     <div class="md-nav__source">
@@ -560,9 +587,27 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../../definitions/" class="md-nav__link">
+    
+    
+    
+    
+      
+      
         
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
   
   
   <span class="md-ellipsis">
@@ -571,7 +616,180 @@
   </span>
   
 
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Core Concepts
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../concepts/clients/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Clients
+    
+  </span>
+  
+
       </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../concepts/events-and-messages/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Events and Messages
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../concepts/keys/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Keys
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../concepts/nips/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    NIPs
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../concepts/nostr-fundamentals/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Nostr Fundamentals
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../concepts/relays/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Relays
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../concepts/zaps/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Zaps
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -831,6 +1049,52 @@
   
 </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../relay-communication/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Relay Communication
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../understanding-events/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Understanding Events
+    
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -1710,7 +1974,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="May 27, 2025 04:44:28 UTC">May 27, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="July 9, 2025 18:04:12 UTC">July 9, 2025</span>
   </span>
 
     
@@ -1806,6 +2070,8 @@
         <script src="../../assets/js/typewriter.js"></script>
       
         <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
+      
+        <script src="https://unpkg.com/mermaid@10.9.0/dist/mermaid.min.js"></script>
       
     
   </body>

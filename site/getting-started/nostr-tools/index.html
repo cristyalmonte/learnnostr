@@ -26,7 +26,7 @@
     
     
       
-        <title>Nostr Tools - Learn Nostr</title>
+        <title>Nostr Tools - LearnNostr</title>
       
     
     
@@ -80,7 +80,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#essential-nostr-tools" class="md-skip">
+        <a href="#development-tools-and-infrastructure" class="md-skip">
           Skip to content
         </a>
       
@@ -96,7 +96,7 @@
 
 <header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../.." title="Learn Nostr" class="md-header__button md-logo" aria-label="Learn Nostr" data-md-component="logo">
+    <a href="../.." title="LearnNostr" class="md-header__button md-logo" aria-label="LearnNostr" data-md-component="logo">
       
   <img src="../../assets/logo.svg" alt="logo">
 
@@ -109,7 +109,7 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            Learn Nostr
+            LearnNostr
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
@@ -151,6 +151,32 @@
     
       <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
     
+    
+      <div class="md-header__option">
+  <div class="md-select">
+    
+    <button class="md-header__button md-icon" aria-label="Select language">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.5 17.5 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2zm-2.62 7 1.62-4.33L19.12 17z"/></svg>
+    </button>
+    <div class="md-select__inner">
+      <ul class="md-select__list">
+        
+          <li class="md-select__item">
+            <a href="./" hreflang="en" class="md-select__link">
+              English
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="../../es/getting-started/nostr-tools/" hreflang="es" class="md-select__link">
+              Español
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
     
     
       
@@ -276,17 +302,18 @@
   
   
   
-    <li class="md-tabs__item">
-      <a href="../../definitions/" class="md-tabs__link">
-        
-  
-  
     
+    
+      <li class="md-tabs__item">
+        <a href="../../concepts/clients/" class="md-tabs__link">
+          
+  
   
   Core Concepts
 
-      </a>
-    </li>
+        </a>
+      </li>
+    
   
 
       
@@ -357,12 +384,12 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="Learn Nostr" class="md-nav__button md-logo" aria-label="Learn Nostr" data-md-component="logo">
+    <a href="../.." title="LearnNostr" class="md-nav__button md-logo" aria-label="LearnNostr" data-md-component="logo">
       
   <img src="../../assets/logo.svg" alt="logo">
 
     </a>
-    Learn Nostr
+    LearnNostr
   </label>
   
     <div class="md-nav__source">
@@ -561,37 +588,133 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#development-tools" class="md-nav__link">
+  <a href="#development-ecosystem-overview" class="md-nav__link">
     <span class="md-ellipsis">
-      Development Tools
+      Development Ecosystem Overview
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Development Tools">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#protocol-implementation-libraries" class="md-nav__link">
+    <span class="md-ellipsis">
+      Protocol Implementation Libraries
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Protocol Implementation Libraries">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#1-nostr-tools-javascripttypescript" class="md-nav__link">
+  <a href="#javascripttypescript-ecosystem" class="md-nav__link">
     <span class="md-ellipsis">
-      1. Nostr-Tools (JavaScript/TypeScript)
+      JavaScript/TypeScript Ecosystem
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="JavaScript/TypeScript Ecosystem">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#nostr-tools" class="md-nav__link">
+    <span class="md-ellipsis">
+      nostr-tools
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#2-python-nostr" class="md-nav__link">
+  <a href="#ndk-nostr-development-kit" class="md-nav__link">
     <span class="md-ellipsis">
-      2. Python-Nostr
+      NDK (Nostr Development Kit)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#python-implementation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Python Implementation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Python Implementation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#python-nostr" class="md-nav__link">
+    <span class="md-ellipsis">
+      python-nostr
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rust-implementation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Rust Implementation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Rust Implementation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#nostr-sdk" class="md-nav__link">
+    <span class="md-ellipsis">
+      nostr-sdk
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#command-line-utilities" class="md-nav__link">
+    <span class="md-ellipsis">
+      Command-Line Utilities
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Command-Line Utilities">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#nak-nostr-army-knife" class="md-nav__link">
+    <span class="md-ellipsis">
+      nak (Nostr Army Knife)
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#3-nostr-sdk-rust" class="md-nav__link">
+  <a href="#nostril" class="md-nav__link">
     <span class="md-ellipsis">
-      3. Nostr-SDK (Rust)
+      nostril
     </span>
   </a>
   
@@ -603,37 +726,181 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#command-line-tools" class="md-nav__link">
+  <a href="#network-analysis-and-monitoring" class="md-nav__link">
     <span class="md-ellipsis">
-      Command Line Tools
+      Network Analysis and Monitoring
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Command Line Tools">
+    <nav class="md-nav" aria-label="Network Analysis and Monitoring">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#1-nostril" class="md-nav__link">
+  <a href="#relay-discovery-and-testing" class="md-nav__link">
     <span class="md-ellipsis">
-      1. Nostril
+      Relay Discovery and Testing
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Relay Discovery and Testing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#nostrwatch" class="md-nav__link">
+    <span class="md-ellipsis">
+      nostr.watch
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#2-nak" class="md-nav__link">
+  <a href="#nostrband" class="md-nav__link">
     <span class="md-ellipsis">
-      2. Nak
+      nostr.band
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#development-and-debugging-tools" class="md-nav__link">
+    <span class="md-ellipsis">
+      Development and Debugging Tools
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Development and Debugging Tools">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#relay-testing-infrastructure" class="md-nav__link">
+    <span class="md-ellipsis">
+      Relay Testing Infrastructure
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#practical-exercise-tool-integration-laboratory" class="md-nav__link">
+    <span class="md-ellipsis">
+      Practical Exercise: Tool Integration Laboratory
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#advanced-development-tools" class="md-nav__link">
+    <span class="md-ellipsis">
+      Advanced Development Tools
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Advanced Development Tools">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#browser-extensions-for-development" class="md-nav__link">
+    <span class="md-ellipsis">
+      Browser Extensions for Development
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Browser Extensions for Development">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#nos2x" class="md-nav__link">
+    <span class="md-ellipsis">
+      nos2x
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#3-nostr-cli" class="md-nav__link">
+  <a href="#alby" class="md-nav__link">
     <span class="md-ellipsis">
-      3. Nostr-CLI
+      Alby
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#infrastructure-development" class="md-nav__link">
+    <span class="md-ellipsis">
+      Infrastructure Development
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Infrastructure Development">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#relay-implementation-tools" class="md-nav__link">
+    <span class="md-ellipsis">
+      Relay Implementation Tools
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#event-analysis-and-debugging" class="md-nav__link">
+    <span class="md-ellipsis">
+      Event Analysis and Debugging
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Event Analysis and Debugging">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#event-structure-validation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Event Structure Validation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#network-protocol-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      Network Protocol Analysis
     </span>
   </a>
   
@@ -645,37 +912,28 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#key-management-tools" class="md-nav__link">
+  <a href="#performance-optimization-tools" class="md-nav__link">
     <span class="md-ellipsis">
-      Key Management Tools
+      Performance Optimization Tools
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Key Management Tools">
+    <nav class="md-nav" aria-label="Performance Optimization Tools">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#1-alby-extension" class="md-nav__link">
+  <a href="#relay-performance-analysis" class="md-nav__link">
     <span class="md-ellipsis">
-      1. Alby Extension
+      Relay Performance Analysis
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#2-nos2x" class="md-nav__link">
+  <a href="#client-performance-testing" class="md-nav__link">
     <span class="md-ellipsis">
-      2. Nos2x
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#3-nostore" class="md-nav__link">
-    <span class="md-ellipsis">
-      3. Nostore
+      Client Performance Testing
     </span>
   </a>
   
@@ -687,37 +945,28 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#relay-tools" class="md-nav__link">
+  <a href="#security-and-compliance-tools" class="md-nav__link">
     <span class="md-ellipsis">
-      Relay Tools
+      Security and Compliance Tools
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Relay Tools">
+    <nav class="md-nav" aria-label="Security and Compliance Tools">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#1-relay-tester" class="md-nav__link">
+  <a href="#key-security-analysis" class="md-nav__link">
     <span class="md-ellipsis">
-      1. Relay Tester
+      Key Security Analysis
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#2-relay-monitor" class="md-nav__link">
+  <a href="#protocol-compliance-testing" class="md-nav__link">
     <span class="md-ellipsis">
-      2. Relay Monitor
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#3-strfry-tools" class="md-nav__link">
-    <span class="md-ellipsis">
-      3. Strfry Tools
+      Protocol Compliance Testing
     </span>
   </a>
   
@@ -729,378 +978,18 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#development-utilities" class="md-nav__link">
+  <a href="#next-steps" class="md-nav__link">
     <span class="md-ellipsis">
-      Development Utilities
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Development Utilities">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1-nostr-debugger" class="md-nav__link">
-    <span class="md-ellipsis">
-      1. Nostr Debugger
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2-nostr-army-knife" class="md-nav__link">
-    <span class="md-ellipsis">
-      2. Nostr Army Knife
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#3-nostrband" class="md-nav__link">
-    <span class="md-ellipsis">
-      3. Nostr.band
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#testing-tools" class="md-nav__link">
-    <span class="md-ellipsis">
-      Testing Tools
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Testing Tools">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1-nostr-test-suite" class="md-nav__link">
-    <span class="md-ellipsis">
-      1. Nostr Test Suite
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2-relay-benchmark" class="md-nav__link">
-    <span class="md-ellipsis">
-      2. Relay Benchmark
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#monitoring-and-analytics" class="md-nav__link">
-    <span class="md-ellipsis">
-      Monitoring and Analytics
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Monitoring and Analytics">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1-nostrwatch" class="md-nav__link">
-    <span class="md-ellipsis">
-      1. Nostr.watch
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2-statsnostrband" class="md-nav__link">
-    <span class="md-ellipsis">
-      2. Stats.nostr.band
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#3-relaytools" class="md-nav__link">
-    <span class="md-ellipsis">
-      3. Relay.tools
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#content-creation-tools" class="md-nav__link">
-    <span class="md-ellipsis">
-      Content Creation Tools
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Content Creation Tools">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1-habla" class="md-nav__link">
-    <span class="md-ellipsis">
-      1. Habla
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2-highlighter" class="md-nav__link">
-    <span class="md-ellipsis">
-      2. Highlighter
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#3-zapstream" class="md-nav__link">
-    <span class="md-ellipsis">
-      3. Zap.stream
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#mobile-development" class="md-nav__link">
-    <span class="md-ellipsis">
-      Mobile Development
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Mobile Development">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1-nostr-react-native" class="md-nav__link">
-    <span class="md-ellipsis">
-      1. Nostr-React-Native
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2-nostrkit-ios" class="md-nav__link">
-    <span class="md-ellipsis">
-      2. NostrKit (iOS)
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#3-nostr-android" class="md-nav__link">
-    <span class="md-ellipsis">
-      3. Nostr-Android
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#backup-and-migration-tools" class="md-nav__link">
-    <span class="md-ellipsis">
-      Backup and Migration Tools
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Backup and Migration Tools">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1-nostr-backup" class="md-nav__link">
-    <span class="md-ellipsis">
-      1. Nostr Backup
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2-profile-migrator" class="md-nav__link">
-    <span class="md-ellipsis">
-      2. Profile Migrator
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#security-tools" class="md-nav__link">
-    <span class="md-ellipsis">
-      Security Tools
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Security Tools">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1-key-validator" class="md-nav__link">
-    <span class="md-ellipsis">
-      1. Key Validator
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2-event-verifier" class="md-nav__link">
-    <span class="md-ellipsis">
-      2. Event Verifier
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#integration-tools" class="md-nav__link">
-    <span class="md-ellipsis">
-      Integration Tools
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Integration Tools">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1-zapier-integration" class="md-nav__link">
-    <span class="md-ellipsis">
-      1. Zapier Integration
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2-ifttt-connector" class="md-nav__link">
-    <span class="md-ellipsis">
-      2. IFTTT Connector
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#getting-started-recommendations" class="md-nav__link">
-    <span class="md-ellipsis">
-      Getting Started Recommendations
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Getting Started Recommendations">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#for-developers" class="md-nav__link">
-    <span class="md-ellipsis">
-      For Developers
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#for-relay-operators" class="md-nav__link">
-    <span class="md-ellipsis">
-      For Relay Operators
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#for-content-creators" class="md-nav__link">
-    <span class="md-ellipsis">
-      For Content Creators
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#for-power-users" class="md-nav__link">
-    <span class="md-ellipsis">
-      For Power Users
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#tool-comparison-matrix" class="md-nav__link">
-    <span class="md-ellipsis">
-      Tool Comparison Matrix
+      Next Steps
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#contributing-to-tools" class="md-nav__link">
+  <a href="#technical-proficiency-assessment" class="md-nav__link">
     <span class="md-ellipsis">
-      Contributing to Tools
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#resources" class="md-nav__link">
-    <span class="md-ellipsis">
-      Resources
+      Technical Proficiency Assessment
     </span>
   </a>
   
@@ -1151,9 +1040,27 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../../definitions/" class="md-nav__link">
+    
+    
+    
+    
+      
+      
         
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
   
   
   <span class="md-ellipsis">
@@ -1162,7 +1069,180 @@
   </span>
   
 
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Core Concepts
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../concepts/clients/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Clients
+    
+  </span>
+  
+
       </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../concepts/events-and-messages/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Events and Messages
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../concepts/keys/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Keys
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../concepts/nips/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    NIPs
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../concepts/nostr-fundamentals/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Nostr Fundamentals
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../concepts/relays/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Relays
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../concepts/zaps/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Zaps
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -1235,6 +1315,52 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorials/relay-communication/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Relay Communication
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorials/understanding-events/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Understanding Events
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1291,37 +1417,133 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#development-tools" class="md-nav__link">
+  <a href="#development-ecosystem-overview" class="md-nav__link">
     <span class="md-ellipsis">
-      Development Tools
+      Development Ecosystem Overview
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Development Tools">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#protocol-implementation-libraries" class="md-nav__link">
+    <span class="md-ellipsis">
+      Protocol Implementation Libraries
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Protocol Implementation Libraries">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#1-nostr-tools-javascripttypescript" class="md-nav__link">
+  <a href="#javascripttypescript-ecosystem" class="md-nav__link">
     <span class="md-ellipsis">
-      1. Nostr-Tools (JavaScript/TypeScript)
+      JavaScript/TypeScript Ecosystem
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="JavaScript/TypeScript Ecosystem">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#nostr-tools" class="md-nav__link">
+    <span class="md-ellipsis">
+      nostr-tools
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#2-python-nostr" class="md-nav__link">
+  <a href="#ndk-nostr-development-kit" class="md-nav__link">
     <span class="md-ellipsis">
-      2. Python-Nostr
+      NDK (Nostr Development Kit)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#python-implementation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Python Implementation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Python Implementation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#python-nostr" class="md-nav__link">
+    <span class="md-ellipsis">
+      python-nostr
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rust-implementation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Rust Implementation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Rust Implementation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#nostr-sdk" class="md-nav__link">
+    <span class="md-ellipsis">
+      nostr-sdk
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#command-line-utilities" class="md-nav__link">
+    <span class="md-ellipsis">
+      Command-Line Utilities
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Command-Line Utilities">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#nak-nostr-army-knife" class="md-nav__link">
+    <span class="md-ellipsis">
+      nak (Nostr Army Knife)
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#3-nostr-sdk-rust" class="md-nav__link">
+  <a href="#nostril" class="md-nav__link">
     <span class="md-ellipsis">
-      3. Nostr-SDK (Rust)
+      nostril
     </span>
   </a>
   
@@ -1333,37 +1555,181 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#command-line-tools" class="md-nav__link">
+  <a href="#network-analysis-and-monitoring" class="md-nav__link">
     <span class="md-ellipsis">
-      Command Line Tools
+      Network Analysis and Monitoring
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Command Line Tools">
+    <nav class="md-nav" aria-label="Network Analysis and Monitoring">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#1-nostril" class="md-nav__link">
+  <a href="#relay-discovery-and-testing" class="md-nav__link">
     <span class="md-ellipsis">
-      1. Nostril
+      Relay Discovery and Testing
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Relay Discovery and Testing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#nostrwatch" class="md-nav__link">
+    <span class="md-ellipsis">
+      nostr.watch
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#2-nak" class="md-nav__link">
+  <a href="#nostrband" class="md-nav__link">
     <span class="md-ellipsis">
-      2. Nak
+      nostr.band
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#development-and-debugging-tools" class="md-nav__link">
+    <span class="md-ellipsis">
+      Development and Debugging Tools
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Development and Debugging Tools">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#relay-testing-infrastructure" class="md-nav__link">
+    <span class="md-ellipsis">
+      Relay Testing Infrastructure
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#practical-exercise-tool-integration-laboratory" class="md-nav__link">
+    <span class="md-ellipsis">
+      Practical Exercise: Tool Integration Laboratory
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#advanced-development-tools" class="md-nav__link">
+    <span class="md-ellipsis">
+      Advanced Development Tools
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Advanced Development Tools">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#browser-extensions-for-development" class="md-nav__link">
+    <span class="md-ellipsis">
+      Browser Extensions for Development
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Browser Extensions for Development">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#nos2x" class="md-nav__link">
+    <span class="md-ellipsis">
+      nos2x
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#3-nostr-cli" class="md-nav__link">
+  <a href="#alby" class="md-nav__link">
     <span class="md-ellipsis">
-      3. Nostr-CLI
+      Alby
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#infrastructure-development" class="md-nav__link">
+    <span class="md-ellipsis">
+      Infrastructure Development
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Infrastructure Development">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#relay-implementation-tools" class="md-nav__link">
+    <span class="md-ellipsis">
+      Relay Implementation Tools
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#event-analysis-and-debugging" class="md-nav__link">
+    <span class="md-ellipsis">
+      Event Analysis and Debugging
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Event Analysis and Debugging">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#event-structure-validation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Event Structure Validation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#network-protocol-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      Network Protocol Analysis
     </span>
   </a>
   
@@ -1375,37 +1741,28 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#key-management-tools" class="md-nav__link">
+  <a href="#performance-optimization-tools" class="md-nav__link">
     <span class="md-ellipsis">
-      Key Management Tools
+      Performance Optimization Tools
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Key Management Tools">
+    <nav class="md-nav" aria-label="Performance Optimization Tools">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#1-alby-extension" class="md-nav__link">
+  <a href="#relay-performance-analysis" class="md-nav__link">
     <span class="md-ellipsis">
-      1. Alby Extension
+      Relay Performance Analysis
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#2-nos2x" class="md-nav__link">
+  <a href="#client-performance-testing" class="md-nav__link">
     <span class="md-ellipsis">
-      2. Nos2x
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#3-nostore" class="md-nav__link">
-    <span class="md-ellipsis">
-      3. Nostore
+      Client Performance Testing
     </span>
   </a>
   
@@ -1417,37 +1774,28 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#relay-tools" class="md-nav__link">
+  <a href="#security-and-compliance-tools" class="md-nav__link">
     <span class="md-ellipsis">
-      Relay Tools
+      Security and Compliance Tools
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Relay Tools">
+    <nav class="md-nav" aria-label="Security and Compliance Tools">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#1-relay-tester" class="md-nav__link">
+  <a href="#key-security-analysis" class="md-nav__link">
     <span class="md-ellipsis">
-      1. Relay Tester
+      Key Security Analysis
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#2-relay-monitor" class="md-nav__link">
+  <a href="#protocol-compliance-testing" class="md-nav__link">
     <span class="md-ellipsis">
-      2. Relay Monitor
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#3-strfry-tools" class="md-nav__link">
-    <span class="md-ellipsis">
-      3. Strfry Tools
+      Protocol Compliance Testing
     </span>
   </a>
   
@@ -1459,378 +1807,18 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#development-utilities" class="md-nav__link">
+  <a href="#next-steps" class="md-nav__link">
     <span class="md-ellipsis">
-      Development Utilities
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Development Utilities">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1-nostr-debugger" class="md-nav__link">
-    <span class="md-ellipsis">
-      1. Nostr Debugger
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2-nostr-army-knife" class="md-nav__link">
-    <span class="md-ellipsis">
-      2. Nostr Army Knife
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#3-nostrband" class="md-nav__link">
-    <span class="md-ellipsis">
-      3. Nostr.band
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#testing-tools" class="md-nav__link">
-    <span class="md-ellipsis">
-      Testing Tools
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Testing Tools">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1-nostr-test-suite" class="md-nav__link">
-    <span class="md-ellipsis">
-      1. Nostr Test Suite
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2-relay-benchmark" class="md-nav__link">
-    <span class="md-ellipsis">
-      2. Relay Benchmark
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#monitoring-and-analytics" class="md-nav__link">
-    <span class="md-ellipsis">
-      Monitoring and Analytics
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Monitoring and Analytics">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1-nostrwatch" class="md-nav__link">
-    <span class="md-ellipsis">
-      1. Nostr.watch
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2-statsnostrband" class="md-nav__link">
-    <span class="md-ellipsis">
-      2. Stats.nostr.band
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#3-relaytools" class="md-nav__link">
-    <span class="md-ellipsis">
-      3. Relay.tools
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#content-creation-tools" class="md-nav__link">
-    <span class="md-ellipsis">
-      Content Creation Tools
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Content Creation Tools">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1-habla" class="md-nav__link">
-    <span class="md-ellipsis">
-      1. Habla
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2-highlighter" class="md-nav__link">
-    <span class="md-ellipsis">
-      2. Highlighter
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#3-zapstream" class="md-nav__link">
-    <span class="md-ellipsis">
-      3. Zap.stream
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#mobile-development" class="md-nav__link">
-    <span class="md-ellipsis">
-      Mobile Development
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Mobile Development">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1-nostr-react-native" class="md-nav__link">
-    <span class="md-ellipsis">
-      1. Nostr-React-Native
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2-nostrkit-ios" class="md-nav__link">
-    <span class="md-ellipsis">
-      2. NostrKit (iOS)
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#3-nostr-android" class="md-nav__link">
-    <span class="md-ellipsis">
-      3. Nostr-Android
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#backup-and-migration-tools" class="md-nav__link">
-    <span class="md-ellipsis">
-      Backup and Migration Tools
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Backup and Migration Tools">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1-nostr-backup" class="md-nav__link">
-    <span class="md-ellipsis">
-      1. Nostr Backup
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2-profile-migrator" class="md-nav__link">
-    <span class="md-ellipsis">
-      2. Profile Migrator
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#security-tools" class="md-nav__link">
-    <span class="md-ellipsis">
-      Security Tools
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Security Tools">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1-key-validator" class="md-nav__link">
-    <span class="md-ellipsis">
-      1. Key Validator
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2-event-verifier" class="md-nav__link">
-    <span class="md-ellipsis">
-      2. Event Verifier
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#integration-tools" class="md-nav__link">
-    <span class="md-ellipsis">
-      Integration Tools
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Integration Tools">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1-zapier-integration" class="md-nav__link">
-    <span class="md-ellipsis">
-      1. Zapier Integration
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2-ifttt-connector" class="md-nav__link">
-    <span class="md-ellipsis">
-      2. IFTTT Connector
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#getting-started-recommendations" class="md-nav__link">
-    <span class="md-ellipsis">
-      Getting Started Recommendations
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Getting Started Recommendations">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#for-developers" class="md-nav__link">
-    <span class="md-ellipsis">
-      For Developers
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#for-relay-operators" class="md-nav__link">
-    <span class="md-ellipsis">
-      For Relay Operators
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#for-content-creators" class="md-nav__link">
-    <span class="md-ellipsis">
-      For Content Creators
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#for-power-users" class="md-nav__link">
-    <span class="md-ellipsis">
-      For Power Users
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#tool-comparison-matrix" class="md-nav__link">
-    <span class="md-ellipsis">
-      Tool Comparison Matrix
+      Next Steps
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#contributing-to-tools" class="md-nav__link">
+  <a href="#technical-proficiency-assessment" class="md-nav__link">
     <span class="md-ellipsis">
-      Contributing to Tools
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#resources" class="md-nav__link">
-    <span class="md-ellipsis">
-      Resources
+      Technical Proficiency Assessment
     </span>
   </a>
   
@@ -1855,403 +1843,374 @@
   
 
 
-<h1 id="essential-nostr-tools">Essential Nostr Tools</h1>
-<p>The Nostr ecosystem has a rich collection of tools for developers, relay operators, and users. This guide covers the most important tools you'll need for working with Nostr.</p>
-<h2 id="development-tools">Development Tools</h2>
-<h3 id="1-nostr-tools-javascripttypescript">1. Nostr-Tools (JavaScript/TypeScript)</h3>
-<p>The most popular JavaScript library for Nostr development.</p>
+<h1 id="development-tools-and-infrastructure">Development Tools and Infrastructure</h1>
+<div class="admonition info">
+<p class="admonition-title">Learning Objectives</p>
+<p>By the end of this lesson, you'll understand:</p>
+<ul>
+<li>Essential development tools for Nostr protocol implementation</li>
+<li>Command-line utilities for network analysis and debugging</li>
+<li>Programming libraries and frameworks for different languages</li>
+<li>Infrastructure monitoring and relay management tools</li>
+</ul>
+</div>
+<h2 id="development-ecosystem-overview">Development Ecosystem Overview</h2>
+<p>The Nostr development ecosystem consists of multiple tool categories designed for different aspects of protocol implementation, from client development to network infrastructure management. Understanding these tools enables efficient development workflows and robust system deployment.</p>
+<h2 id="protocol-implementation-libraries">Protocol Implementation Libraries</h2>
+<h3 id="javascripttypescript-ecosystem">JavaScript/TypeScript Ecosystem</h3>
+<h4 id="nostr-tools">nostr-tools</h4>
+<p><strong>Primary Features:</strong>
+- Core protocol implementation with event creation, validation, and signing
+- WebSocket relay communication management
+- Cryptographic key generation and management utilities
+- NIP implementation support for protocol extensions</p>
+<p><strong>Installation and Basic Usage:</strong>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>npm<span class="w"> </span>install<span class="w"> </span>nostr-tools
-</code></pre></div>
-<p><strong>Key Features:</strong>
-- Event creation and signing
-- Key generation and management
-- Relay communication
-- NIP implementations</p>
+</code></pre></div></p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">generatePrivateKey</span><span class="p">,</span><span class="w"> </span><span class="nx">getPublicKey</span><span class="p">,</span><span class="w"> </span><span class="nx">finishEvent</span><span class="p">,</span><span class="w"> </span><span class="nx">relayInit</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;nostr-tools&#39;</span>
 <a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="c1">// Generate keys</span>
-<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="kd">const</span><span class="w"> </span><span class="nx">sk</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">generatePrivateKey</span><span class="p">()</span>
-<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="kd">const</span><span class="w"> </span><span class="nx">pk</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">getPublicKey</span><span class="p">(</span><span class="nx">sk</span><span class="p">)</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="c1">// Key generation and management</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="kd">const</span><span class="w"> </span><span class="nx">privateKey</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">generatePrivateKey</span><span class="p">()</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="kd">const</span><span class="w"> </span><span class="nx">publicKey</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">getPublicKey</span><span class="p">(</span><span class="nx">privateKey</span><span class="p">)</span>
 <a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>
-<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="c1">// Create event</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="c1">// Event creation and signing</span>
 <a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="kd">const</span><span class="w"> </span><span class="nx">event</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">finishEvent</span><span class="p">({</span>
 <a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="w">  </span><span class="nx">kind</span><span class="o">:</span><span class="w"> </span><span class="mf">1</span><span class="p">,</span>
 <a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="w">  </span><span class="nx">created_at</span><span class="o">:</span><span class="w"> </span><span class="nb">Math</span><span class="p">.</span><span class="nx">floor</span><span class="p">(</span><span class="nb">Date</span><span class="p">.</span><span class="nx">now</span><span class="p">()</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mf">1000</span><span class="p">),</span>
-<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="w">  </span><span class="nx">tags</span><span class="o">:</span><span class="w"> </span><span class="p">[],</span>
-<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="w">  </span><span class="nx">content</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Hello Nostr!&#39;</span>
-<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="p">},</span><span class="w"> </span><span class="nx">sk</span><span class="p">)</span>
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="w">  </span><span class="nx">tags</span><span class="o">:</span><span class="w"> </span><span class="p">[[</span><span class="s2">&quot;t&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;nostr&quot;</span><span class="p">],</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;t&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;development&quot;</span><span class="p">]],</span>
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="w">  </span><span class="nx">content</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Protocol implementation example&#39;</span>
+<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="p">},</span><span class="w"> </span><span class="nx">privateKey</span><span class="p">)</span>
+<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a>
+<a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a><span class="c1">// Relay communication</span>
+<a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a><span class="kd">const</span><span class="w"> </span><span class="nx">relay</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">relayInit</span><span class="p">(</span><span class="s1">&#39;wss://relay.damus.io&#39;</span><span class="p">)</span>
+<a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a><span class="k">await</span><span class="w"> </span><span class="nx">relay</span><span class="p">.</span><span class="nx">connect</span><span class="p">()</span>
+<a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a><span class="nx">relay</span><span class="p">.</span><span class="nx">publish</span><span class="p">(</span><span class="nx">event</span><span class="p">)</span>
 </code></pre></div>
-<h3 id="2-python-nostr">2. Python-Nostr</h3>
-<p>Python library for Nostr protocol implementation.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>pip<span class="w"> </span>install<span class="w"> </span>nostr
+<h4 id="ndk-nostr-development-kit">NDK (Nostr Development Kit)</h4>
+<p><strong>Advanced Features:</strong>
+- Higher-level abstractions for complex application development
+- Built-in caching and optimization mechanisms
+- Multi-relay coordination and failover handling
+- Enhanced developer experience with TypeScript support</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>npm<span class="w"> </span>install<span class="w"> </span>@nostr-dev-kit/ndk
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">nostr.key</span><span class="w"> </span><span class="kn">import</span> <span class="n">PrivateKey</span>
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="kn">from</span><span class="w"> </span><span class="nn">nostr.event</span><span class="w"> </span><span class="kn">import</span> <span class="n">Event</span>
-<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="kn">from</span><span class="w"> </span><span class="nn">nostr.relay_manager</span><span class="w"> </span><span class="kn">import</span> <span class="n">RelayManager</span>
-<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>
-<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="c1"># Generate keys</span>
-<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="n">private_key</span> <span class="o">=</span> <span class="n">PrivateKey</span><span class="p">()</span>
-<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="n">public_key</span> <span class="o">=</span> <span class="n">private_key</span><span class="o">.</span><span class="n">public_key</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="k">import</span><span class="w"> </span><span class="nx">NDK</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;@nostr-dev-kit/ndk&#39;</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="kd">const</span><span class="w"> </span><span class="nx">ndk</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">NDK</span><span class="p">({</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">  </span><span class="nx">explicitRelayUrls</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s1">&#39;wss://relay.damus.io&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;wss://nos.lol&#39;</span><span class="p">],</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">  </span><span class="nx">outboxRelayUrls</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s1">&#39;wss://purplepag.es&#39;</span><span class="p">],</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="w">  </span><span class="nx">enableOutboxModel</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="p">})</span>
 <a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>
-<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="c1"># Create event</span>
-<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="n">event</span> <span class="o">=</span> <span class="n">Event</span><span class="p">(</span>
-<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>    <span class="n">kind</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
-<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>    <span class="n">content</span><span class="o">=</span><span class="s2">&quot;Hello from Python!&quot;</span><span class="p">,</span>
-<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a>    <span class="n">created_at</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">())</span>
-<a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a><span class="p">)</span>
-<a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a><span class="n">private_key</span><span class="o">.</span><span class="n">sign_event</span><span class="p">(</span><span class="n">event</span><span class="p">)</span>
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="k">await</span><span class="w"> </span><span class="nx">ndk</span><span class="p">.</span><span class="nx">connect</span><span class="p">()</span>
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>
+<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="kd">const</span><span class="w"> </span><span class="nx">note</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">NDKEvent</span><span class="p">(</span><span class="nx">ndk</span><span class="p">)</span>
+<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a><span class="nx">note</span><span class="p">.</span><span class="nx">kind</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1</span>
+<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a><span class="nx">note</span><span class="p">.</span><span class="nx">content</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Advanced protocol implementation&quot;</span>
+<a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a><span class="k">await</span><span class="w"> </span><span class="nx">note</span><span class="p">.</span><span class="nx">publish</span><span class="p">()</span>
 </code></pre></div>
-<h3 id="3-nostr-sdk-rust">3. Nostr-SDK (Rust)</h3>
-<p>High-performance Rust library with bindings for multiple languages.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="k">[dependencies]</span>
-<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="n">nostr-sdk</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;0.24&quot;</span>
+<h3 id="python-implementation">Python Implementation</h3>
+<h4 id="python-nostr">python-nostr</h4>
+<p><strong>Core Capabilities:</strong>
+- Complete protocol implementation with cryptographic operations
+- Relay management and connection pooling
+- Event validation and network communication
+- Integration with existing Python infrastructure</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>pip<span class="w"> </span>install<span class="w"> </span>nostr
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="k">use</span><span class="w"> </span><span class="n">nostr_sdk</span><span class="p">::</span><span class="n">prelude</span><span class="p">::</span><span class="o">*</span><span class="p">;</span>
-<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>
-<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="cp">#[tokio::main]</span>
-<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="k">async</span><span class="w"> </span><span class="k">fn</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">-&gt;</span><span class="w"> </span><span class="nb">Result</span><span class="o">&lt;</span><span class="p">()</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">keys</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Keys</span><span class="p">::</span><span class="n">generate</span><span class="p">();</span>
-<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">client</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Client</span><span class="p">::</span><span class="n">new</span><span class="p">(</span><span class="o">&amp;</span><span class="n">keys</span><span class="p">);</span>
-<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>
-<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="w">    </span><span class="n">client</span><span class="p">.</span><span class="n">add_relay</span><span class="p">(</span><span class="s">&quot;wss://relay.damus.io&quot;</span><span class="p">,</span><span class="w"> </span><span class="nb">None</span><span class="p">).</span><span class="k">await</span><span class="o">?</span><span class="p">;</span>
-<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="w">    </span><span class="n">client</span><span class="p">.</span><span class="n">connect</span><span class="p">().</span><span class="k">await</span><span class="p">;</span>
-<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>
-<a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">event</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">EventBuilder</span><span class="p">::</span><span class="n">new_text_note</span><span class="p">(</span><span class="s">&quot;Hello Rust!&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="p">[])</span>
-<a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a><span class="w">        </span><span class="p">.</span><span class="n">to_event</span><span class="p">(</span><span class="o">&amp;</span><span class="n">keys</span><span class="p">)</span><span class="o">?</span><span class="p">;</span>
-<a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a>
-<a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a><span class="w">    </span><span class="n">client</span><span class="p">.</span><span class="n">send_event</span><span class="p">(</span><span class="n">event</span><span class="p">).</span><span class="k">await</span><span class="o">?</span><span class="p">;</span>
-<a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a><span class="w">    </span><span class="nb">Ok</span><span class="p">(())</span>
-<a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a><span class="p">}</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">nostr.key</span><span class="w"> </span><span class="kn">import</span> <span class="n">PrivateKey</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="kn">from</span><span class="w"> </span><span class="nn">nostr.event</span><span class="w"> </span><span class="kn">import</span> <span class="n">Event</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="kn">from</span><span class="w"> </span><span class="nn">nostr.relay_manager</span><span class="w"> </span><span class="kn">import</span> <span class="n">RelayManager</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="kn">import</span><span class="w"> </span><span class="nn">time</span>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="c1"># Cryptographic key management</span>
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="n">private_key</span> <span class="o">=</span> <span class="n">PrivateKey</span><span class="p">()</span>
+<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="n">public_key</span> <span class="o">=</span> <span class="n">private_key</span><span class="o">.</span><span class="n">public_key</span>
+<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>
+<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a><span class="c1"># Event creation and signing</span>
+<a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a><span class="n">event</span> <span class="o">=</span> <span class="n">Event</span><span class="p">(</span>
+<a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a>    <span class="n">kind</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+<a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a>    <span class="n">content</span><span class="o">=</span><span class="s2">&quot;Python protocol implementation&quot;</span><span class="p">,</span>
+<a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a>    <span class="n">created_at</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()),</span>
+<a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a>    <span class="n">tags</span><span class="o">=</span><span class="p">[[</span><span class="s2">&quot;t&quot;</span><span class="p">,</span> <span class="s2">&quot;nostr&quot;</span><span class="p">],</span> <span class="p">[</span><span class="s2">&quot;t&quot;</span><span class="p">,</span> <span class="s2">&quot;python&quot;</span><span class="p">]]</span>
+<a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a><span class="p">)</span>
+<a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a><span class="n">private_key</span><span class="o">.</span><span class="n">sign_event</span><span class="p">(</span><span class="n">event</span><span class="p">)</span>
+<a id="__codelineno-5-18" name="__codelineno-5-18" href="#__codelineno-5-18"></a>
+<a id="__codelineno-5-19" name="__codelineno-5-19" href="#__codelineno-5-19"></a><span class="c1"># Network communication</span>
+<a id="__codelineno-5-20" name="__codelineno-5-20" href="#__codelineno-5-20"></a><span class="n">relay_manager</span> <span class="o">=</span> <span class="n">RelayManager</span><span class="p">()</span>
+<a id="__codelineno-5-21" name="__codelineno-5-21" href="#__codelineno-5-21"></a><span class="n">relay_manager</span><span class="o">.</span><span class="n">add_relay</span><span class="p">(</span><span class="s2">&quot;wss://relay.damus.io&quot;</span><span class="p">)</span>
+<a id="__codelineno-5-22" name="__codelineno-5-22" href="#__codelineno-5-22"></a><span class="n">relay_manager</span><span class="o">.</span><span class="n">publish_event</span><span class="p">(</span><span class="n">event</span><span class="p">)</span>
 </code></pre></div>
-<h2 id="command-line-tools">Command Line Tools</h2>
-<h3 id="1-nostril">1. Nostril</h3>
-<p>Command-line tool for creating and publishing Nostr events.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="c1"># Install</span>
-<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>go<span class="w"> </span>install<span class="w"> </span>github.com/fiatjaf/nostril@latest
-<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>
-<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="c1"># Create a text note</span>
-<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>nostril<span class="w"> </span>--content<span class="w"> </span><span class="s2">&quot;Hello Nostr!&quot;</span><span class="w"> </span>--sec<span class="w"> </span>&lt;your-private-key&gt;
-<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>
-<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="c1"># Publish to relay</span>
-<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>nostril<span class="w"> </span>--content<span class="w"> </span><span class="s2">&quot;Hello!&quot;</span><span class="w"> </span>--sec<span class="w"> </span>&lt;key&gt;<span class="w"> </span><span class="p">|</span><span class="w"> </span>websocat<span class="w"> </span>wss://relay.damus.io
+<h3 id="rust-implementation">Rust Implementation</h3>
+<h4 id="nostr-sdk">nostr-sdk</h4>
+<p><strong>Performance Features:</strong>
+- High-performance implementation with memory safety
+- Cross-platform compatibility with foreign function interfaces
+- Comprehensive NIP support and protocol compliance
+- Integration with Rust's async ecosystem</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="k">[dependencies]</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="n">nostr-sdk</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;0.29&quot;</span>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="n">tokio</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">version</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;1.0&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">features</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;full&quot;</span><span class="p">]</span><span class="w"> </span><span class="p">}</span>
 </code></pre></div>
-<h3 id="2-nak">2. Nak</h3>
-<p>Swiss Army knife for Nostr operations.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="c1"># Install</span>
-<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>go<span class="w"> </span>install<span class="w"> </span>github.com/fiatjaf/nak@latest
-<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>
-<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="c1"># Generate keys</span>
-<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>nak<span class="w"> </span>key<span class="w"> </span>generate
-<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>
-<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="c1"># Publish note</span>
-<a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a>nak<span class="w"> </span>event<span class="w"> </span>--content<span class="w"> </span><span class="s2">&quot;Hello!&quot;</span><span class="w"> </span>--sec<span class="w"> </span>&lt;key&gt;<span class="w"> </span>wss://relay.damus.io
-<a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a>
-<a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a><span class="c1"># Query events</span>
-<a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a>nak<span class="w"> </span>req<span class="w"> </span>-k<span class="w"> </span><span class="m">1</span><span class="w"> </span>--limit<span class="w"> </span><span class="m">10</span><span class="w"> </span>wss://relay.damus.io
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="k">use</span><span class="w"> </span><span class="n">nostr_sdk</span><span class="p">::</span><span class="n">prelude</span><span class="p">::</span><span class="o">*</span><span class="p">;</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="cp">#[tokio::main]</span>
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="k">async</span><span class="w"> </span><span class="k">fn</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">-&gt;</span><span class="w"> </span><span class="nb">Result</span><span class="o">&lt;</span><span class="p">()</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">keys</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Keys</span><span class="p">::</span><span class="n">generate</span><span class="p">();</span>
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">client</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Client</span><span class="p">::</span><span class="n">new</span><span class="p">(</span><span class="o">&amp;</span><span class="n">keys</span><span class="p">);</span>
+<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a>
+<a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a><span class="w">    </span><span class="n">client</span><span class="p">.</span><span class="n">add_relay</span><span class="p">(</span><span class="s">&quot;wss://relay.damus.io&quot;</span><span class="p">,</span><span class="w"> </span><span class="nb">None</span><span class="p">).</span><span class="k">await</span><span class="o">?</span><span class="p">;</span>
+<a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a><span class="w">    </span><span class="n">client</span><span class="p">.</span><span class="n">connect</span><span class="p">().</span><span class="k">await</span><span class="p">;</span>
+<a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a>
+<a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">event</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">EventBuilder</span><span class="p">::</span><span class="n">new_text_note</span><span class="p">(</span><span class="s">&quot;Rust implementation&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="p">[])</span>
+<a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a><span class="w">        </span><span class="p">.</span><span class="n">to_event</span><span class="p">(</span><span class="o">&amp;</span><span class="n">keys</span><span class="p">)</span><span class="o">?</span><span class="p">;</span>
+<a id="__codelineno-7-13" name="__codelineno-7-13" href="#__codelineno-7-13"></a>
+<a id="__codelineno-7-14" name="__codelineno-7-14" href="#__codelineno-7-14"></a><span class="w">    </span><span class="n">client</span><span class="p">.</span><span class="n">send_event</span><span class="p">(</span><span class="n">event</span><span class="p">).</span><span class="k">await</span><span class="o">?</span><span class="p">;</span>
+<a id="__codelineno-7-15" name="__codelineno-7-15" href="#__codelineno-7-15"></a><span class="w">    </span><span class="nb">Ok</span><span class="p">(())</span>
+<a id="__codelineno-7-16" name="__codelineno-7-16" href="#__codelineno-7-16"></a><span class="p">}</span>
 </code></pre></div>
-<h3 id="3-nostr-cli">3. Nostr-CLI</h3>
-<p>Python-based CLI tool for Nostr operations.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="c1"># Install</span>
-<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>pip<span class="w"> </span>install<span class="w"> </span>nostr-cli
-<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>
-<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="c1"># Generate keys</span>
-<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>nostr-cli<span class="w"> </span>generate-keys
-<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>
-<a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a><span class="c1"># Publish note</span>
-<a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a>nostr-cli<span class="w"> </span>publish<span class="w"> </span>--content<span class="w"> </span><span class="s2">&quot;Hello!&quot;</span><span class="w"> </span>--private-key<span class="w"> </span>&lt;key&gt;<span class="w"> </span>--relay<span class="w"> </span>wss://relay.damus.io
-<a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a>
-<a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a><span class="c1"># Subscribe to events</span>
-<a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a>nostr-cli<span class="w"> </span>subscribe<span class="w"> </span>--kinds<span class="w"> </span><span class="m">1</span><span class="w"> </span>--limit<span class="w"> </span><span class="m">10</span><span class="w"> </span>--relay<span class="w"> </span>wss://relay.damus.io
-</code></pre></div>
-<h2 id="key-management-tools">Key Management Tools</h2>
-<h3 id="1-alby-extension">1. Alby Extension</h3>
-<p>Browser extension for key management and signing.</p>
-<ul>
-<li><strong>Features</strong>: Key storage, event signing, Lightning integration</li>
-<li><strong>Platforms</strong>: Chrome, Firefox, Safari</li>
-<li><strong>Website</strong>: <a href="https://getalby.com">getalby.com</a></li>
-</ul>
-<h3 id="2-nos2x">2. Nos2x</h3>
-<p>Lightweight browser extension for Nostr key management.</p>
-<ul>
-<li><strong>Features</strong>: Simple key storage, event signing</li>
-<li><strong>Platforms</strong>: Chrome, Firefox</li>
-<li><strong>GitHub</strong>: <a href="https://github.com/fiatjaf/nos2x">github.com/fiatjaf/nos2x</a></li>
-</ul>
-<h3 id="3-nostore">3. Nostore</h3>
-<p>Advanced key management with multiple account support.</p>
-<ul>
-<li><strong>Features</strong>: Multiple keys, backup/restore, hardware wallet support</li>
-<li><strong>Platform</strong>: Browser extension</li>
-<li><strong>GitHub</strong>: <a href="https://github.com/ursuscamp/nostore">github.com/ursuscamp/nostore</a></li>
-</ul>
-<h2 id="relay-tools">Relay Tools</h2>
-<h3 id="1-relay-tester">1. Relay Tester</h3>
-<p>Tool for testing relay functionality and performance.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="c1"># Install</span>
-<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>npm<span class="w"> </span>install<span class="w"> </span>-g<span class="w"> </span>nostr-relay-tester
-<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>
-<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="c1"># Test relay</span>
-<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>nostr-relay-tester<span class="w"> </span>wss://relay.damus.io
-</code></pre></div>
-<h3 id="2-relay-monitor">2. Relay Monitor</h3>
-<p>Monitor relay health and statistics.</p>
+<h2 id="command-line-utilities">Command-Line Utilities</h2>
+<h3 id="nak-nostr-army-knife">nak (Nostr Army Knife)</h3>
+<p><strong>Operational Capabilities:</strong>
+- Event creation, signing, and publishing from command line
+- Relay querying and subscription management
+- Key generation and format conversion utilities
+- Network debugging and analysis tools</p>
+<p><strong>Installation:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>go<span class="w"> </span>install<span class="w"> </span>github.com/fiatjaf/nak@latest
+</code></pre></div></p>
+<p><strong>Core Operations:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="c1"># Key generation and management</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>nak<span class="w"> </span>key<span class="w"> </span>generate
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>nak<span class="w"> </span>key<span class="w"> </span>--npub<span class="w"> </span>npub1...<span class="w"> </span><span class="c1"># Convert to hex format</span>
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="c1"># Event operations</span>
+<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>nak<span class="w"> </span>event<span class="w"> </span>--content<span class="w"> </span><span class="s2">&quot;Command line event&quot;</span><span class="w"> </span>--kind<span class="w"> </span><span class="m">1</span>
+<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a>nak<span class="w"> </span>req<span class="w"> </span>-k<span class="w"> </span><span class="m">1</span><span class="w"> </span>--limit<span class="w"> </span><span class="m">10</span><span class="w"> </span>wss://relay.damus.io
+<a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a>
+<a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a><span class="c1"># Network analysis</span>
+<a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a>nak<span class="w"> </span>decode<span class="w"> </span>nevent1...<span class="w"> </span><span class="c1"># Decode Nostr entities</span>
+</code></pre></div></p>
+<h3 id="nostril">nostril</h3>
+<p><strong>Event Publishing Utility:</strong>
+- Lightweight event creation and publishing
+- Simple integration with shell scripts and automation
+- Direct relay communication without client overhead</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="c1"># Install</span>
-<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>go<span class="w"> </span>install<span class="w"> </span>github.com/fiatjaf/relay-monitor@latest
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>go<span class="w"> </span>install<span class="w"> </span>github.com/fiatjaf/nostril@latest
 <a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>
-<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="c1"># Monitor relay</span>
-<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>relay-monitor<span class="w"> </span>--relay<span class="w"> </span>wss://relay.damus.io<span class="w"> </span>--interval<span class="w"> </span>30s
+<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="c1"># Create and publish events</span>
+<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>nostril<span class="w"> </span>--content<span class="w"> </span><span class="s2">&quot;Direct event publishing&quot;</span><span class="w"> </span>--sec<span class="w"> </span>&lt;private-key&gt;
+<a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a>nostril<span class="w"> </span>--dm<span class="w"> </span>&lt;pubkey&gt;<span class="w"> </span>--content<span class="w"> </span><span class="s2">&quot;Direct message&quot;</span><span class="w"> </span>--sec<span class="w"> </span>&lt;private-key&gt;
 </code></pre></div>
-<h3 id="3-strfry-tools">3. Strfry Tools</h3>
-<p>Administrative tools for Strfry relay.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="c1"># Export events</span>
-<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>./strfry<span class="w"> </span><span class="nb">export</span><span class="w"> </span>--since<span class="o">=</span>1day<span class="w"> </span>&gt;<span class="w"> </span>events.jsonl
-<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>
-<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="c1"># Import events</span>
-<a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a>./strfry<span class="w"> </span>import<span class="w"> </span>&lt;<span class="w"> </span>events.jsonl
-<a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a>
-<a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a><span class="c1"># Database statistics</span>
-<a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a>./strfry<span class="w"> </span>stats
-<a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a>
-<a id="__codelineno-11-10" name="__codelineno-11-10" href="#__codelineno-11-10"></a><span class="c1"># Compact database</span>
-<a id="__codelineno-11-11" name="__codelineno-11-11" href="#__codelineno-11-11"></a>./strfry<span class="w"> </span>compact
+<h2 id="network-analysis-and-monitoring">Network Analysis and Monitoring</h2>
+<h3 id="relay-discovery-and-testing">Relay Discovery and Testing</h3>
+<h4 id="nostrwatch">nostr.watch</h4>
+<p><strong>Network Monitoring:</strong>
+- Real-time relay status and performance metrics
+- Geographic distribution analysis
+- Protocol compliance verification
+- Network topology visualization</p>
+<p><strong>Integration Example:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="c1"># Automated relay health checking</span>
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>curl<span class="w"> </span>-s<span class="w"> </span>https://api.nostr.watch/v1/online<span class="w"> </span><span class="p">|</span><span class="w"> </span>jq<span class="w"> </span><span class="s1">&#39;.[]&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>head<span class="w"> </span>-10
+</code></pre></div></p>
+<h4 id="nostrband">nostr.band</h4>
+<p><strong>Network Analytics:</strong>
+- Event search and analysis across the network
+- User activity patterns and statistics
+- Content discovery and trending analysis
+- Protocol usage metrics</p>
+<h3 id="development-and-debugging-tools">Development and Debugging Tools</h3>
+<h4 id="relay-testing-infrastructure">Relay Testing Infrastructure</h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="c1"># Install relay testing tools</span>
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>go<span class="w"> </span>install<span class="w"> </span>github.com/fiatjaf/relay-benchmark@latest
+<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>
+<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="c1"># Performance testing</span>
+<a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a>relay-benchmark<span class="w"> </span>--relay<span class="w"> </span>wss://relay.damus.io<span class="w"> </span>--connections<span class="w"> </span><span class="m">50</span><span class="w"> </span>--duration<span class="w"> </span>60s
+<a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a>
+<a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a><span class="c1"># Functionality testing</span>
+<a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a>nak<span class="w"> </span>req<span class="w"> </span>--limit<span class="w"> </span><span class="m">1</span><span class="w"> </span>wss://relay.damus.io<span class="w"> </span><span class="c1"># Basic connectivity test</span>
 </code></pre></div>
-<h2 id="development-utilities">Development Utilities</h2>
-<h3 id="1-nostr-debugger">1. Nostr Debugger</h3>
-<p>Web-based tool for debugging Nostr events and relays.</p>
-<ul>
-<li><strong>URL</strong>: <a href="https://nostrdebug.com">nostrdebug.com</a></li>
-<li><strong>Features</strong>: Event inspection, relay testing, key validation</li>
-</ul>
-<h3 id="2-nostr-army-knife">2. Nostr Army Knife</h3>
-<p>Multi-purpose web tool for Nostr operations.</p>
-<ul>
-<li><strong>URL</strong>: <a href="https://nak.nostr.com">nak.nostr.com</a></li>
-<li><strong>Features</strong>: Key generation, event creation, relay queries</li>
-</ul>
-<h3 id="3-nostrband">3. Nostr.band</h3>
-<p>Analytics and search tool for the Nostr network.</p>
-<ul>
-<li><strong>URL</strong>: <a href="https://nostr.band">nostr.band</a></li>
-<li><strong>Features</strong>: Network statistics, event search, trending content</li>
-</ul>
-<h2 id="testing-tools">Testing Tools</h2>
-<h3 id="1-nostr-test-suite">1. Nostr Test Suite</h3>
-<p>Comprehensive test suite for Nostr implementations.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="c1"># Clone repository</span>
-<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/nostr-protocol/nostr-test-suite.git
-<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="nb">cd</span><span class="w"> </span>nostr-test-suite
-<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a>
-<a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a><span class="c1"># Run tests</span>
-<a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a>npm<span class="w"> </span>install
-<a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a>npm<span class="w"> </span><span class="nb">test</span>
-</code></pre></div>
-<h3 id="2-relay-benchmark">2. Relay Benchmark</h3>
-<p>Performance testing tool for relays.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="c1"># Install</span>
-<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>go<span class="w"> </span>install<span class="w"> </span>github.com/fiatjaf/relay-benchmark@latest
-<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>
-<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a><span class="c1"># Benchmark relay</span>
-<a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a>relay-benchmark<span class="w"> </span>--relay<span class="w"> </span>wss://relay.damus.io<span class="w"> </span>--connections<span class="w"> </span><span class="m">100</span><span class="w"> </span>--duration<span class="w"> </span>60s
-</code></pre></div>
-<h2 id="monitoring-and-analytics">Monitoring and Analytics</h2>
-<h3 id="1-nostrwatch">1. Nostr.watch</h3>
-<p>Real-time relay monitoring and statistics.</p>
-<ul>
-<li><strong>URL</strong>: <a href="https://nostr.watch">nostr.watch</a></li>
-<li><strong>Features</strong>: Relay uptime, performance metrics, geographic distribution</li>
-</ul>
-<h3 id="2-statsnostrband">2. Stats.nostr.band</h3>
-<p>Network-wide statistics and analytics.</p>
-<ul>
-<li><strong>URL</strong>: <a href="https://stats.nostr.band">stats.nostr.band</a></li>
-<li><strong>Features</strong>: User growth, event volume, relay statistics</li>
-</ul>
-<h3 id="3-relaytools">3. Relay.tools</h3>
-<p>Comprehensive relay analysis and monitoring.</p>
-<ul>
-<li><strong>URL</strong>: <a href="https://relay.tools">relay.tools</a></li>
-<li><strong>Features</strong>: Relay comparison, performance analysis, NIP support</li>
-</ul>
-<h2 id="content-creation-tools">Content Creation Tools</h2>
-<h3 id="1-habla">1. Habla</h3>
-<p>Long-form content publishing on Nostr.</p>
-<ul>
-<li><strong>URL</strong>: <a href="https://habla.news">habla.news</a></li>
-<li><strong>Features</strong>: Article publishing, markdown support, commenting</li>
-</ul>
-<h3 id="2-highlighter">2. Highlighter</h3>
-<p>Highlight and share content on Nostr.</p>
-<ul>
-<li><strong>URL</strong>: <a href="https://highlighter.com">highlighter.com</a></li>
-<li><strong>Features</strong>: Content highlighting, social sharing, discovery</li>
-</ul>
-<h3 id="3-zapstream">3. Zap.stream</h3>
-<p>Live streaming platform built on Nostr.</p>
-<ul>
-<li><strong>URL</strong>: <a href="https://zap.stream">zap.stream</a></li>
-<li><strong>Features</strong>: Live streaming, chat integration, zaps</li>
-</ul>
-<h2 id="mobile-development">Mobile Development</h2>
-<h3 id="1-nostr-react-native">1. Nostr-React-Native</h3>
-<p>React Native components for Nostr apps.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>npm<span class="w"> </span>install<span class="w"> </span>nostr-react-native
-</code></pre></div>
-<h3 id="2-nostrkit-ios">2. NostrKit (iOS)</h3>
-<p>Swift library for iOS Nostr development.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="kd">import</span><span class="w"> </span><span class="nc">NostrKit</span>
-<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>
-<a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a><span class="kd">let</span><span class="w"> </span><span class="nv">keys</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">Keys</span><span class="p">.</span><span class="n">generate</span><span class="p">()</span>
-<a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a><span class="kd">let</span><span class="w"> </span><span class="nv">client</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">NostrClient</span><span class="p">(</span><span class="n">keys</span><span class="p">:</span><span class="w"> </span><span class="n">keys</span><span class="p">)</span>
-</code></pre></div>
-<h3 id="3-nostr-android">3. Nostr-Android</h3>
-<p>Android library for Nostr integration.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>implementation &#39;com.github.nostr:nostr-android:1.0.0&#39;
-</code></pre></div>
-<h2 id="backup-and-migration-tools">Backup and Migration Tools</h2>
-<h3 id="1-nostr-backup">1. Nostr Backup</h3>
-<p>Tool for backing up your Nostr data.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="c1"># Install</span>
-<a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a>npm<span class="w"> </span>install<span class="w"> </span>-g<span class="w"> </span>nostr-backup
-<a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a>
-<a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a><span class="c1"># Backup profile and notes</span>
-<a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a>nostr-backup<span class="w"> </span>--pubkey<span class="w"> </span>&lt;your-pubkey&gt;<span class="w"> </span>--output<span class="w"> </span>backup.json
-</code></pre></div>
-<h3 id="2-profile-migrator">2. Profile Migrator</h3>
-<p>Migrate profiles between different Nostr clients.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="c1"># Export from client A</span>
-<a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a>nostr-export<span class="w"> </span>--client<span class="w"> </span>damus<span class="w"> </span>--output<span class="w"> </span>profile.json
-<a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a>
-<a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a><span class="c1"># Import to client B</span>
-<a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a>nostr-import<span class="w"> </span>--client<span class="w"> </span>amethyst<span class="w"> </span>--input<span class="w"> </span>profile.json
-</code></pre></div>
-<h2 id="security-tools">Security Tools</h2>
-<h3 id="1-key-validator">1. Key Validator</h3>
-<p>Validate Nostr keys and addresses.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="c1"># Install</span>
-<a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a>npm<span class="w"> </span>install<span class="w"> </span>-g<span class="w"> </span>nostr-key-validator
-<a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a>
-<a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a><span class="c1"># Validate key</span>
-<a id="__codelineno-19-5" name="__codelineno-19-5" href="#__codelineno-19-5"></a>nostr-validate-key<span class="w"> </span>&lt;public-key&gt;
-</code></pre></div>
-<h3 id="2-event-verifier">2. Event Verifier</h3>
-<p>Verify event signatures and integrity.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="c1"># Verify event signature</span>
-<a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a>nostr-verify-event<span class="w"> </span>&lt;event-json&gt;
-</code></pre></div>
-<h2 id="integration-tools">Integration Tools</h2>
-<h3 id="1-zapier-integration">1. Zapier Integration</h3>
-<p>Connect Nostr to other services via Zapier.</p>
-<ul>
-<li><strong>Features</strong>: Automated workflows, cross-platform integration</li>
-<li><strong>Use cases</strong>: Social media cross-posting, notification systems</li>
-</ul>
-<h3 id="2-ifttt-connector">2. IFTTT Connector</h3>
-<p>If This Then That integration for Nostr.</p>
-<ul>
-<li><strong>Features</strong>: Trigger-based automation</li>
-<li><strong>Use cases</strong>: Smart home integration, productivity workflows</li>
-</ul>
-<h2 id="getting-started-recommendations">Getting Started Recommendations</h2>
-<h3 id="for-developers">For Developers</h3>
-<ol>
-<li>Start with <strong>nostr-tools</strong> (JavaScript) or <strong>nostr-sdk</strong> (Rust)</li>
-<li>Use <strong>nostril</strong> or <strong>nak</strong> for command-line testing</li>
-<li>Set up <strong>nostr-debugger</strong> for development debugging</li>
-</ol>
-<h3 id="for-relay-operators">For Relay Operators</h3>
-<ol>
-<li>Use <strong>strfry</strong> with its built-in tools</li>
-<li>Monitor with <strong>nostr.watch</strong> and <strong>relay.tools</strong></li>
-<li>Test with <strong>relay-tester</strong> and <strong>relay-benchmark</strong></li>
-</ol>
-<h3 id="for-content-creators">For Content Creators</h3>
-<ol>
-<li>Install <strong>Alby</strong> or <strong>nos2x</strong> for key management</li>
-<li>Use <strong>habla.news</strong> for long-form content</li>
-<li>Try <strong>zap.stream</strong> for live streaming</li>
-</ol>
-<h3 id="for-power-users">For Power Users</h3>
-<ol>
-<li>Use <strong>nak</strong> for advanced operations</li>
-<li>Set up <strong>nostr-backup</strong> for data safety</li>
-<li>Monitor network with <strong>nostr.band</strong> and <strong>stats.nostr.band</strong></li>
-</ol>
-<h2 id="tool-comparison-matrix">Tool Comparison Matrix</h2>
-<table>
-<thead>
-<tr>
-<th>Tool</th>
-<th>Language</th>
-<th>Use Case</th>
-<th>Difficulty</th>
-<th>Active</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>nostr-tools</td>
-<td>JS/TS</td>
-<td>Development</td>
-<td>Easy</td>
-<td>✅</td>
-</tr>
-<tr>
-<td>nostr-sdk</td>
-<td>Rust</td>
-<td>Development</td>
-<td>Medium</td>
-<td>✅</td>
-</tr>
-<tr>
-<td>nostril</td>
-<td>Go</td>
-<td>CLI</td>
-<td>Easy</td>
-<td>✅</td>
-</tr>
-<tr>
-<td>nak</td>
-<td>Go</td>
-<td>CLI</td>
-<td>Easy</td>
-<td>✅</td>
-</tr>
-<tr>
-<td>strfry</td>
-<td>C++</td>
-<td>Relay</td>
-<td>Hard</td>
-<td>✅</td>
-</tr>
-<tr>
-<td>Alby</td>
-<td>Browser</td>
-<td>Keys</td>
-<td>Easy</td>
-<td>✅</td>
-</tr>
-</tbody>
-</table>
-<h2 id="contributing-to-tools">Contributing to Tools</h2>
-<p>Many Nostr tools are open source and welcome contributions:</p>
-<ol>
-<li><strong>Find issues</strong>: Look for "good first issue" labels</li>
-<li><strong>Documentation</strong>: Help improve tool documentation</li>
-<li><strong>Testing</strong>: Report bugs and test new features</li>
-<li><strong>Development</strong>: Submit pull requests for new features</li>
-</ol>
-<h2 id="resources">Resources</h2>
-<ul>
-<li><a href="https://github.com/aljazceru/awesome-nostr">Awesome Nostr</a> - Comprehensive tool list</li>
-<li><a href="https://github.com/nostr-protocol/nostr">Nostr Protocol</a> - Official protocol repository</li>
-<li><a href="https://github.com/nostr-protocol/nips">NIPs Repository</a> - Protocol specifications</li>
-<li><a href="https://t.me/nostr_dev">Nostr Dev Chat</a> - Developer community</li>
-</ul>
-<div class="admonition tip">
-<p class="admonition-title">Tool Selection</p>
-<p>Choose tools based on your specific needs and technical expertise. Start with simpler tools and gradually move to more advanced ones as you become comfortable with the Nostr ecosystem. </p>
+<h2 id="practical-exercise-tool-integration-laboratory">Practical Exercise: Tool Integration Laboratory</h2>
+<div class="admonition example">
+<p class="admonition-title">Development Environment Setup</p>
+<p><strong>Objective:</strong> Configure a complete development environment for Nostr protocol work</p>
+<p><strong>Phase 1: Environment Preparation</strong>
+1. Install programming language runtimes (Node.js, Python, Go, Rust)
+2. Configure package managers and dependency management
+3. Set up version control and development workflows
+4. Install command-line utilities (nak, nostril)</p>
+<p><strong>Phase 2: Library Integration Testing</strong>
+1. Implement basic event creation in multiple languages
+2. Test relay communication and event publishing
+3. Verify cryptographic operations and key management
+4. Compare performance characteristics across implementations</p>
+<p><strong>Phase 3: Network Analysis Exercise</strong>
+1. Use nak to query different relays and analyze response patterns
+2. Monitor relay performance using available tools
+3. Analyze event patterns and network activity
+4. Document relay capabilities and limitations</p>
 </div>
+<h2 id="advanced-development-tools">Advanced Development Tools</h2>
+<h3 id="browser-extensions-for-development">Browser Extensions for Development</h3>
+<h4 id="nos2x">nos2x</h4>
+<p><strong>Key Management Features:</strong>
+- Secure private key storage in browser environment
+- NIP-07 event signing capabilities
+- Permission management for web applications
+- Development testing and debugging support</p>
+<h4 id="alby">Alby</h4>
+<p><strong>Comprehensive Development Platform:</strong>
+- Lightning Network integration for testing
+- Advanced key management with multiple accounts
+- Developer APIs for application integration
+- Testing environment for zap functionality</p>
+<h3 id="infrastructure-development">Infrastructure Development</h3>
+<h4 id="relay-implementation-tools">Relay Implementation Tools</h4>
+<p><strong>Strfry Development:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="c1"># Clone and build relay software</span>
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/hoytech/strfry.git
+<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="nb">cd</span><span class="w"> </span>strfry
+<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>git<span class="w"> </span>submodule<span class="w"> </span>update<span class="w"> </span>--init
+<a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a>make<span class="w"> </span>setup-golpe
+<a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a>make<span class="w"> </span>-j4
+<a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a>
+<a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a><span class="c1"># Configuration and testing</span>
+<a id="__codelineno-13-9" name="__codelineno-13-9" href="#__codelineno-13-9"></a>./strfry<span class="w"> </span>relay<span class="w"> </span><span class="c1"># Start relay</span>
+<a id="__codelineno-13-10" name="__codelineno-13-10" href="#__codelineno-13-10"></a>./strfry<span class="w"> </span><span class="nb">export</span><span class="w"> </span>--since<span class="o">=</span>1day<span class="w"> </span><span class="c1"># Data export</span>
+</code></pre></div></p>
+<p><strong>Nostream Development:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="c1"># Node.js relay implementation</span>
+<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/Cameri/nostream.git
+<a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a><span class="nb">cd</span><span class="w"> </span>nostream
+<a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a>npm<span class="w"> </span>install
+<a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a>npm<span class="w"> </span>run<span class="w"> </span>build
+<a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a>npm<span class="w"> </span>start
+</code></pre></div></p>
+<h2 id="event-analysis-and-debugging">Event Analysis and Debugging</h2>
+<h3 id="event-structure-validation">Event Structure Validation</h3>
+<p><strong>Automated Testing Framework:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="c1">// Event validation testing</span>
+<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">validateEvent</span><span class="p">,</span><span class="w"> </span><span class="nx">verifySignature</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;nostr-tools&#39;</span>
+<a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a>
+<a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a><span class="kd">function</span><span class="w"> </span><span class="nx">testEventValidation</span><span class="p">(</span><span class="nx">event</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a><span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">isValid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">validateEvent</span><span class="p">(</span><span class="nx">event</span><span class="p">)</span>
+<a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a><span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">sigValid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">verifySignature</span><span class="p">(</span><span class="nx">event</span><span class="p">)</span>
+<a id="__codelineno-15-7" name="__codelineno-15-7" href="#__codelineno-15-7"></a>
+<a id="__codelineno-15-8" name="__codelineno-15-8" href="#__codelineno-15-8"></a><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-15-9" name="__codelineno-15-9" href="#__codelineno-15-9"></a><span class="w">    </span><span class="nx">structureValid</span><span class="o">:</span><span class="w"> </span><span class="nx">isValid</span><span class="p">,</span>
+<a id="__codelineno-15-10" name="__codelineno-15-10" href="#__codelineno-15-10"></a><span class="w">    </span><span class="nx">signatureValid</span><span class="o">:</span><span class="w"> </span><span class="nx">sigValid</span><span class="p">,</span>
+<a id="__codelineno-15-11" name="__codelineno-15-11" href="#__codelineno-15-11"></a><span class="w">    </span><span class="nx">timestamp</span><span class="o">:</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nb">Date</span><span class="p">(</span><span class="nx">event</span><span class="p">.</span><span class="nx">created_at</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">1000</span><span class="p">),</span>
+<a id="__codelineno-15-12" name="__codelineno-15-12" href="#__codelineno-15-12"></a><span class="w">    </span><span class="nx">kind</span><span class="o">:</span><span class="w"> </span><span class="nx">event</span><span class="p">.</span><span class="nx">kind</span><span class="p">,</span>
+<a id="__codelineno-15-13" name="__codelineno-15-13" href="#__codelineno-15-13"></a><span class="w">    </span><span class="nx">contentLength</span><span class="o">:</span><span class="w"> </span><span class="nx">event</span><span class="p">.</span><span class="nx">content</span><span class="p">.</span><span class="nx">length</span>
+<a id="__codelineno-15-14" name="__codelineno-15-14" href="#__codelineno-15-14"></a><span class="w">  </span><span class="p">}</span>
+<a id="__codelineno-15-15" name="__codelineno-15-15" href="#__codelineno-15-15"></a><span class="p">}</span>
+</code></pre></div></p>
+<h3 id="network-protocol-analysis">Network Protocol Analysis</h3>
+<p><strong>Traffic Monitoring:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="c1"># WebSocket traffic analysis</span>
+<a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>wscat<span class="w"> </span>-c<span class="w"> </span>wss://relay.damus.io
+<a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a><span class="c1"># Send: [&quot;REQ&quot;, &quot;sub1&quot;, {&quot;kinds&quot;: [1], &quot;limit&quot;: 5}]</span>
+<a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a>
+<a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a><span class="c1"># Protocol compliance testing</span>
+<a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a>nak<span class="w"> </span>req<span class="w"> </span>-k<span class="w"> </span><span class="m">1</span><span class="w"> </span>--limit<span class="w"> </span><span class="m">1</span><span class="w"> </span>wss://relay.damus.io<span class="w"> </span><span class="p">|</span><span class="w"> </span>jq<span class="w"> </span><span class="s1">&#39;.[]&#39;</span>
+</code></pre></div></p>
+<h2 id="performance-optimization-tools">Performance Optimization Tools</h2>
+<h3 id="relay-performance-analysis">Relay Performance Analysis</h3>
+<p><strong>Metrics Collection:</strong>
+- Connection establishment latency
+- Event processing throughput
+- Query response times
+- Resource utilization patterns</p>
+<p><strong>Benchmarking Framework:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="c1"># Comprehensive relay testing</span>
+<a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a>relay-benchmark<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a><span class="w">  </span>--relay<span class="w"> </span>wss://relay.damus.io<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a><span class="w">  </span>--connections<span class="w"> </span><span class="m">100</span><span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a><span class="w">  </span>--events-per-second<span class="w"> </span><span class="m">10</span><span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a><span class="w">  </span>--duration<span class="w"> </span>300s<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-17-7" name="__codelineno-17-7" href="#__codelineno-17-7"></a><span class="w">  </span>--output<span class="w"> </span>results.json
+</code></pre></div></p>
+<h3 id="client-performance-testing">Client Performance Testing</h3>
+<p><strong>Load Testing Implementation:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="c1">// Client performance testing</span>
+<a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a><span class="k">async</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">loadTest</span><span class="p">(</span><span class="nx">relayUrls</span><span class="p">,</span><span class="w"> </span><span class="nx">eventCount</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a><span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">clients</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">relayUrls</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">url</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">relayInit</span><span class="p">(</span><span class="nx">url</span><span class="p">))</span>
+<a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a><span class="w">  </span><span class="k">await</span><span class="w"> </span><span class="nb">Promise</span><span class="p">.</span><span class="nx">all</span><span class="p">(</span><span class="nx">clients</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">c</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">c</span><span class="p">.</span><span class="nx">connect</span><span class="p">()))</span>
+<a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a>
+<a id="__codelineno-18-6" name="__codelineno-18-6" href="#__codelineno-18-6"></a><span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">startTime</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">Date</span><span class="p">.</span><span class="nx">now</span><span class="p">()</span>
+<a id="__codelineno-18-7" name="__codelineno-18-7" href="#__codelineno-18-7"></a>
+<a id="__codelineno-18-8" name="__codelineno-18-8" href="#__codelineno-18-8"></a><span class="w">  </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">let</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="nx">eventCount</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-18-9" name="__codelineno-18-9" href="#__codelineno-18-9"></a><span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">event</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">createTestEvent</span><span class="p">(</span><span class="nx">i</span><span class="p">)</span>
+<a id="__codelineno-18-10" name="__codelineno-18-10" href="#__codelineno-18-10"></a><span class="w">    </span><span class="k">await</span><span class="w"> </span><span class="nb">Promise</span><span class="p">.</span><span class="nx">all</span><span class="p">(</span><span class="nx">clients</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">c</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">c</span><span class="p">.</span><span class="nx">publish</span><span class="p">(</span><span class="nx">event</span><span class="p">)))</span>
+<a id="__codelineno-18-11" name="__codelineno-18-11" href="#__codelineno-18-11"></a><span class="w">  </span><span class="p">}</span>
+<a id="__codelineno-18-12" name="__codelineno-18-12" href="#__codelineno-18-12"></a>
+<a id="__codelineno-18-13" name="__codelineno-18-13" href="#__codelineno-18-13"></a><span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">duration</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">Date</span><span class="p">.</span><span class="nx">now</span><span class="p">()</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="nx">startTime</span>
+<a id="__codelineno-18-14" name="__codelineno-18-14" href="#__codelineno-18-14"></a><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">eventsPerSecond</span><span class="o">:</span><span class="w"> </span><span class="nx">eventCount</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="p">(</span><span class="nx">duration</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mf">1000</span><span class="p">)</span><span class="w"> </span><span class="p">}</span>
+<a id="__codelineno-18-15" name="__codelineno-18-15" href="#__codelineno-18-15"></a><span class="p">}</span>
+</code></pre></div></p>
+<h2 id="security-and-compliance-tools">Security and Compliance Tools</h2>
+<h3 id="key-security-analysis">Key Security Analysis</h3>
+<p><strong>Cryptographic Validation:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="c1"># Key security verification</span>
+<a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a><span class="k">def</span><span class="w"> </span><span class="nf">validate_key_security</span><span class="p">(</span><span class="n">private_key_hex</span><span class="p">):</span>
+<a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Validate private key entropy and security properties&quot;&quot;&quot;</span>
+<a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a>    <span class="n">key_bytes</span> <span class="o">=</span> <span class="nb">bytes</span><span class="o">.</span><span class="n">fromhex</span><span class="p">(</span><span class="n">private_key_hex</span><span class="p">)</span>
+<a id="__codelineno-19-5" name="__codelineno-19-5" href="#__codelineno-19-5"></a>
+<a id="__codelineno-19-6" name="__codelineno-19-6" href="#__codelineno-19-6"></a>    <span class="c1"># Entropy analysis</span>
+<a id="__codelineno-19-7" name="__codelineno-19-7" href="#__codelineno-19-7"></a>    <span class="n">entropy</span> <span class="o">=</span> <span class="n">calculate_entropy</span><span class="p">(</span><span class="n">key_bytes</span><span class="p">)</span>
+<a id="__codelineno-19-8" name="__codelineno-19-8" href="#__codelineno-19-8"></a>
+<a id="__codelineno-19-9" name="__codelineno-19-9" href="#__codelineno-19-9"></a>    <span class="c1"># Format validation</span>
+<a id="__codelineno-19-10" name="__codelineno-19-10" href="#__codelineno-19-10"></a>    <span class="n">valid_format</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">key_bytes</span><span class="p">)</span> <span class="o">==</span> <span class="mi">32</span>
+<a id="__codelineno-19-11" name="__codelineno-19-11" href="#__codelineno-19-11"></a>
+<a id="__codelineno-19-12" name="__codelineno-19-12" href="#__codelineno-19-12"></a>    <span class="c1"># Weak key detection</span>
+<a id="__codelineno-19-13" name="__codelineno-19-13" href="#__codelineno-19-13"></a>    <span class="n">is_weak</span> <span class="o">=</span> <span class="n">check_weak_patterns</span><span class="p">(</span><span class="n">key_bytes</span><span class="p">)</span>
+<a id="__codelineno-19-14" name="__codelineno-19-14" href="#__codelineno-19-14"></a>
+<a id="__codelineno-19-15" name="__codelineno-19-15" href="#__codelineno-19-15"></a>    <span class="k">return</span> <span class="p">{</span>
+<a id="__codelineno-19-16" name="__codelineno-19-16" href="#__codelineno-19-16"></a>        <span class="s1">&#39;entropy&#39;</span><span class="p">:</span> <span class="n">entropy</span><span class="p">,</span>
+<a id="__codelineno-19-17" name="__codelineno-19-17" href="#__codelineno-19-17"></a>        <span class="s1">&#39;valid_format&#39;</span><span class="p">:</span> <span class="n">valid_format</span><span class="p">,</span>
+<a id="__codelineno-19-18" name="__codelineno-19-18" href="#__codelineno-19-18"></a>        <span class="s1">&#39;is_secure&#39;</span><span class="p">:</span> <span class="n">entropy</span> <span class="o">&gt;</span> <span class="mf">7.0</span> <span class="ow">and</span> <span class="n">valid_format</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">is_weak</span>
+<a id="__codelineno-19-19" name="__codelineno-19-19" href="#__codelineno-19-19"></a>    <span class="p">}</span>
+</code></pre></div></p>
+<h3 id="protocol-compliance-testing">Protocol Compliance Testing</h3>
+<p><strong>NIP Compliance Verification:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="c1"># Automated NIP compliance testing</span>
+<a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a><span class="k">for</span><span class="w"> </span>relay<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="k">$(</span>cat<span class="w"> </span>relay_list.txt<span class="k">)</span><span class="p">;</span><span class="w"> </span><span class="k">do</span>
+<a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a><span class="w">  </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Testing </span><span class="nv">$relay</span><span class="s2">&quot;</span>
+<a id="__codelineno-20-4" name="__codelineno-20-4" href="#__codelineno-20-4"></a><span class="w">  </span>nak<span class="w"> </span>req<span class="w"> </span>-k<span class="w"> </span><span class="m">0</span><span class="w"> </span>--limit<span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="nv">$relay</span><span class="w"> </span>&gt;/dev/null<span class="w"> </span><span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;NIP-01: ✓&quot;</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;NIP-01: ✗&quot;</span>
+<a id="__codelineno-20-5" name="__codelineno-20-5" href="#__codelineno-20-5"></a><span class="w">  </span><span class="c1"># Additional NIP tests...</span>
+<a id="__codelineno-20-6" name="__codelineno-20-6" href="#__codelineno-20-6"></a><span class="k">done</span>
+</code></pre></div></p>
+<h2 id="next-steps">Next Steps</h2>
+<p>Mastering development tools and infrastructure components enables effective participation in Nostr protocol development. Understanding the ecosystem prepares you for advanced implementation work and network infrastructure deployment.</p>
+<div class="next-lesson">
+  <a href="../relay-setup/" class="btn btn-primary">
+    Relay Infrastructure Deployment →
+  </a>
+</div>
+
+<hr />
+<h2 id="technical-proficiency-assessment">Technical Proficiency Assessment</h2>
+<div class="admonition question">
+<p class="admonition-title">Development Tools Mastery</p>
+<ol>
+<li>What are the key differences between nostr-tools and NDK for JavaScript development?</li>
+<li>How do command-line utilities like nak facilitate protocol debugging and analysis?</li>
+<li>What performance considerations apply when choosing between different language implementations?</li>
+<li>How can relay testing tools inform infrastructure deployment decisions?</li>
+</ol>
+<details class="success">
+<summary>Technical Analysis</summary>
+<ol>
+<li><strong>nostr-tools</strong> provides core protocol primitives, while <strong>NDK</strong> offers higher-level abstractions with built-in optimization and multi-relay coordination</li>
+<li><strong>Command-line utilities</strong> enable direct protocol interaction for testing, debugging, and automation without the overhead of full client implementations</li>
+<li><strong>Performance considerations</strong> include memory usage, cryptographic operation speed, concurrency models, and integration complexity with existing infrastructure</li>
+<li><strong>Relay testing tools</strong> provide critical metrics on throughput, latency, compliance, and reliability that inform capacity planning, geographic distribution, and redundancy strategies for production deployments</li>
+</ol>
+</details>
+</div>
+<hr />
 
 
 
@@ -2272,7 +2231,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="May 27, 2025 04:44:28 UTC">May 27, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="July 9, 2025 18:04:12 UTC">July 9, 2025</span>
   </span>
 
     
@@ -2368,6 +2327,8 @@
         <script src="../../assets/js/typewriter.js"></script>
       
         <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
+      
+        <script src="https://unpkg.com/mermaid@10.9.0/dist/mermaid.min.js"></script>
       
     
   </body>

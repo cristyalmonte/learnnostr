@@ -5,6 +5,7 @@ site_name: LearnNostr
 site_description: A comprehensive guide to understanding and building on the Nostr protocol
 site_author: LearnNostr Team
 site_url: https://learnnostr.com
+use_directory_urls: true
 
 # Repository
 repo_name: 'LearnNostr'
@@ -68,6 +69,7 @@ plugins:
       fallback_to_default: true
       reconfigure_material: true
       reconfigure_search: true
+      default_language: en
       languages:
         - locale: en
           default: true

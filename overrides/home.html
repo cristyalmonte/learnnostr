@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 
-{% set is_spanish = '/es/' in page.url or config.theme.language == 'es' or page.meta.lang == 'es' %}
+{% set is_spanish = page.url.startswith('/es/') or page.url == '/es' %}
 
 {% block announce %}
   <a href="https://discord.gg/BtkVKRkJ" target="_blank">

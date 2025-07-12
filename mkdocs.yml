@@ -77,6 +77,8 @@ plugins:
           build: true
           site_name: "LearnNostr"
           site_description: "A comprehensive guide to understanding and building on the Nostr protocol"
+          extra:
+            announcement: 💜 Join our Discord community to learn Nostr together, ask questions, and connect with other developers! <a href="https://discord.gg/BtkVKRkJ">Join Discord</a>
         - locale: es
           name: Español
           build: true
@@ -110,7 +112,6 @@ plugins:
 
 # Customization
 extra:
-  announcement: 💜 Join our Discord community to learn Nostr together, ask questions, and connect with other developers! <a href="https://discord.gg/BtkVKRkJ">Join Discord</a>
   social:
     - icon: fontawesome/brands/discord
       link: https://discord.gg/BtkVKRkJ

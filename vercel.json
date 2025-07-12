@@ -10,5 +10,33 @@
       }
     }
   ],
-  "outputDirectory": "site"
+  "outputDirectory": "site",
+  "trailingSlash": false,
+  "redirects": [
+    {
+      "source": "/index.html",
+      "destination": "/",
+      "permanent": true
+    }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "Content-Language",
+          "value": "en"
+        }
+      ]
+    },
+    {
+      "source": "/es/(.*)",
+      "headers": [
+        {
+          "key": "Content-Language",
+          "value": "es"
+        }
+      ]
+    }
+  ]
 } 

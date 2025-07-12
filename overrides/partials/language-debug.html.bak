@@ -1,0 +1,8 @@
+<!-- Debug language detection -->
+<script>
+  console.log('Current page language:', document.documentElement.lang);
+  console.log('Browser language:', navigator.language);
+  console.log('Browser languages:', navigator.languages);
+  console.log('Current URL:', window.location.href);
+  console.log('MkDocs config:', typeof config !== 'undefined' ? config : 'Not available');
+</script>

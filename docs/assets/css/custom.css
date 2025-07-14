@@ -1,8 +1,4 @@
-@font-face {
-  font-family: 'Satoshi';
-  src: url("/assets/brand/Satoshi-Variable.ttf") format("truetype");
-  font-display: swap;
-}
+/* Font removed - using system fonts instead */
 
 /* Define brand */
 :root, [data-md-color-scheme="default"] {
@@ -93,18 +89,67 @@
 /* header font */
 
 .md-header__topic:first-child {
-  font-family: 'Satoshi';
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   font-weight: 700;
 }
 
 .md-typeset h1 {
-  font-family: 'Satoshi';
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   font-weight: 700;
   color: var(--md-typeset-a-color);
 }
 
 h2, h3 {
-  font-family: 'Satoshi';
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+/* Ensure announcement banner is visible and prominent */
+.md-banner {
+  display: block !important;
+  visibility: visible !important;
+  z-index: 1000;
+  background: linear-gradient(135deg, #9C27B0 0%, #7B1FA2 100%);
+  color: white;
+  padding: 1rem;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(156, 39, 176, 0.3);
+  border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.md-banner__inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.md-banner__button {
+  display: inline-block !important;
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+  margin-left: 1rem;
+}
+
+.md-banner__button:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: translateY(-1px);
+}
+
+.md-banner a {
+  color: white;
+  text-decoration: underline;
+  font-weight: 600;
+}
+
+.md-banner a:hover {
+  color: rgba(255, 255, 255, 0.8);
 }
 
 /* Correct page icon size */

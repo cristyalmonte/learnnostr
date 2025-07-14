@@ -5,7 +5,6 @@ site_name: LearnNostr
 site_description: A comprehensive guide to understanding and building on the Nostr protocol
 site_author: LearnNostr Team
 site_url: https://learnnostr.com
-use_directory_urls: true
 
 # Repository
 repo_name: 'LearnNostr'
@@ -32,8 +31,6 @@ theme:
     - content.code.annotate
     - content.tabs.link
     - content.tooltips
-    - navigation.instant
-    - navigation.instant.prefetch
     - navigation.path
     - navigation.tabs.sticky
     - navigation.tracking
@@ -69,7 +66,6 @@ plugins:
       fallback_to_default: true
       reconfigure_material: true
       reconfigure_search: true
-      default_language: en
       languages:
         - locale: en
           default: true
@@ -82,6 +78,8 @@ plugins:
           build: true
           site_name: "LearnNostr"
           site_description: "Una guía completa para entender y construir sobre el protocolo Nostr"
+          extra:
+            announcement: 💜 ¡Únete a nuestra comunidad de Discord para aprender Nostr juntos, hacer preguntas y conectar con otros desarrolladores! <a href="https://discord.gg/BtkVKRkJ">Únete a Discord</a>
           nav_translations:
             Home: Inicio
             Getting Started: Comenzar
@@ -169,6 +167,23 @@ nav:
     - Nostr Fundamentals: concepts/nostr-fundamentals.md
     - Relays: concepts/relays.md
     - Zaps: concepts/zaps.md
+  - Learning Modules:
+    - Overview: tutorials/modules/index.md
+    - Module 1 - Welcome to Decentralized Web:
+      - tutorials/modules/01-welcome-to-decentralized-web/index.md
+      - Problems with Centralization: tutorials/modules/01-welcome-to-decentralized-web/problems-with-centralization.md
+      - Exploring Nostr: tutorials/modules/01-welcome-to-decentralized-web/exploring-nostr.md
+      - Ecosystem Overview: tutorials/modules/01-welcome-to-decentralized-web/ecosystem-overview.md
+      - Assessment: tutorials/modules/01-welcome-to-decentralized-web/assessment.md
+    - Module 2 - Digital Identity & Security:
+      - tutorials/modules/02-digital-identity-security/index.md
+      - Cryptographic Fundamentals: tutorials/modules/02-digital-identity-security/crypto-fundamentals.md
+      - Key Generation & Management: tutorials/modules/02-digital-identity-security/key-management.md
+      - Security Best Practices: tutorials/modules/02-digital-identity-security/practical-security.md
+      - Identity in Practice: tutorials/modules/02-digital-identity-security/identity-in-practice.md
+      - Assessment: tutorials/modules/02-digital-identity-security/assessment.md
+    - Module 3 - Events Language of Nostr:
+      - tutorials/modules/03-events-language-of-nostr/index.md
   - Tutorials:
     - Build a Simple Client: tutorials/simple-client.md
     - Relay Communication: tutorials/relay-communication.md

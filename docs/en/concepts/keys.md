@@ -1,14 +1,5 @@
 # Keys and Identity in Nostr
 
-!!! info "Learning Path Available"
-    **New to cryptographic keys?** This topic is covered step-by-step in our structured learning modules:
-    
-    - [Module 2: Digital Identity & Security](../tutorials/modules/02-digital-identity-security/) - Complete guided course
-    - [Cryptographic Fundamentals](../tutorials/modules/02-digital-identity-security/crypto-fundamentals.md) - Understanding the math
-    - [Key Generation & Management](../tutorials/modules/02-digital-identity-security/key-management.md) - Practical skills
-    
-    **Prefer guided learning?** [Start the full learning path →](../tutorials/modules/01-welcome-to-decentralized-web/)
-
 !!! info "Learning Objectives"
     After this lesson, you'll understand:
     

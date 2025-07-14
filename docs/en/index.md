@@ -412,3 +412,4 @@ Here's how to publish your first event to the Nostr network:
         Ok(())
     }
     ```
+

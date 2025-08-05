@@ -156,6 +156,11 @@ markdown_extensions:
 # Navigation
 nav:
   - Home: index.md
+  - Modules:
+    - Overview: modules/index.md
+    - Module 1 - Introduction: modules/module-01-introduction.md
+    - Module 2 - Keys & Identity: modules/module-02-keys-identity.md
+    - Module 3 - Events & Messages: modules/module-03-events-messages.md
   - Getting Started:
     - What is Nostr?: getting-started/what-is-nostr.md
     - Wallet Setup: getting-started/wallet-setup.md

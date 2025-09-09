@@ -2,7 +2,7 @@
 
 !!! info "Learning Objectives"
     By the end of this lesson, you'll understand:
-    
+
     - Relay architecture and operational requirements
     - Installation and configuration procedures for production deployment
     - Security hardening and performance optimization techniques
@@ -132,17 +132,17 @@ relay {
     bind = "127.0.0.1"
     port = 7777
     nofiles = 65536
-    
+
     # Performance tuning
     maxWebsocketPayloadSize = 131072
     autoPingSeconds = 30
     enableTcpKeepalive = true
     queryTimesliceBudgetMicroseconds = 5000
-    
+
     # Rate limiting
     maxFilterLimit = 1000
     maxSubsPerConnection = 50
-    
+
     # Relay metadata (NIP-11)
     info {
         name = "Production Nostr Relay"
@@ -211,7 +211,7 @@ upstream strfry_backend {
 server {
     listen 80;
     server_name relay.example.com;
-    
+
     # Redirect to HTTPS
     return 301 https://$server_name$request_uri;
 }
@@ -219,18 +219,18 @@ server {
 server {
     listen 443 ssl http2;
     server_name relay.example.com;
-    
+
     # SSL configuration
     ssl_certificate /etc/letsencrypt/live/relay.example.com/fullchain.pem;
     ssl_certificate_key /etc/letsencrypt/live/relay.example.com/privkey.pem;
     ssl_protocols TLSv1.2 TLSv1.3;
     ssl_ciphers ECDHE-RSA-AES128-GCM-SHA256:ECDHE-RSA-AES256-GCM-SHA384;
     ssl_prefer_server_ciphers off;
-    
+
     # Performance optimization
     keepalive_timeout 65;
     keepalive_requests 1000;
-    
+
     # WebSocket proxy configuration
     location / {
         proxy_pass http://strfry_backend;
@@ -241,28 +241,28 @@ server {
         proxy_set_header X-Real-IP $remote_addr;
         proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
         proxy_set_header X-Forwarded-Proto $scheme;
-        
+
         # Timeout configuration
         proxy_connect_timeout 60s;
         proxy_send_timeout 60s;
         proxy_read_timeout 60s;
-        
+
         # Buffer configuration
         proxy_buffering off;
         proxy_request_buffering off;
     }
-    
+
     # NIP-11 relay information
     location = / {
         add_header Content-Type application/nostr+json;
         add_header Access-Control-Allow-Origin *;
         add_header Access-Control-Allow-Methods "GET, POST, OPTIONS";
         add_header Access-Control-Allow-Headers "Content-Type";
-        
+
         if ($http_accept ~* "application/nostr\+json") {
             proxy_pass http://strfry_backend;
         }
-        
+
         # Default response for web browsers
         return 200 '{"name":"Production Nostr Relay","description":"High-performance relay infrastructure","supported_nips":[1,2,9,11,12,15,16,20,22],"software":"strfry","version":"0.9.6"}';
     }
@@ -410,27 +410,27 @@ sysctl -p
 ## Practical Exercise: Relay Deployment Laboratory
 
 !!! example "Production Relay Implementation"
-    
+
     **Objective:** Deploy and configure a production-ready Nostr relay
-    
+
     **Phase 1: Infrastructure Setup**
     1. Provision VPS with appropriate specifications
     2. Complete security hardening and system preparation
     3. Install and configure all required dependencies
     4. Implement monitoring and logging infrastructure
-    
+
     **Phase 2: Relay Configuration**
     1. Compile and install Strfry with optimizations
     2. Configure relay policies and operational parameters
     3. Implement reverse proxy with SSL termination
     4. Create systemd service for process management
-    
+
     **Phase 3: Testing and Validation**
     1. Verify WebSocket connectivity and protocol compliance
     2. Test event publishing and retrieval functionality
     3. Validate SSL certificate configuration and renewal
     4. Perform load testing and performance optimization
-    
+
     **Phase 4: Operational Procedures**
     1. Implement backup and recovery procedures
     2. Configure monitoring and alerting systems
@@ -447,7 +447,7 @@ sysctl -p
 dbParams {
     maxreaders = 1024
     mapsize = 5TB
-    
+
     # Memory mapping optimization
     mdb_env_set_mapsize = 5497558138880  # 5TB in bytes
     mdb_env_set_maxdbs = 16
@@ -460,11 +460,11 @@ relay {
     # Increase connection limits
     nofiles = 131072
     maxSubsPerConnection = 100
-    
+
     # Optimize query performance
     queryTimesliceBudgetMicroseconds = 10000
     maxFilterLimit = 2000
-    
+
     # Network tuning
     autoPingSeconds = 25
     enableTcpKeepalive = true
@@ -480,7 +480,7 @@ upstream strfry_cluster {
     server 10.0.1.10:7777 weight=3;
     server 10.0.1.11:7777 weight=3;
     server 10.0.1.12:7777 weight=2;
-    
+
     keepalive 64;
 }
 ```
@@ -589,7 +589,7 @@ jq -r '.pubkey' | sort | uniq -c | sort -nr | head -20
 Successful relay deployment provides hands-on experience with Nostr infrastructure and prepares you for advanced protocol development. Understanding operational requirements enables effective contribution to network infrastructure and specialized service development.
 
 <div class="next-lesson">
-  <a href="../../concepts/" class="btn btn-primary">
+  <a href="../../concepts/clients" class="btn btn-primary">
     Advanced Protocol Concepts →
   </a>
 </div>
@@ -599,12 +599,12 @@ Successful relay deployment provides hands-on experience with Nostr infrastructu
 ## Infrastructure Mastery Assessment
 
 !!! question "Relay Operations Proficiency"
-    
+
     1. What are the critical considerations for relay database configuration and optimization?
     2. How do write policies enable content moderation while maintaining decentralization principles?
     3. What security measures are essential for production relay deployment?
     4. How can relay operators balance performance, scalability, and resource costs?
-    
+
     ??? success "Infrastructure Analysis"
         1. **Database configuration** must balance storage efficiency, query performance, and concurrent access patterns while ensuring data integrity and crash resistance
         2. **Write policies** provide programmatic content filtering at the relay level, allowing operators to implement custom rules while users retain the ability to choose relays that align with their preferences

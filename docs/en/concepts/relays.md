@@ -2,7 +2,7 @@
 
 !!! info "Learning Objectives"
     After this lesson, you'll understand:
-    
+
     - What relays are and how they work
     - The relay-client communication protocol
     - Different types of relays and their purposes
@@ -329,7 +329,7 @@ relay:
   description: "A relay for my friends and family"
   pubkey: "your-pubkey-here"
   contact: "admin@myrelay.com"
-  
+
 rejectFilters:
   - kinds: []
     authors: []
@@ -393,7 +393,7 @@ CMD ["./strfry", "relay"]
 Now that you understand relays, explore:
 
 - [Events and Messages](../events-and-messages/) - What relays store and forward
-- [Building Applications](../../tutorials/) - How to work with relays in code
+- [Building Applications](../../tutorials/simple-client/) - How to work with relays in code
 - [Advanced Topics](../advanced/) - Specialized relay features
 
 !!! tip "Getting Started"

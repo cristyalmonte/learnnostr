@@ -650,11 +650,8 @@ Congratulations! You've built a working Nostr client. Here are some ideas for en
 
 ---
 
-<div class="tutorial-navigation">
-  <a href="../bot/" class="btn btn-outline">
-    ← Previous: Creating a Bot
-  </a>
-  <a href="../advanced/" class="btn btn-primary">
-    Next: Advanced Features →
-  </a>
-</div> 
+## Related Tutorials
+
+- [Understanding Nostr Events](../tutorials/understanding-events/) - Deep dive into event structures
+- [Relay Communication](../tutorials/relay-communication/) - Advanced relay interaction patterns
+- [Nostr Fundamentals](../concepts/nostr-fundamentals/) - Core protocol concepts 

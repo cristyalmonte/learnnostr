@@ -652,6 +652,6 @@ Congratulations! You've built a working Nostr client. Here are some ideas for en
 
 ## Related Tutorials
 
-- [Understanding Nostr Events](../tutorials/understanding-events/) - Deep dive into event structures
-- [Relay Communication](../tutorials/relay-communication/) - Advanced relay interaction patterns
-- [Nostr Fundamentals](../concepts/nostr-fundamentals/) - Core protocol concepts 
+- [Understanding Nostr Events](understanding-events.md) - Deep dive into event structures
+- [Relay Communication](relay-communication.md) - Advanced relay interaction patterns
+- [Nostr Fundamentals](../concepts/nostr-fundamentals.md) - Core protocol concepts 

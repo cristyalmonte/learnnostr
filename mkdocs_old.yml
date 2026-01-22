@@ -161,8 +161,6 @@ nav:
     - Module 1 - Introduction: modules/module-01-introduction.md
     - Module 2 - Keys & Identity: modules/module-02-keys-identity.md
     - Module 3 - Events & Messages: modules/module-03-events-messages.md
-    - Module 4 - Relays & Architecture: modules/module-04-relays-architecture.md
-    - Module 5 - Building Your Client: modules/module-05-building-client.md
   - Getting Started:
     - What is Nostr?: getting-started/what-is-nostr.md
     - Wallet Setup: getting-started/wallet-setup.md

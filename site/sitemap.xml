@@ -2,238 +2,322 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
     <url>
         <loc>https://learnnostr.com/</loc>
-        <lastmod>2025-07-09</lastmod>
+        <lastmod>2026-01-22</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="en" href="https://learnnostr.com/"/>
         <xhtml:link rel="alternate" hreflang="es" href="https://learnnostr.com/es/"/>
     </url>
     <url>
         <loc>https://learnnostr.com/definitions/</loc>
-        <lastmod>2025-07-09</lastmod>
+        <lastmod>2026-01-22</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="en" href="https://learnnostr.com/definitions/"/>
         <xhtml:link rel="alternate" hreflang="es" href="https://learnnostr.com/es/definitions/"/>
     </url>
     <url>
         <loc>https://learnnostr.com/support/</loc>
-        <lastmod>2025-07-09</lastmod>
+        <lastmod>2026-01-22</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="en" href="https://learnnostr.com/support/"/>
         <xhtml:link rel="alternate" hreflang="es" href="https://learnnostr.com/es/support/"/>
     </url>
     <url>
         <loc>https://learnnostr.com/concepts/clients/</loc>
-        <lastmod>2025-07-09</lastmod>
+        <lastmod>2026-01-22</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="en" href="https://learnnostr.com/concepts/clients/"/>
         <xhtml:link rel="alternate" hreflang="es" href="https://learnnostr.com/es/concepts/clients/"/>
     </url>
     <url>
         <loc>https://learnnostr.com/concepts/events-and-messages/</loc>
-        <lastmod>2025-07-09</lastmod>
+        <lastmod>2026-01-22</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="en" href="https://learnnostr.com/concepts/events-and-messages/"/>
         <xhtml:link rel="alternate" hreflang="es" href="https://learnnostr.com/es/concepts/events-and-messages/"/>
     </url>
     <url>
         <loc>https://learnnostr.com/concepts/keys/</loc>
-        <lastmod>2025-07-09</lastmod>
+        <lastmod>2026-01-22</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="en" href="https://learnnostr.com/concepts/keys/"/>
         <xhtml:link rel="alternate" hreflang="es" href="https://learnnostr.com/es/concepts/keys/"/>
     </url>
     <url>
         <loc>https://learnnostr.com/concepts/nips/</loc>
-        <lastmod>2025-07-09</lastmod>
+        <lastmod>2026-01-22</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="en" href="https://learnnostr.com/concepts/nips/"/>
         <xhtml:link rel="alternate" hreflang="es" href="https://learnnostr.com/es/concepts/nips/"/>
     </url>
     <url>
         <loc>https://learnnostr.com/concepts/nostr-fundamentals/</loc>
-        <lastmod>2025-07-09</lastmod>
+        <lastmod>2026-01-22</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="en" href="https://learnnostr.com/concepts/nostr-fundamentals/"/>
         <xhtml:link rel="alternate" hreflang="es" href="https://learnnostr.com/es/concepts/nostr-fundamentals/"/>
     </url>
     <url>
         <loc>https://learnnostr.com/concepts/relays/</loc>
-        <lastmod>2025-07-09</lastmod>
+        <lastmod>2026-01-22</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="en" href="https://learnnostr.com/concepts/relays/"/>
         <xhtml:link rel="alternate" hreflang="es" href="https://learnnostr.com/es/concepts/relays/"/>
     </url>
     <url>
         <loc>https://learnnostr.com/concepts/zaps/</loc>
-        <lastmod>2025-07-09</lastmod>
+        <lastmod>2026-01-22</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="en" href="https://learnnostr.com/concepts/zaps/"/>
         <xhtml:link rel="alternate" hreflang="es" href="https://learnnostr.com/es/concepts/zaps/"/>
     </url>
     <url>
         <loc>https://learnnostr.com/getting-started/nostr-tools/</loc>
-        <lastmod>2025-07-09</lastmod>
+        <lastmod>2026-01-22</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="en" href="https://learnnostr.com/getting-started/nostr-tools/"/>
         <xhtml:link rel="alternate" hreflang="es" href="https://learnnostr.com/es/getting-started/nostr-tools/"/>
     </url>
     <url>
         <loc>https://learnnostr.com/getting-started/relay-setup/</loc>
-        <lastmod>2025-07-09</lastmod>
+        <lastmod>2026-01-22</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="en" href="https://learnnostr.com/getting-started/relay-setup/"/>
         <xhtml:link rel="alternate" hreflang="es" href="https://learnnostr.com/es/getting-started/relay-setup/"/>
     </url>
     <url>
         <loc>https://learnnostr.com/getting-started/wallet-setup/</loc>
-        <lastmod>2025-07-09</lastmod>
+        <lastmod>2026-01-22</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="en" href="https://learnnostr.com/getting-started/wallet-setup/"/>
         <xhtml:link rel="alternate" hreflang="es" href="https://learnnostr.com/es/getting-started/wallet-setup/"/>
     </url>
     <url>
         <loc>https://learnnostr.com/getting-started/what-is-nostr/</loc>
-        <lastmod>2025-07-09</lastmod>
+        <lastmod>2026-01-22</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="en" href="https://learnnostr.com/getting-started/what-is-nostr/"/>
         <xhtml:link rel="alternate" hreflang="es" href="https://learnnostr.com/es/getting-started/what-is-nostr/"/>
     </url>
     <url>
+        <loc>https://learnnostr.com/modules/</loc>
+        <lastmod>2026-01-22</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://learnnostr.com/modules/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://learnnostr.com/es/modules/"/>
+    </url>
+    <url>
+        <loc>https://learnnostr.com/modules/module-01-introduction/</loc>
+        <lastmod>2026-01-22</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://learnnostr.com/modules/module-01-introduction/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://learnnostr.com/es/modules/module-01-introduction/"/>
+    </url>
+    <url>
+        <loc>https://learnnostr.com/modules/module-02-keys-identity/</loc>
+        <lastmod>2026-01-22</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://learnnostr.com/modules/module-02-keys-identity/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://learnnostr.com/es/modules/module-02-keys-identity/"/>
+    </url>
+    <url>
+        <loc>https://learnnostr.com/modules/module-03-events-messages/</loc>
+        <lastmod>2026-01-22</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://learnnostr.com/modules/module-03-events-messages/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://learnnostr.com/es/modules/module-03-events-messages/"/>
+    </url>
+    <url>
+        <loc>https://learnnostr.com/modules/module-04-relays-architecture/</loc>
+        <lastmod>2026-01-22</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://learnnostr.com/modules/module-04-relays-architecture/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://learnnostr.com/es/modules/module-04-relays-architecture/"/>
+    </url>
+    <url>
+        <loc>https://learnnostr.com/modules/module-05-building-client/</loc>
+        <lastmod>2026-01-22</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://learnnostr.com/modules/module-05-building-client/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://learnnostr.com/es/modules/module-05-building-client/"/>
+    </url>
+    <url>
         <loc>https://learnnostr.com/tutorials/relay-communication/</loc>
-        <lastmod>2025-07-09</lastmod>
+        <lastmod>2026-01-22</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="en" href="https://learnnostr.com/tutorials/relay-communication/"/>
         <xhtml:link rel="alternate" hreflang="es" href="https://learnnostr.com/es/tutorials/relay-communication/"/>
     </url>
     <url>
         <loc>https://learnnostr.com/tutorials/simple-client/</loc>
-        <lastmod>2025-07-09</lastmod>
+        <lastmod>2026-01-22</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="en" href="https://learnnostr.com/tutorials/simple-client/"/>
         <xhtml:link rel="alternate" hreflang="es" href="https://learnnostr.com/es/tutorials/simple-client/"/>
     </url>
     <url>
         <loc>https://learnnostr.com/tutorials/understanding-events/</loc>
-        <lastmod>2025-07-09</lastmod>
+        <lastmod>2026-01-22</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="en" href="https://learnnostr.com/tutorials/understanding-events/"/>
         <xhtml:link rel="alternate" hreflang="es" href="https://learnnostr.com/es/tutorials/understanding-events/"/>
     </url>
     <url>
         <loc>https://learnnostr.com/es/</loc>
-        <lastmod>2025-07-09</lastmod>
+        <lastmod>2026-01-22</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="es" href="https://learnnostr.com/es/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://learnnostr.com/"/>
     </url>
     <url>
         <loc>https://learnnostr.com/es/definitions/</loc>
-        <lastmod>2025-07-09</lastmod>
+        <lastmod>2026-01-22</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="es" href="https://learnnostr.com/es/definitions/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://learnnostr.com/definitions/"/>
     </url>
     <url>
         <loc>https://learnnostr.com/es/support/</loc>
-        <lastmod>2025-07-09</lastmod>
+        <lastmod>2026-01-22</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="es" href="https://learnnostr.com/es/support/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://learnnostr.com/support/"/>
     </url>
     <url>
         <loc>https://learnnostr.com/es/concepts/clients/</loc>
-        <lastmod>2025-07-09</lastmod>
+        <lastmod>2026-01-22</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="es" href="https://learnnostr.com/es/concepts/clients/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://learnnostr.com/concepts/clients/"/>
     </url>
     <url>
         <loc>https://learnnostr.com/es/concepts/events-and-messages/</loc>
-        <lastmod>2025-07-09</lastmod>
+        <lastmod>2026-01-22</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="es" href="https://learnnostr.com/es/concepts/events-and-messages/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://learnnostr.com/concepts/events-and-messages/"/>
     </url>
     <url>
         <loc>https://learnnostr.com/es/concepts/keys/</loc>
-        <lastmod>2025-07-09</lastmod>
+        <lastmod>2026-01-22</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="es" href="https://learnnostr.com/es/concepts/keys/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://learnnostr.com/concepts/keys/"/>
     </url>
     <url>
         <loc>https://learnnostr.com/es/concepts/nips/</loc>
-        <lastmod>2025-07-09</lastmod>
+        <lastmod>2026-01-22</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="es" href="https://learnnostr.com/es/concepts/nips/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://learnnostr.com/concepts/nips/"/>
     </url>
     <url>
         <loc>https://learnnostr.com/es/concepts/nostr-fundamentals/</loc>
-        <lastmod>2025-07-09</lastmod>
+        <lastmod>2026-01-22</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="es" href="https://learnnostr.com/es/concepts/nostr-fundamentals/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://learnnostr.com/concepts/nostr-fundamentals/"/>
     </url>
     <url>
         <loc>https://learnnostr.com/es/concepts/relays/</loc>
-        <lastmod>2025-07-09</lastmod>
+        <lastmod>2026-01-22</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="es" href="https://learnnostr.com/es/concepts/relays/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://learnnostr.com/concepts/relays/"/>
     </url>
     <url>
         <loc>https://learnnostr.com/es/concepts/zaps/</loc>
-        <lastmod>2025-07-09</lastmod>
+        <lastmod>2026-01-22</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="es" href="https://learnnostr.com/es/concepts/zaps/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://learnnostr.com/concepts/zaps/"/>
     </url>
     <url>
         <loc>https://learnnostr.com/es/getting-started/nostr-tools/</loc>
-        <lastmod>2025-07-09</lastmod>
+        <lastmod>2026-01-22</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="es" href="https://learnnostr.com/es/getting-started/nostr-tools/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://learnnostr.com/getting-started/nostr-tools/"/>
     </url>
     <url>
         <loc>https://learnnostr.com/es/getting-started/relay-setup/</loc>
-        <lastmod>2025-07-09</lastmod>
+        <lastmod>2026-01-22</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="es" href="https://learnnostr.com/es/getting-started/relay-setup/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://learnnostr.com/getting-started/relay-setup/"/>
     </url>
     <url>
         <loc>https://learnnostr.com/es/getting-started/wallet-setup/</loc>
-        <lastmod>2025-07-09</lastmod>
+        <lastmod>2026-01-22</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="es" href="https://learnnostr.com/es/getting-started/wallet-setup/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://learnnostr.com/getting-started/wallet-setup/"/>
     </url>
     <url>
         <loc>https://learnnostr.com/es/getting-started/what-is-nostr/</loc>
-        <lastmod>2025-07-09</lastmod>
+        <lastmod>2026-01-22</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="es" href="https://learnnostr.com/es/getting-started/what-is-nostr/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://learnnostr.com/getting-started/what-is-nostr/"/>
     </url>
     <url>
+        <loc>https://learnnostr.com/es/modules/</loc>
+        <lastmod>2026-01-22</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="https://learnnostr.com/es/modules/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://learnnostr.com/modules/"/>
+    </url>
+    <url>
+        <loc>https://learnnostr.com/es/modules/module-01-introduction/</loc>
+        <lastmod>2026-01-22</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="https://learnnostr.com/es/modules/module-01-introduction/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://learnnostr.com/modules/module-01-introduction/"/>
+    </url>
+    <url>
+        <loc>https://learnnostr.com/es/modules/module-02-keys-identity/</loc>
+        <lastmod>2026-01-22</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="https://learnnostr.com/es/modules/module-02-keys-identity/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://learnnostr.com/modules/module-02-keys-identity/"/>
+    </url>
+    <url>
+        <loc>https://learnnostr.com/es/modules/module-03-events-messages/</loc>
+        <lastmod>2026-01-22</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="https://learnnostr.com/es/modules/module-03-events-messages/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://learnnostr.com/modules/module-03-events-messages/"/>
+    </url>
+    <url>
+        <loc>https://learnnostr.com/es/modules/module-04-relays-architecture/</loc>
+        <lastmod>2026-01-22</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="https://learnnostr.com/es/modules/module-04-relays-architecture/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://learnnostr.com/modules/module-04-relays-architecture/"/>
+    </url>
+    <url>
+        <loc>https://learnnostr.com/es/modules/module-05-building-client/</loc>
+        <lastmod>2026-01-22</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="https://learnnostr.com/es/modules/module-05-building-client/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://learnnostr.com/modules/module-05-building-client/"/>
+    </url>
+    <url>
         <loc>https://learnnostr.com/es/tutorials/relay-communication/</loc>
-        <lastmod>2025-07-09</lastmod>
+        <lastmod>2026-01-22</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="es" href="https://learnnostr.com/es/tutorials/relay-communication/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://learnnostr.com/tutorials/relay-communication/"/>
     </url>
     <url>
         <loc>https://learnnostr.com/es/tutorials/simple-client/</loc>
-        <lastmod>2025-07-09</lastmod>
+        <lastmod>2026-01-22</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="es" href="https://learnnostr.com/es/tutorials/simple-client/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://learnnostr.com/tutorials/simple-client/"/>
     </url>
     <url>
         <loc>https://learnnostr.com/es/tutorials/understanding-events/</loc>
-        <lastmod>2025-07-09</lastmod>
+        <lastmod>2026-01-22</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="es" href="https://learnnostr.com/es/tutorials/understanding-events/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://learnnostr.com/tutorials/understanding-events/"/>

@@ -43,14 +43,66 @@ Our modules are carefully structured to build your knowledge progressively:
 
 </div>
 
+### Intermediate Track
+
+<div class="grid cards" markdown>
+
+-   :material-numeric-4-circle:{ .lg .middle } **Module 4: Relays & Architecture**
+
+    ---
+
+    Master relay communication, WebSocket connections, and network architecture patterns.
+
+    [:octicons-arrow-right-24: Begin Module 4](module-04-relays-architecture.md)
+
+-   :material-numeric-5-circle:{ .lg .middle } **Module 5: Building Your Client**
+
+    ---
+
+    Build a complete, production-ready Nostr client application from scratch.
+
+    [:octicons-arrow-right-24: Begin Module 5](module-05-building-client.md)
+
+-   :material-numeric-6-circle:{ .lg .middle } **Module 6: Advanced NIPs**
+
+    ---
+
+    Master advanced event types, NIPs, and protocol extensions for sophisticated applications.
+
+    [:octicons-arrow-right-24: Begin Module 6](module-06-advanced-nips.md)
+
+</div>
+
+### Advanced Track
+
+<div class="grid cards" markdown>
+
+-   :material-numeric-7-circle:{ .lg .middle } **Module 7: Production Relays**
+
+    ---
+
+    Design, deploy, and operate production-grade Nostr relays at scale.
+
+    [:octicons-arrow-right-24: Begin Module 7](module-07-production-relays.md)
+
+-   :material-numeric-8-circle:{ .lg .middle } **Module 8: Scaling & Performance**
+
+    ---
+
+    Optimize relay performance, implement caching, and scale to millions of users.
+
+    [:octicons-arrow-right-24: Begin Module 8](module-08-scaling-performance.md)
+
+-   :material-numeric-9-circle:{ .lg .middle } **Module 9: Security Best Practices**
+
+    ---
+
+    Coming Soon - Advanced security patterns, threat modeling, and hardening strategies.
+
+</div>
+
 ### Coming Soon
 
-- **Module 4**: Relays & Network Architecture
-- **Module 5**: Building Your First Nostr Client
-- **Module 6**: Advanced Event Types & NIPs
-- **Module 7**: Running Production Relays
-- **Module 8**: Scaling & Performance
-- **Module 9**: Security Best Practices
 - **Module 10**: Protocol Development
 - **Module 11**: Economic Models & Lightning
 - **Module 12**: Contributing to Nostr

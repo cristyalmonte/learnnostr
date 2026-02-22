@@ -19,6 +19,415 @@ By the end of this module, you will:
 - ✅ Handle security threats and abuse
 - ✅ Plan for high availability and disaster recovery
 
+## 📚 Relay Implementation NIPs Reference
+
+### Essential NIPs for Relay Operators
+
+| NIP | Title | Implementation | Priority | Purpose |
+|-----|-------|----------------|----------|---------|
+| [NIP-01](https://github.com/nostr-protocol/nips/blob/master/01.md) | Basic Protocol | Mandatory | **Critical** | Event structure, message types |
+| [NIP-11](https://github.com/nostr-protocol/nips/blob/master/11.md) | Relay Info Document | Mandatory | **Critical** | Relay metadata & capabilities |
+| [NIP-09](https://github.com/nostr-protocol/nips/blob/master/09.md) | Event Deletion | Optional | High | Handle deletion requests |
+| [NIP-13](https://github.com/nostr-protocol/nips/blob/master/13.md) | Proof of Work | Optional | High | Anti-spam PoW validation |
+| [NIP-42](https://github.com/nostr-protocol/nips/blob/master/42.md) | Authentication | Optional | High | Client AUTH (access control) |
+| [NIP-40](https://github.com/nostr-protocol/nips/blob/master/40.md) | Expiration | Optional | Medium | Expire events automatically |
+| [NIP-45](https://github.com/nostr-protocol/nips/blob/master/45.md) | Event Counts | Optional | Medium | COUNT query support |
+| [NIP-50](https://github.com/nostr-protocol/nips/blob/master/50.md) | Search | Optional | Medium | Full-text search capability |
+| [NIP-65](https://github.com/nostr-protocol/nips/blob/master/65.md) | Relay List Metadata | Recommended | Medium | User relay preferences |
+| [NIP-70](https://github.com/nostr-protocol/nips/blob/master/70.md) | Protected Events | Optional | Low | Author-only republishing |
+
+### Relay Message Flow (NIP-01)
+
+```javascript
+// CLIENT TO RELAY MESSAGES
+const ClientMessages = {
+  // Publish an event
+  EVENT: ['EVENT', {
+    id: '...',
+    pubkey: '...',
+    created_at: 1234567890,
+    kind: 1,
+    tags: [],
+    content: 'Hello',
+    sig: '...'
+  }],
+  
+  // Subscribe to events
+  REQ: ['REQ', 'subscription-id', {
+    kinds: [1],
+    authors: ['pubkey...'],
+    since: 1234567890,
+    limit: 100
+  }],
+  
+  // Close subscription
+  CLOSE: ['CLOSE', 'subscription-id'],
+  
+  // Authenticate (NIP-42)
+  AUTH: ['AUTH', {
+    kind: 22242,
+    tags: [
+      ['relay', 'wss://relay.example.com'],
+      ['challenge', '...']
+    ]
+    // ...
+  }],
+  
+  // Request count (NIP-45)
+  COUNT: ['COUNT', 'count-id', {kinds: [1]}]
+};
+
+// RELAY TO CLIENT MESSAGES
+const RelayMessages = {
+  // Send event to subscriber
+  EVENT: ['EVENT', 'subscription-id', event],
+  
+  // Acknowledge event receipt
+  OK: ['OK', 'event-id', true, ''],
+  OK_REJECTED: ['OK', 'event-id', false, 'blocked: spam detected'],
+  
+  // End of stored events
+  EOSE: ['EOSE', 'subscription-id'],
+  
+  // Closed subscription
+  CLOSED: ['CLOSED', 'subscription-id', 'auth-required: must authenticate'],
+  
+  // Human-readable notice
+  NOTICE: ['NOTICE', 'This relay requires payment'],
+  
+  // Auth challenge (NIP-42)
+  AUTH: ['AUTH', 'random-challenge-string'],
+  
+  // Count response (NIP-45)
+  COUNT: ['COUNT', 'count-id', {count: 42}]
+};
+```
+
+### Relay Information Document (NIP-11)
+
+Your relay MUST serve a JSON document at `/.well-known/nostr.json`:
+
+```javascript
+// Example NIP-11 Document
+{
+  "name": "My Production Relay",
+  "description": "A high-performance Nostr relay",
+  "pubkey": "relay-admin-pubkey-hex",
+  "contact": "admin@example.com",
+  "supported_nips": [1, 2, 9, 11, 12, 13, 15, 16, 20, 22, 33, 40, 42, 45, 50],
+  "software": "https://github.com/myrelay/nostr-relay",
+  "version": "1.2.3",
+  "limitation": {
+    "max_message_length": 65536,
+    "max_subscriptions": 20,
+    "max_filters": 10,
+    "max_limit": 5000,
+    "max_subid_length": 64,
+    "max_event_tags": 2000,
+    "max_content_length": 65536,
+    "min_pow_difficulty": 0,
+    "auth_required": false,
+    "payment_required": true,
+    "restricted_writes": false
+  },
+  "retention": [
+    {
+      "kinds": [0, 3, 10000, 10001, 10002],
+      "time": null  // Keep replaceable events forever
+    },
+    {
+      "kinds": [1, 7],
+      "time": 3600  // Keep regular events for 1 hour
+    }
+  ],
+  "relay_countries": ["US", "CA"],
+  "language_tags": ["en", "en-US"],
+  "tags": ["bitcoin", "lightning", "freedom"],
+  "posting_policy": "https://example.com/policy",
+  "payments_url": "https://example.com/payments",
+  "fees": {
+    "admission": [{
+      "amount": 5000000,
+      "unit": "msats",
+      "period": 2592000  // 30 days
+    }],
+    "subscription": [{
+      "amount": 1000000,
+      "unit": "msats",
+      "period": 2592000
+    }],
+    "publication": [{
+      "kinds": [4],
+      "amount": 100,
+      "unit": "msats"
+    }]
+  }
+}
+```
+
+### Event Kind Handling
+
+```javascript
+// Relay storage policy based on event kind ranges (NIP-01)
+class EventKindHandler {
+  shouldStore(event) {
+    const kind = event.kind;
+    
+    // Regular events (stored permanently)
+    if ((kind >= 1 && kind < 10000) || 
+        (kind >= 4 && kind < 45) || 
+        kind === 1 || kind === 2) {
+      return {
+        store: true,
+        strategy: 'permanent'
+      };
+    }
+    
+    // Replaceable events (keep only latest)
+    if ((kind >= 10000 && kind < 20000) || 
+        kind === 0 || kind === 3) {
+      return {
+        store: true,
+        strategy: 'replaceable',
+        replaceKey: event.pubkey
+      };
+    }
+    
+    // Ephemeral events (never store)
+    if (kind >= 20000 && kind < 30000) {
+      return {
+        store: false,
+        strategy: 'ephemeral'
+      };
+    }
+    
+    // Parameterized replaceable (keep latest per d-tag)
+    if (kind >= 30000 && kind < 40000) {
+      const dTag = event.tags.find(t => t[0] === 'd')?.[1] || '';
+      return {
+        store: true,
+        strategy: 'parameterized-replaceable',
+        replaceKey: `${event.pubkey}:${kind}:${dTag}`
+      };
+    }
+    
+    return { store: true, strategy: 'permanent' };
+  }
+  
+  async handleEvent(event, db) {
+    const policy = this.shouldStore(event);
+    
+    if (!policy.store) {
+      // Just broadcast to active subscriptions
+      return { stored: false, broadcasted: true };
+    }
+    
+    switch (policy.strategy) {
+      case 'replaceable':
+        // Delete older events from same author with same kind
+        await db.query(
+          'DELETE FROM events WHERE pubkey = $1 AND kind = $2',
+          [event.pubkey, event.kind]
+        );
+        break;
+        
+      case 'parameterized-replaceable':
+        // Delete older events with same pubkey:kind:d-tag
+        const dTag = event.tags.find(t => t[0] === 'd')?.[1] || '';
+        await db.query(
+          'DELETE FROM events WHERE pubkey = $1 AND kind = $2 AND d_tag = $3',
+          [event.pubkey, event.kind, dTag]
+        );
+        break;
+    }
+    
+    // Store the new event
+    await db.storeEvent(event);
+    return { stored: true, broadcasted: true };
+  }
+}
+```
+
+### Authentication Flow (NIP-42)
+
+```javascript
+// Relay-side AUTH implementation
+class RelayAuth {
+  constructor() {
+    this.challenges = new Map();
+    this.authenticatedClients = new Map();
+  }
+  
+  // Send AUTH challenge to client
+  sendChallenge(ws, clientId) {
+    const challenge = crypto.randomBytes(32).toString('hex');
+    this.challenges.set(clientId, {
+      challenge,
+      timestamp: Date.now()
+    });
+    
+    ws.send(JSON.stringify(['AUTH', challenge]));
+    
+    // Challenge expires in 5 minutes
+    setTimeout(() => {
+      this.challenges.delete(clientId);
+    }, 300000);
+  }
+  
+  // Verify AUTH response
+  async verifyAuth(event, clientId) {
+    // Validate event kind
+    if (event.kind !== 22242) {
+      return { valid: false, reason: 'invalid kind' };
+    }
+    
+    // Check challenge tag
+    const challengeTag = event.tags.find(t => t[0] === 'challenge');
+    if (!challengeTag) {
+      return { valid: false, reason: 'missing challenge' };
+    }
+    
+    // Verify challenge matches
+    const stored = this.challenges.get(clientId);
+    if (!stored || stored.challenge !== challengeTag[1]) {
+      return { valid: false, reason: 'invalid challenge' };
+    }
+    
+    // Check relay tag
+    const relayTag = event.tags.find(t => t[0] === 'relay');
+    if (!relayTag || !this.isMyRelay(relayTag[1])) {
+      return { valid: false, reason: 'wrong relay' };
+    }
+    
+    // Check timestamp (within 10 minutes)
+    const now = Math.floor(Date.now() / 1000);
+    if (Math.abs(event.created_at - now) > 600) {
+      return { valid: false, reason: 'timestamp out of range' };
+    }
+    
+    // Verify signature
+    if (!await this.verifySignature(event)) {
+      return { valid: false, reason: 'invalid signature' };
+    }
+    
+    // Authentication successful
+    this.authenticatedClients.set(clientId, {
+      pubkey: event.pubkey,
+      authenticatedAt: Date.now()
+    });
+    
+    this.challenges.delete(clientId);
+    
+    return { valid: true, pubkey: event.pubkey };
+  }
+  
+  isAuthenticated(clientId) {
+    return this.authenticatedClients.has(clientId);
+  }
+  
+  getAuthenticatedPubkey(clientId) {
+    return this.authenticatedClients.get(clientId)?.pubkey;
+  }
+}
+```
+
+### Filter Validation (NIP-01)
+
+```javascript
+// Comprehensive filter validation for relay
+class FilterValidator {
+  constructor(config) {
+    this.config = {
+      maxFilterIds: 1000,
+      maxFilterAuthors: 1000,
+      maxFilterKinds: 20,
+      maxFilterTags: 100,
+      maxLimit: 5000,
+      ...config
+    };
+  }
+  
+  validate(filter) {
+    const errors = [];
+    
+    // Validate ids array
+    if (filter.ids) {
+      if (!Array.isArray(filter.ids)) {
+        errors.push('ids must be an array');
+      } else if (filter.ids.length > this.config.maxFilterIds) {
+        errors.push(`too many ids (max ${this.config.maxFilterIds})`);
+      } else if (!filter.ids.every(id => /^[0-9a-f]{64}$/i.test(id))) {
+        errors.push('invalid id format (must be 64-char hex)');
+      }
+    }
+    
+    // Validate authors array
+    if (filter.authors) {
+      if (!Array.isArray(filter.authors)) {
+        errors.push('authors must be an array');
+      } else if (filter.authors.length > this.config.maxFilterAuthors) {
+        errors.push(`too many authors (max ${this.config.maxFilterAuthors})`);
+      } else if (!filter.authors.every(pk => /^[0-9a-f]{64}$/i.test(pk))) {
+        errors.push('invalid pubkey format');
+      }
+    }
+    
+    // Validate kinds array
+    if (filter.kinds) {
+      if (!Array.isArray(filter.kinds)) {
+        errors.push('kinds must be an array');
+      } else if (filter.kinds.length > this.config.maxFilterKinds) {
+        errors.push(`too many kinds (max ${this.config.maxFilterKinds})`);
+      } else if (!filter.kinds.every(k => Number.isInteger(k) && k >= 0 && k <= 65535)) {
+        errors.push('invalid kind (must be 0-65535)');
+      }
+    }
+    
+    // Validate tag filters (#e, #p, etc.)
+    for (const [key, values] of Object.entries(filter)) {
+      if (key.startsWith('#')) {
+        const tagName = key.slice(1);
+        if (!/^[a-zA-Z]$/.test(tagName)) {
+          errors.push(`invalid tag filter: ${key}`);
+        }
+        if (!Array.isArray(values)) {
+          errors.push(`${key} must be an array`);
+        }
+        if (values.length > this.config.maxFilterTags) {
+          errors.push(`too many ${key} values (max ${this.config.maxFilterTags})`);
+        }
+      }
+    }
+    
+    // Validate timestamps
+    if (filter.since !== undefined && !Number.isInteger(filter.since)) {
+      errors.push('since must be an integer');
+    }
+    if (filter.until !== undefined && !Number.isInteger(filter.until)) {
+      errors.push('until must be an integer');
+    }
+    if (filter.since && filter.until && filter.since > filter.until) {
+      errors.push('since must be <= until');
+    }
+    
+    // Validate limit
+    if (filter.limit !== undefined) {
+      if (!Number.isInteger(filter.limit) || filter.limit < 0) {
+        errors.push('limit must be a positive integer');
+      }
+      if (filter.limit > this.config.maxLimit) {
+        errors.push(`limit too high (max ${this.config.maxLimit})`);
+      }
+    }
+    
+    return {
+      valid: errors.length === 0,
+      errors
+    };
+  }
+}
+```
+
 ## 7.1 Relay Architecture Fundamentals
 
 ### Relay Responsibilities

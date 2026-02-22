@@ -19,6 +19,215 @@ By the end of this module, you will:
 - ✅ Handle badges and achievements (NIP-58)
 - ✅ Integrate Zaps and Lightning (NIP-57)
 
+## 📚 NIP Reference Quick Guide
+
+### Core NIPs Covered in This Module
+
+| NIP | Title | Event Kinds | Status | Use Case |
+|-----|-------|-------------|--------|----------|
+| [NIP-01](https://github.com/nostr-protocol/nips/blob/master/01.md) | Basic Protocol | 0, 1, 2, 3, 4, 5, 6, 7 | Mandatory | Event structure, kinds, filters |
+| [NIP-02](https://github.com/nostr-protocol/nips/blob/master/02.md) | Follow List | 3 | Recommended | Contact list management |
+| [NIP-04](https://github.com/nostr-protocol/nips/blob/master/04.md) | Encrypted DM | 4 | Deprecated | Old DM encryption (use NIP-17) |
+| [NIP-05](https://github.com/nostr-protocol/nips/blob/master/05.md) | DNS Identifiers | - | Optional | username@domain verification |
+| [NIP-09](https://github.com/nostr-protocol/nips/blob/master/09.md) | Event Deletion | 5 | Optional | Request event deletion |
+| [NIP-10](https://github.com/nostr-protocol/nips/blob/master/10.md) | Text Notes | 1 | Recommended | Reply/thread handling |
+| [NIP-11](https://github.com/nostr-protocol/nips/blob/master/11.md) | Relay Info | - | Recommended | Relay metadata document |
+| [NIP-13](https://github.com/nostr-protocol/nips/blob/master/13.md) | Proof of Work | - | Optional | Anti-spam PoW |
+| [NIP-14](https://github.com/nostr-protocol/nips/blob/master/14.md) | Subject Tag | - | Optional | Email-like subjects |
+| [NIP-17](https://github.com/nostr-protocol/nips/blob/master/17.md) | Private DMs | 14 | Recommended | Modern encrypted messaging |
+| [NIP-18](https://github.com/nostr-protocol/nips/blob/master/18.md) | Reposts | 6, 16 | Optional | Boost/repost events |
+| [NIP-19](https://github.com/nostr-protocol/nips/blob/master/19.md) | bech32 Entities | - | Recommended | npub, note, nevent encoding |
+| [NIP-21](https://github.com/nostr-protocol/nips/blob/master/21.md) | nostr: URI | - | Optional | nostr: URL scheme |
+| [NIP-23](https://github.com/nostr-protocol/nips/blob/master/23.md) | Long-form | 30023 | Recommended | Articles, blog posts |
+| [NIP-25](https://github.com/nostr-protocol/nips/blob/master/25.md) | Reactions | 7 | Recommended | Likes, emoji reactions |
+| [NIP-26](https://github.com/nostr-protocol/nips/blob/master/26.md) | Event Delegation | - | Optional | Delegate event signing |
+| [NIP-27](https://github.com/nostr-protocol/nips/blob/master/27.md) | Text References | - | Recommended | Mention formatting |
+| [NIP-28](https://github.com/nostr-protocol/nips/blob/master/28.md) | Public Chat | 40-44 | Optional | IRC-style channels |
+| [NIP-29](https://github.com/nostr-protocol/nips/blob/master/29.md) | Relay Groups | 9000-9030 | Optional | Private relay groups |
+| [NIP-31](https://github.com/nostr-protocol/nips/blob/master/31.md) | Unknown Events | - | Recommended | Graceful degradation |
+| [NIP-32](https://github.com/nostr-protocol/nips/blob/master/32.md) | Labeling | 1985 | Optional | Content classification |
+| [NIP-36](https://github.com/nostr-protocol/nips/blob/master/36.md) | Sensitive Content | - | Optional | Content warnings |
+| [NIP-38](https://github.com/nostr-protocol/nips/blob/master/38.md) | User Statuses | 30315 | Optional | Status updates |
+| [NIP-39](https://github.com/nostr-protocol/nips/blob/master/39.md) | External IDs | - | Optional | Link external identities |
+| [NIP-42](https://github.com/nostr-protocol/nips/blob/master/42.md) | Auth | 22242 | Optional | Client authentication |
+| [NIP-44](https://github.com/nostr-protocol/nips/blob/master/44.md) | Encrypted Payload | - | Recommended | Modern encryption (versioned) |
+| [NIP-45](https://github.com/nostr-protocol/nips/blob/master/45.md) | Event Counts | - | Optional | COUNT queries |
+| [NIP-50](https://github.com/nostr-protocol/nips/blob/master/50.md) | Search | - | Optional | Full-text search |
+| [NIP-51](https://github.com/nostr-protocol/nips/blob/master/51.md) | Lists | 10000-10030, 30000-30030 | Recommended | Mutes, pins, bookmarks |
+| [NIP-56](https://github.com/nostr-protocol/nips/blob/master/56.md) | Reporting | 1984 | Optional | Report spam/illegal content |
+| [NIP-57](https://github.com/nostr-protocol/nips/blob/master/57.md) | Zaps | 9734, 9735 | Recommended | Lightning tips |
+| [NIP-58](https://github.com/nostr-protocol/nips/blob/master/58.md) | Badges | 30009, 8 | Optional | Achievements, awards |
+| [NIP-59](https://github.com/nostr-protocol/nips/blob/master/59.md) | Gift Wrap | 1059 | Recommended | Metadata-hiding wrapper |
+| [NIP-65](https://github.com/nostr-protocol/nips/blob/master/65.md) | Relay List | 10002 | Recommended | User relay preferences |
+
+### Event Kind Categories Reference
+
+Understanding how event kinds are organized in the Nostr protocol:
+
+```javascript
+// Event Kind Categories (NIP-01)
+const KIND_RANGES = {
+  // Regular Events (stored permanently)
+  REGULAR: {
+    range: [1, 10000],
+    behavior: 'Stored by all relays',
+    examples: [1, 6, 7, 40, 1984]
+  },
+  
+  // Replaceable Events (only latest kept)
+  REPLACEABLE: {
+    range: [10000, 20000],
+    behavior: 'Only newest per pubkey kept',
+    examples: [0, 3, 10000, 10002]
+  },
+  
+  // Ephemeral Events (not stored)
+  EPHEMERAL: {
+    range: [20000, 30000],
+    behavior: 'Never stored, realtime only',
+    examples: [20000, 22242]
+  },
+  
+  // Parameterized Replaceable (latest per d-tag)
+  PARAMETERIZED: {
+    range: [30000, 40000],
+    behavior: 'Only newest per pubkey+d-tag',
+    examples: [30000, 30001, 30023, 30315]
+  }
+};
+
+// Complete Event Kind Map (from nostr protocol spec)
+const EVENT_KINDS = {
+  // Metadata & Profiles
+  0: 'User Metadata (NIP-01)',
+  3: 'Contacts/Follow List (NIP-02)',
+  
+  // Notes & Content
+  1: 'Short Text Note (NIP-01)',
+  6: 'Repost (NIP-18)',
+  16: 'Generic Repost (NIP-18)',
+  30023: 'Long-form Article (NIP-23)',
+  30024: 'Draft Article (NIP-23)',
+  
+  // Reactions & Engagement
+  7: 'Reaction (NIP-25)',
+  9734: 'Zap Request (NIP-57)',
+  9735: 'Zap Receipt (NIP-57)',
+  
+  // Direct Messages
+  4: 'Encrypted DM (NIP-04, deprecated)',
+  14: 'Private DM (NIP-17)',
+  1059: 'Gift Wrap (NIP-59)',
+  
+  // Moderation
+  5: 'Event Deletion Request (NIP-09)',
+  1984: 'Reporting (NIP-56)',
+  
+  // Lists & Collections (NIP-51)
+  10000: 'Mute List',
+  10001: 'Pin List',
+  10002: 'Relay List (NIP-65)',
+  10003: 'Bookmark List',
+  10004: 'Communities List',
+  10005: 'Public Chats List',
+  10006: 'Blocked Relays',
+  10007: 'Search Relays',
+  10015: 'Interests List',
+  10030: 'User Emoji List',
+  
+  30000: 'Follow Sets',
+  30001: 'Generic Lists (deprecated)',
+  30002: 'Relay Sets',
+  30003: 'Bookmark Sets',
+  30004: 'Curation Sets',
+  30008: 'Profile Badges (NIP-58)',
+  30009: 'Badge Definition (NIP-58)',
+  30015: 'Interest Sets',
+  30030: 'Emoji Sets',
+  
+  // Community & Channels (NIP-28)
+  40: 'Channel Creation',
+  41: 'Channel Metadata',
+  42: 'Channel Message',
+  43: 'Channel Hide Message',
+  44: 'Channel Mute User',
+  
+  // Authentication & Security
+  22242: 'Client Authentication (NIP-42)',
+  
+  // Status & Presence
+  30315: 'User Status (NIP-38)',
+  
+  // Marketplace (NIP-15)
+  30017: 'Create/Update Stall',
+  30018: 'Create/Update Product',
+  
+  // Other
+  8: 'Badge Award (NIP-58)',
+  1111: 'Comments (NIP-22)',
+  1985: 'Label (NIP-32)'
+};
+```
+
+### Message Types Reference
+
+Client-to-Relay and Relay-to-Client messages:
+
+```javascript
+// Client to Relay Messages
+const CLIENT_MESSAGES = {
+  EVENT: ['EVENT', event],        // Publish an event
+  REQ: ['REQ', subId, ...filters], // Request events & subscribe
+  CLOSE: ['CLOSE', subId],        // End subscription
+  AUTH: ['AUTH', event],          // Authentication (NIP-42)
+  COUNT: ['COUNT', subId, filter] // Request counts (NIP-45)
+};
+
+// Relay to Client Messages
+const RELAY_MESSAGES = {
+  EVENT: ['EVENT', subId, event],     // Send requested event
+  OK: ['OK', eventId, accepted, msg], // Accept/reject EVENT
+  EOSE: ['EOSE', subId],             // End of stored events
+  CLOSED: ['CLOSED', subId, msg],     // Subscription ended
+  NOTICE: ['NOTICE', humanMsg],       // Human-readable message
+  AUTH: ['AUTH', challenge],          // Request auth (NIP-42)
+  COUNT: ['COUNT', subId, {count}]    // Send count (NIP-45)
+};
+```
+
+### Common Tags Reference
+
+Standard tags used across event kinds:
+
+| Tag | Description | Values | NIPs |
+|-----|-------------|--------|------|
+| `e` | Event reference | `[eventId, relay, marker, pubkey]` | 01, 10 |
+| `p` | Pubkey reference | `[pubkey, relay, petname]` | 01, 02 |
+| `a` | Parameterized event ref | `[kind:pubkey:d-tag, relay]` | 01 |
+| `d` | Identifier/d-tag | `[string]` | 01 (addressable) |
+| `t` | Hashtag | `[topic]` | 24 |
+| `r` | URL reference | `[url]` | 24, 25 |
+| `q` | Quote reference | `[eventId, relay, pubkey]` | 18 |
+| `amount` | Millisats | `[msats]` | 57 (zaps) |
+| `bolt11` | Lightning invoice | `[invoice]` | 57 |
+| `lnurl` | LNURL | `[lnurl]` | 57 |
+| `relays` | Relay list | `[url1, url2, ...]` | 57 |
+| `client` | Client name | `[name, url]` | 89 |
+| `title` | Title | `[text]` | 23 |
+| `image` | Image URL | `[url, dimensions]` | 23, 52 |
+| `summary` | Summary | `[text]` | 23 |
+| `published_at` | Publish time | `[timestamp]` | 23 |
+| `subject` | Subject line | `[text]` | 14, 17 |
+| `alt` | Alt description | `[text]` | 31 |
+| `expiration` | Expiration time | `[timestamp]` | 40 |
+| `content-warning` | Warning | `[reason]` | 36 |
+| `delegation` | Delegation token | `[delegator, conditions, token]` | 26 |
+| `proxy` | External ID | `[id, protocol]` | 48 |
+| `i` | External identity | `[platform:identity, proof]` | 39, 73 |
+| `k` | Kind number | `[number]` | 18, 25 |
+| `l` | Label | `[label, namespace]` | 32 |
+| `L` | Label namespace | `[namespace]` | 32 |
+
 ## 6.1 Event Kind Categories
 
 ### Event Structure (NIP-01)

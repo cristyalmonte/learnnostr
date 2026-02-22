@@ -150,6 +150,93 @@ Nostr uses three main message types between clients and relays:
 ["AUTH", "challenge"]
 ```
 
+### Filter Objects
+
+Filters are JSON objects used in `REQ` messages to specify which events you want to receive. Understanding filters is essential for efficient relay communication.
+
+#### Filter Properties
+
+| Property | Type | Description | Example |
+|----------|------|-------------|---------|
+| `ids` | array | Event IDs (prefix match) | `["abc123...", "def456..."]` |
+| `authors` | array | Pubkey prefixes | `["npub1abc..."]` |
+| `kinds` | array | Event kind numbers | `[0, 1, 3]` |
+| `#e` | array | Referenced event IDs | `["event_id"]` |
+| `#p` | array | Referenced pubkeys | `["pubkey"]` |
+| `#t` | array | Hashtags | `["bitcoin", "nostr"]` |
+| `since` | integer | Unix timestamp (inclusive) | `1640000000` |
+| `until` | integer | Unix timestamp (inclusive) | `1650000000` |
+| `limit` | integer | Max events to return | `100` |
+
+#### Filter Examples
+
+```javascript
+// Get all text notes from a specific user
+const userNotesFilter = {
+  authors: ["user_pubkey"],
+  kinds: [1],
+  limit: 50
+};
+
+// Get recent global feed
+const globalFeedFilter = {
+  kinds: [1],
+  since: Math.floor(Date.now() / 1000) - 3600, // Last hour
+  limit: 100
+};
+
+// Get replies to a specific note
+const repliesFilter = {
+  kinds: [1],
+  "#e": ["note_event_id"]
+};
+
+// Get user profile and metadata
+const profileFilter = {
+  authors: ["user_pubkey"],
+  kinds: [0, 3] // Metadata and contacts
+};
+
+// Get events with specific hashtags
+const hashtagFilter = {
+  kinds: [1],
+  "#t": ["bitcoin", "nostr"],
+  limit: 20
+};
+
+// Combine multiple conditions
+const complexFilter = {
+  authors: ["user1", "user2", "user3"],
+  kinds: [1, 6, 7], // Notes, reposts, reactions
+  since: 1640000000,
+  limit: 100
+};
+```
+
+#### Multiple Filters in One Subscription
+
+You can pass multiple filter objects in a single `REQ` - results will be the union:
+
+```javascript
+// Subscribe to notes from followed users AND mentions of you
+relay.send([
+  "REQ",
+  "combined_feed",
+  // Filter 1: Notes from people I follow
+  {
+    authors: followedPubkeys,
+    kinds: [1],
+    limit: 50
+  },
+  // Filter 2: Mentions of me
+  {
+    "#p": [myPubkey],
+    kinds: [1],
+    limit: 20
+  }
+]);
+```
+
 ### Communication Flow
 
 ```mermaid
@@ -518,6 +605,142 @@ class SpamFilterRule {
   }
 }
 ```
+
+### Relay Authentication (NIP-42)
+
+Some relays require authentication to access certain features or content. NIP-42 defines how clients authenticate with relays.
+
+#### Authentication Flow
+
+```mermaid
+sequenceDiagram
+    participant C as Client
+    participant R as Relay
+    
+    C->>R: Connect WebSocket
+    R->>C: ["AUTH", "<challenge>"]
+    Note over C: Create kind 22242 event<br/>with challenge
+    C->>R: ["AUTH", {signed_event}]
+    R->>C: ["OK", event_id, true, ""]
+    Note over C,R: Now authenticated
+```
+
+#### Authentication Event (Kind 22242)
+
+```javascript
+async function authenticateToRelay(relay, challenge, privateKey) {
+  const authEvent = {
+    kind: 22242,
+    created_at: Math.floor(Date.now() / 1000),
+    tags: [
+      ["relay", relay.url],
+      ["challenge", challenge]
+    ],
+    content: ""
+  };
+  
+  const signedEvent = finishEvent(authEvent, privateKey);
+  
+  relay.send(["AUTH", signedEvent]);
+  
+  return new Promise((resolve, reject) => {
+    const timeout = setTimeout(() => {
+      reject(new Error("Authentication timeout"));
+    }, 5000);
+    
+    relay.once("message", (msg) => {
+      const [type, eventId, success, message] = JSON.parse(msg.data);
+      clearTimeout(timeout);
+      
+      if (type === "OK" && success) {
+        resolve({ authenticated: true });
+      } else {
+        reject(new Error(`Authentication failed: ${message}`));
+      }
+    });
+  });
+}
+```
+
+#### Handling AUTH Challenges
+
+```javascript
+class AuthenticatedRelayConnection {
+  constructor(url, privateKey) {
+    this.url = url;
+    this.privateKey = privateKey;
+    this.authenticated = false;
+    this.ws = null;
+  }
+  
+  async connect() {
+    this.ws = new WebSocket(this.url);
+    
+    return new Promise((resolve, reject) => {
+      this.ws.onopen = () => {
+        resolve();
+      };
+      
+      this.ws.onerror = (error) => {
+        reject(error);
+      };
+      
+      this.ws.onmessage = async (event) => {
+        const message = JSON.parse(event.data);
+        
+        if (message[0] === "AUTH") {
+          const challenge = message[1];
+          await this.handleAuthChallenge(challenge);
+        }
+      };
+    });
+  }
+  
+  async handleAuthChallenge(challenge) {
+    const authEvent = {
+      kind: 22242,
+      created_at: Math.floor(Date.now() / 1000),
+      tags: [
+        ["relay", this.url],
+        ["challenge", challenge]
+      ],
+      content: ""
+    };
+    
+    const signedEvent = finishEvent(authEvent, this.privateKey);
+    this.ws.send(JSON.stringify(["AUTH", signedEvent]));
+    this.authenticated = true;
+  }
+  
+  send(message) {
+    if (this.ws.readyState === WebSocket.OPEN) {
+      this.ws.send(JSON.stringify(message));
+    } else {
+      throw new Error("WebSocket not connected");
+    }
+  }
+}
+
+// Usage
+const authedRelay = new AuthenticatedRelayConnection(
+  'wss://private-relay.com',
+  privateKey
+);
+
+await authedRelay.connect();
+// Relay will send AUTH challenge, client auto-responds
+// Now you can use the relay
+authedRelay.send(["REQ", "sub1", { kinds: [1], limit: 10 }]);
+```
+
+#### When Authentication is Required
+
+Relays may require authentication for:
+- **Private content** - Access to restricted events
+- **Write permissions** - Publishing events
+- **Rate limit increases** - Higher limits for authenticated users
+- **Premium features** - Special capabilities
+- **Analytics** - Track authenticated user activity
 
 ## 4.5 Network Topology
 

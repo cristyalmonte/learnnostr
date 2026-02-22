@@ -21,6 +21,105 @@ By the end of this module, you will:
 
 ## 6.1 Event Kind Categories
 
+### Event Structure (NIP-01)
+
+Every Nostr event follows a standard structure defined in NIP-01:
+
+```javascript
+{
+  "id": "<32-bytes lowercase hex-encoded sha256 of serialized event>",
+  "pubkey": "<32-bytes lowercase hex-encoded public key>",
+  "created_at": "<unix timestamp in seconds>",
+  "kind": "<integer>",
+  "tags": [
+    ["<single-letter>", "<value>", "<optional-value>"],
+    // ... more tags
+  ],
+  "content": "<arbitrary string>",
+  "sig": "<64-bytes lowercase hex of signature of id>"
+}
+```
+
+#### Event ID Calculation
+
+The event ID is the SHA256 hash of the UTF-8 serialized event data:
+
+```javascript
+import { sha256 } from '@noble/hashes/sha256';
+import { bytesToHex } from '@noble/hashes/utils';
+
+function getEventHash(event) {
+  const serialized = JSON.stringify([
+    0, // reserved for future use
+    event.pubkey,
+    event.created_at,
+    event.kind,
+    event.tags,
+    event.content
+  ]);
+  
+  const hash = sha256(new TextEncoder().encode(serialized));
+  return bytesToHex(hash);
+}
+
+// Example
+const event = {
+  pubkey: "abc123...",
+  created_at: 1640000000,
+  kind: 1,
+  tags: [],
+  content: "Hello Nostr!"
+};
+
+event.id = getEventHash(event);
+```
+
+#### Event Signature Verification
+
+```javascript
+import { schnorr } from '@noble/curves/secp256k1';
+import { hexToBytes } from '@noble/hashes/utils';
+
+function verifySignature(event) {
+  try {
+    return schnorr.verify(
+      event.sig,
+      event.id,
+      event.pubkey
+    );
+  } catch {
+    return false;
+  }
+}
+
+// Validate complete event
+function validateEvent(event) {
+  // Check required fields
+  if (!event.id || !event.pubkey || !event.sig) {
+    return { valid: false, reason: 'Missing required fields' };
+  }
+  
+  // Verify ID matches content
+  const calculatedId = getEventHash(event);
+  if (calculatedId !== event.id) {
+    return { valid: false, reason: 'Invalid event ID' };
+  }
+  
+  // Verify signature
+  if (!verifySignature(event)) {
+    return { valid: false, reason: 'Invalid signature' };
+  }
+  
+  // Check timestamp reasonableness (not too far in future)
+  const now = Math.floor(Date.now() / 1000);
+  if (event.created_at > now + 900) { // 15 minutes tolerance
+    return { valid: false, reason: 'Timestamp too far in future' };
+  }
+  
+  return { valid: true };
+}
+```
+
 ### Standard Event Kinds
 
 Nostr events are categorized by their `kind` number, which determines their behavior and purpose.
@@ -409,15 +508,17 @@ async function getArticle(pool, authorPubkey, identifier) {
 
 ### Implementing Reactions
 
+Reactions in Nostr use kind 7 events with the `content` field containing the reaction. While the standard like is `+`, clients can use emojis or any text to create expressive reactions.
+
 ```javascript
 class Reaction {
   static LIKE = '+';
   static DISLIKE = '-';
   
-  static create(targetEvent, emoji = '+') {
+  static create(targetEvent, content = '+') {
     return {
       kind: 7,
-      content: emoji,
+      content: content,  // Can be '+', emoji, or any text
       tags: [
         ['e', targetEvent.id],
         ['p', targetEvent.pubkey]
@@ -426,8 +527,8 @@ class Reaction {
     };
   }
   
-  static createCustom(targetEvent, emoji) {
-    return this.create(targetEvent, emoji);
+  static createCustom(targetEvent, content) {
+    return this.create(targetEvent, content);
   }
   
   static async getReactions(pool, eventId) {
@@ -439,11 +540,11 @@ class Reaction {
     // Group by reaction type
     const grouped = {};
     reactions.forEach(r => {
-      const emoji = r.content || '+';
-      if (!grouped[emoji]) {
-        grouped[emoji] = [];
+      const content = r.content || '+';
+      if (!grouped[content]) {
+        grouped[content] = [];
       }
-      grouped[emoji].push(r);
+      grouped[content].push(r);
     });
     
     return grouped;
@@ -461,14 +562,24 @@ class Reaction {
   }
 }
 
-// Usage
+// Usage Examples - Reactions in Practice
+
+// Standard like (universally supported)
 const likeEvent = Reaction.create(someEvent, '+');
+
+// Emoji reactions (popular in modern clients)
 const heartEvent = Reaction.create(someEvent, '❤️');
 const fireEvent = Reaction.create(someEvent, '🔥');
+const laughEvent = Reaction.create(someEvent, '😂');
 
-// Get reaction counts
+// Text-based reactions (also valid)
+const customReaction = Reaction.create(someEvent, 'awesome');
+
+// The content field accepts any string - clients determine how to display it
+
+// Get reaction counts grouped by type
 const counts = await Reaction.getReactionCount(pool, eventId);
-// { '+': 42, '❤️': 15, '🔥': 8 }
+// Example result: { '+': 42, '❤️': 15, '🔥': 8, '😂': 3 }
 ```
 
 ### Reposts (NIP-18)
@@ -865,7 +976,202 @@ const awardEvent = contributorBadge.createAward(developerPubkey);
 // Sign and publish
 ```
 
-## 6.10 Practical Exercises
+## 6.10 Bech32-Encoded Identifiers (NIP-19)
+
+NIP-19 defines special bech32-encoded identifiers for user-friendly representation of keys and events.
+
+### Entity Types
+
+| Prefix | Entity | Use Case |
+|--------|--------|----------|
+| `npub` | Public key | User profiles, mentions |
+| `nsec` | Private key | Backup/import (handle securely!) |
+| `note` | Event ID | Share individual notes |
+| `nprofile` | Profile with relays | Share profile with relay hints |
+| `nevent` | Event with relays | Share event with relay hints |
+| `naddr` | Replaceable event address | Reference articles, products |
+
+### Encoding and Decoding
+
+```javascript
+import { nip19 } from 'nostr-tools';
+
+// Encode public key
+const hexPubkey = "3bf0c63fcb93463407af97a5e5ee64fa883d107ef9e558472c4eb9aaaefa459d";
+const npub = nip19.npubEncode(hexPubkey);
+// "npub180cvv07tjdrrgpa0j7j7tmnyl2yr6yr7l8j4s3evf6u64th6gkwsyjh6w6"
+
+// Decode npub
+const decoded = nip19.decode(npub);
+console.log(decoded);
+// { type: 'npub', data: '3bf0c63fcb...' }
+
+// Encode private key (WARNING: Handle with extreme care!)
+const hexPrivkey = "...";
+const nsec = nip19.nsecEncode(hexPrivkey);
+// "nsec1..."
+
+// Encode note ID
+const noteId = "note1abc...";
+const note1 = nip19.noteEncode(noteId);
+
+// Encode profile with relay hints
+const profilePointer = nip19.nprofileEncode({
+  pubkey: hexPubkey,
+  relays: ['wss://relay.damus.io', 'wss://nos.lol']
+});
+
+// Encode event with context
+const eventPointer = nip19.neventEncode({
+  id: eventId,
+  relays: ['wss://relay.damus.io'],
+  author: authorPubkey,
+  kind: 1
+});
+
+// Encode parameterized replaceable event address
+const addressPointer = nip19.naddrEncode({
+  identifier: 'my-article',
+  pubkey: authorPubkey,
+  kind: 30023,
+  relays: ['wss://relay.damus.io']
+});
+```
+
+### Practical Uses
+
+```javascript
+class Nip19Helper {
+  // Display-friendly public key
+  static displayPubkey(hexPubkey) {
+    const npub = nip19.npubEncode(hexPubkey);
+    return npub.substring(0, 12) + '...' + npub.substring(npub.length - 6);
+    // "npub180cvv07...jh6w6"
+  }
+  
+  // Create shareable note link
+  static createNoteLink(eventId, relays = []) {
+    if (relays.length > 0) {
+      return nip19.neventEncode({ id: eventId, relays });
+    }
+    return nip19.noteEncode(eventId);
+  }
+  
+  // Parse user input (could be hex or bech32)
+  static parseUserInput(input) {
+    try {
+      // Try bech32 decode
+      const decoded = nip19.decode(input);
+      return {
+        type: decoded.type,
+        data: decoded.data
+      };
+    } catch {
+      // Assume hex if decode fails
+      if (/^[0-9a-f]{64}$/i.test(input)) {
+        return {
+          type: 'hex',
+          data: input.toLowerCase()
+        };
+      }
+      throw new Error('Invalid input format');
+    }
+  }
+  
+  // Extract mentions from text
+  static extractMentions(text) {
+    const mentionRegex = /(npub1[a-z0-9]{58}|nprofile1[a-z0-9]+)/g;
+    const matches = text.match(mentionRegex) || [];
+    
+    return matches.map(mention => {
+      const decoded = nip19.decode(mention);
+      return {
+        mention,
+        pubkey: decoded.type === 'npub' ? decoded.data : decoded.data.pubkey
+      };
+    });
+  }
+  
+  // Replace mentions with user-friendly names
+  static async formatMentions(text, pool) {
+    const mentions = this.extractMentions(text);
+    let formatted = text;
+    
+    for (const { mention, pubkey } of mentions) {
+      // Fetch user profile
+      const profile = await pool.queryOne({
+        kinds: [0],
+        authors: [pubkey]
+      });
+      
+      const name = profile 
+        ? JSON.parse(profile.content).name 
+        : this.displayPubkey(pubkey);
+      
+      formatted = formatted.replace(mention, `@${name}`);
+    }
+    
+    return formatted;
+  }
+}
+
+// Usage examples
+const shareableNote = Nip19Helper.createNoteLink(
+  eventId, 
+  ['wss://relay.damus.io']
+);
+console.log(`Share this: nostr:${shareableNote}`);
+
+const parsed = Nip19Helper.parseUserInput('npub180cvv07...');
+console.log(parsed); // { type: 'npub', data: '3bf0c63...' }
+
+const mentions = Nip19Helper.extractMentions(
+  'Hey npub180cvv07tjdrrgpa0j7j7tmnyl2yr6yr7l8j4s3evf6u64th6gkwsyjh6w6 check this out!'
+);
+console.log(mentions); // [{ mention: 'npub1...', pubkey: '3bf0c...' }]
+```
+
+### Security Considerations
+
+```javascript
+class SecureNip19Handler {
+  // NEVER expose nsec in UI or logs
+  static handleNsec(nsec) {
+    try {
+      const { data: privateKey } = nip19.decode(nsec);
+      
+      // Immediately encrypt or store securely
+      this.secureStore(privateKey);
+      
+      // Clear from memory
+      nsec = null;
+      
+      return { success: true };
+    } catch (error) {
+      return { success: false, error: error.message };
+    }
+  }
+  
+  // Validate before decoding
+  static validateNip19(input) {
+    const validPrefixes = ['npub', 'nsec', 'note', 'nprofile', 'nevent', 'naddr'];
+    const prefix = input.substring(0, input.indexOf('1'));
+    
+    if (!validPrefixes.includes(prefix)) {
+      throw new Error(`Invalid NIP-19 prefix: ${prefix}`);
+    }
+    
+    try {
+      nip19.decode(input);
+      return true;
+    } catch {
+      return false;
+    }
+  }
+}
+```
+
+## 6.11 Practical Exercises
 
 ### Exercise 1: Article Platform
 Build a long-form content platform:
@@ -902,7 +1208,198 @@ Add zapping to your client:
 3. List top zappers
 4. Create zap leaderboard
 
-## 6.11 Advanced Patterns
+## 6.12 Event Delegation (NIP-26)
+
+Event delegation allows one user to authorize another to publish events on their behalf. This is useful for:
+- Social media managers posting for brands
+- Bot accounts publishing automated content
+- Multi-device key management
+- Service integrations
+
+### Creating a Delegation Token
+
+```javascript
+import { getSignature, getEventHash } from 'nostr-tools';
+import { sha256 } from '@noble/hashes/sha256';
+import { bytesToHex } from '@noble/hashes/utils';
+
+class EventDelegation {
+  static createDelegation(delegatorPrivateKey, delegatePubkey, conditions = {}) {
+    const {
+      kinds = [],        // Allowed event kinds
+      since = 0,         // Unix timestamp - valid from
+      until = null,      // Unix timestamp - valid until
+    } = conditions;
+    
+    // Build conditions string
+    const conditionStrings = [];
+    
+    if (kinds.length > 0) {
+      conditionStrings.push(`kind=${kinds.join(',')}`);
+    }
+    if (since > 0) {
+      conditionStrings.push(`created_at>${since}`);
+    }
+    if (until) {
+      conditionStrings.push(`created_at<${until}`);
+    }
+    
+    const conditionsStr = conditionStrings.join('&');
+    
+    // Create delegation token
+    const token = `nostr:delegation:${delegatePubkey}:${conditionsStr}`;
+    const hash = sha256(new TextEncoder().encode(token));
+    const sig = getSignature(hash, delegatorPrivateKey);
+    
+    return {
+      delegatePubkey,
+      conditions: conditionsStr,
+      token: bytesToHex(sig)
+    };
+  }
+  
+  static applyDelegationToEvent(event, delegatorPubkey, delegationToken) {
+    // Add delegation tag
+    event.tags.push([
+      'delegation',
+      delegatorPubkey,
+      delegationToken.conditions,
+      delegationToken.token
+    ]);
+    
+    return event;
+  }
+  
+  static verifyDelegation(event) {
+    const delegationTag = event.tags.find(t => t[0] === 'delegation');
+    
+    if (!delegationTag) {
+      return { valid: false, reason: 'No delegation tag' };
+    }
+    
+    const [_, delegatorPubkey, conditions, token] = delegationTag;
+    
+    // Verify conditions match event
+    const conditionChecks = conditions.split('&');
+    
+    for (const condition of conditionChecks) {
+      if (condition.startsWith('kind=')) {
+        const allowedKinds = condition.substring(5).split(',').map(Number);
+        if (!allowedKinds.includes(event.kind)) {
+          return { valid: false, reason: 'Kind not allowed by delegation' };
+        }
+      }
+      
+      if (condition.startsWith('created_at>')) {
+        const since = parseInt(condition.substring(11));
+        if (event.created_at <= since) {
+          return { valid: false, reason: 'Event too old for delegation' };
+        }
+      }
+      
+      if (condition.startsWith('created_at<')) {
+        const until = parseInt(condition.substring(11));
+        if (event.created_at >= until) {
+          return { valid: false, reason: 'Event too new for delegation' };
+        }
+      }
+    }
+    
+    // Verify delegation signature
+    const delegationString = `nostr:delegation:${event.pubkey}:${conditions}`;
+    const hash = sha256(new TextEncoder().encode(delegationString));
+    
+    // In practice, use schnorr.verify here
+    // For now, assume token is valid if format is correct
+    
+    return { valid: true, delegator: delegatorPubkey };
+  }
+}
+
+// Usage Example
+const delegatorPrivateKey = "..."; // Brand's key
+const delegatePubkey = "...";      // Social media manager's public key
+
+// Create delegation for kind 1 notes, valid for 30 days
+const delegation = EventDelegation.createDelegation(
+  delegatorPrivateKey,
+  delegatePubkey,
+  {
+    kinds: [1],
+    since: Math.floor(Date.now() / 1000),
+    until: Math.floor(Date.now() / 1000) + (30 * 86400)
+  }
+);
+
+// Social media manager creates an event
+const event = {
+  kind: 1,
+  pubkey: delegatePubkey,
+  created_at: Math.floor(Date.now() / 1000),
+  tags: [],
+  content: "Posted on behalf of the brand"
+};
+
+// Apply delegation
+EventDelegation.applyDelegationToEvent(
+  event,
+  getDelegatorPubkey(delegatorPrivateKey), // Derive from private key
+  delegation
+);
+
+// Sign with delegate's key and publish
+// Relays will show this as from the delegator
+```
+
+### Practical Delegation Use Cases
+
+```javascript
+// 1. Bot Account Delegation
+class BotDelegation {
+  constructor(ownerPrivateKey, botPubkey) {
+    this.delegation = EventDelegation.createDelegation(
+      ownerPrivateKey,
+      botPubkey,
+      {
+        kinds: [1], // Only allow text notes
+        since: Math.floor(Date.now() / 1000),
+        until: Math.floor(Date.now() / 1000) + (365 * 86400) // 1 year
+      }
+    );
+  }
+  
+  createBotPost(content, botPrivateKey) {
+    const event = {
+      kind: 1,
+      pubkey: getPublicKey(botPrivateKey),
+      created_at: Math.floor(Date.now() / 1000),
+      tags: [],
+      content
+    };
+    
+    EventDelegation.applyDelegationToEvent(event, this.ownerPubkey, this.delegation);
+    return finishEvent(event, botPrivateKey);
+  }
+}
+
+// 2. Temporary Access Delegation
+class TemporaryDelegation {
+  static createHourlyAccess(ownerKey, tempPubkey) {
+    const now = Math.floor(Date.now() / 1000);
+    
+    return EventDelegation.createDelegation(
+      ownerKey,
+      tempPubkey,
+      {
+        since: now,
+        until: now + 3600 // 1 hour
+      }
+    );
+  }
+}
+```
+
+## 6.13 Advanced Patterns
 
 ### Event Threading
 

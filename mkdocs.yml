@@ -151,10 +151,7 @@ nav:
 
 # Customization
 extra:
-  announcement: 💜 Join our Discord community to learn Nostr together, ask questions, and connect with other developers! <a href="https://discord.gg/BtkVKRkJ">Join Discord</a>
   social:
-    - icon: fontawesome/brands/discord
-      link: https://discord.gg/BtkVKRkJ
     - icon: fontawesome/brands/github
       link: https://github.com/cristyalmonte/learnnostr
       name: GitHub

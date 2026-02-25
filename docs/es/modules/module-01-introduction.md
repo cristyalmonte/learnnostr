@@ -152,7 +152,7 @@ Todo en Nostr es un **evento**:
 - [Sitio Web Oficial de Nostr](https://nostr.com/)
 - [NIPs (Propuestas de Implementación de Nostr)](https://github.com/nostr-protocol/nips)
 - [Awesome Nostr](https://github.com/aljazceru/awesome-nostr)
-- [Comunidad en Discord de LearnNostr](https://discord.gg/BtkVKRkJ)
+- [Repositorio GitHub de LearnNostr](https://github.com/cristyalmonte/learnnostr)
 
 ## 🎯 Evaluación del Módulo 1
 

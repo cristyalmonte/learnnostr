@@ -131,5 +131,5 @@ Complete all modules and projects to earn your Nostr Developer Certification (co
 
 ---
 
-!!! tip "Join Our Community"
-    Have questions? Join our [Discord](https://discord.gg/BtkVKRkJ) to connect with other learners and get help from experienced Nostr developers!
+!!! tip "Get Help"
+    Have questions? Check out the [Support page](../support.md) for resources and ways to connect with the Nostr community!

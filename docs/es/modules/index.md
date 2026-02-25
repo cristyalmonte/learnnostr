@@ -131,5 +131,5 @@ Completa todos los módulos y proyectos para obtener tu Certificación de Desarr
 
 ---
 
-!!! tip "Únete a Nuestra Comunidad"
-    ¿Tienes preguntas? Únete a nuestro [Discord](https://discord.gg/BtkVKRkJ) para conectarte con otros estudiantes y obtener ayuda de desarrolladores experimentados de Nostr!
+!!! tip "Obtén Ayuda"
+    ¿Tienes preguntas? Consulta la [página de Soporte](../support.md) para recursos y formas de conectarte con la comunidad Nostr!

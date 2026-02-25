@@ -93,6 +93,7 @@ plugins:
             Module 6 - Advanced NIPs: Módulo 6 - NIPs Avanzados
             Module 7 - Production Relays: Módulo 7 - Relés en Producción
             Module 8 - Scaling & Performance: Módulo 8 - Escalado y Rendimiento
+            Module 9 - Security & Privacy: Módulo 9 - Seguridad y Privacidad
             Getting Started: Comenzar
             What is Nostr?: ¿Qué es Nostr?
             Wallet Setup: Configuración de Billetera
@@ -128,6 +129,7 @@ nav:
     - Module 6 - Advanced NIPs: modules/module-06-advanced-nips.md
     - Module 7 - Production Relays: modules/module-07-production-relays.md
     - Module 8 - Scaling & Performance: modules/module-08-scaling-performance.md
+    - Module 9 - Security & Privacy: modules/module-09-security.md
   - Getting Started:
     - What is Nostr?: getting-started/what-is-nostr.md
     - Wallet Setup: getting-started/wallet-setup.md

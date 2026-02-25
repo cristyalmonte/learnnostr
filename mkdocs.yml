@@ -66,10 +66,9 @@ plugins:
       separator: '[\s\-,:!=\[\]()"/]+|(?!\b)(?=[A-Z][a-z])|\.(?!\d)|&[lg]t;'
   - i18n:
       docs_structure: folder
-      fallback_to_default: true
+      fallback_to_default: false
       reconfigure_material: true
       reconfigure_search: true
-      default_language: en
       languages:
         - locale: en
           default: true
@@ -84,14 +83,22 @@ plugins:
           site_description: "Una guía completa para entender y construir sobre el protocolo Nostr"
           nav_translations:
             Home: Inicio
+            Modules: Módulos
+            Overview: Descripción General
+            Module 1 - Introduction: Módulo 1 - Introducción
+            Module 2 - Keys & Identity: Módulo 2 - Claves e Identidad
+            Module 3 - Events & Messages: Módulo 3 - Eventos y Mensajes
+            Module 4 - Relays & Architecture: Módulo 4 - Relés y Arquitectura
+            Module 5 - Building Your Client: Módulo 5 - Construyendo Tu Cliente
+            Module 6 - Advanced NIPs: Módulo 6 - NIPs Avanzados
+            Module 7 - Production Relays: Módulo 7 - Relés en Producción
+            Module 8 - Scaling & Performance: Módulo 8 - Escalado y Rendimiento
             Getting Started: Comenzar
-            Core Concepts: Conceptos Centrales
-            Tutorials: Tutoriales
-            Support: Soporte
             What is Nostr?: ¿Qué es Nostr?
             Wallet Setup: Configuración de Billetera
             Nostr Tools: Herramientas de Nostr
             Relay Setup: Configuración de Relé
+            Core Concepts: Conceptos Centrales
             Clients: Clientes
             Events and Messages: Eventos y Mensajes
             Keys: Llaves
@@ -99,12 +106,46 @@ plugins:
             Nostr Fundamentals: Fundamentos de Nostr
             Relays: Relés
             Zaps: Zaps
+            Tutorials: Tutoriales
             Build a Simple Client: Construir un Cliente Simple
             Relay Communication: Comunicación con Relés
             Understanding Events: Entendiendo Eventos
+            Support: Soporte
   - git-revision-date-localized:
       type: date
       fallback_to_build_date: true
+
+# Navigation
+nav:
+  - Home: index.md
+  - Modules:
+    - Overview: modules/index.md
+    - Module 1 - Introduction: modules/module-01-introduction.md
+    - Module 2 - Keys & Identity: modules/module-02-keys-identity.md
+    - Module 3 - Events & Messages: modules/module-03-events-messages.md
+    - Module 4 - Relays & Architecture: modules/module-04-relays-architecture.md
+    - Module 5 - Building Your Client: modules/module-05-building-client.md
+    - Module 6 - Advanced NIPs: modules/module-06-advanced-nips.md
+    - Module 7 - Production Relays: modules/module-07-production-relays.md
+    - Module 8 - Scaling & Performance: modules/module-08-scaling-performance.md
+  - Getting Started:
+    - What is Nostr?: getting-started/what-is-nostr.md
+    - Wallet Setup: getting-started/wallet-setup.md
+    - Nostr Tools: getting-started/nostr-tools.md
+    - Relay Setup: getting-started/relay-setup.md
+  - Core Concepts:
+    - Clients: concepts/clients.md
+    - Events and Messages: concepts/events-and-messages.md
+    - Keys: concepts/keys.md
+    - NIPs: concepts/nips.md
+    - Nostr Fundamentals: concepts/nostr-fundamentals.md
+    - Relays: concepts/relays.md
+    - Zaps: concepts/zaps.md
+  - Tutorials:
+    - Build a Simple Client: tutorials/simple-client.md
+    - Relay Communication: tutorials/relay-communication.md
+    - Understanding Events: tutorials/understanding-events.md
+  - Support: support.md
 
 # Customization
 extra:
@@ -152,35 +193,3 @@ markdown_extensions:
   - pymdownx.emoji:
       emoji_index: !!python/name:material.extensions.emoji.twemoji
       emoji_generator: !!python/name:material.extensions.emoji.to_svg
-
-# Navigation
-nav:
-  - Home: index.md
-  - Modules:
-    - Overview: modules/index.md
-    - Module 1 - Introduction: modules/module-01-introduction.md
-    - Module 2 - Keys & Identity: modules/module-02-keys-identity.md
-    - Module 3 - Events & Messages: modules/module-03-events-messages.md
-    - Module 4 - Relays & Architecture: modules/module-04-relays-architecture.md
-    - Module 5 - Building Your Client: modules/module-05-building-client.md
-    - Module 6 - Advanced NIPs: modules/module-06-advanced-nips.md
-    - Module 7 - Production Relays: modules/module-07-production-relays.md
-    - Module 8 - Scaling & Performance: modules/module-08-scaling-performance.md
-  - Getting Started:
-    - What is Nostr?: getting-started/what-is-nostr.md
-    - Wallet Setup: getting-started/wallet-setup.md
-    - Nostr Tools: getting-started/nostr-tools.md
-    - Relay Setup: getting-started/relay-setup.md
-  - Core Concepts:
-    - Clients: concepts/clients.md
-    - Events and Messages: concepts/events-and-messages.md
-    - Keys: concepts/keys.md
-    - NIPs: concepts/nips.md
-    - Nostr Fundamentals: concepts/nostr-fundamentals.md
-    - Relays: concepts/relays.md
-    - Zaps: concepts/zaps.md
-  - Tutorials:
-    - Build a Simple Client: tutorials/simple-client.md
-    - Relay Communication: tutorials/relay-communication.md
-    - Understanding Events: tutorials/understanding-events.md
-  - Support: support.md

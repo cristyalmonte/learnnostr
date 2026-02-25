@@ -61,14 +61,14 @@ Crea una interfaz simple pero funcional:
     <body>
         <div class="container">
             <header>
-                <h1>🚀 Mi Cliente Nostr</h1>
+                <h1>Mi Cliente Nostr</h1>
                 <div class="connection-status" id="status">Desconectado</div>
             </header>
 
             <main>
                 <!-- Sección de Gestión de Llaves -->
                 <section class="key-section">
-                    <h2>🔑 Tu Identidad</h2>
+                    <h2>Tu Identidad</h2>
                     <div class="key-display">
                         <label>Llave Pública (npub):</label>
                         <input type="text" id="pubkey" readonly>
@@ -78,14 +78,14 @@ Crea una interfaz simple pero funcional:
 
                 <!-- Sección de Composición -->
                 <section class="compose-section">
-                    <h2>✍️ Escribir Nota</h2>
+                    <h2>Escribir Nota</h2>
                     <textarea id="note-content" placeholder="¿Qué tienes en mente?"></textarea>
                     <button id="publish-note">Publicar Nota</button>
                 </section>
 
                 <!-- Sección de Feed -->
                 <section class="feed-section">
-                    <h2>📰 Feed Global</h2>
+                    <h2>Feed Global</h2>
                     <div id="feed"></div>
                 </section>
             </main>

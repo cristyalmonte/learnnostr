@@ -237,14 +237,14 @@ Las suscripciones son el corazón de la comunicación en tiempo real en Nostr:
         // Verificar si es mención
         const menciones = event.tags.filter(tag => tag[0] === 'p')
         if (menciones.some(tag => tag[1] === miPubkey)) {
-            console.log('📢 Nueva mención:', event.content)
+            console.log('[MENTION] Nueva mención:', event.content)
         } else {
-            console.log('📝 Nueva nota:', event.content)
+            console.log('[NOTE] Nueva nota:', event.content)
         }
     }
 
     function manejarReaccion(event) {
-        const emoji = event.content || '👍'
+        const emoji = event.content || '+'
         console.log(`${emoji} Reacción recibida`)
     }
     ```
@@ -335,11 +335,11 @@ La publicación de eventos requiere manejo cuidadoso de errores y confirmaciones
             const pub = relay.publish(evento)
             
             pub.on('ok', () => {
-                console.log(`✅ Evento publicado exitosamente: ${evento.id}`)
+                console.log(`[OK] Evento publicado exitosamente: ${evento.id}`)
             })
             
             pub.on('failed', (reason) => {
-                console.error(`❌ Falló la publicación: ${reason}`)
+                console.error(`[ERROR] Falló la publicación: ${reason}`)
             })
             
             return evento
@@ -824,7 +824,7 @@ Aquí hay un ejemplo completo que combina todos los conceptos:
             await this.pool.inicializar()
             this.configurarSuscripciones(canales)
             
-            console.log('💬 Cliente de chat inicializado')
+            console.log('[CHAT] Cliente de chat inicializado')
         }
         
         configurarSuscripciones(canales) {
@@ -880,10 +880,10 @@ Aquí hay un ejemplo completo que combina todos los conceptos:
             try {
                 const resultados = await this.pool.publicarATodos(evento)
                 const exitosos = resultados.filter(r => r.éxito).length
-                console.log(`📤 Mensaje enviado a ${exitosos} relés`)
+                console.log(`[SENT] Mensaje enviado a ${exitosos} relés`)
                 return true
             } catch (error) {
-                console.error('❌ Error enviando mensaje:', error)
+                console.error('[ERROR] Error enviando mensaje:', error)
                 return false
             }
         }

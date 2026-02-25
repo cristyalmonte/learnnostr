@@ -61,14 +61,14 @@ Create a simple but functional interface:
     <body>
         <div class="container">
             <header>
-                <h1>🚀 My Nostr Client</h1>
+                <h1>My Nostr Client</h1>
                 <div class="connection-status" id="status">Disconnected</div>
             </header>
 
             <main>
                 <!-- Key Management Section -->
                 <section class="key-section">
-                    <h2>🔑 Your Identity</h2>
+                    <h2>Your Identity</h2>
                     <div class="key-display">
                         <label>Public Key (npub):</label>
                         <input type="text" id="pubkey" readonly>
@@ -78,14 +78,14 @@ Create a simple but functional interface:
 
                 <!-- Compose Section -->
                 <section class="compose-section">
-                    <h2>✍️ Compose Note</h2>
+                    <h2>Compose Note</h2>
                     <textarea id="note-content" placeholder="What's on your mind?"></textarea>
                     <button id="publish-note">Publish Note</button>
                 </section>
 
                 <!-- Feed Section -->
                 <section class="feed-section">
-                    <h2>📰 Global Feed</h2>
+                    <h2>Global Feed</h2>
                     <div id="feed"></div>
                 </section>
             </main>

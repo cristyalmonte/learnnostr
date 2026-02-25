@@ -403,7 +403,7 @@ Let's build a simple event creator and validator:
         name: "Alice",
         about: "Nostr developer"
     })
-    const reaction = creator.createReaction(someEvent, '🚀')
+    const reaction = creator.createReaction(someEvent, '+')
     ```
 
 === "Test It Out"

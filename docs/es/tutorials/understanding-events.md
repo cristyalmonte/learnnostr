@@ -453,7 +453,7 @@ Construyamos un creador y validador de eventos simple:
         about: "Desarrolladora Nostr",
         picture: "https://example.com/alice.jpg"
     })
-    const reaccion = creador.crearReaccion(algunEvento, '🚀')
+    const reaccion = creador.crearReaccion(algunEvento, '+')
     const articulo = creador.crearArticulo(
         "Mi Primer Artículo Nostr",
         "# Introducción\n\nEste es mi primer artículo...",
@@ -655,17 +655,17 @@ Construyamos un creador y validador de eventos simple:
     const resultado = validador.validarCompleto(eventoRecibido)
     if (resultado.valido) {
         if (!validador.esEventoDuplicado(eventoRecibido)) {
-            console.log('✅ Evento válido y único')
+            console.log('[OK] Evento válido y único')
             procesarEvento(eventoRecibido)
         } else {
-            console.log('⚠️ Evento duplicado ignorado')
+            console.log('[WARNING] Evento duplicado ignorado')
         }
     } else {
-        console.log('❌ Evento inválido:', resultado.errores)
+        console.log('[ERROR] Evento inválido:', resultado.errores)
     }
 
     if (resultado.advertencias.length > 0) {
-        console.log('⚠️ Advertencias:', resultado.advertencias)
+        console.log('[WARNING] Advertencias:', resultado.advertencias)
     }
     ```
 
@@ -734,24 +734,24 @@ Construyamos un creador y validador de eventos simple:
         </style>
     </head>
     <body>
-        <h1>🔧 Creador de Eventos Nostr</h1>
+        <h1>Creador de Eventos Nostr</h1>
         <div class="pubkey" id="pubkey-display"></div>
         
         <div class="section">
-            <h2>📝 Crear Nota de Texto</h2>
+            <h2>Crear Nota de Texto</h2>
             <textarea id="note-content" placeholder="¿Qué tienes en mente? Prueba usar #hashtags" rows="3"></textarea>
             <button id="create-note">Crear Nota</button>
         </div>
 
         <div class="section">
-            <h2>👤 Crear Perfil</h2>
+            <h2>Crear Perfil</h2>
             <input id="profile-name" placeholder="Tu nombre" />
             <textarea id="profile-about" placeholder="Acerca de ti" rows="2"></textarea>
             <button id="create-profile">Crear Perfil</button>
         </div>
 
         <div class="section">
-            <h2>📄 Evento Generado</h2>
+            <h2>Evento Generado</h2>
             <div id="event-id" style="margin-bottom: 10px; font-weight: bold;"></div>
             <pre id="output">Los eventos aparecerán aquí...</pre>
         </div>

@@ -1,5 +1,6 @@
 {
-  "buildCommand": "bash build.sh",
+  "installCommand": "pip3 install -r requirements.txt",
+  "buildCommand": "mkdocs build",
   "outputDirectory": "site",
   "trailingSlash": false,
   "redirects": [

@@ -1,0 +1,14 @@
+{
+  "name": "learnnostr",
+  "version": "1.0.0",
+  "description": "A comprehensive guide to understanding and building on the Nostr protocol",
+  "scripts": {
+    "build": "./build.sh"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cristyalmonte/learnnostr"
+  },
+  "author": "LearnNostr Team",
+  "license": "MIT"
+}

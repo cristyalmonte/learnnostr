@@ -32,11 +32,11 @@ theme:
     - content.code.annotate
     - content.tabs.link
     - content.tooltips
-    - navigation.instant
-    - navigation.instant.prefetch
+    # - navigation.instant  # Disabled: incompatible with language switcher
+    # - navigation.instant.prefetch  # Disabled: incompatible with language switcher
     - navigation.path
     - navigation.tabs.sticky
-    - navigation.tracking
+    # - navigation.tracking  # Disabled: requires navigation.instant
     - search.suggest
     - toc.follow
   palette:

@@ -97,7 +97,9 @@ Nuestros módulos están cuidadosamente estructurados para construir tu conocimi
 
     ---
 
-    Próximamente - Patrones de seguridad avanzados, modelado de amenazas y estrategias de endurecimiento.
+    Patrones de seguridad avanzados, modelado de amenazas, DM cifrados y endurecimiento. También: [escenarios para personas en riesgo](../getting-started/high-risk-users.md).
+
+    [:octicons-arrow-right-24: Comenzar Módulo 9](module-09-security.md)
 
 </div>
 

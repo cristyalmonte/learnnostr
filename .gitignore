@@ -41,4 +41,7 @@ node_modules/
 
 # Build artifacts
 dist/
-build/ 
+build/
+
+# Local HRF grant drafts (do not publish)
+grant-reports/ 

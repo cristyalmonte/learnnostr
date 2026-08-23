@@ -3,6 +3,8 @@ set -euo pipefail
 
 echo "==> Installing uv (standalone Python + pip)"
 export PATH="${HOME}/.local/bin:${PATH}"
+# Vercel’s filesystem cannot hardlink the uv cache; copy instead of warning.
+export UV_LINK_MODE=copy
 if ! command -v uv >/dev/null 2>&1; then
   curl -LsSf https://astral.sh/uv/install.sh | sh
 fi

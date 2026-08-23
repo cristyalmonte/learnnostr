@@ -116,6 +116,7 @@ plugins:
   - git-revision-date-localized:
       type: date
       fallback_to_build_date: true
+      enabled: !ENV [MKDOCS_ENABLE_GIT_REVISION_DATE, true]
 
 # Navigation
 nav:

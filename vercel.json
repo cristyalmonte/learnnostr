@@ -1,5 +1,6 @@
 {
   "framework": null,
+  "installCommand": "python3 -m pip --version || python3 -m ensurepip --user || true",
   "buildCommand": "chmod +x build.sh && ./build.sh",
   "outputDirectory": "site",
   "trailingSlash": false,

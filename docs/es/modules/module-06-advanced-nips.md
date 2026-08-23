@@ -1810,7 +1810,7 @@ Antes de completar este módulo, asegúrate de haber:
 
 [🎓 Curso Completado - Próximos Pasos →](#next-steps)
 
-## Próximos Pasos
+## Próximos Pasos {#next-steps}
 
 Ahora que has completado los 6 módulos, considera:
 

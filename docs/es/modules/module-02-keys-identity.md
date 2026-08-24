@@ -1,344 +1,419 @@
-# Módulo 2: Claves e Identidad
+# Módulo 2: Claves e identidad
 
-!!! info "Visión General del Módulo"
+!!! info "Visión general del módulo"
     **Duración**: 3-4 horas  
     **Nivel**: Principiante  
     **Prerrequisitos**: Módulo 1 completado  
-    **Objetivo**: Dominar la gestión de claves criptográficas y la identidad en Nostr
+    **Objetivo**: Dominar el sistema de identidad criptográfica de Nostr y la gestión de claves
 
-## 📋 Objetivos de Aprendizaje
+## 📋 Objetivos de aprendizaje
 
 Al final de este módulo, podrás:
 
-- ✅ Generar pares de claves públicas/privadas
-- ✅ Entender diferentes formatos de claves (hex, bech32)
-- ✅ Implementar almacenamiento seguro de claves
-- ✅ Usar extensiones de firma (NIP-07)
-- ✅ Gestionar múltiples identidades
-
-## 🔐 Criptografía de Curva Elíptica
-
-Nostr usa **secp256k1** (la misma curva que Bitcoin) para:
-
-- Generar pares de claves
-- Firmar eventos
-- Verificar firmas
-
-### Generación de Claves
-
-```javascript
-import { generatePrivateKey, getPublicKey } from 'nostr-tools'
-
-// Generar clave privada (32 bytes aleatorios)
-const privateKey = generatePrivateKey()
-
-// Derivar clave pública de la privada
-const publicKey = getPublicKey(privateKey)
-
-console.log('Privada:', privateKey)
-console.log('Pública:', publicKey)
-```
-
-## 🏷️ Formatos de Claves
-
-### Formato Hexadecimal (Predeterminado)
-
-```javascript
-// Clave privada (64 caracteres hex)
-const privHex = "3bf0c63fcb93463407af97a5e5ee64fa883d107ef9e558472c4eb9aaaefa459d"
-
-// Clave pública (64 caracteres hex)
-const pubHex = "7e7e9c42a91bfef19fa929e5fda1b72e0ebc1a4c1141673e2794234d86addf4e"
-```
-
-### Formato Bech32 (Amigable)
-
-Nostr usa codificación bech32 con prefijos:
-
-- `npub1...` - Clave pública (para compartir)
-- `nsec1...` - Clave privada (mantener secreta)
-
-```javascript
-import { nip19 } from 'nostr-tools'
-
-// Codificar a bech32
-const npub = nip19.npubEncode(publicKey)
-const nsec = nip19.nsecEncode(privateKey)
-
-console.log('npub:', npub)
-// npub1qyt8wn3lfkej38...
-
-console.log('nsec:', nsec)
-// nsec1xxx... ⚠️ NUNCA COMPARTIR
-
-// Decodificar de bech32
-const { type, data } = nip19.decode(npub)
-console.log(type) // 'npub'
-console.log(data) // clave pública hex
-```
-
-## 🔒 Almacenamiento Seguro de Claves
-
-### ❌ NUNCA Hagas Esto
-
-```javascript
-// ¡NO almacenes claves privadas en texto plano!
-localStorage.setItem('privateKey', nsec)
-
-// ¡NO las envíes por correo/chat!
-sendEmail(nsec)
-
-// ¡NO las guardes en GitHub!
-const PRIVATE_KEY = "nsec1..."
-```
-
-### ✅ Mejores Prácticas
-
-**1. Usar Extensiones de Navegador (NIP-07)**
-
-```javascript
-// El usuario mantiene claves en extensión segura
-if (window.nostr) {
-  const pubkey = await window.nostr.getPublicKey()
-  const signedEvent = await window.nostr.signEvent(event)
-}
-```
-
-**2. Gestores de Claves de Hardware**
-
-- Usar dispositivos de firma dedicados
-- Mantener claves fuera de línea
-- Requiere confirmación física
-
-**3. Cifrado de Aplicación**
-
-```javascript
-// Cifrar antes de almacenar
-import { encrypt, decrypt } from 'crypto-library'
-
-const encrypted = encrypt(privateKey, userPassword)
-localStorage.setItem('encryptedKey', encrypted)
-
-// Descifrar cuando sea necesario
-const privateKey = decrypt(encrypted, userPassword)
-```
-
-## 🌐 NIP-07: Extensión de Firma de Ventana
-
-### Extensiones Populares
-
-- **[nos2x](https://github.com/fiatjaf/nos2x)** - Chrome/Firefox
-- **[Alby](https://getalby.com/)** - Chrome/Firefox (con funciones Lightning)
-- **[Flamingo](https://www.flamingo.me/)** - Chrome
-
-### Integración
-
-```javascript
-class NostrClient {
-  async init() {
-    // Verificar disponibilidad de extensión
-    if (!window.nostr) {
-      alert('¡Por favor instala una extensión Nostr!')
-      return
-    }
-
-    try {
-      // Obtener clave pública
-      this.pubkey = await window.nostr.getPublicKey()
-      console.log('Conectado:', this.pubkey)
-    } catch (error) {
-      console.error('Usuario rechazó acceso:', error)
-    }
-  }
-
-  async publishNote(content) {
-    // Crear evento sin firmar
-    const event = {
-      kind: 1,
-      created_at: Math.floor(Date.now() / 1000),
-      tags: [],
-      content: content,
-      pubkey: this.pubkey
-    }
-
-    try {
-      // Extensión firma el evento
-      const signedEvent = await window.nostr.signEvent(event)
-      
-      // Publicar a relés
-      await this.publishToRelays(signedEvent)
-    } catch (error) {
-      console.error('Firma rechazada:', error)
-    }
-  }
-}
-```
-
-## 👥 Gestión de Múltiples Identidades
-
-### Casos de Uso
-
-- **Identidad Personal**: Para uso diario
-- **Identidad Profesional**: Para trabajo/negocios
-- **Identidad Anónima**: Para privacidad
-- **Identidad de Bot**: Para automatización
-
-### Implementación
-
-```javascript
-class IdentityManager {
-  constructor() {
-    this.identities = []
-    this.activeIdentity = null
-  }
-
-  addIdentity(name, privateKey) {
-    this.identities.push({
-      name,
-      privateKey,
-      publicKey: getPublicKey(privateKey)
-    })
-  }
-
-  switchIdentity(name) {
-    this.activeIdentity = this.identities.find(i => i.name === name)
-  }
-
-  async signAs(name, event) {
-    const identity = this.identities.find(i => i.name === name)
-    return finishEvent(event, identity.privateKey)
-  }
-}
-
-// Uso
-const manager = new IdentityManager()
-manager.addIdentity('personal', privateKey1)
-manager.addIdentity('trabajo', privateKey2)
-
-// Publicar como 'personal'
-await manager.signAs('personal', noteEvent)
-```
-
-## 🔄 Rotación y Recuperación de Claves
-
-### Rotación de Claves
-
-Nostr NO soporta rotación de claves nativa:
-- Tu clave pública ES tu identidad
-- No puedes cambiarla sin perder seguidores/historia
-- Planifica backup cuidadoso desde el principio
-
-### Estrategias de Backup
-
-```javascript
-// 1. Frase mnemónica (como Bitcoin)
-import { generateMnemonic, mnemonicToPrivateKey } from 'nostr-mnemonic'
-
-const mnemonic = generateMnemonic()
-// "witch collapse practice feed shame open despair creek road again ice least"
-
-const privateKey = mnemonicToPrivateKey(mnemonic)
-
-// 2. Múltiples backups
-const backups = [
-  '1. Guardar en gestor de contraseñas',
-  '2. Escribir en papel (almacenar seguro)',
-  '3. Dividir usando Shamir Secret Sharing',
-  '4. Almacenamiento cifrado en nube'
-]
-```
-
-## 🎯 Ejercicio Práctico
-
-### Ejercicio 1: Generador de Claves
-
-Crea una herramienta simple de generación de claves:
-
-```javascript
-function generateNostrIdentity() {
-  const privateKey = generatePrivateKey()
-  const publicKey = getPublicKey(privateKey)
-  
-  return {
-    privateKey: {
-      hex: privateKey,
-      nsec: nip19.nsecEncode(privateKey)
-    },
-    publicKey: {
-      hex: publicKey,
-      npub: nip19.npubEncode(publicKey)
-    }
-  }
-}
-
-// Probar
-const identity = generateNostrIdentity()
-console.log(identity)
-```
-
-### Ejercicio 2: Integración NIP-07
-
-Construye un botón de "Conectar con Nostr":
-
-```html
-<button id="connect">Conectar Billetera Nostr</button>
-<div id="profile" style="display:none">
-  <p>Conectado: <span id="npub"></span></p>
-</div>
-
-<script type="module">
-import { nip19 } from 'nostr-tools'
-
-document.getElementById('connect').onclick = async () => {
-  if (!window.nostr) {
-    alert('Instala extensión Nostr primero')
-    return
-  }
-  
-  try {
-    const pubkey = await window.nostr.getPublicKey()
-    const npub = nip19.npubEncode(pubkey)
+- ✅ Entender lo básico de la criptografía de clave pública
+- ✅ Dominar los formatos de claves de Nostr (hex, npub, nsec)
+- ✅ Aplicar prácticas seguras de gestión de claves
+- ✅ Usar extensiones de navegador NIP-07
+- ✅ Comprender los conceptos de delegación y rotación de claves
+- ✅ Construir tu identidad criptográfica
+
+## 2.1 Fundamentos de criptografía
+
+### ¿Qué es la criptografía de clave pública?
+
+La criptografía de clave pública usa un par de claves relacionadas matemáticamente:
+
+```mermaid
+graph LR
+    A[Clave privada<br/>Secreta] -->|Genera| B[Clave pública<br/>Compartible]
+    B -->|No se puede derivar| A
     
-    document.getElementById('npub').textContent = npub
-    document.getElementById('profile').style.display = 'block'
-  } catch (e) {
-    alert('Conexión rechazada')
-  }
-}
-</script>
+    style A fill:#f44336,stroke:#fff,color:#fff
+    style B fill:#4caf50,stroke:#fff,color:#fff
 ```
 
-## 📝 Cuestionario del Módulo 2
+**Propiedades clave:**
+- **Relación unidireccional**: la clave pública se deriva de la privada, nunca al revés
+- **Firmas digitales**: la clave privada firma, la pública verifica
+- **Cifrado**: la clave pública cifra, la privada descifra
 
-1. **¿Cuál es la diferencia entre npub y nsec?**
+### Cómo funciona en Nostr
+
+1. **Creación de identidad**
+   ```
+   Private Key → Public Key → Your Nostr Identity
+   ```
+
+2. **Firma de mensajes**
+   ```
+   Your Message + Private Key → Signed Event
+   ```
+
+3. **Verificación**
+   ```
+   Signed Event + Public Key → Verified as Authentic
+   ```
+
+!!! example "Analogía del mundo real"
+    Piénsalo como un sello de lacre en una carta:
+    - Tu clave privada es el sello único (¡guárdalo en secreto!)
+    - Tu clave pública es el patrón que todos reconocen como tuyo
+    - La impresión en lacre demuestra que la carta vino de ti
+
+## 2.2 Formatos de claves de Nostr
+
+### Entender las codificaciones de claves
+
+Nostr usa distintos formatos para las mismas claves:
+
+| Formato | Prefijo | Uso | Ejemplo |
+|--------|--------|----------|---------|
+| **Hex** | Ninguno | Formato crudo, 64 caracteres | `7e7e9c42a91b...` |
+| **npub** | npub1 | Clave pública (se puede compartir) | `npub1xxxxx...` |
+| **nsec** | nsec1 | Clave privada (¡SECRETA!) | `nsec1xxxxx...` |
+
+### Codificación Bech32 (npub/nsec)
+
+Nostr usa codificación Bech32 para una mejor experiencia de usuario:
+
+- **Prefijo legible** (npub/nsec)
+- **Detección de errores** incorporada
+- **Sin distinción de mayúsculas** (excepto el prefijo)
+- **Más corto** que hex al mostrarlo
+
+### Ejemplo de conversión de claves
+
+```javascript
+// La misma clave en distintos formatos:
+Hex Private:  "5426b5f89a7a5e1c8f4e9b5a8d7c3b2a1e9f8d7c6b5a4e3d2c1b0a9f8e7d6c5b"
+nsec Format:  "nsec1gaafdhet7fu5uu38f8nf3lemlt5cj32kfduxsjwudxy8ehdrqmrs8ktqmz"
+
+Hex Public:   "8e9f3d5c7b4a2e1f9d8c7b6a5e4d3c2b1a0f9e8d7c6b5a4e3d2c1b0a9f8e7d6c"
+npub Format:  "npub136lsxmeac6fqslvce76n4y9swfvslf65d73hykgjvs5u5a089kwqg43ezk"
+```
+
+## 2.3 Generación de claves
+
+### Métodos para generar claves
+
+#### Método 1: Generación en el cliente (el más fácil)
+La mayoría de los clientes de Nostr pueden generar claves por ti:
+1. Haz clic en "Create New Account"
+2. Las claves se generan en tu navegador
+3. ¡Guárdalas de inmediato!
+
+#### Método 2: Línea de comandos (técnico)
+Usando `openssl`:
+```bash
+# Generar clave privada
+openssl rand -hex 32
+
+# O usando herramientas de Nostr
+npm install -g nostr-tools
+nostr-keygen
+```
+
+#### Método 3: Hardware wallets (el más seguro)
+Algunas hardware wallets soportan Nostr:
+- Generan claves fuera de línea
+- Nunca exponen la clave privada a internet
+- Firman eventos en el dispositivo
+
+### Mejores prácticas de generación de claves
+
+!!! danger "Reglas de seguridad"
+    1. **Genera las claves fuera de línea** cuando sea posible
+    2. **Usa aleatoriedad criptográficamente segura**
+    3. **Nunca uses brain wallets** (claves derivadas de contraseñas)
+    4. **No reutilices claves** para propósitos distintos
+    5. **Genera claves de respaldo** para recuperación
+
+## 2.4 Gestión de claves
+
+### Opciones de almacenamiento
+
+#### 🔒 Gestores de contraseñas (recomendado)
+**Ventajas:**
+- Almacenamiento cifrado
+- Sincronización entre dispositivos
+- Respaldo fácil
+
+**Ejemplo de configuración (Bitwarden):**
+1. Crea una nota segura nueva
+2. Nombre: "Nostr Identity"
+3. Añade campos:
+   - nsec: `nsec1xxxxx...`
+   - npub: `npub1xxxxx...`
+   - Created: `2024-01-15`
+   - Clients used: `Damus, Snort`
+
+#### 📝 Respaldo físico (esencial)
+**Mejores prácticas:**
+- Escríbelo en papel con bolígrafo
+- Guárdalo en una caja fuerte ignífuga
+- Crea varias copias
+- Considera un respaldo en metal para el largo plazo
+
+**Plantilla:**
+```
+NOSTR IDENTITY BACKUP
+Date: ___________
+Private Key (nsec): _________________
+Public Key (npub): __________________
+Recovery Words (if applicable): ______
+```
+
+#### 🔐 Seguridad de hardware
+
+**Almacenamiento en frío:**
+- Computadora air-gapped
+- Hardware wallet
+- Unidad USB cifrada
+
+**Configuración multifirma** (avanzado):
+- Divide la clave en fragmentos
+- Exige M-de-N fragmentos para reconstruirla
+- Distribuye los fragmentos entre personas de confianza
+
+### Amenazas de seguridad y mitigaciones
+
+| Amenaza | Nivel de riesgo | Mitigación |
+|--------|------------|------------|
+| Sitios de phishing | Alto | Verifica siempre la URL, usa marcadores |
+| Malware en el portapapeles | Medio | Usa extensiones de navegador, verifica las direcciones |
+| Cliente comprometido | Medio | Usa clientes de confianza y de código abierto |
+| Robo físico | Bajo-medio | Cifra los dispositivos, usa contraseñas fuertes |
+| Ingeniería social | Alto | Nunca compartas el nsec, ni siquiera con "soporte" |
+
+## 2.5 NIP-07: Firma con extensión de navegador
+
+### ¿Qué es NIP-07?
+
+NIP-07 define un estándar para que las extensiones de navegador gestionen las claves:
+
+- **Las claves se quedan en la extensión** (nunca se exponen a los sitios web)
+- **Firma basada en permisos** (tú apruebas cada acción)
+- **Funciona en todos los clientes web**
+
+### Extensiones NIP-07 populares
+
+1. **Alby** (recomendada para principiantes)
+   - Integración con wallet Lightning
+   - Soporte de varias cuentas
+   - Disponible para Chrome/Firefox/Edge
+
+2. **nos2x** (mínima y segura)
+   - Simple y enfocada
+   - Código abierto
+   - Firefox y Chrome
+
+3. **Flamingo**
+   - Funciones avanzadas
+   - Soporte de derivación de claves
+   - Amigable para desarrolladores
+
+### Configurar Alby
+
+**Instalación:**
+1. Visita [getalby.com](https://getalby.com)
+2. Instala la extensión del navegador
+3. Crea una cuenta nueva o importa una existente
+
+**Importar una clave existente:**
+1. Haz clic en el icono de la extensión Alby
+2. Selecciona "Import Nostr Key"
+3. Pega tu clave `nsec`
+4. Define una contraseña de gasto
+5. Configura los permisos
+
+**Uso con clientes:**
+1. Visita cualquier cliente web de Nostr
+2. Elige "Login with Extension"
+3. Alby pide permiso
+4. Aprueba y ya estás conectado
+
+### Modelo de seguridad de NIP-07
+
+```mermaid
+graph TD
+    A[Cliente web] -->|Solicitar firma| B[Extensión NIP-07]
+    B -->|¿Aprueba el usuario?| C{Decisión}
+    C -->|Sí| D[Firmar con la clave]
+    C -->|No| E[Rechazar]
+    D -->|Devolver firma| A
+    E -->|Devolver error| A
+    
+    style B fill:#9c27b0,stroke:#fff,color:#fff
+    style C fill:#7b1fa2,stroke:#fff,color:#fff
+```
+
+## 2.6 Conceptos avanzados de identidad
+
+### Delegación de claves (NIP-26)
+
+La delegación permite un permiso temporal para que otra clave actúe en tu nombre:
+
+**Casos de uso:**
+- Gestores de redes sociales
+- Servicios de publicación programada
+- Acceso temporal desde un dispositivo
+
+**Cómo funciona:**
+1. Crea un token de delegación con tu clave principal
+2. Especifica la pubkey delegada y las condiciones
+3. La clave delegada puede publicar con prueba de delegación
+
+### Estrategias de rotación de claves
+
+Como Nostr ata la identidad a las claves, rotarlas es un desafío:
+
+**Enfoque 1: Migración social**
+1. Crea un par de claves nuevo
+2. Anuncia la migración desde la cuenta antigua
+3. Pide a tus seguidores que sigan la cuenta nueva
+4. Mantén la cuenta antigua activa con una redirección
+
+**Enfoque 2: Identidad con varias claves**
+- Usa varias claves para distintos propósitos
+- Profesional vs. personal
+- Alta seguridad vs. conveniencia
+
+### Verificación de identidad
+
+**Métodos para demostrar que controlas una identidad:**
+
+1. **Verificación entre plataformas**
+   - Publica el mismo mensaje en Twitter/GitHub
+   - Incluye tu npub de Nostr en la bio
+
+2. **Verificación de dominio** (NIP-05)
+   - Vincula tu npub a tu dominio
+   - Ejemplo: `bob@example.com` → `npub1xxx...`
+
+3. **Red de confianza (web of trust)**
+   - Recibe el respaldo de cuentas conocidas
+   - Construye reputación con el tiempo
+
+## 2.7 Ejercicios prácticos
+
+### Ejercicio 1: Conversión de formatos de clave
+1. Toma tu clave pública en hex
+2. Conviértela a formato npub a mano (o usa una herramienta)
+3. Verifica que ambas representen la misma identidad
+
+### Ejercicio 2: Crear un respaldo seguro
+1. Crea un respaldo completo de tu identidad Nostr
+2. Incluye:
+   - Ambos formatos de clave
+   - El identificador NIP-05 asociado
+   - Lista de relés principales
+   - Fecha de recuperación
+3. Guárdalo en al menos dos lugares seguros
+
+### Ejercicio 3: Configuración y prueba de NIP-07
+1. Instala una extensión NIP-07
+2. Importa tu clave
+3. Inicia sesión en tres clientes web distintos usando solo la extensión
+4. Configura distintos niveles de permiso
+
+### Ejercicio 4: Verificación de identidad
+1. Configura verificación NIP-05 (si tienes un dominio)
+2. Verifícate de forma cruzada en otra plataforma
+3. Consigue que al menos otro usuario te verifique
+
+## 2.8 Escenarios de recuperación
+
+### Escenario 1: Perdiste el gestor de contraseñas
+**Prevención:**
+- Respaldos cifrados periódicos
+- Respaldo en papel físico
+- Un contacto de confianza con un fragmento de recuperación
+
+**Recuperación:**
+- Revisa todos los lugares de respaldo
+- Usa el respaldo físico para restaurar
+- Crea una identidad nueva si realmente se perdió
+
+### Escenario 2: Clave comprometida
+**Acciones inmediatas:**
+1. Crea un par de claves nuevo de inmediato
+2. Publica una advertencia desde la cuenta comprometida (si es posible)
+3. Avisa a tus contactos cercanos de forma directa
+4. Actualiza todas las verificaciones NIP-05
+
+### Escenario 3: Robo del dispositivo
+**Si el dispositivo tenía las claves:**
+1. Asume que las claves están comprometidas
+2. Migra a una identidad nueva
+3. Revoca cualquier delegación
+4. Actualiza tus prácticas de seguridad
+
+## 📝 Cuestionario del módulo 2
+
+1. **¿Cuál es la relación entre las claves privada y pública?**
    <details>
    <summary>Respuesta</summary>
-   npub es tu clave PÚBLICA (seguro compartir), nsec es tu clave PRIVADA (mantener secreta). npub es como nombre de usuario, nsec es como contraseña.
+   La clave pública se deriva de la privada con una función criptográfica unidireccional. No puedes derivar la clave privada a partir de la pública.
    </details>
 
-2. **¿Por qué usar NIP-07 en lugar de almacenar claves directamente?**
+2. **¿Qué significa "nsec" y cuándo deberías compartirlo?**
    <details>
    <summary>Respuesta</summary>
-   NIP-07 mantiene las claves en una extensión segura del navegador. Las aplicaciones web nunca ven tu clave privada, solo solicitan firmas. Más seguro que almacenar claves en aplicaciones web.
+   "nsec" es el formato Bech32 de las claves secretas (privadas) de Nostr. NUNCA deberías compartirlo con nadie ni con ningún servicio.
    </details>
 
-3. **¿Puedes cambiar tu clave pública en Nostr?**
+3. **¿Qué es NIP-07 y por qué es importante?**
    <details>
    <summary>Respuesta</summary>
-   No. Tu clave pública ES tu identidad. Cambiarla significa crear una nueva identidad y perder toda historia/seguidores. ¡Haz backup!
+   NIP-07 es un estándar para que las extensiones de navegador gestionen las claves de Nostr de forma segura. Mantiene las claves privadas en la extensión, sin exponerlas a los sitios web, y permite firmar con permisos.
    </details>
 
-## 🎯 Evaluación del Módulo 2
+4. **Nombra tres formas seguras de guardar tu clave privada de Nostr**
+   <details>
+   <summary>Respuesta</summary>
+   1. Gestor de contraseñas cifrado (como Bitwarden)
+   2. Respaldo en papel físico en una caja fuerte
+   3. Hardware wallet o dispositivo air-gapped
+   </details>
 
-- [ ] Generar pares de claves programáticamente
-- [ ] Convertir entre formatos hex y bech32
-- [ ] Integrar extensión de firma NIP-07
-- [ ] Entender mejores prácticas de almacenamiento
-- [ ] Gestionar múltiples identidades
+5. **¿Qué deberías hacer si tu clave privada queda comprometida?**
+   <details>
+   <summary>Respuesta</summary>
+   Crea un par de claves nuevo de inmediato, avisa a tus seguidores desde la cuenta antigua si es posible, notifica a tus contactos cercanos, actualiza todas las verificaciones y migra a la identidad nueva.
+   </details>
+
+## 🎯 Punto de control del módulo 2
+
+Antes de pasar al módulo 3, asegúrate de haber:
+
+- [ ] Entendido la relación entre claves públicas y privadas
+- [ ] Guardado tus claves en al menos dos lugares seguros
+- [ ] Creado un respaldo físico de tus claves
+- [ ] Instalado y configurado una extensión de navegador NIP-07
+- [ ] Usado la extensión con éxito para iniciar sesión en varios clientes
+- [ ] Configurado al menos una forma de verificación de identidad
+- [ ] Practicado la conversión de formatos de clave
+- [ ] Creado un plan de recuperación de claves
+
+## 📚 Recursos adicionales
+
+- [NIP-01: Basic Protocol](https://github.com/nostr-protocol/nips/blob/master/01.md)
+- [NIP-07: Browser Extensions](https://github.com/nostr-protocol/nips/blob/master/07.md)
+- [NIP-26: Delegated Event Signing](https://github.com/nostr-protocol/nips/blob/master/26.md)
+- [Key Management Best Practices](https://github.com/nostr-protocol/nostr)
+- Herramienta: [Nostr Army Knife](https://nak.nostr.com) - Utilidades de conversión de claves
+
+## 💬 Discusión comunitaria
+
+Únete a nuestro Discord para hablar del módulo 2:
+- Comparte tus estrategias de gestión de claves
+- Pide ayuda con la configuración de NIP-07
+- Discute métodos de verificación de identidad
+- Aprende de las prácticas de seguridad de otros
 
 ---
 
-!!! success "¡Bien Hecho!"
-    ¡Dominas la gestión de claves de Nostr! Ahora estás listo para eventos y mensajes.
+!!! success "¡Felicitaciones!"
+    ¡Dominaste el sistema de identidad de Nostr! Ya entiendes las claves criptográficas, puedes gestionarlas de forma segura y usar funciones avanzadas como NIP-07. ¡Listo para el módulo 3, donde exploraremos cómo Nostr estructura y transmite los datos!
 
-[Continuar al Módulo 3: Eventos y Mensajes →](module-03-events-messages.md)
+[Continuar al módulo 3: Eventos y mensajes →](module-03-events-messages.md)

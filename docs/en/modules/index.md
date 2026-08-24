@@ -97,7 +97,9 @@ Our modules are carefully structured to build your knowledge progressively:
 
     ---
 
-    Coming Soon - Advanced security patterns, threat modeling, and hardening strategies.
+    Advanced security patterns, threat modeling, encrypted DMs, and hardening strategies. Also see the [high-risk user scenarios](../getting-started/high-risk-users.md).
+
+    [:octicons-arrow-right-24: Begin Module 9](module-09-security.md)
 
 </div>
 

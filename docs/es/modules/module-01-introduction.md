@@ -1,179 +1,285 @@
 # Módulo 1: Introducción a Nostr
 
-!!! info "Visión General del Módulo"
+!!! info "Visión general del módulo"
     **Duración**: 2-3 horas  
     **Nivel**: Principiante  
     **Prerrequisitos**: Ninguno  
-    **Objetivo**: Comprender los fundamentos del protocolo Nostr y su arquitectura
+    **Objetivo**: Entender qué es Nostr, por qué existe y cómo funciona en lo fundamental
 
-## 📋 Objetivos de Aprendizaje
+## 📋 Objetivos de aprendizaje
 
 Al final de este módulo, podrás:
 
-- ✅ Explicar qué es Nostr y cómo funciona
-- ✅ Comprender la arquitectura descentralizada
-- ✅ Identificar casos de uso y aplicaciones
-- ✅ Comparar Nostr con plataformas tradicionales
-- ✅ Configurar tu primer cliente Nostr
+- ✅ Entender qué es Nostr y su filosofía central
+- ✅ Conocer los problemas que Nostr resuelve
+- ✅ Comprender la arquitectura básica
+- ✅ Crear tu primera cuenta de Nostr
+- ✅ Enviar tu primer mensaje en Nostr
 
-## 🌟 ¿Qué es Nostr?
+## 1.1 ¿Qué es Nostr?
 
-**Nostr** significa **"Notes and Other Stuff Transmitted by Relays"** (Notas y Otras Cosas Transmitidas por Relés).
+### El nombre
 
-Es un protocolo simple y abierto para redes sociales descentralizadas, resistente a la censura y verdaderamente distribuido.
+**Nostr** significa "**N**otes and **O**ther **S**tuff **T**ransmitted by **R**elays" (Notas y otras cosas transmitidas por relés). Es un protocolo simple y abierto que permite una red social global verdaderamente descentralizada y resistente a la censura.
 
-### Características Principales
+### Concepto central
 
-- 🔓 **Sin Permisos**: No se requiere autorización para publicar
-- 🔐 **Criptografía de Clave Pública**: Tu identidad está controlada por tus claves
-- 🌐 **Descentralizado**: Sin servidor central, sin punto único de fallo
-- 🚫 **Resistente a Censura**: Nadie puede silenciarte
-- 🆓 **Sin Tokens**: No hay token nativo o criptomoneda requerida
+En esencia, Nostr es:
 
-## 🏗️ Arquitectura de Nostr
+- **Un protocolo**, no una plataforma ni una empresa
+- **Descentralizado**: ninguna entidad lo controla por sí sola
+- **Simple**: se basa en ideas directas y fáciles de entender
+- **Flexible**: sirve para muchas aplicaciones más allá de las redes sociales
+
+!!! quote "Idea clave"
+    "Nostr no es una app, es un protocolo: como el correo electrónico o la web. Cualquiera puede construir sobre él y nadie puede apagarlo."
+
+## 1.2 Por qué existe Nostr
+
+### Problemas de las redes sociales actuales
+
+Las plataformas tradicionales de redes sociales enfrentan varios problemas críticos:
+
+1. **Control centralizado**
+   - Una sola empresa controla tus datos
+   - Puede banear o censurar usuarios de forma arbitraria
+   - Puede desaparecer y llevarse tu contenido consigo
+
+2. **Propiedad de los datos**
+   - Las plataformas son dueñas de tu contenido
+   - No es fácil moverse de una plataforma a otra
+   - Tu grafo social queda encerrado
+
+3. **Censura**
+   - Moderación de contenido por autoridades centrales
+   - Estándares distintos según la región
+   - El usuario no elige las políticas de moderación
+
+4. **Portabilidad de identidad**
+   - Los nombres de usuario están atados a una plataforma concreta
+   - Hay que reconstruir los seguidores en cada red
+   - No existe una identidad digital universal
+
+### Las soluciones de Nostr
+
+| Problema | Solución de Nostr |
+|---------|---------------|
+| Servidores centralizados | Múltiples relés independientes |
+| Encierro en una plataforma | Identidad portable mediante claves criptográficas |
+| Censura | Eliges tus propios relés y filtros |
+| Propiedad de los datos | Tú firmas y eres dueño de tu contenido |
+| Portabilidad de identidad | Una sola identidad funciona en todas partes |
+
+## 1.3 Cómo funciona Nostr
+
+### Los tres pilares
 
 ```mermaid
-graph LR
-    A[Cliente] -->|Publicar Evento| B[Relé 1]
-    A -->|Publicar Evento| C[Relé 2]
-    A -->|Publicar Evento| D[Relé 3]
+graph TD
+    A[Usuarios] -->|Crean y firman| B[Eventos]
+    B -->|Se transmiten a| C[Relés]
+    C -->|Se distribuyen a| A
     
-    B -->|Eventos| A
-    C -->|Eventos| A
-    D -->|Eventos| A
-    
-    E[Otro Cliente] -->|Suscribirse| B
-    E -->|Suscribirse| C
-    
-    style A fill:#667eea,stroke:#fff,color:#fff
-    style E fill:#667eea,stroke:#fff,color:#fff
-    style B fill:#764ba2,stroke:#fff,color:#fff
-    style C fill:#764ba2,stroke:#fff,color:#fff
-    style D fill:#764ba2,stroke:#fff,color:#fff
+    style A fill:#9c27b0,stroke:#fff,color:#fff
+    style B fill:#7b1fa2,stroke:#fff,color:#fff
+    style C fill:#6a1b9a,stroke:#fff,color:#fff
 ```
 
-### Componentes Clave
+1. **Usuarios (clientes)**
+   - Crean y consumen contenido
+   - Guardan claves privadas para la identidad
+   - Se conectan a varios relés
 
-1. **Clientes**: Aplicaciones que usan los usuarios (navegador web, móvil, escritorio)
-2. **Relés**: Servidores que almacenan y transmiten eventos
-3. **Eventos**: Mensajes firmados que contienen contenido
-4. **Claves**: Pares de claves públicas/privadas para identidad
+2. **Eventos**
+   - Todos los datos en Nostr son un "evento"
+   - Mensajes firmados criptográficamente
+   - Contienen contenido, metadatos y una firma
 
-## 💡 ¿Por Qué Nostr?
+3. **Relés**
+   - Servidores simples que almacenan y reenvían eventos
+   - Cualquiera puede operar un relé
+   - Los usuarios eligen a qué relés conectarse
 
-### Problemas con las Redes Sociales Tradicionales
+### Ejemplo sencillo de arquitectura
 
-- ❌ Censura y deplatforming
-- ❌ Control centralizado de datos
-- ❌ Algoritmos opacos
-- ❌ Lock-in de plataforma
-- ❌ Sin portabilidad de identidad
+Imagina que Alice quiere enviar un mensaje:
 
-### Soluciones de Nostr
+1. Alice escribe "¡Hola Nostr!" en su cliente
+2. Su cliente crea un evento y lo firma con su clave privada
+3. El cliente envía ese evento a los relés que ella eligió
+4. El cliente de Bob consulta esos relés en busca de eventos nuevos
+5. Bob ve el mensaje de Alice y puede verificar que realmente es de ella
 
-- ✅ Imposible censurar (múltiples relés)
-- ✅ Tú controlas tus datos
-- ✅ Protocolo abierto y transparente
-- ✅ Cambia de cliente cuando quieras
-- ✅ Una identidad en todas las aplicaciones
+## 1.4 Innovaciones clave
 
-## 🚀 Primeros Pasos
+### 1. Identidad criptográfica
 
-### 1. Elige un Cliente
+En lugar de nombres de usuario, Nostr usa pares de claves criptográficas:
 
-Algunos clientes populares:
+- **Clave privada**: tu contraseña secreta (¡nunca la compartas!)
+- **Clave pública**: tu identidad, la que los demás ven
 
-- **[Damus](https://damus.io/)** - iOS
-- **[Amethyst](https://github.com/vitorpamplona/amethyst)** - Android
-- **[Snort](https://snort.social/)** - Web
-- **[Iris](https://iris.to/)** - Web
-- **[Nostrudel](https://nostrudel.ninja/)** - Web
+!!! warning "Importante"
+    Tu clave privada ES tu identidad. Si la pierdes, pierdes la cuenta. Si alguien más la obtiene, puede hacerse pasar por ti.
 
-### 2. Crea Tu Identidad
+### 2. Arquitectura cliente-relé
 
-Tu identidad es un par de claves:
+- **Clientes** son las apps que usas (como Damus, Amethyst, Snort)
+- **Relés** son servidores que almacenan mensajes
+- Puedes usar varios clientes con la misma identidad
+- Puedes conectarte a varios relés para tener redundancia
 
-- **Clave Privada (nsec)**: MANTÉN ESTO EN SECRETO - como una contraseña
-- **Clave Pública (npub)**: Comparte esto - como un nombre de usuario
+### 3. Resistencia a la censura
 
-!!! warning "Seguridad Importante"
-    Tu clave privada ES tu identidad. Si la pierdes, pierdes tu cuenta.
-    Si alguien la obtiene, puede hacerse pasar por ti.
+- Ningún relé por sí solo puede censurarte por completo
+- Si un relé te banea, usas otros
+- Los usuarios eligen sus propios filtros de contenido
+- La selección de relés funciona como un mercado
 
-### 3. Conéctate a Relés
+## 1.5 Práctica: tu primera experiencia con Nostr
 
-Los clientes se conectan a múltiples relés para:
-- Publicar tus eventos
-- Recibir eventos de otros
-- Aumentar la redundancia
+### Paso 1: Elige un cliente
 
-Relés populares:
-- `wss://relay.damus.io`
-- `wss://nos.lol`
-- `wss://relay.snort.social`
+Clientes web populares para principiantes:
 
-## 📝 Conceptos Fundamentales
+- [Snort.social](https://snort.social) - Cliente web con muchas funciones
+- [Iris.to](https://iris.to) - Interfaz simple y limpia
+- [Coracle.social](https://coracle.social) - Funciones avanzadas
 
-### Eventos
+### Paso 2: Crea tu cuenta
 
-Todo en Nostr es un **evento**:
+1. Visita el cliente que elegiste
+2. Haz clic en "Create Account" o "Get Started"
+3. **¡Guarda tu clave privada de inmediato!**
 
-```json
-{
-  "id": "4376c65d2f232afbe9b882a35baa4f6fe8667c4e684749af565f981833ed6a65",
-  "pubkey": "6e468422dfb74a5738702a8823b9b28168abab8655faacb6853cd0ee15deee93",
-  "created_at": 1673347337,
-  "kind": 1,
-  "tags": [],
-  "content": "¡Hola Nostr!",
-  "sig": "908a15e46fb4d8675bab026fc230a0e3542bfade63da02d542fb78b2a8513fcd0092619a2c8c1221e581946e0191f2af505dfdf8657a414dbca329186f009262"
-}
-```
+!!! danger "Crítico: guarda tus claves"
+    ```
+    Private Key (nsec): nsec1xxxxx... (NUNCA COMPARTAS ESTO)
+    Public Key (npub): npub1xxxxx... (Esta es tu identidad pública)
+    ```
+    ¡Guarda tu clave privada en un gestor de contraseñas o anótala de forma segura!
 
-### Tipos de Eventos (Kinds)
+### Paso 3: Completa tu perfil
 
-- `kind: 0` - Metadatos de perfil
-- `kind: 1` - Notas de texto
-- `kind: 3` - Lista de contactos
-- `kind: 4` - Mensajes cifrados
-- `kind: 7` - Reacciones
+- Añade un nombre para mostrar
+- Escribe una bio corta
+- Añade una foto de perfil (opcional)
+- Configura una dirección Lightning para propinas (opcional)
 
-## 🎯 Ejercicio Práctico
+### Paso 4: Envía tu primera nota
 
-1. **Descarga un Cliente**: Instala Damus (iOS) o Amethyst (Android)
-2. **Crea Claves**: Genera un nuevo par de claves
-3. **Haz una Copia de Seguridad**: Guarda tu clave privada de forma segura
-4. **Tu Primera Nota**: Publica "¡Hola Nostr!"
-5. **Sigue a Alguien**: Encuentra y sigue otro usuario
-6. **Explora**: Navega el feed global
+1. Busca el botón de redactar/publicar
+2. Escribe tu primer mensaje: "Hello #Nostr! Just joined this decentralized network 🚀"
+3. Haz clic en enviar/publicar
 
-## 📚 Recursos Adicionales
+### Paso 5: Sigue a otras personas y explora
 
-- [Sitio Web Oficial de Nostr](https://nostr.com/)
-- [NIPs (Propuestas de Implementación de Nostr)](https://github.com/nostr-protocol/nips)
-- [Awesome Nostr](https://github.com/aljazceru/awesome-nostr)
-- [Repositorio GitHub de LearnNostr](https://github.com/cristyalmonte/learnnostr)
+Cuentas recomendadas para seguir:
+- Desarrolladores y constructores de Nostr
+- Creadores de contenido de tus temas de interés
+- Cuentas de noticias y actualizaciones
 
-## 🎯 Evaluación del Módulo 1
+## 1.6 Ejercicios prácticos
 
-Antes de pasar al Módulo 2, asegúrate de que puedes:
+### Ejercicio 1: Experiencia con varios clientes
+1. Inicia sesión en un segundo cliente usando tu clave privada
+2. Observa cómo tu perfil y tus publicaciones aparecen de inmediato
+3. Publica desde un cliente y míralo en el otro
 
-- [ ] Explicar qué es Nostr en tus propias palabras
-- [ ] Describir la diferencia entre clientes y relés
-- [ ] Entender por qué las claves privadas son importantes
-- [ ] Haber creado tu primer par de claves
-- [ ] Haber publicado tu primera nota
+### Ejercicio 2: Exploración de relés
+1. Revisa qué relés está usando tu cliente (normalmente en ajustes)
+2. Añade un relé nuevo: `wss://relay.damus.io`
+3. Quita un relé y comprueba si sigues viendo contenido
 
-## 💬 Discusión Comunitaria
+### Ejercicio 3: Verificar un mensaje
+1. Encuentra un mensaje de una cuenta popular
+2. Busca marcas de verificación o indicadores
+3. Entiende cómo la firma demuestra autenticidad
 
-Únete a nuestro Discord para discutir el Módulo 1:
+## 1.7 Ideas erróneas comunes
+
+| Idea errónea | Realidad |
+|--------------|---------|
+| "Nostr es solo otra app de redes sociales" | Nostr es un protocolo; las apps son solo clientes |
+| "Solo es para gente de Bitcoin/crypto" | Nostr es para todos; la integración con Bitcoin es opcional |
+| "Es demasiado técnico para usuarios normales" | Los clientes modernos son tan fáciles como las redes sociales tradicionales |
+| "No hay moderación" | Usuarios y relés pueden implementar su propia moderación |
+| "No puede escalar" | La arquitectura de Nostr permite el escalado horizontal |
+
+## 1.8 Casos de uso más allá de las redes sociales
+
+Nostr no se limita a las redes sociales:
+
+- **Mensajería**: mensajes directos cifrados
+- **Blogging**: plataformas de contenido largo
+- **Marketplace**: comercio descentralizado
+- **Juegos**: puntuaciones altas y logros
+- **Identidad**: sistema de inicio de sesión universal
+- **IoT**: comunicación de máquina a máquina
+
+## 📝 Cuestionario del módulo 1
+
+Pon a prueba lo que entendiste:
+
+1. **¿Qué significa Nostr?**
+   <details>
+   <summary>Respuesta</summary>
+   Notes and Other Stuff Transmitted by Relays (Notas y otras cosas transmitidas por relés)
+   </details>
+
+2. **¿Cuáles son los tres componentes principales de Nostr?**
+   <details>
+   <summary>Respuesta</summary>
+   Usuarios (clientes), eventos y relés
+   </details>
+
+3. **¿Por qué es importante tu clave privada?**
+   <details>
+   <summary>Respuesta</summary>
+   Es tu identidad y tu contraseña juntas: perderla significa perder la cuenta, y cualquiera que la tenga puede hacerse pasar por ti
+   </details>
+
+4. **¿Puede un solo relé censurarte por completo en Nostr?**
+   <details>
+   <summary>Respuesta</summary>
+   No, porque puedes usar varios relés. Si uno te bloquea, otros pueden seguir distribuyendo tu contenido
+   </details>
+
+5. **¿Qué hace distinto a Nostr de Twitter o Facebook?**
+   <details>
+   <summary>Respuesta</summary>
+   Nostr es un protocolo (no una empresa), está descentralizado (sin un único punto de control), da a los usuarios la propiedad de sus datos y ofrece portabilidad de identidad
+   </details>
+
+## 🎯 Punto de control del módulo 1
+
+Antes de pasar al módulo 2, asegúrate de haber:
+
+- [ ] Creado una cuenta de Nostr y guardado tus claves de forma segura
+- [ ] Publicado al menos una nota con éxito
+- [ ] Iniciado sesión en dos clientes distintos con la misma clave
+- [ ] Seguido al menos 5 cuentas
+- [ ] Añadido o quitado al menos un relé
+- [ ] Entendido la diferencia entre claves públicas y privadas
+
+## 📚 Recursos adicionales
+
+- [Documentación del protocolo Nostr](https://github.com/nostr-protocol/nostr)
+- [Awesome Nostr](https://github.com/aljazceru/awesome-nostr) - Lista curada de recursos de Nostr
+- [Nostr.how](https://nostr.how) - Guías para principiantes
+- Video: ["What is Nostr?" Explained Simply](https://www.youtube.com/watch?v=example)
+
+## 💬 Discusión comunitaria
+
+Únete a nuestro Discord para hablar del módulo 1:
 - Comparte tu primera experiencia con Nostr
-- Haz preguntas sobre el protocolo
-- Conecta con otros aprendices
+- Haz preguntas sobre los conceptos
+- Ayuda a otros principiantes
+- Encuentra gente a quien seguir
 
 ---
 
 !!! success "¡Felicitaciones!"
-    ¡Has completado el Módulo 1! Ahora entiendes los fundamentos de Nostr.
-    
-[Continuar al Módulo 2: Claves e Identidad →](module-02-keys-identity.md)
+    ¡Completaste el módulo 1! Ya entiendes qué es Nostr, por qué importa y tienes experiencia práctica usándolo. ¡Listo para el módulo 2, donde profundizaremos en claves e identidad!
+
+[Continuar al módulo 2: Claves e identidad →](module-02-keys-identity.md)

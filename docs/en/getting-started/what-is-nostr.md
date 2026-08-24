@@ -269,4 +269,6 @@ Understanding Nostr's foundational architecture prepares you for implementing pr
         3. **Relays operate independently** with individual policies, creating a distributed network without central control points
         4. **JSON simplicity** ensures broad compatibility, easy parsing, and straightforward protocol implementation across different programming languages
 
+If you need Nostr for journalism, organizing, or personal safety rather than development, continue with [Practical scenarios for journalists, organizers, and at-risk users](high-risk-users.md).
+
 ---

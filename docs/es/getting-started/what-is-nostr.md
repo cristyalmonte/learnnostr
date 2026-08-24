@@ -269,4 +269,6 @@ Entender la arquitectura fundamental de Nostr te prepara para implementar aplica
         3. **Los relés operan independientemente** con políticas individuales, creando una red distribuida sin puntos de control centrales
         4. **La simplicidad de JSON** asegura compatibilidad amplia, análisis fácil, e implementación directa del protocolo en diferentes lenguajes de programación
 
+Si necesitas Nostr para periodismo, organización o seguridad personal más que para desarrollo, continúa con [Escenarios prácticos para periodistas, organizadores y personas en riesgo](high-risk-users.md).
+
 ---

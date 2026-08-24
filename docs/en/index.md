@@ -37,6 +37,11 @@ hide:
 
 </div>
 
+!!! danger "For journalists, organizers, and at-risk users"
+    New: practical, non-developer scenarios for creating a separate identity, publishing without a real-name account, and knowing what Nostr does *not* hide.
+
+    [Open the high-risk user guide →](getting-started/high-risk-users.md)
+
 <style>
 /* Hero section styling */
 .hero {

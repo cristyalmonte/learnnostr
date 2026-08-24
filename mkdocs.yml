@@ -96,6 +96,7 @@ plugins:
             Module 9 - Security & Privacy: Módulo 9 - Seguridad y Privacidad
             Getting Started: Comenzar
             What is Nostr?: ¿Qué es Nostr?
+            For Journalists & At-Risk Users: Para periodistas y personas en riesgo
             Wallet Setup: Configuración de Billetera
             Nostr Tools: Herramientas de Nostr
             Relay Setup: Configuración de Relé
@@ -115,6 +116,7 @@ plugins:
   - git-revision-date-localized:
       type: date
       fallback_to_build_date: true
+      enabled: !ENV [MKDOCS_ENABLE_GIT_REVISION_DATE, true]
 
 # Navigation
 nav:
@@ -132,6 +134,7 @@ nav:
     - Module 9 - Security & Privacy: modules/module-09-security.md
   - Getting Started:
     - What is Nostr?: getting-started/what-is-nostr.md
+    - For Journalists & At-Risk Users: getting-started/high-risk-users.md
     - Wallet Setup: getting-started/wallet-setup.md
     - Nostr Tools: getting-started/nostr-tools.md
     - Relay Setup: getting-started/relay-setup.md

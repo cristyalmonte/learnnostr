@@ -245,19 +245,21 @@ Revisa permisos después de cada actualización.
 
 ## 10. Lista de incidente
 
-Cópiala; guárdala fuera del teléfono que tiene la llave.
+Guárdala **en papel** (u otro dispositivo), no en el teléfono que tiene la llave.
 
-- [ ] Modelo de amenaza escrito (quién / qué / cuánto tiempo)
-- [ ] Llave nueva; no reutilizada de una cuenta pública
-- [ ] `nsec` fuera de línea; restauración probada
-- [ ] Sin nombre real, cara, NIP-05 ni Lightning KYC en el perfil
-- [ ] Sin follows que apunten a tu identidad real
-- [ ] Tor/VPN antes del cliente
-- [ ] Varios relés, más de un país si puedes
-- [ ] Fuentes presentadas fuera de banda; también con llaves desechables
-- [ ] NIP-17 (o nada de DM) para lo sensible
-- [ ] Sin ubicación en vivo, sin EXIF, sin tu voz de firma en el npub secreto
-- [ ] Plan de rotación si decomisan el dispositivo
+!!! example "Antes de publicar"
+
+    - [ ] Modelo de amenaza escrito (quién / qué / cuánto tiempo)
+    - [ ] Llave nueva; no reutilizada de una cuenta pública
+    - [ ] `nsec` fuera de línea; restauración probada
+    - [ ] Sin nombre real, cara, NIP-05 ni Lightning KYC en el perfil
+    - [ ] Sin follows que apunten a tu identidad real
+    - [ ] Tor/VPN conectado *antes* del cliente
+    - [ ] Varios relés, más de un país si puedes
+    - [ ] Fuentes presentadas fuera de banda; también con llaves desechables
+    - [ ] NIP-17 (o nada de DM) para lo sensible
+    - [ ] Sin ubicación en vivo, sin EXIF, sin tu voz de firma en el npub secreto
+    - [ ] Plan de rotación si decomisan el dispositivo
 
 ---
 

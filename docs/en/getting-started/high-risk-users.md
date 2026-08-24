@@ -245,19 +245,21 @@ Re-check permissions after every app update.
 
 ## 10. Incident checklist
 
-Copy this; keep it off the phone that holds the key.
+Keep this **on paper** (or another device) — not on the phone that holds the key.
 
-- [ ] Threat model written (who / what / how long)
-- [ ] New key; not reused from a public account
-- [ ] `nsec` offline, tested restore
-- [ ] No real name, face, NIP-05, or KYC Lightning on the profile
-- [ ] No follows that point at your real identity
-- [ ] Tor/VPN before the client
-- [ ] Several relays, more than one country if you can
-- [ ] Sources introduced out of band; throwaway keys for them too
-- [ ] NIP-17 (or no DMs) for sensitive talk
-- [ ] No live location, no EXIF, no unique byline voice on the secret npub
-- [ ] Rotation plan if device is seized
+!!! example "Before you publish"
+
+    - [ ] Threat model written (who / what / how long)
+    - [ ] New key; not reused from a public account
+    - [ ] `nsec` offline, restore tested
+    - [ ] No real name, face, NIP-05, or KYC Lightning on the profile
+    - [ ] No follows that point at your real identity
+    - [ ] Tor/VPN connected *before* the client
+    - [ ] Several relays, more than one country if you can
+    - [ ] Sources introduced out of band; throwaway keys for them too
+    - [ ] NIP-17 (or no DMs) for sensitive talk
+    - [ ] No live location, no EXIF, no unique byline voice on the secret npub
+    - [ ] Rotation plan if the device is seized
 
 ---
 

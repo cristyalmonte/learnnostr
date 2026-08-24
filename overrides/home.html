@@ -9,7 +9,10 @@
     <div class="md-grid md-typeset">
       <div class="mdx-hero">
         <div class="mdx-hero__content">
-          <h1>{% if is_spanish %}Aprende Nostr.{% else %}Learn Nostr.{% endif %}</h1>
+          <h1>
+            {% if is_spanish %}Aprende{% else %}Learn{% endif %}
+            <span id="typewriter">{% if is_spanish %}Nostr.{% else %}Nostr.{% endif %}</span>
+          </h1>
           <p class="mdx-hero__lede">
             {% if is_spanish %}
               El protocolo simple y abierto para identidad, notas y pagos — sin una empresa en el medio.
@@ -20,9 +23,6 @@
           <p class="mdx-hero__actions">
             <a href="{% if is_spanish %}/es/getting-started/what-is-nostr/{% else %}/getting-started/what-is-nostr/{% endif %}" class="md-button md-button--primary">
               {% if is_spanish %}Empezar{% else %}Start learning{% endif %}
-            </a>
-            <a href="{% if is_spanish %}/es/getting-started/high-risk-users/{% else %}/getting-started/high-risk-users/{% endif %}" class="md-button">
-              {% if is_spanish %}Periodistas y personas en riesgo{% else %}Journalists &amp; at-risk{% endif %}
             </a>
           </p>
         </div>

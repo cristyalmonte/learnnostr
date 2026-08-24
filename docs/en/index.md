@@ -37,11 +37,6 @@ hide:
 
 </div>
 
-!!! info "For journalists, organizers, and at-risk users"
-    Threat models, source protection, relays, DMs (NIP-04 vs NIP-17), zaps, and what Nostr does *not* hide.
-
-    [Open the field guide →](getting-started/high-risk-users.md)
-
 ## Learning path
 
 Four short steps, from first note to a working client.

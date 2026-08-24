@@ -37,11 +37,6 @@ hide:
 
 </div>
 
-!!! info "Para periodistas, organizadores y personas en riesgo"
-    Modelo de amenaza, protección de fuentes, relés, DM (NIP-04 vs NIP-17), zaps y lo que Nostr *no* oculta.
-
-    [Abrir la guía de campo →](getting-started/high-risk-users.md)
-
 ## Ruta de aprendizaje
 
 Cuatro pasos cortos, desde la primera nota hasta un cliente que funciona.

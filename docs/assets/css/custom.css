@@ -84,12 +84,6 @@
   border-color: var(--md-accent-fg-color);
 }
 
-/* typewriter */
-
-#typewriter {
-  color: var(--md-accent-fg-color);
-}
-
 /* header font */
 
 .md-header__topic:first-child {
@@ -256,8 +250,105 @@ header[class="md-header md-header--shadow"], nav[class="md-tabs"] {
 }
 
 .md-typeset hr {
-  margin-top: 5rem;
-  margin-bottom: 5rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+/* Homepage hero */
+.mdx-container {
+  background: linear-gradient(180deg, rgba(156, 39, 176, 0.08) 0%, var(--md-default-bg-color) 70%);
+  padding: 2rem 0 0.5rem;
+}
+[data-md-color-scheme="slate"] .mdx-container {
+  background: linear-gradient(180deg, rgba(156, 39, 176, 0.18) 0%, var(--md-default-bg-color) 70%);
+}
+.mdx-hero {
+  margin: 0 0.8rem;
+}
+.mdx-hero h1 {
+  color: var(--md-typeset-a-color);
+  font-size: 2.25rem;
+  margin: 0 0 0.5rem;
+  font-weight: 700;
+}
+.mdx-hero__lede {
+  color: var(--md-default-fg-color--light);
+  font-size: 1.05rem;
+  line-height: 1.5;
+  max-width: 36rem;
+  margin: 0 0 1.25rem;
+}
+.mdx-hero__actions {
+  margin: 0 0 1.5rem;
+}
+.mdx-hero .md-button {
+  margin: 0.25rem 0.5rem 0.25rem 0;
+}
+.mdx-hero .md-button--primary {
+  color: var(--md-primary-fg-color);
+  background-color: var(--hb-hero-color);
+  border-color: transparent;
+}
+[data-md-color-scheme="slate"] .mdx-hero .md-button:not(.md-button--primary):hover {
+  color: #000;
+}
+@media screen and (max-width: 29.9375em) {
+  .mdx-hero h1 {
+    font-size: 1.7rem;
+  }
+}
+
+/* Homepage learning path */
+.home-path ol {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.75rem;
+  list-style: none;
+  counter-reset: home-path;
+  padding: 0;
+  margin: 0.75rem 0 1.5rem;
+}
+.home-path li {
+  counter-increment: home-path;
+  background: var(--md-primary-fg-color);
+  border: 1px solid var(--pg-light-border);
+  border-radius: 6px;
+  padding: 1rem 1rem 1rem 2.75rem;
+  position: relative;
+  margin: 0;
+}
+.home-path li::before {
+  content: counter(home-path);
+  position: absolute;
+  left: 0.85rem;
+  top: 1rem;
+  width: 1.35rem;
+  height: 1.35rem;
+  border-radius: 50%;
+  background: var(--hb-hero-color);
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: 700;
+  line-height: 1.35rem;
+  text-align: center;
+}
+.home-path li p {
+  margin: 0.15rem 0;
+  font-size: 0.85rem;
+}
+.home-path li strong {
+  display: block;
+  font-size: 0.95rem;
+}
+@media screen and (max-width: 60rem) {
+  .home-path ol {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media screen and (max-width: 30rem) {
+  .home-path ol {
+    grid-template-columns: 1fr;
+  }
 }
 
 

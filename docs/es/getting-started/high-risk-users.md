@@ -1,164 +1,269 @@
-# Escenarios prácticos: periodistas, organizadores y personas en riesgo
+# Para periodistas y personas en riesgo
 
 !!! info "Para quién es esta guía"
-    Esta lección es para quienes necesitan Nostr como **herramienta de comunicación**, no como un curso de programación: periodistas, organizadores y personas en entornos de alto riesgo. No hace falta escribir código.
+    Esto es una **guía de campo**, no un tutorial para programar. Sirve a periodistas, organizadores, investigadoras y cualquiera que necesite publicar o hablar **sin entregar a una empresa su nombre real, teléfono o grafo social**.
 
-    Al terminar sabrás cómo:
+    No hace falta escribir código. Sí hace falta ser honesta/o sobre quién podría estar mirando.
 
-    - Crear una identidad Nostr **separada**, no ligada a tu nombre real
-    - Publicar y leer notas sin depender de una sola empresa o un solo servidor
-    - Elegir clientes y relés pensando en la privacidad
-    - Evitar los errores más comunes que identifican a las personas
-    - Entender lo que Nostr **no** protege
+    Al terminar deberías poder:
 
-!!! warning "Límites honestos"
-    Nostr te da **identidad portable** y **resistencia a que una sola plataforma te baneé**. No te hace invisible. Los relés pueden ver tu dirección IP si no tomas medidas extra. Las fotos, el estilo de escritura, los zaps y los horarios de publicación también pueden identificarte. Esto es una lista práctica, no una garantía.
+    - Armar un **modelo de amenaza** (quién, qué, por cuánto tiempo)
+    - Crear un **compartimento**: una identidad Nostr que no sea tu firma, tu trabajo ni tu cuenta familiar
+    - Elegir clientes, firmantes y relés para que un solo operador no te silencie ni te desenmascare
+    - Hablar con fuentes sin filtrar su identidad por DM, follows o zaps
+    - Saber qué Nostr **no** puede ocultar (IP, fotos, pagos, estilo de escritura, horarios)
 
-## Por qué Nostr importa en entornos de alto riesgo
+!!! warning "Esto no es una garantía"
+    Nostr te da **llaves portables** y **ninguna empresa única que pueda borrar tu cuenta en todo el mundo**. **No** te hace anónima/o.
 
-Las plataformas tradicionales pueden:
+    Los relés pueden registrar IPs. Las notas son públicas si no las cifras. Los pagos Lightning pueden atarse a exchanges con KYC. Una foto con un letrero de calle puede hacer más daño que una llave filtrada.
 
-- Suspender una cuenta y borrar una red de fuentes de un día para otro
-- Exigir un número de teléfono o un documento de identidad
-- Entregar datos de la cuenta a un gobierno o a un empleador
-- Silenciar en silencio la cobertura de una protesta o una investigación
-
-En Nostr:
-
-- **Tú** tienes la llave privada. Eso *es* la cuenta.
-- Las notas son eventos firmados. Cualquiera puede verificar que salieron de esa llave.
-- Publicas en **varios relés**. Un operador hostil no puede borrarte en todo el mundo.
-- Puedes cambiar de app (Damus, Primal, Amethyst, Coracle, …) sin reconstruir tu identidad.
-
-Eso solo sirve si **no mezclas** esta llave con tu identidad real.
+    Si enfrentas vigilancia dirigida, combina esto con alguien que entienda **tus** leyes y riesgos locales. Esta página es educación, no asesoría legal.
 
 ---
 
-## Escenario 1 — Periodista cubriendo una historia sensible
+## 1. Modelo de amenaza (antes de instalar nada)
 
-**Objetivo:** Publicar actualizaciones y hablar con fuentes sin atar la llave a tu firma periodística, al portátil de la redacción o a tus redes personales.
+Escribe tres frases en papel:
 
-### Configuración (una sola vez; en un dispositivo dedicado si puedes)
+1. **¿Quién** podría intentar desenmascararme o silenciarme? (policía, empleador, milicia, pareja violenta, una plataforma, trolls)
+2. **¿Qué** pasa si lo logran? (perder el trabajo, detención, fuente quemada, familia en riesgo)
+3. **¿Cuánto tiempo** debe vivir esta identidad? (una nota, una protesta, años)
 
-1. Instala un cliente de confianza. Prefiere uno que guarde las llaves en el dispositivo y que soporte un firmante (extensión NIP-07 o un firmante remoto como nsec.app / Amber) en lugar de pegar tu `nsec` en sitios web aleatorios.
-2. **Genera un par de llaves nuevo.** No reutilices la llave de tu perfil público de periodista.
-3. Escribe el `nsec` (o la semilla) **fuera de línea**: papel, no captura de pantalla, no correo, no notas en la nube.
-4. Completa los metadatos de perfil (kind 0) con un **rol**, no con un nombre: por ejemplo `Notas de campo | cobertura de protestas` y una imagen genérica. Sin logo de la redacción, sin cara, sin ciudad en la bio si esa ciudad te identifica.
-5. Añade **varios** relés en distintas jurisdicciones. No dependas de un solo relé popular.
+Esa respuesta lo cambia todo. Documentar una manifestación pública no es lo mismo que esconderse de una pareja violenta.
 
-### Publicar
+### Qué protege Nostr de verdad
 
-- Escribe como si un adversario fuera a leer la nota mañana. Sin nombres de hotel, sin “acabo de aterrizar en…”, sin fotos con metadatos de ubicación.
-- Quita el EXIF de las imágenes antes de publicar, o no publiques fotos desde el terreno.
-- Prefiere **texto** para actualizaciones urgentes. Imagen y vídeo son de alto riesgo.
-- Si una fuente debe contactarte, dale **solo este npub** por un canal que ya consideres de confianza. No anuncies “escríbeme por DM para filtraciones” en tu cuenta pública con tu nombre real.
+| Capacidad | ¿Protegido? | En la práctica |
+|------------|------------|----------------|
+| Que te usurpen la cuenta sin la llave | Sí | Nadie publica como tú sin el `nsec` |
+| Que una app o un relé te banee | Parcial | Republicas en otros relés; no pueden borrar todas las copias |
+| Probar que una nota salió de una llave | Sí | Las firmas se verifican |
+| Ocultar *que* publicaste | No | Los eventos son públicos; se ven `pubkey` y `created_at` |
+| Ocultar tu IP a los relés | No | Salvo Tor/VPN **antes** del cliente |
+| Ocultar con quién hablas | No por defecto | Los DM viejos (NIP-04) filtran metadatos; prefiere NIP-17 |
+| Recuperar una llave robada o perdida | No | No hay restablecer contraseña |
 
-### Hablar con fuentes
+### Compartimentos, no “una cuenta para siempre”
 
-- Los DM por defecto en muchos clientes (NIP-04 antiguo) filtran metadatos. Prefiere clientes con **mensajes privados (NIP-17 / gift wrap)** cuando la conversación sea sensible.
-- Nunca pidas a una fuente que instale una app aleatoria que no hayas verificado.
-- Acuerda de antemano qué pasa si la llave se quema: rotas a un npub nuevo y avisas a las personas de confianza por otro canal.
+Piensa en **cajas**:
 
-### Si hay que abandonar la identidad
+```mermaid
+flowchart LR
+    A[Firma / periodista público] -.->|nunca mezclar| B[npub de cobertura]
+    C[npub de amistades] -.->|nunca mezclar| B
+    D[Correo / teléfono de la redacción] -.->|nunca mezclar| B
+    B --> E[Dispositivo o perfil de navegador dedicado]
+    B --> F[Varios relés]
+    B --> G[Fuentes presentadas fuera de banda]
+```
 
-Si crees que la llave está comprometida: **deja de usarla**. Genera una nueva. Avisa a las fuentes por otro canal. En Nostr no existe “restablecer contraseña”.
-
----
-
-## Escenario 2 — Organizador coordinando una comunidad
-
-**Objetivo:** Difundir información pública (hora, lugar, apoyo legal) y mantener la planificación y las listas de miembros fuera del feed público.
-
-### Separa identidades a propósito
-
-| Llave | Úsala para | No la uses para |
-|-----|------------|-------------------|
-| **npub público de organización** | Anuncios, peticiones de apoyo mutuo, enlaces a abogados | Listas de miembros, direcciones privadas, quién va a asistir |
-| **npub del grupo de trabajo** | Solo con personas de confianza | Posts públicos, zaps desde un exchange KYC que lleve tu nombre |
-| **npub personal** | Amistades, bromas, zaps | Cualquier cosa sobre la acción |
-
-Usar una sola llave para todo es el error más común de quien organiza.
-
-### Anuncios públicos
-
-- Publica la misma nota en **varios relés** para que un solo operador no pueda tumbar el anuncio.
-- Pon los datos críticos en el **texto**, no solo en una imagen (las imágenes fallan en conexiones lentas y son más difíciles de archivar).
-- Usa un hashtag o etiqueta `t` estable para que la gente siga el tema sin seguirte a ti.
-
-### Coordinación privada
-
-- Listas de miembros y logística van en **chat de grupo cifrado o DM NIP-17**, no en un hilo público.
-- No menciones (@) a personas que no hayan aceptado ser visibles.
-- Si administras un relé comunitario, publica una política clara: qué registras, cuánto tiempo guardas eventos y cómo pedir borrado (NIP-09 es un esfuerzo razonable; el relé puede conservar una copia).
-
-### Después del evento
-
-- Asume que las notas públicas son permanentes, aunque envíes un evento de borrado.
-- Rota la llave del grupo de trabajo si hubo decomisos de dispositivos o coacción.
+Si la llave de campo se vincula a tu nombre, **quémala** y abre otra caja. No “rebrandees” el mismo `nsec`.
 
 ---
 
-## Escenario 3 — Persona en riesgo que necesita hablar sin cuenta a nombre real
+## 2. Identidad: llaves, perfiles y desenmascaramiento accidental
 
-**Objetivo:** Entrar a Nostr en menos de 30 minutos sin vincular teléfono, correo ni documento de identidad.
+### Genera una llave nueva — y que sea aburrida
 
-### Primeros 30 minutos
+1. Créala **en el dispositivo que la va a usar**, o en una app firmante, no en una web.
+2. Guarda el `nsec` **fuera de línea** (papel, metal). No capturas, no Fotos, no “mensajes guardados” de WhatsApp, no copias de seguridad del portátil del trabajo.
+3. El perfil (`kind 0`) debe describir un **rol**, no a una persona: `Notas de campo · cobertura cívica`, avatar genérico, sin sitio web.
+4. **No** agregues:
 
-1. **Llave nueva. Perfil nuevo. Perfil de dispositivo nuevo** si es posible (otro perfil del navegador u otro usuario del teléfono).
-2. No nombres la cuenta como tu Twitter, Instagram o correo.
-3. Conéctate a 3–5 relés. Incluye al menos uno que no hayas elegido de un tuit al azar.
-4. Lee antes de publicar. Sigue unos npubs de confianza. Confirma que las notas aparecen en otro cliente.
-5. Recién entonces publica. Primera nota: sin selfies, sin trabajo, sin “mi nombre real es…”.
+    - Tu nombre real, medio o ciudad si esa ciudad es poco común
+    - Una dirección **NIP-05** en un dominio tuyo (el DNS es una etiqueta con nombre)
+    - Una **dirección Lightning** de una wallet KYC a tu nombre legal
+    - Un enlace a Twitter/Instagram/GitHub que ya esté atado a ti
 
-### Privacidad de red (en lenguaje sencillo)
+5. Las listas de follows (`kind 3`) son públicas. Seguir tu npub público de periodista desde el npub de campo **los vincula**.
 
-| Riesgo | Qué ocurre | Respuesta práctica |
-|------|----------------|-------------------|
-| El relé ve tu IP | El operador puede registrar quién se conectó | Usa Tor o una VPN de confianza **antes** de abrir el cliente |
-| Número de teléfono | Muchas apps “fáciles” lo piden | Usa un cliente que no exija teléfono |
-| Zaps de Lightning | Los pagos pueden vincularse a un exchange KYC | No hagas zap desde un exchange a tu nombre legal si necesitas anonimato |
-| Capturas de pantalla | Otras personas pueden republicarte | Escribe en consecuencia |
+### Firmantes: nunca pegues `nsec` en la web
 
-### Qué publicar — y qué no
+| Patrón | Úsalo cuando | Evita |
+|---------|----------|--------|
+| Llave en una app móvil (Damus, Amethyst) | Un teléfono dedicado | El mismo teléfono que tu iCloud/Google a nombre real |
+| Extensión NIP-07 | Portátil + clientes web | Pegar `nsec` en Coracle/Snort |
+| Firmante remoto (NIP-46, Amber, nsec.app) | Apps web sin entregarles la llave | Firmantes que no hayas verificado |
 
-**Más seguro:** análisis general, documentación de hechos públicos, copias de documentos ya públicos, enlaces.
+Si un sitio te pide pegar `nsec` para “entrar”, vete.
 
-**Peligroso:** ubicación en vivo, fotos de familia, documentos de identidad, “soy la única enfermera del turno de noche en el hospital X”, cualquier cosa que una autoridad local pueda usar para encontrar una casa o un trabajo.
+### Respaldo y muerte de una llave
+
+- Dos copias en papel, en sitios físicos distintos, si la historia dura meses.
+- Prueba restaurar **antes** de necesitarlo.
+- Si decomisan el dispositivo, asume que la llave que había ahí está quemada. Rota. Avisa a las fuentes por **otro** canal.
 
 ---
 
-## Reglas compartidas (los tres escenarios)
+## 3. Red y relés (aquí es donde más gente queda expuesta)
 
-1. **Una finalidad por llave.** Mezclar identidades es cómo encuentran a la gente.
-2. **Nunca pegues tu `nsec` en un sitio web.** Usa una extensión firmante o un firmante móvil.
-3. **Respalda la llave fuera de línea.** Si la pierdes, pierdes la identidad. No hay mesa de ayuda.
-4. **Varios relés, no uno.** La resistencia a la censura es un *hábito*, no un eslogan.
-5. **Asume que las notas públicas duran para siempre.**
-6. **Nostr no oculta tu IP por sí solo.** Combínalo con Tor/VPN cuando el modelo de amenaza lo exija.
-7. **Verifica los clientes.** Descárgalos de sitios oficiales o de F-Droid / App Store que hayas comprobado, no de anuncios.
+Los clientes abren un WebSocket a cada relé. Ese relé ve **tu IP** y **qué pubkeys pides**.
 
-## Clientes de partida sugeridos
+### Higiene de red práctica
 
-Esto cambia con el tiempo. Revisa recomendaciones actuales y verifica la fuente de descarga:
+- Activa **Tor o una VPN de confianza antes** de abrir el cliente Nostr. El orden importa.
+- Prefiere clientes con **proxy**, o un dispositivo que ya esté en Tor.
+- Una VPN “de privacidad” pagada con tu tarjeta personal es más débil que Tor para el anonimato; igual puede ocultar tu IP de casa al relé.
+- No publiques el npub “secreto” desde el Wi‑Fi de la redacción.
 
-- **iOS:** Damus, Primal
-- **Android:** Amethyst, Primal
-- **Web (con firmante):** Coracle, Snort — usa una extensión NIP-07; no pegues el `nsec`
-- **Endurecimiento:** un firmante dedicado (extensión de navegador o app tipo Amber) para que los sitios nunca vean la llave privada
+### Cuántos relés, y cuáles
+
+- **Escribe en varios** (idea de outbox): si uno te censura, otros conservan la nota.
+- **Lee de varios**: un relé puede mentir por omisión.
+- Mezcla jurisdicciones. Un relé amateur en tu ciudad recibe un oficio judicial más fácil que varios operadores lejanos.
+- Relés de pago o autenticados bajan el spam; también pueden **exigir** una factura Lightning que te identifique. Sepa qué estás canjeando.
+- La **lista de relés del cliente** a veces se publica (`kind 10002`). Eso indica a quien observa **dónde** mirarte.
+
+### Qué puede ver quien opera un relé
+
+- IP y hora de conexión
+- Eventos que publicas
+- Filtros a los que te suscribes (a menudo: “notas del pubkey X” — revela a quién lees)
+
+Por lo general **no** pueden falsificar notas con tu llave. **Sí** pueden tirar tus notas, registrarte o entregar logs.
+
+---
+
+## 4. Publicar sin entregar la historia
+
+### Escribe como si se leyera en un tribunal
+
+- Sin ubicación en vivo, hotel, retén ni “acabo de aterrizar en…”.
+- Sin fotos hasta **quitar EXIF** (GPS, modelo de teléfono, marca de tiempo). Mejor: no dispares con el mismo teléfono de tus cuentas a nombre real.
+- Prefiere **texto** para lo urgente. El vídeo alimenta reconocimiento facial y geolocalización.
+- Evita frases únicas que también uses en tu blog con firma (la estilometría basta para preocuparse).
+- Los hashtags ayudan a descubrir **y** a buscar. Úsalos a propósito.
+
+### Borrar no es borrar
+
+NIP-09 pide a los relés que suelten un evento. Muchos no lo harán. Quedan archivos, otros relés y capturas. **Asume que lo público es para siempre.**
+
+### Verificar sin doxxearte
+
+El periodismo sigue necesitando credibilidad:
+
+- Usa un **segundo** npub, claramente identificado, para el trabajo que firmarás con tu nombre.
+- En el npub de campo, verifica hechos en el **texto** (IDs de documentos, URLs públicas, horas de eventos públicos), no “confía, estoy en X”.
+- Los medios pueden publicar “contacta este npub primero por Signal” en una página **aparte**, no enlazada desde el perfil secreto.
+
+---
+
+## 5. Escenario: periodista y fuentes
+
+**Objetivo:** cubrir una historia sensible; las fuentes no deben quedar a un follow list de distancia de quedar expuestas.
+
+### Configuración
+
+1. Dispositivo dedicado, o al menos un usuario del sistema / perfil de navegador dedicado.
+2. Llave nueva + firmante. Respaldo en papel.
+3. Perfil aburrido. Sin NIP-05, sin Lightning KYC.
+4. 4+ relés. Primero Tor/VPN.
+5. Presenta el npub a las fuentes **fuera de banda** (Signal, en persona, correo cifrado que ya uses) — no publicando “mándenme filtraciones por DM” en tu firma pública.
+
+### DM: NIP-04 vs NIP-17 (en lenguaje claro)
+
+- **NIP-04** (“DM cifrado” legado): el contenido va cifrado, pero a menudo se ve **que** A habló con B, y cuándo. Trátalo como una postal en un sobre: mejor que una nota pública, insuficiente para fuentes.
+- **NIP-17 / gift wrap**: oculta gran parte de esos metadatos. Usa un cliente que lo implemente de verdad. Si el cliente es vago, asume NIP-04.
+
+Aun así: una fuente que te sigue, te hace zap o da like desde **su** npub identificable se ató sola. Pídele también una **llave desechable**.
+
+### Qué no hacer con fuentes
+
+- No las agregues a una lista pública de follows.
+- No las menciones con @.
+- No les pidas instalar un APK que tú enviaste.
+- No guardes nombres de fuentes en marcadores o listas públicas (`kind 30000` suele ser público).
+
+### Quema
+
+Si se compromete la llave, el dispositivo o una fuente: deja de publicar. Llave nueva. Nuevo perfil de dispositivo si hace falta. Avisa al resto por un canal que **no** sea Nostr.
+
+---
+
+## 6. Escenario: organizador
+
+**Objetivo:** que la logística pública siga disponible aunque una tienda de apps o un relé entre en pánico; que el padrón no vaya al firehose.
+
+### Tres llaves, tres trabajos
+
+| Llave | ¿Pública? | Trabajo |
+|-----|---------|-----|
+| Difusión de la org | Sí | Hora, lugar, línea legal, apoyo mutuo — solo hechos |
+| Núcleo / grupo de trabajo | No | Pocas personas; planificación |
+| Personal | Quizá | Amistades. Nunca la acción. |
+
+Publica el **mismo** anuncio en varios relés. Dirección y hora en **texto**, no solo en una gráfica.
+
+No uses la llave de difusión para seguir a cada voluntaria — eso es una lista de miembros.
+
+Si operas un relé comunitario: publica una **política** (logs, retención, proceso legal). Los borrados NIP-09 son de mejor esfuerzo.
+
+Tras redadas o decomisos: rota la llave del núcleo. Trata el historial del grupo como expuesto.
+
+---
+
+## 7. Escenario: persona en riesgo (sin redacción ni informática)
+
+**Objetivo:** hablar sin cuenta atada a un teléfono, en menos de una hora.
+
+1. Perfil de navegador o usuario del teléfono nuevo. No tu Chrome de todos los días con Google.
+2. Llave nueva. Papel. Nombre aburrido.
+3. Cliente que **no exija** número de teléfono.
+4. Tor o VPN **primero**.
+5. Lee 20 minutos. Confirma que las notas aparecen en un segundo cliente (biblioteca, teléfono de alguien de confianza) antes de decir nada identificable.
+6. Primeros posts: hechos públicos, sin selfies, sin trabajo, sin “soy la única de este turno”.
+
+Si el riesgo es un adversario **personal** que conoce tu forma de escribir y tu ciudad, Nostr no es magia. Recorta detalles únicos. Prefiere documentar fuentes públicas, no un diario.
+
+---
+
+## 8. Dinero: zaps y por qué desenmascaran
+
+Los zaps son pagos Lightning. Son útiles y **ruidosos**.
+
+- Un zap desde una wallet KYC con tu pasaporte ata **este npub** a ti.
+- Incluso wallets sin KYC filtran si las fondeaste desde un exchange personal.
+- Recibir zaps en un perfil “secreto” anunciado en tu blog real une las dos identidades.
+
+Si este compartimento debe seguir sin nombre: **desactiva Lightning en el perfil** y no hagas zap desde ahí.
+
+---
+
+## 9. Clientes (puntos de partida, no avales)
+
+Verifica siempre quién publica la app. Esto cambia rápido:
+
+- **iOS:** Damus, Primal  
+- **Android:** Amethyst, Primal (F-Droid / sitio oficial, no APKs raros)  
+- **Web:** Coracle, Snort — **solo** con firmante NIP-07  
+- **Firmante:** extensión de navegador o app tipo Amber para que el sitio nunca tenga el `nsec`
+
+Revisa permisos después de cada actualización.
+
+---
+
+## 10. Lista de incidente
+
+Cópiala; guárdala fuera del teléfono que tiene la llave.
+
+- [ ] Modelo de amenaza escrito (quién / qué / cuánto tiempo)
+- [ ] Llave nueva; no reutilizada de una cuenta pública
+- [ ] `nsec` fuera de línea; restauración probada
+- [ ] Sin nombre real, cara, NIP-05 ni Lightning KYC en el perfil
+- [ ] Sin follows que apunten a tu identidad real
+- [ ] Tor/VPN antes del cliente
+- [ ] Varios relés, más de un país si puedes
+- [ ] Fuentes presentadas fuera de banda; también con llaves desechables
+- [ ] NIP-17 (o nada de DM) para lo sensible
+- [ ] Sin ubicación en vivo, sin EXIF, sin tu voz de firma en el npub secreto
+- [ ] Plan de rotación si decomisan el dispositivo
+
+---
 
 ## Cómo se conecta con el resto de LearnNostr
 
-- Llaves y respaldos: [Llaves](../concepts/keys.md) y [Módulo 2](../modules/module-02-keys-identity.md)
-- Relés y por qué importan varios: [Relés](../concepts/relays.md) y [Módulo 4](../modules/module-04-relays-architecture.md)
-- Cifrado, DM y modelos de amenaza: [Módulo 9: Seguridad y privacidad](../modules/module-09-security.md)
-- Tutorial técnico de cliente: [Construir un cliente simple](../tutorials/simple-client.md)
-
-## Lista rápida
-
-- [ ] Creé una llave **nueva** para este propósito, no mi llave personal pública
-- [ ] El `nsec` está escrito fuera de línea, no en fotos de la nube
-- [ ] El perfil no tiene nombre real, cara ni lugar de trabajo
-- [ ] Estoy conectada/o a más de un relé
-- [ ] No pego la llave privada en sitios web
-- [ ] Sé que Nostr no oculta mi IP por sí solo
-- [ ] Tengo un plan para **rotar llaves** si decomisan un dispositivo o se quema una fuente
+- Llaves y respaldos: [Llaves](../concepts/keys.md) · [Módulo 2](../modules/module-02-keys-identity.md)
+- Relés: [Relés](../concepts/relays.md) · [Módulo 4](../modules/module-04-relays-architecture.md)
+- Cifrado, DM, NIP-44 / NIP-17: [Módulo 9: Seguridad y privacidad](../modules/module-09-security.md)
+- Construir un cliente (técnico): [Construir un cliente simple](../tutorials/simple-client.md)

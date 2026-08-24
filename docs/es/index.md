@@ -38,9 +38,9 @@ hide:
 </div>
 
 !!! danger "Para periodistas, organizadores y personas en riesgo"
-    Nuevo: escenarios prácticos, sin código, para crear una identidad separada, publicar sin una cuenta a nombre real y entender lo que Nostr *no* oculta.
+    Guía de campo: modelo de amenaza, protección de fuentes, relés, DM (NIP-04 vs NIP-17), zaps y lo que Nostr *no* oculta.
 
-    [Abrir la guía para usuarios en alto riesgo →](getting-started/high-risk-users.md)
+    [Abrir la guía para periodistas y personas en riesgo →](getting-started/high-risk-users.md)
 
 <style>
 /* Hero section styling */

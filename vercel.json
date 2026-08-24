@@ -3,7 +3,7 @@
   "installCommand": "echo skip-npm",
   "buildCommand": "chmod +x build.sh && ./build.sh",
   "outputDirectory": "site",
-  "trailingSlash": false,
+  "trailingSlash": true,
   "redirects": [
     {
       "source": "/index.html",

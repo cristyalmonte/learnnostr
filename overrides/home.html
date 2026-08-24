@@ -5,119 +5,37 @@
 
   {% set is_spanish = config.theme.language == 'es' or page.url.startswith('/es/') or page.url == '/es' %}
 
-  <!-- Additional styles for landing page -->
-  <style>
-    /* Announcement banner styles */
-    .md-banner {
-        background-color: #9C27B0 !important;
-        color: white;
-        padding: 0.6rem 1rem;
-        text-align: center;
-        font-weight: 500;
-        text-decoration: none;
-        display: block;
-        border: none;
-        position: relative;
-    }
-    
-    .md-banner:hover {
-        background-color: #7B1FA2 !important;
-        color: white;
-        text-decoration: none;
-    }
-
-    .mdx-container {
-        background: linear-gradient(to bottom, rgb(255 255 255/.8), #9C27B0 99%, var(--md-default-bg-color) 99%);
-        padding-top: 1rem;
-    }
-    [data-md-color-scheme="slate"] .mdx-container {
-        background: rgba(9, 9, 9, 0.95);
-    }
-
-    .mdx-hero {
-        color: var(--hb-hero-color);
-        margin: 0 0.8rem;
-    }
-    .mdx-hero h1 {
-        color: currentcolor;
-        margin-bottom: 1rem;
-        font-size: 2.6rem;
-    }
-    @media screen and (max-width: 29.9375em) {
-        .mdx-hero h1 {
-            font-size: 1.4rem;
-        }
-    }
-    .mdx-hero__content {
-        padding-bottom: 6rem;
-    }
-    @media screen and (min-width: 60em) {
-        .mdx-hero {
-            align-items: stretch;
-            display: flex;
-        }
-        .mdx-hero__content {
-            margin-top: 3.5rem;
-            max-width: 38rem;
-            padding-bottom: 14vw;
-        }
-        .mdx-hero__image {
-            order: 1;
-            transform: translateX(4rem);
-            width: 38rem;
-        }
-    }
-    @media screen and (min-width: 76.25em) {
-        .mdx-hero__image {
-            transform: translateX(8rem);
-        }
-    }
-    .mdx-hero .md-button {
-        color: var(--hb-hero-color);
-        border-color: var(--hb-hero-color);
-    }
-    [data-md-color-scheme="slate"] .mdx-hero .md-button--primary {
-        color: var(--md-primary-fg-color);
-    }
-    .mdx-hero .md-button--primary {
-        color: var(--md-primary-fg-color);
-        background-color: var(--hb-hero-color);
-        border-color: transparent;
-        margin-right: 0.5rem;
-        margin-top: 0.5rem;
-        margin-bottom: 0.5rem;
-    }
-
-    /* Make tutorials button text black when hovering in dark mode */
-    [data-md-color-scheme="slate"] .mdx-hero .md-button:not(.md-button--primary):hover {
-        color: #000000 !important;
-    }
-
-    .md-main .md-button--primary {
-        color: var(--md-primary-fg-color);
-        background-color: var(--hb-hero-color);
-        border-color: transparent;
-    }
-
-    nav[class="md-tabs"] {
-        border-bottom: none;
-    }
-  </style>
-
   <section class="mdx-container">
     <div class="md-grid md-typeset">
       <div class="mdx-hero">
         <div class="mdx-hero__content">
-          <h1><span style="color: #9C27B0;">LearnNostr</span> <div id="typewriter">{% if is_spanish %}protocolo social{% else %}social protocol{% endif %}</div></h1>
-          <h3 style="color: #9C27B0;">{% if is_spanish %}Domina Nostr - el protocolo simple y abierto que te pone en control de tu identidad digital e interacciones sociales.{% else %}Master Nostr - the simple, open protocol that puts you in control of your digital identity and social interactions.{% endif %}</h3>
-          <a href="{% if is_spanish %}/es/getting-started/what-is-nostr/{% else %}/getting-started/what-is-nostr/{% endif %}" class="md-button md-button--primary">
-            {% if is_spanish %}Básicos{% else %}Basics{% endif %}
-          </a>
-          <a href="{% if is_spanish %}/es/tutorials/simple-client/{% else %}/tutorials/simple-client/{% endif %}" class="md-button">
-            {% if is_spanish %}Tutoriales{% else %}Tutorials{% endif %}
-          </a>
+          <h1>
+            {% if is_spanish %}Aprende{% else %}Learn{% endif %}
+            <span id="typewriter">{% if is_spanish %}Nostr.{% else %}Nostr.{% endif %}</span>
+          </h1>
+          <p class="mdx-hero__lede">
+            {% if is_spanish %}
+              El protocolo simple y abierto para identidad, notas y pagos, sin una empresa en el medio.
+            {% else %}
+              The simple, open protocol for identity, notes, and payments, without a company in the middle.
+            {% endif %}
+          </p>
+          <p class="mdx-hero__actions">
+            <a href="{% if is_spanish %}/es/getting-started/what-is-nostr/{% else %}/getting-started/what-is-nostr/{% endif %}" class="md-button md-button--primary">
+              {% if is_spanish %}Empezar{% else %}Start learning{% endif %}
+            </a>
+          </p>
         </div>
       </div>
     </div>
   </section>
+{% endblock %}
+
+{% block content %}
+  {% include "partials/tags.html" %}
+  {% include "partials/actions.html" %}
+  {{ page.content }}
+  {% include "partials/source-file.html" %}
+  {% include "partials/feedback.html" %}
+  {% include "partials/comments.html" %}
 {% endblock %}

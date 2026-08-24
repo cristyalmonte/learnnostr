@@ -4,7 +4,7 @@
 site_name: LearnNostr
 site_description: A comprehensive guide to understanding and building on the Nostr protocol
 site_author: LearnNostr Team
-site_url: https://learnnostr.com
+site_url: https://learnnostr.org
 use_directory_urls: true
 
 # Repository
@@ -66,7 +66,7 @@ plugins:
       separator: '[\s\-,:!=\[\]()"/]+|(?!\b)(?=[A-Z][a-z])|\.(?!\d)|&[lg]t;'
   - i18n:
       docs_structure: folder
-      fallback_to_default: false
+      fallback_to_default: true
       reconfigure_material: true
       reconfigure_search: true
       languages:

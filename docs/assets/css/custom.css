@@ -351,6 +351,22 @@ header[class="md-header md-header--shadow"], nav[class="md-tabs"] {
   }
 }
 
+/* Hero already has the page title; Material still injects the nav name. */
+body:has(.mdx-hero) .md-content__inner > h1:first-of-type {
+  display: none;
+}
+body:has(.mdx-hero) .md-main__inner {
+  margin-top: 0;
+}
+body:has(.mdx-hero) .md-content {
+  padding-top: 0.5rem;
+}
+@media screen and (max-width: 44.9375em) {
+  body:has(.mdx-hero) .md-typeset .grid.cards {
+    grid-template-columns: 1fr;
+  }
+}
+
 
 /* Testimonial cards */
 .testimonial {

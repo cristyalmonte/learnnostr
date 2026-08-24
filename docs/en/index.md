@@ -5,8 +5,9 @@ hide:
   - toc
   - navigation
   - feedback
-  - title
 ---
+
+<!-- Material injects a nav-title heading unless the page already contains <h1 -->
 
 <div class="grid cards" markdown>
 

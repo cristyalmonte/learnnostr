@@ -392,9 +392,10 @@ CMD ["./strfry", "relay"]
 
 Now that you understand relays, explore:
 
+- [Choosing relays](../../getting-started/choose-relays.md) — inspect NIP-11 and write to more than one operator
 - [Events and Messages](../events-and-messages/) - What relays store and forward
+- [Publish and verify](../../tutorials/publish-and-verify.md) — prove a note landed
 - [Building Applications](../../tutorials/simple-client/) - How to work with relays in code
-- [Advanced Topics](../advanced/) - Specialized relay features
 
 !!! tip "Getting Started"
-    Start by understanding how to use relays as a client, then experiment with running your own relay for learning. Consider the community and economic factors when deciding whether to run a public relay.
+    Start by using relays as a client (several, in more than one country if you can), then experiment with running your own relay for learning. Consider the community and economic factors when deciding whether to run a public relay.

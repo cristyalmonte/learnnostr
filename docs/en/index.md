@@ -9,7 +9,17 @@ hide:
 
 <!-- Material injects a nav-title heading unless the page already contains <h1 -->
 
+If a company or a government can lock the account, lock the phone number, read the prompt log, or delete the post, this is the other path: **inference you control**, **keys you hold**, **relays anyone can run**.
+
 <div class="grid cards" markdown>
+
+-   :material-shield-lock:{ .lg .middle } **Learn Private AI**
+
+    ---
+
+    Four labs: why cloud chat is evidence, run a model offline, Maple or Routstr when local is not enough, publish without leaking the draft.
+
+    [Start the path →](private-ai/index.md)
 
 -   :material-account-key:{ .lg .middle } **Your keys, your identity**
 
@@ -17,7 +27,7 @@ hide:
 
     You hold the cryptographic keys. No company can delete your account or speak for you.
 
-    [Keys →](concepts/keys.md)
+    [Keys without cloud accounts →](getting-started/keys-without-accounts.md)
 
 -   :material-network:{ .lg .middle } **Relays, not platforms**
 
@@ -25,21 +35,75 @@ hide:
 
     Notes live on a network of servers anyone can run. No single operator is the network.
 
-    [What is Nostr? →](getting-started/what-is-nostr.md)
+    [Choosing relays →](getting-started/choose-relays.md)
 
--   :material-lightning-bolt:{ .lg .middle } **Bitcoin built in**
+-   :material-shield-account:{ .lg .middle } **Publish under pressure**
 
     ---
 
-    Lightning zaps send value over the same protocol as notes and identity.
+    Pseudonymous identity and secure publishing for people who cannot trust a platform.
 
-    [Build a client →](tutorials/simple-client.md)
+    [First hour →](getting-started/first-session.md)
 
 </div>
 
 ## Learning path
 
-Four short steps, from first note to a working client.
+Three tracks. Same site. Private AI is the lead if you came here to keep prompts off OpenAI, Google, and Anthropic. The Nostr-under-censorship path is still the door if you came here to publish.
+
+### Learn Private AI
+
+Copy-paste labs for people living under censorship. LearnNostr is the classroom, not Maple, Routstr, or Ollama.
+
+<div class="home-path" markdown>
+
+1.  **Cloud AI is surveillance**  
+    What not to type. Logging, KYC payments, and jurisdiction.  
+    [Start →](private-ai/cloud-surveillance.md)
+
+2.  **Run a model locally**  
+    Install Ollama, pull a local tag, finish a real rewrite offline.  
+    [Lab →](private-ai/run-local.md)
+
+3.  **Maple and Routstr**  
+    TEE chat or Cashu + Nostr discovery when local is not enough — as their docs describe them.  
+    [Lab →](private-ai/maple-routstr.md)
+
+4.  **Publish without leaking**  
+    Infer on localhost. Edit by hand. Post only the public paragraph from a throwaway key.  
+    [Lab →](private-ai/publish-without-leaking.md)
+
+</div>
+
+### Use Nostr when a platform can silence you
+
+Hands-on steps for pseudonymous identity and publishing — the use case Human Rights Foundation funded this site to teach.
+
+<div class="home-path" markdown>
+
+1.  **First hour**  
+    Client, keys on paper, three relays, a test note you can see from a second device.  
+    [Start →](getting-started/first-session.md)
+
+2.  **Keys without cloud accounts**  
+    `nsec` vs `npub`, signers so websites never hold the secret, compartments.  
+    [Read →](getting-started/keys-without-accounts.md)
+
+3.  **Choosing relays**  
+    What operators log, how to inspect NIP-11, why you write to more than one.  
+    [Read →](getting-started/choose-relays.md)
+
+4.  **Field guide**  
+    Journalists, organizers, sources, and an incident checklist.  
+    [Read →](getting-started/high-risk-users.md)
+
+</div>
+
+Workshops next: [publish and verify a note](tutorials/publish-and-verify.md) · [private messages (NIP-17)](getting-started/private-messages.md)
+
+### Build on Nostr
+
+Four short steps if you want a working client.
 
 <div class="home-path" markdown>
 
@@ -63,14 +127,15 @@ Four short steps, from first note to a working client.
 
 ## Publish a note
 
+Same signed event, several relays. A rejection on one is not a global ban.
+
 === "JavaScript"
 
     ```javascript
-    import { generateSecretKey, getPublicKey, finalizeEvent, Relay } from 'nostr-tools'
+    import { generateSecretKey, finalizeEvent } from 'nostr-tools'
+    import { SimplePool } from 'nostr-tools/pool'
 
     const sk = generateSecretKey()
-    const pk = getPublicKey(sk)
-
     const event = finalizeEvent({
       kind: 1,
       created_at: Math.floor(Date.now() / 1000),
@@ -78,25 +143,27 @@ Four short steps, from first note to a working client.
       content: 'Hello Nostr!',
     }, sk)
 
-    const relay = await Relay.connect('wss://relay.damus.io')
-    await relay.publish(event)
+    const relays = ['wss://relay.damus.io', 'wss://nos.lol']
+    const pool = new SimplePool()
+    await Promise.any(pool.publish(relays, event))
+    pool.close(relays)
     ```
 
 === "Python"
 
     ```python
-    from nostr.key import PrivateKey
-    from nostr.event import Event
-    from nostr.relay_manager import RelayManager
-    import time
+    import asyncio
+    from nostr_sdk import Client, EventBuilder, Keys, NostrSigner
 
-    private_key = PrivateKey()
-    event = Event(kind=1, content="Hello Nostr!", created_at=int(time.time()))
-    private_key.sign_event(event)
+    async def main():
+        keys = Keys.generate()
+        client = Client(NostrSigner.keys(keys))
+        await client.add_relay("wss://relay.damus.io")
+        await client.add_relay("wss://nos.lol")
+        await client.connect()
+        await client.send_event_builder(EventBuilder.text_note("Hello Nostr!"))
 
-    relay_manager = RelayManager()
-    relay_manager.add_relay("wss://relay.damus.io")
-    relay_manager.publish_event(event)
+    asyncio.run(main())
     ```
 
 === "Rust"
@@ -107,10 +174,13 @@ Four short steps, from first note to a working client.
     #[tokio::main]
     async fn main() -> Result<()> {
         let keys = Keys::generate();
-        let client = Client::new(&keys);
+        let client = Client::builder().signer(keys).build();
         client.add_relay("wss://relay.damus.io").await?;
+        client.add_relay("wss://nos.lol").await?;
         client.connect().await;
-        client.publish_text_note("Hello Nostr!", []).await?;
+        client
+            .send_event_builder(EventBuilder::text_note("Hello Nostr!"))
+            .await?;
         Ok(())
     }
     ```

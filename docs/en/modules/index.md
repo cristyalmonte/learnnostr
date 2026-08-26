@@ -1,6 +1,8 @@
 # Learn Nostr Modules
 
-Welcome to the Learn Nostr Modules! This comprehensive curriculum is designed to take you from a complete beginner to a Nostr expert through structured, progressive learning paths.
+Welcome to the Learn Nostr Modules! This curriculum takes you from protocol basics to building clients and operating relays.
+
+If you need **censorship-resistant publishing** more than a developer track, start with [Your first hour](../getting-started/first-session.md) and the [field guide](../getting-started/high-risk-users.md). If you need AI without a ChatGPT login, start with [Learn Private AI](../private-ai/index.md). Then come back here.
 
 ## 🎯 Learning Path Overview
 
@@ -97,7 +99,7 @@ Our modules are carefully structured to build your knowledge progressively:
 
     ---
 
-    Advanced security patterns, threat modeling, encrypted DMs, and hardening strategies. Also see the [high-risk user scenarios](../getting-started/high-risk-users.md).
+    Advanced security patterns, threat modeling, encrypted DMs, and hardening strategies. Also see the [high-risk user scenarios](../getting-started/high-risk-users.md) and [Learn Private AI](../private-ai/index.md).
 
     [:octicons-arrow-right-24: Begin Module 9](module-09-security.md)
 

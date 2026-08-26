@@ -1,5 +1,8 @@
 # Integración de Billetera Lightning
 
+!!! warning "Los zaps pueden desenmascarar una identidad secreta"
+    Los pagos Lightning son útiles y **ruidosos**. Un zap desde una billetera con KYC, o una dirección Lightning en un perfil de campo, ata ese npub al dinero — y a menudo a un nombre legal. Si esta identidad debe quedar sin nombre, **salta esta página**, desactiva Lightning en el perfil y lee [Para periodistas y personas en riesgo](high-risk-users.md).
+
 !!! info "Objetivos de Aprendizaje"
     Al final de esta lección, entenderás:
     

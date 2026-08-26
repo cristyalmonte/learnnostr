@@ -1,6 +1,8 @@
 # Módulos de Learn Nostr
 
-¡Bienvenido a los Módulos de Learn Nostr! Este plan de estudios integral está diseñado para llevarte de principiante completo a experto en Nostr a través de rutas de aprendizaje estructuradas y progresivas.
+¡Bienvenido a los Módulos de Learn Nostr! Este plan de estudios te lleva de los fundamentos del protocolo a construir clientes y operar relés.
+
+Si necesitas **publicar a prueba de censura** más que una pista de desarrollo, empieza por [Tu primera hora](../getting-started/first-session.md) y la [guía de campo](../getting-started/high-risk-users.md). Si necesitas IA sin un login de ChatGPT, empieza por [Aprende IA privada](../private-ai/index.md). Luego vuelve aquí.
 
 ## 🎯 Descripción General del Camino de Aprendizaje
 
@@ -97,7 +99,7 @@ Nuestros módulos están cuidadosamente estructurados para construir tu conocimi
 
     ---
 
-    Patrones de seguridad avanzados, modelado de amenazas, DM cifrados y endurecimiento. También: [escenarios para personas en riesgo](../getting-started/high-risk-users.md).
+    Patrones de seguridad avanzados, modelado de amenazas, DM cifrados y endurecimiento. También: [escenarios para personas en riesgo](../getting-started/high-risk-users.md) y [Aprende IA privada](../private-ai/index.md).
 
     [:octicons-arrow-right-24: Comenzar Módulo 9](module-09-security.md)
 

@@ -1141,7 +1141,7 @@ Security and privacy in Nostr require careful attention to cryptographic details
 
 ## Next Steps
 
-- Review [Keys without cloud accounts](../getting-started/keys-without-accounts.md) and the [field guide](../getting-started/high-risk-users.md)
+- Review [Keys without cloud accounts](../getting-started/keys-without-accounts.md), the [field guide](../getting-started/high-risk-users.md), and [Learn Private AI](../private-ai/index.md)
 - Build a secure application using these principles
 - Contribute to Nostr security research
 - Stay updated on new security NIPs

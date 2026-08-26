@@ -269,6 +269,6 @@ Understanding Nostr's foundational architecture prepares you for using it — or
         3. **Relays operate independently** with individual policies, creating a distributed network without central control points
         4. **JSON simplicity** ensures broad compatibility, easy parsing, and straightforward protocol implementation across different programming languages
 
-If you need Nostr for journalism, organizing, or personal safety rather than development, continue with [Your first hour](first-session.md) and then the [field guide for journalists, organizers, and at-risk users](high-risk-users.md).
+If you need Nostr for journalism, organizing, or personal safety rather than development, continue with [Your first hour](first-session.md) and then the [field guide for journalists, organizers, and at-risk users](high-risk-users.md). If you need to use AI without a vendor prompt log, start [Learn Private AI](../private-ai/index.md).
 
 ---

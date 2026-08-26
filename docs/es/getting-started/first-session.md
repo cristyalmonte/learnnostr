@@ -28,7 +28,7 @@ Esa frase decide si usas el teléfono de todos los días, un perfil de navegador
 
 ---
 
-## 1. Primero la red, después la app
+## 1. Primero la red, después la app { #1-network-first-then-the-app }
 
 El orden importa:
 
@@ -132,6 +132,14 @@ Eso es el caso de uso de HRF en la práctica: identidad seudónima y publicació
 ## Siguiente
 
 <div class="grid cards" markdown>
+
+-   **Aprende IA privada**
+
+    ---
+
+    Reescribe y publica sin entregar el borrador a OpenAI, Google o Anthropic.
+
+    [Empezar →](../private-ai/index.md)
 
 -   **Llaves sin cuentas en la nube**
 

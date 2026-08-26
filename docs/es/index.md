@@ -9,9 +9,17 @@ hide:
 
 <!-- Material injects a nav-title heading unless the page already contains <h1 -->
 
-Si una empresa o un gobierno puede bloquear la cuenta, bloquear el teléfono o borrar el post, este es el otro camino: **llaves que tú sostienes**, **relés que cualquiera puede operar**, notas que no viven en una sola base de datos.
+Si una empresa o un gobierno puede bloquear la cuenta, bloquear el teléfono, leer el registro de prompts o borrar el post, este es el otro camino: **inferencia que tú controlas**, **llaves que tú sostienes**, **relés que cualquiera puede operar**.
 
 <div class="grid cards" markdown>
+
+-   :material-shield-lock:{ .lg .middle } **Aprende IA privada**
+
+    ---
+
+    Cuatro laboratorios: por qué el chat en la nube es prueba, corre un modelo sin red, Maple o Routstr cuando lo local no alcanza, publica sin filtrar el borrador.
+
+    [Empezar el camino →](private-ai/index.md)
 
 -   :material-account-key:{ .lg .middle } **Tus llaves, tu identidad**
 
@@ -41,7 +49,31 @@ Si una empresa o un gobierno puede bloquear la cuenta, bloquear el teléfono o b
 
 ## Ruta de aprendizaje
 
-Dos caminos. El mismo protocolo. Elige por qué estás aquí.
+Tres caminos. El mismo sitio. IA privada es el principal si viniste a dejar los prompts fuera de OpenAI, Google y Anthropic. La pista Nostr bajo censura sigue siendo la puerta si viniste a publicar.
+
+### Aprende IA privada
+
+Laboratorios para copiar y pegar, para quien vive bajo censura. LearnNostr es el aula, no Maple, Routstr ni Ollama.
+
+<div class="home-path" markdown>
+
+1.  **La IA en la nube es vigilancia**  
+    Qué no teclear. Registros, pagos KYC y jurisdicción.  
+    [Empezar →](private-ai/cloud-surveillance.md)
+
+2.  **Corre un modelo en local**  
+    Instala Ollama, baja una etiqueta local, termina una reescritura real sin red.  
+    [Lab →](private-ai/run-local.md)
+
+3.  **Maple y Routstr**  
+    Chat en TEE o Cashu + descubrimiento Nostr cuando lo local no alcanza — como lo describen sus docs.  
+    [Lab →](private-ai/maple-routstr.md)
+
+4.  **Publica sin filtrar**  
+    Infiere en localhost. Edita a mano. Publica solo el párrafo público desde una clave de un solo uso.  
+    [Lab →](private-ai/publish-without-leaking.md)
+
+</div>
 
 ### Usa Nostr cuando una plataforma puede silenciarte
 

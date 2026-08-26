@@ -218,7 +218,7 @@ If your risk is a **personal** adversary who knows your writing and your city, N
 
 ---
 
-## 8. Money: zaps and why they unmask people
+## 8. Money: zaps and why they unmask people { #8-money-zaps-and-why-they-unmask-people }
 
 Zaps are Lightning payments. They are useful and **loud**.
 
@@ -265,6 +265,7 @@ Keep this **on paper** (or another device) — not on the phone that holds the k
 
 ## How this connects to the rest of LearnNostr
 
+- **AI without a vendor prompt log:** [Learn Private AI](../private-ai/index.md) — local Ollama first, then Maple or Routstr as their docs describe them, then publish only the public remainder
 - First hour (no code): [Your first hour](first-session.md)
 - Keys and backups: [Keys without cloud accounts](keys-without-accounts.md) · [Keys](../concepts/keys.md) · [Module 2](../modules/module-02-keys-identity.md)
 - Relays: [Choosing relays](choose-relays.md) · [Relays](../concepts/relays.md) · [Module 4](../modules/module-04-relays-architecture.md)

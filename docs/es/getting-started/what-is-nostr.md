@@ -269,6 +269,6 @@ Entender la arquitectura fundamental de Nostr te prepara para usarlo — o para 
         3. **Los relés operan independientemente** con políticas individuales, creando una red distribuida sin puntos de control centrales
         4. **La simplicidad de JSON** asegura compatibilidad amplia, análisis fácil, e implementación directa del protocolo en diferentes lenguajes de programación
 
-Si necesitas Nostr para periodismo, organización o seguridad personal más que para desarrollo, continúa con [Tu primera hora](first-session.md) y luego la [guía de campo para periodistas, organizadores y personas en riesgo](high-risk-users.md).
+Si necesitas Nostr para periodismo, organización o seguridad personal más que para desarrollo, continúa con [Tu primera hora](first-session.md) y luego la [guía de campo para periodistas, organizadores y personas en riesgo](high-risk-users.md). Si necesitas usar IA sin un log de prompts de vendedor, empieza por [Aprende IA privada](../private-ai/index.md).
 
 ---

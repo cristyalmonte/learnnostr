@@ -28,7 +28,7 @@ That sentence decides whether you use a daily phone, a dedicated browser profile
 
 ---
 
-## 1. Network first, then the app
+## 1. Network first, then the app { #1-network-first-then-the-app }
 
 Order matters:
 
@@ -132,6 +132,14 @@ That is the HRF use case in practice: pseudonymous identity and publishing that 
 ## Next
 
 <div class="grid cards" markdown>
+
+-   **Learn Private AI**
+
+    ---
+
+    Rewrite and publish without handing the draft to OpenAI, Google, or Anthropic.
+
+    [Start →](../private-ai/index.md)
 
 -   **Keys without cloud accounts**
 

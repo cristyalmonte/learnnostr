@@ -9,9 +9,17 @@ hide:
 
 <!-- Material injects a nav-title heading unless the page already contains <h1 -->
 
-If a company or a government can lock the account, lock the phone number, or delete the post, this is the other path: **keys you hold**, **relays anyone can run**, notes that do not live in one database.
+If a company or a government can lock the account, lock the phone number, read the prompt log, or delete the post, this is the other path: **inference you control**, **keys you hold**, **relays anyone can run**.
 
 <div class="grid cards" markdown>
+
+-   :material-shield-lock:{ .lg .middle } **Learn Private AI**
+
+    ---
+
+    Four labs: why cloud chat is evidence, run a model offline, Maple or Routstr when local is not enough, publish without leaking the draft.
+
+    [Start the path →](private-ai/index.md)
 
 -   :material-account-key:{ .lg .middle } **Your keys, your identity**
 
@@ -41,7 +49,31 @@ If a company or a government can lock the account, lock the phone number, or del
 
 ## Learning path
 
-Two tracks. Same protocol. Pick why you are here.
+Three tracks. Same site. Private AI is the lead if you came here to keep prompts off OpenAI, Google, and Anthropic. The Nostr-under-censorship path is still the door if you came here to publish.
+
+### Learn Private AI
+
+Copy-paste labs for people living under censorship. LearnNostr is the classroom, not Maple, Routstr, or Ollama.
+
+<div class="home-path" markdown>
+
+1.  **Cloud AI is surveillance**  
+    What not to type. Logging, KYC payments, and jurisdiction.  
+    [Start →](private-ai/cloud-surveillance.md)
+
+2.  **Run a model locally**  
+    Install Ollama, pull a local tag, finish a real rewrite offline.  
+    [Lab →](private-ai/run-local.md)
+
+3.  **Maple and Routstr**  
+    TEE chat or Cashu + Nostr discovery when local is not enough — as their docs describe them.  
+    [Lab →](private-ai/maple-routstr.md)
+
+4.  **Publish without leaking**  
+    Infer on localhost. Edit by hand. Post only the public paragraph from a throwaway key.  
+    [Lab →](private-ai/publish-without-leaking.md)
+
+</div>
 
 ### Use Nostr when a platform can silence you
 

@@ -4,7 +4,11 @@ An interactive learning platform for the Nostr protocol built with MkDocs Materi
 
 🌐 **Live Site**: [learnnostr.org](https://learnnostr.org)
 
-LearnNostr teaches people how to use Nostr for **pseudonymous identity** and **secure publishing** — including people who cannot trust a company account, a phone-number login, or a single platform remaining online. Developer modules and client tutorials are still here; they are no longer the only front door.
+LearnNostr is bilingual education for people who cannot trust a company account, a phone-number login, a cloud prompt log, or a single platform remaining online.
+
+**Learn Private AI** is the lead path: a short, completable curriculum for using AI under censorship without handing prompts, documents, or identity to OpenAI, Google, Anthropic, or a local ISP. It is the grant artifact for Cristy Almonte’s HRF **AI for Individual Rights** application. LearnNostr is the classroom — it does not re-host Maple, Routstr, Ollama, Freedom Skills, OpenCode, PlebDevs, or Gen AI.
+
+The original **Nostr under censorship** track (first hour, keys, relays, DMs) remains. Developer modules are still here; they are not the only front door.
 
 ## Quick Start
 
@@ -26,6 +30,14 @@ Visit `http://localhost:8000` to see the site locally.
 Build the static site with `mkdocs build`.
 
 ## What's Inside
+
+**Learn Private AI** (lead path — four completable labs)
+
+- [Overview](docs/en/private-ai/index.md) — who it is for, decision rule, what this site is not
+- [Cloud AI is surveillance](docs/en/private-ai/cloud-surveillance.md) — what not to type, logging, KYC, jurisdiction
+- [Run a model locally](docs/en/private-ai/run-local.md) — Ollama, local tags only, a real offline rewrite
+- [Maple and Routstr](docs/en/private-ai/maple-routstr.md) — TEE + attestation vs Cashu + Nostr discovery, as their current docs describe them
+- [Publish without leaking the prompt](docs/en/private-ai/publish-without-leaking.md) — infer locally, edit by hand, post from a throwaway key
 
 **Using Nostr under censorship** (beginner, no code required)
 
@@ -53,6 +65,8 @@ Build the static site with `mkdocs build`.
 5. Submit a pull request
 
 Do not invent NIPs. Link the current spec: [nostr-protocol/nips](https://github.com/nostr-protocol/nips).
+
+Do not invent Maple, Routstr, or Ollama behavior. Link their current docs and describe only what those pages say, including limits (cloud tags, upstream forwarding, AWS jurisdiction).
 
 ## Tech Stack
 

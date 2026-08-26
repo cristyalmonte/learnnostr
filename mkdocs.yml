@@ -95,6 +95,7 @@ plugins:
             Module 8 - Scaling & Performance: Módulo 8 - Escalado y Rendimiento
             Module 9 - Security & Privacy: Módulo 9 - Seguridad y Privacidad
             Learn Private AI: Aprende IA privada
+            The four labs: Los cuatro laboratorios
             Cloud AI is surveillance: La IA en la nube es vigilancia
             Run a model locally: Corre un modelo en local
             Maple and Routstr: Maple y Routstr
@@ -132,7 +133,7 @@ plugins:
 nav:
   - Home: index.md
   - Learn Private AI:
-    - Overview: private-ai/index.md
+    - The four labs: private-ai/index.md
     - Cloud AI is surveillance: private-ai/cloud-surveillance.md
     - Run a model locally: private-ai/run-local.md
     - Maple and Routstr: private-ai/maple-routstr.md

@@ -1,5 +1,8 @@
 # Lightning Wallet Integration
 
+!!! warning "Zaps can unmask a secret identity"
+    Lightning payments are useful and **loud**. A zap from a KYC wallet, or a Lightning address on a field profile, ties that npub to money — and often to a legal name. If this identity must stay unnamed, **skip this page**, disable Lightning on the profile, and read [For journalists & at-risk users](high-risk-users.md) instead.
+
 !!! info "Learning Objectives"
     By the end of this lesson, you'll understand:
     

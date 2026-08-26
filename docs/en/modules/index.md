@@ -1,6 +1,8 @@
 # Learn Nostr Modules
 
-Welcome to the Learn Nostr Modules! This comprehensive curriculum is designed to take you from a complete beginner to a Nostr expert through structured, progressive learning paths.
+Welcome to the Learn Nostr Modules! This curriculum takes you from protocol basics to building clients and operating relays.
+
+If you need **censorship-resistant publishing** more than a developer track, start with [Your first hour](../getting-started/first-session.md) and the [field guide](../getting-started/high-risk-users.md) instead, then come back here.
 
 ## 🎯 Learning Path Overview
 

@@ -265,7 +265,9 @@ Guárdala **en papel** (u otro dispositivo), no en el teléfono que tiene la lla
 
 ## Cómo se conecta con el resto de LearnNostr
 
-- Llaves y respaldos: [Llaves](../concepts/keys.md) · [Módulo 2](../modules/module-02-keys-identity.md)
-- Relés: [Relés](../concepts/relays.md) · [Módulo 4](../modules/module-04-relays-architecture.md)
-- Cifrado, DM, NIP-44 / NIP-17: [Módulo 9: Seguridad y privacidad](../modules/module-09-security.md)
+- Primera hora (sin código): [Tu primera hora](first-session.md)
+- Llaves y respaldos: [Llaves sin cuentas en la nube](keys-without-accounts.md) · [Llaves](../concepts/keys.md) · [Módulo 2](../modules/module-02-keys-identity.md)
+- Relés: [Elegir relés](choose-relays.md) · [Relés](../concepts/relays.md) · [Módulo 4](../modules/module-04-relays-architecture.md)
+- Probar que una nota aterrizó: [Publicar y verificar](../tutorials/publish-and-verify.md)
+- Cifrado, DM, NIP-44 / NIP-17: [Mensajes privados](private-messages.md) · [Módulo 9: Seguridad y privacidad](../modules/module-09-security.md)
 - Construir un cliente (técnico): [Construir un cliente simple](../tutorials/simple-client.md)

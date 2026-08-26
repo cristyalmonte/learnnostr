@@ -244,11 +244,11 @@ Nostr Implementation Possibilities (NIPs) define protocol extensions and standar
 
 ## Next Steps
 
-Understanding Nostr's foundational architecture prepares you for implementing practical applications. The protocol's simplicity enables rapid development while its cryptographic foundations ensure security and user sovereignty.
+Understanding Nostr's foundational architecture prepares you for using it — or for implementing applications. If you need to publish without a company account, start the hands-on path next.
 
 <div class="next-lesson">
-  <a href="../wallet-setup/" class="btn btn-primary">
-    Lightning Wallet Integration →
+  <a href="../first-session/" class="btn btn-primary">
+    Your first hour on Nostr →
   </a>
 </div>
 
@@ -269,6 +269,6 @@ Understanding Nostr's foundational architecture prepares you for implementing pr
         3. **Relays operate independently** with individual policies, creating a distributed network without central control points
         4. **JSON simplicity** ensures broad compatibility, easy parsing, and straightforward protocol implementation across different programming languages
 
-If you need Nostr for journalism, organizing, or personal safety rather than development, continue with [Practical scenarios for journalists, organizers, and at-risk users](high-risk-users.md).
+If you need Nostr for journalism, organizing, or personal safety rather than development, continue with [Your first hour](first-session.md) and then the [field guide for journalists, organizers, and at-risk users](high-risk-users.md).
 
 ---

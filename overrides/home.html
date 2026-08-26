@@ -15,14 +15,17 @@
           </h1>
           <p class="mdx-hero__lede">
             {% if is_spanish %}
-              El protocolo simple y abierto para identidad, notas y pagos, sin una empresa en el medio.
+              El protocolo simple y abierto para identidad, notas y pagos — sin una empresa, un número de teléfono ni una cuenta de gobierno en el medio.
             {% else %}
-              The simple, open protocol for identity, notes, and payments, without a company in the middle.
+              The simple, open protocol for identity, notes, and payments — without a company, a phone number, or a government account in the middle.
             {% endif %}
           </p>
           <p class="mdx-hero__actions">
-            <a href="{% if is_spanish %}/es/getting-started/what-is-nostr/{% else %}/getting-started/what-is-nostr/{% endif %}" class="md-button md-button--primary">
-              {% if is_spanish %}Empezar{% else %}Start learning{% endif %}
+            <a href="{% if is_spanish %}/es/getting-started/first-session/{% else %}/getting-started/first-session/{% endif %}" class="md-button md-button--primary">
+              {% if is_spanish %}Primera hora{% else %}Your first hour{% endif %}
+            </a>
+            <a href="{% if is_spanish %}/es/getting-started/what-is-nostr/{% else %}/getting-started/what-is-nostr/{% endif %}" class="md-button">
+              {% if is_spanish %}Qué es Nostr{% else %}What is Nostr?{% endif %}
             </a>
           </p>
         </div>

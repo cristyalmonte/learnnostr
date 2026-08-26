@@ -244,11 +244,11 @@ Las Posibilidades de Implementación de Nostr (NIPs) definen extensiones y está
 
 ## Siguientes Pasos
 
-Entender la arquitectura fundamental de Nostr te prepara para implementar aplicaciones prácticas. La simplicidad del protocolo permite desarrollo rápido mientras que sus fundamentos criptográficos aseguran seguridad y soberanía del usuario.
+Entender la arquitectura fundamental de Nostr te prepara para usarlo — o para implementar aplicaciones. Si necesitas publicar sin una cuenta de empresa, empieza el camino práctico a continuación.
 
 <div class="next-lesson">
-  <a href="../wallet-setup/" class="btn btn-primary">
-    Integración de Billetera Lightning →
+  <a href="../first-session/" class="btn btn-primary">
+    Tu primera hora en Nostr →
   </a>
 </div>
 
@@ -269,6 +269,6 @@ Entender la arquitectura fundamental de Nostr te prepara para implementar aplica
         3. **Los relés operan independientemente** con políticas individuales, creando una red distribuida sin puntos de control centrales
         4. **La simplicidad de JSON** asegura compatibilidad amplia, análisis fácil, e implementación directa del protocolo en diferentes lenguajes de programación
 
-Si necesitas Nostr para periodismo, organización o seguridad personal más que para desarrollo, continúa con [Escenarios prácticos para periodistas, organizadores y personas en riesgo](high-risk-users.md).
+Si necesitas Nostr para periodismo, organización o seguridad personal más que para desarrollo, continúa con [Tu primera hora](first-session.md) y luego la [guía de campo para periodistas, organizadores y personas en riesgo](high-risk-users.md).
 
 ---

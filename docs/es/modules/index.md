@@ -1,6 +1,8 @@
 # Módulos de Learn Nostr
 
-¡Bienvenido a los Módulos de Learn Nostr! Este plan de estudios integral está diseñado para llevarte de principiante completo a experto en Nostr a través de rutas de aprendizaje estructuradas y progresivas.
+¡Bienvenido a los Módulos de Learn Nostr! Este plan de estudios te lleva de los fundamentos del protocolo a construir clientes y operar relés.
+
+Si necesitas **publicar a prueba de censura** más que una pista de desarrollo, empieza por [Tu primera hora](../getting-started/first-session.md) y la [guía de campo](../getting-started/high-risk-users.md), y vuelve aquí después.
 
 ## 🎯 Descripción General del Camino de Aprendizaje
 

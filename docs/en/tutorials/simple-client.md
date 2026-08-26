@@ -652,6 +652,7 @@ Congratulations! You've built a working Nostr client. Here are some ideas for en
 
 ## Related Tutorials
 
+- [Publish and verify a note](publish-and-verify.md) - Hands-on: multi-relay publish, fetch-back, NIP-09
 - [Understanding Nostr Events](understanding-events.md) - Deep dive into event structures
 - [Relay Communication](relay-communication.md) - Advanced relay interaction patterns
 - [Nostr Fundamentals](../concepts/nostr-fundamentals.md) - Core protocol concepts 

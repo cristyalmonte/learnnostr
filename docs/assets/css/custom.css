@@ -355,6 +355,10 @@ header[class="md-header md-header--shadow"], nav[class="md-tabs"] {
   }
 }
 
+.md-typeset h3 + .home-path ol {
+  margin-top: 0.5rem;
+}
+
 /* Hero already has the page title; Material still injects the nav name. */
 body:has(.mdx-hero) .md-content__inner > h1:first-of-type {
   display: none;

@@ -125,7 +125,9 @@ nostr-client-pro/
 Create `src/services/NostrService.js`:
 
 ```javascript
-import { generatePrivateKey, getPublicKey, finishEvent, nip19 } from 'nostr-tools'
+import { finalizeEvent, generateSecretKey, getPublicKey } from 'nostr-tools/pure'
+import { decode, npubEncode, nsecEncode } from 'nostr-tools/nip19'
+import { bytesToHex, hexToBytes } from 'nostr-tools/utils'
 
 class NostrService {
   constructor() {
@@ -135,13 +137,13 @@ class NostrService {
 
   // Generate new keys
   generateKeys() {
-    this.privateKey = generatePrivateKey()
+    this.privateKey = generateSecretKey()
     this.publicKey = getPublicKey(this.privateKey)
     return {
-      privateKey: this.privateKey,
+      privateKey: bytesToHex(this.privateKey),
       publicKey: this.publicKey,
-      npub: nip19.npubEncode(this.publicKey),
-      nsec: nip19.nsecEncode(this.privateKey)
+      npub: npubEncode(this.publicKey),
+      nsec: nsecEncode(this.privateKey)
     }
   }
 
@@ -149,10 +151,11 @@ class NostrService {
   importKeys(privateKey) {
     // Handle both hex and nsec formats
     if (privateKey.startsWith('nsec')) {
-      const decoded = nip19.decode(privateKey)
+      const decoded = decode(privateKey)
+      if (decoded.type !== 'nsec') throw new Error('Expected an nsec key')
       this.privateKey = decoded.data
     } else {
-      this.privateKey = privateKey
+      this.privateKey = hexToBytes(privateKey)
     }
     this.publicKey = getPublicKey(this.privateKey)
     return this.getKeys()
@@ -163,7 +166,7 @@ class NostrService {
     if (!this.publicKey) return null
     return {
       publicKey: this.publicKey,
-      npub: nip19.npubEncode(this.publicKey)
+      npub: npubEncode(this.publicKey)
     }
   }
 
@@ -171,7 +174,7 @@ class NostrService {
   createTextNote(content, tags = []) {
     if (!this.privateKey) throw new Error('No keys loaded')
     
-    return finishEvent({
+    return finalizeEvent({
       kind: 1,
       created_at: Math.floor(Date.now() / 1000),
       tags: tags,
@@ -201,7 +204,7 @@ class NostrService {
   createReaction(eventId, pubkey, emoji = '+') {
     if (!this.privateKey) throw new Error('No keys loaded')
     
-    return finishEvent({
+    return finalizeEvent({
       kind: 7,
       created_at: Math.floor(Date.now() / 1000),
       tags: [
@@ -216,7 +219,7 @@ class NostrService {
   createProfile(metadata) {
     if (!this.privateKey) throw new Error('No keys loaded')
     
-    return finishEvent({
+    return finalizeEvent({
       kind: 0,
       created_at: Math.floor(Date.now() / 1000),
       tags: [],
@@ -230,7 +233,7 @@ class NostrService {
     
     const tags = pubkeys.map(pk => ['p', pk])
     
-    return finishEvent({
+    return finalizeEvent({
       kind: 3,
       created_at: Math.floor(Date.now() / 1000),
       tags: tags,
@@ -247,81 +250,47 @@ export default new NostrService()
 Create `src/services/RelayPool.js`:
 
 ```javascript
-import { relayInit } from 'nostr-tools'
+import { SimplePool } from 'nostr-tools/pool'
 
 class RelayPool {
   constructor() {
-    this.relays = new Map()
+    this.pool = new SimplePool({ enableReconnect: true })
+    this.relays = new Set()
     this.subscriptions = new Map()
     this.eventHandlers = new Map()
   }
 
   // Add and connect to a relay
   async addRelay(url) {
-    if (this.relays.has(url)) {
-      return this.relays.get(url)
-    }
-
-    const relay = relayInit(url)
-    
-    relay.on('connect', () => {
-      console.log(`✅ Connected to ${url}`)
-      this.emit('relay:connect', { url })
-    })
-
-    relay.on('disconnect', () => {
-      console.log(`❌ Disconnected from ${url}`)
-      this.emit('relay:disconnect', { url })
-    })
-
-    relay.on('error', () => {
-      console.log(`⚠️ Error with ${url}`)
-      this.emit('relay:error', { url })
-    })
-
     try {
-      await relay.connect()
-      this.relays.set(url, relay)
-      return relay
+      await this.pool.ensureRelay(url)
+      this.relays.add(url)
+      this.emit('relay:connect', { url })
+      return url
     } catch (error) {
       console.error(`Failed to connect to ${url}:`, error)
+      this.emit('relay:error', { url, error })
       throw error
     }
   }
 
   // Remove a relay
   removeRelay(url) {
-    const relay = this.relays.get(url)
-    if (relay) {
-      relay.close()
-      this.relays.delete(url)
-    }
+    this.pool.close([url])
+    this.relays.delete(url)
+    this.emit('relay:disconnect', { url })
   }
 
   // Subscribe to events
   subscribe(filters, onEvent, subId = null) {
     const id = subId || `sub_${Date.now()}`
-    const subs = []
-
-    for (const [url, relay] of this.relays) {
-      if (relay.status !== 1) continue // Only connected relays
-      
-      try {
-        const sub = relay.sub(filters)
-        
-        sub.on('event', (event) => {
-          onEvent(event, url)
-        })
-
-        sub.on('eose', () => {
-          this.emit('subscription:eose', { id, url })
-        })
-
-        subs.push({ relay: url, sub })
-      } catch (error) {
-        console.error(`Subscription error on ${url}:`, error)
-      }
-    }
+    const relayUrls = Array.from(this.relays)
+    const subs = filters.map(filter =>
+      this.pool.subscribe(relayUrls, filter, {
+        onevent: event => onEvent(event),
+        oneose: () => this.emit('subscription:eose', { id })
+      })
+    )
 
     this.subscriptions.set(id, subs)
     return id
@@ -331,34 +300,25 @@ class RelayPool {
   unsubscribe(subId) {
     const subs = this.subscriptions.get(subId)
     if (subs) {
-      subs.forEach(({ sub }) => sub.unsub())
+      subs.forEach(sub => sub.close())
       this.subscriptions.delete(subId)
     }
   }
 
   // Publish event to all relays
   async publish(event) {
-    const results = []
-
-    for (const [url, relay] of this.relays) {
-      if (relay.status !== 1) continue
-
-      try {
-        const pub = await relay.publish(event)
-        results.push({ url, success: true, pub })
-      } catch (error) {
-        results.push({ url, success: false, error })
-      }
-    }
-
-    return results
+    const relayUrls = Array.from(this.relays)
+    const settled = await Promise.allSettled(this.pool.publish(relayUrls, event))
+    return settled.map((result, index) => ({
+      url: relayUrls[index],
+      success: result.status === 'fulfilled',
+      result
+    }))
   }
 
   // Get connected relays
   getConnectedRelays() {
-    return Array.from(this.relays.entries())
-      .filter(([_, relay]) => relay.status === 1)
-      .map(([url]) => url)
+    return Array.from(this.relays)
   }
 
   // Event emitter
@@ -379,7 +339,7 @@ class RelayPool {
   // Cleanup
   close() {
     this.subscriptions.forEach((_, id) => this.unsubscribe(id))
-    this.relays.forEach(relay => relay.close())
+    this.pool.close(Array.from(this.relays))
     this.relays.clear()
   }
 }
@@ -921,7 +881,7 @@ class NostrClient {
     if (nsec) {
       try {
         const keys = NostrService.importKeys(nsec)
-        Storage.saveKeys({ privateKey: NostrService.privateKey })
+        Storage.saveKeys({ privateKey: nsec })
         this.state.authenticated = true
         this.showFeed()
         this.subscribeToFeed()

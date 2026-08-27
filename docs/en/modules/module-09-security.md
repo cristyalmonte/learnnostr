@@ -1141,7 +1141,7 @@ Security and privacy in Nostr require careful attention to cryptographic details
 
 ## Next Steps
 
-- Review the [Security Best Practices](../../concepts/security-best-practices.md)
+- Review the [practical security guide](../getting-started/high-risk-users.md)
 - Build a secure application using these principles
 - Contribute to Nostr security research
 - Stay updated on new security NIPs

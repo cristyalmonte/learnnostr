@@ -1141,7 +1141,7 @@ La seguridad y privacidad en Nostr requieren atención cuidadosa a detalles crip
 
 ## Próximos Pasos
 
-- Revisa las [Mejores Prácticas de Seguridad](../../concepts/security-best-practices.md)
+- Revisa la [guía práctica de seguridad](../getting-started/high-risk-users.md)
 - Construye una aplicación segura usando estos principios
 - Contribuye a la investigación de seguridad de Nostr
 - Mantente actualizado sobre nuevos NIPs de seguridad

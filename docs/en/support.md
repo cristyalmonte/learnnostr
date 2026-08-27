@@ -3,6 +3,10 @@
 !!! tip "Help Keep This Resource Free"
     LearnNostr is a community-driven educational platform. Your support helps us maintain and expand this comprehensive Nostr learning resource for everyone.
 
+## Download or mirror LearnNostr
+
+Need the curriculum without a reliable internet connection? [Download the offline package or learn how to run a mirror](getting-started/offline.md).
+
 ## ⚡ Donate to LearnNostr via Bitcoin Lightning:
 
 ```

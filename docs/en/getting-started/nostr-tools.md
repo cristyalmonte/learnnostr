@@ -25,29 +25,37 @@ The Nostr development ecosystem consists of multiple tool categories designed fo
 
 **Installation and Basic Usage:**
 ```bash
-npm install nostr-tools
+npm install nostr-tools@2.25.0
 ```
 
 ```javascript
-import { generatePrivateKey, getPublicKey, finishEvent, relayInit } from 'nostr-tools'
+import {
+  finalizeEvent,
+  generateSecretKey,
+  getPublicKey,
+} from 'nostr-tools/pure'
+import { SimplePool } from 'nostr-tools/pool'
 
-// Key generation and management
-const privateKey = generatePrivateKey()
-const publicKey = getPublicKey(privateKey)
+// Generate a temporary identity
+const secretKey = generateSecretKey()
+const publicKey = getPublicKey(secretKey)
 
-// Event creation and signing
-const event = finishEvent({
+// Create and sign an event
+const event = finalizeEvent({
   kind: 1,
   created_at: Math.floor(Date.now() / 1000),
-  tags: [["t", "nostr"], ["t", "development"]],
-  content: 'Protocol implementation example'
-}, privateKey)
+  tags: [['t', 'nostr'], ['t', 'development']],
+  content: 'Protocol implementation example',
+}, secretKey)
 
-// Relay communication
-const relay = relayInit('wss://relay.damus.io')
-await relay.connect()
-relay.publish(event)
+// Publish to multiple relays
+const relays = ['wss://relay.damus.io', 'wss://nos.lol']
+const pool = new SimplePool()
+await Promise.any(pool.publish(relays, event))
+pool.close(relays)
 ```
+
+See [Build a Simple Nostr Client](../tutorials/simple-client.md) for a complete subscription and publishing example.
 
 #### NDK (Nostr Development Kit)
 **Advanced Features:**

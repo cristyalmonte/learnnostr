@@ -21,6 +21,16 @@ mkdocs serve
 
 Visit `http://localhost:8000` to see the site locally.
 
+## Offline Package and Mirrors
+
+Build a self-contained English and Spanish package:
+
+```bash
+./scripts/package-offline.sh
+```
+
+The ZIP and SHA-256 checksum are written to `dist/`. See [MIRROR.md](MIRROR.md) for local reading, independent hosting, and update instructions.
+
 ## What's Inside
 
 - **Getting Started**: Nostr basics, relay setup, essential tools

@@ -96,6 +96,7 @@ plugins:
             Module 9 - Security & Privacy: Módulo 9 - Seguridad y Privacidad
             Getting Started: Comenzar
             What is Nostr?: ¿Qué es Nostr?
+            Offline & Mirrors: Sin conexión y réplicas
             For Journalists & At-Risk Users: Para periodistas y personas en riesgo
             Wallet Setup: Configuración de Billetera
             Nostr Tools: Herramientas de Nostr
@@ -117,6 +118,8 @@ plugins:
       type: date
       fallback_to_build_date: true
       enabled: !ENV [MKDOCS_ENABLE_GIT_REVISION_DATE, true]
+  - privacy:
+      assets_fetch: true
 
 # Navigation
 nav:
@@ -134,6 +137,7 @@ nav:
     - Module 9 - Security & Privacy: modules/module-09-security.md
   - Getting Started:
     - What is Nostr?: getting-started/what-is-nostr.md
+    - Offline & Mirrors: getting-started/offline.md
     - For Journalists & At-Risk Users: getting-started/high-risk-users.md
     - Wallet Setup: getting-started/wallet-setup.md
     - Nostr Tools: getting-started/nostr-tools.md
@@ -147,9 +151,9 @@ nav:
     - Relays: concepts/relays.md
     - Zaps: concepts/zaps.md
   - Tutorials:
-    - Build a Simple Client: tutorials/simple-client.md
-    - Relay Communication: tutorials/relay-communication.md
     - Understanding Events: tutorials/understanding-events.md
+    - Relay Communication: tutorials/relay-communication.md
+    - Build a Simple Client: tutorials/simple-client.md
   - Support: support.md
 
 # Customization
@@ -171,7 +175,7 @@ extra_css:
 extra_javascript:
   - assets/js/mathjax.js
   - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
-  - https://unpkg.com/typewriter-effect@latest/dist/core.js
+  - https://unpkg.com/typewriter-effect@2.22.0/dist/core.js
   - assets/js/typewriter.js
   - https://unpkg.com/mermaid@10.9.0/dist/mermaid.min.js
 
